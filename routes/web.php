@@ -79,3 +79,28 @@ for(;;){
     echo json_encode($a);
 
 });
+
+Route::get('foda_1', function(){
+    return view('activities.Analisis_Foda_Paso1_1');
+
+});
+
+Route::get('foda_1_1', function(){
+    return view('activities.Analisis_Foda_Paso1_1');
+
+});
+
+Route::get('foda_1_2', function(){
+    return view('activities.Analisis_Foda_Paso1_2');
+
+});
+
+Route::get('foda_1_3', function(){
+    return view('activities.Analisis_Foda_Paso1_3');
+
+});
+
+Route::get('foda_1_4', function(){
+    return view('activities.Analisis_Foda_Paso1_3');
+
+});
