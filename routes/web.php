@@ -180,6 +180,12 @@ Route::get('foda_resumen', function(){
 
 });
 
+Route::get('tiempo', function(){
+    return view('activities.administracion_del_tiempo.lectura_2');
+
+});
+
+
 
 
 
