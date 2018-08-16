@@ -22,7 +22,8 @@
                     6. Es lo más valioso que tiene los individuos, por lo que hay que utilizarlo con el
                     máximo grado de efectividad.<br>
                     7. Se dice que nadie tiene suficiente tiempo, sin embargo todo el mundo tiene
-                    todo el tiempo que hay. Esta es la gran paradoja del tiempo.<br>
+                    todo el tiempo que hay. <br>
+                    Esta es la gran paradoja del tiempo.<br>
                 </div>
 
 
