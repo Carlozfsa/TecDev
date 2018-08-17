@@ -23,7 +23,7 @@
                 <button id="add_activity">Add</button>
 
                 <table class="table table-bordered">
-                    <thead >
+                    <thead class="thead-light">
                         <tr>
                             <th>Categoría</th>
                             <th>Lunes</th>
@@ -247,6 +247,7 @@
 
     $(document).ready(function(){
         var i = 0;
+        $('td').css({'border':'1px gray solid'});
 
 
         $('#a1').on('click', function(){
@@ -265,7 +266,7 @@
         $('#a2').on('click', function(){
             i=0;
             $('#btn_1', '').remove();
-            $('td').css({'border':'none'});
+            $('td').css({'border':'1px gray solid'});
             $(this).css({'border': '3px solid red'});
 
         });

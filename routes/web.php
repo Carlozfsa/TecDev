@@ -185,6 +185,12 @@ Route::get('tiempo', function(){
 
 });
 
+Route::get('integral', function(){
+    return view('activities.el_ser_humano_integral.lectura_2');
+
+});
+
+
 
 
 
