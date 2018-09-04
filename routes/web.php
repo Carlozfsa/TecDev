@@ -185,12 +185,15 @@ Route::get('tiempo', function(){
 
 });
 
-Route::get('integral', function(){
-    return view('activities.el_ser_humano_integral.lectura_2');
+Route::get('lecs', function(){
+    return view('activities.6_Habilidades_de_estudio.lecturas.lectura_3');
 
 });
 
+Route::get('ejs', function(){
+    return view('activities.5_Inteligencias_multiples.ejercicios.ejercicio_4');
 
+});
 
 
 

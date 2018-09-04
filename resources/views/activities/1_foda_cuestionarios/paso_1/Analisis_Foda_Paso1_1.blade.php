@@ -33,7 +33,7 @@
                     <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field">
                                 <tr>
-                                    <td ><input type="text" name="name[]" placeholder="Escriba una fortaleza" class="form-control name_list center-block"></>
+                                    <td ><input type="text" name="name[]" placeholder="Escriba una fortaleza" class="form-control name_list center-block"></td>
                                     <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
                                 </tr>
                             </table>
