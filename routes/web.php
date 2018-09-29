@@ -80,122 +80,70 @@ for(;;){
 
 });
 
-Route::get('foda_1', function(){
-    return view('activities.Analisis_Foda_Paso1_1');
+////*********FORTALEZAS**********////
+Route::get('/foda_1_1', 'FodaController@create_f1');
+Route::get('/foda_1_2', 'FodaController@create_f2');
+Route::get('/foda_1_3', 'FodaController@create_f3');
+Route::get('/foda_1_4', 'FodaController@create_f4');
 
-});
 
-Route::get('foda_1_1', function(){
-    return view('activities.foda_cuestionarios.paso_1.Analisis_Foda_Paso1_1');
+Route::post('/store/foda_1_1', 'FodaController@store_f1');
+Route::post('/store/foda_1_2', 'FodaController@store_f2');
+Route::post('/store/foda_1_3', 'FodaController@store_f3');
+Route::post('/store/foda_1_4', 'FodaController@store_f4');
 
-});
+////*********DEBILIDADES**********////
+Route::get('/foda_2_1', 'FodaController@create_d1');
+Route::get('/foda_2_2', 'FodaController@create_d2');
+Route::get('/foda_2_3', 'FodaController@create_d3');
+Route::get('/foda_2_4', 'FodaController@create_d4');
+
+Route::post('/store/foda_2_1', 'FodaController@store_d1');
+Route::post('/store/foda_2_2', 'FodaController@store_d2');
+Route::post('/store/foda_2_3', 'FodaController@store_d3');
+Route::post('/store/foda_2_4', 'FodaController@store_d4');
+
+////*********AMENAZAS**********////
+Route::get('/foda_3_1', 'FodaController@create_a1');
+Route::get('/foda_3_2', 'FodaController@create_a2');
+Route::get('/foda_3_3', 'FodaController@create_a3');
+Route::get('/foda_3_4', 'FodaController@create_a4');
+Route::get('/foda_3_5', 'FodaController@create_a5');
+
+
+Route::post('/store/foda_3_1', 'FodaController@store_a1');
+Route::post('/store/foda_3_2', 'FodaController@store_a2');
+Route::post('/store/foda_3_3', 'FodaController@store_a3');
+Route::post('/store/foda_3_4', 'FodaController@store_a4');
+Route::post('/store/foda_3_5', 'FodaController@store_a5');
+
+
+
+
+
+
+
+
 
 Route::get('foda_1_2', function(){
-    return view('activities.foda_cuestionarios.paso_1.Analisis_Foda_Paso1_2');
-
+    return view('activities.1_foda_cuestionarios.paso_1.Analisis_Foda_Paso1_2');
 });
 
-Route::get('foda_1_3', function(){
-    return view('activities.foda_cuestionarios.paso_1.Analisis_Foda_Paso1_3');
 
-});
 
-Route::get('foda_1_4', function(){
-    return view('activities.foda_cuestionarios.paso_1.Analisis_Foda_Paso1_4');
 
-});
 
-Route::get('foda_2_1', function(){
-    return view('activities.foda_cuestionarios.paso_2.Analisis_Foda_Paso2_1');
-
-});
-
-Route::get('foda_2_2', function(){
-    return view('activities.foda_cuestionarios.paso_2.Analisis_Foda_Paso2_2');
-
-});
-
-Route::get('foda_2_3', function(){
-    return view('activities.foda_cuestionarios.paso_2.Analisis_Foda_Paso2_3');
-
-});
-
-Route::get('foda_2_4', function(){
-    return view('activities.foda_cuestionarios.paso_2.Analisis_Foda_Paso2_4');
-
-});
-
-Route::get('foda_3_1', function(){
-    return view('activities.foda_cuestionarios.paso_3.Analisis_Foda_Paso3_1');
-
-});
-
-Route::get('foda_3_2', function(){
-    return view('activities.foda_cuestionarios.paso_3.Analisis_Foda_Paso3_2');
-
-});
-
-Route::get('foda_3_3', function(){
-    return view('activities.foda_cuestionarios.paso_3.Analisis_Foda_Paso3_3');
-
-});
-
-Route::get('foda_3_4', function(){
-    return view('activities.foda_cuestionarios.paso_3.Analisis_Foda_Paso3_4');
-
-});
-
-Route::get('foda_3_5', function(){
-    return view('activities.foda_cuestionarios.paso_3.Analisis_Foda_Paso3_5');
-
-});
-
-Route::get('foda_3_5', function(){
-    return view('activities.foda_cuestionarios.paso_3.Analisis_Foda_Paso3_5');
-
-});
-
-Route::get('foda_4_1', function(){
-    return view('activities.foda_cuestionarios.paso_4.Analisis_Foda_Paso4_1');
-
-});
-
-Route::get('foda_4_2', function(){
-    return view('activities.foda_cuestionarios.paso_4.Analisis_Foda_Paso4_2');
-
-});
-
-Route::get('foda_4_3', function(){
-    return view('activities.foda_cuestionarios.paso_4.Analisis_Foda_Paso4_3');
-
-});
-
-Route::get('foda_4_4', function(){
-    return view('activities.foda_cuestionarios.paso_4.Analisis_Foda_Paso4_4');
-
-});
-
-Route::get('foda_resumen', function(){
-    return view('activities.foda_cuestionarios.resumen.Analisis_Foda_Resumen');
-
-});
-
-Route::get('tiempo', function(){
-    return view('activities.administracion_del_tiempo.ejercicio_1');
-
-});
 
 Route::get('lecs', function(){
-    return view('activities.6_Habilidades_de_estudio.lecturas.lectura_3');
+    return view('activities.13_Inferencias_logicas.lecturas.lectura_1');
+
 
 });
 
 Route::get('ejs', function(){
-    return view('activities.5_Inteligencias_multiples.ejercicios.ejercicio_4');
+    return view('activities.14_Relacion_y_simbolizacion.ejercicios.ejercicio_5');
 
 });
-
-
 
 
 

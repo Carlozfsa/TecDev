@@ -28,16 +28,18 @@
                 a relucir en dichos momentos?<br> 2. Identifica cuáles son tus mayores talentos.<br> Estos
                 pueden ser habilidades o competencias. <br>
                 Escríbelos aquí:
-                <form name="add_fort" id="add_fort">
+
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_1_1')}}">
+                {{csrf_field()}}
 
                     <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field">
                                 <tr>
-                                    <td ><input type="text" name="name[]" placeholder="Escriba una fortaleza" class="form-control name_list center-block"></td>
+                                    <td ><input type="text" name="f1[]" placeholder="Escriba una fortaleza" class="form-control name_list center-block"></td>
                                     <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
                                 </tr>
                             </table>
-                        <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
+                        <input type="submit" name="submit" id="submit" class="btn btn-info" value="Guardar" />
                     </div>
                 </form>
 
@@ -54,11 +56,10 @@
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/foda_1_1')}}">Paso 1.1</a></li>
+            <li><a href="{{url('/foda_1_2')}}">Paso 1.2</a></li>
+            <li><a href="{{url('/foda_1_3')}}">Paso 1.3</a></li>
+            <li><a href="{{url('/foda_1_4')}}">Paso 1.4</a></li>
             <li>
                 <a href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
@@ -76,7 +77,7 @@
 
         $('#add').click(function(){
             i++;
-            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
+            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="f1[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
         });
 
         $(document).on('click', '.btn_remove', function(){

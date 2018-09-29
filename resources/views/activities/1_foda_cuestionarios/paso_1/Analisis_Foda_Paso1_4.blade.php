@@ -15,16 +15,18 @@
                 Revisa tus respuestas a las preguntas anteriores.<br> ESCRIBE LAS CUATRO
                 “FORTALEZAS” MAS IMPORTANTES QUE DEBES CONSTRUIR PARA LOS
                 SIGUIENTES CAPÍTULOS DE TU VIDA
-                <form name="add_fort" id="add_fort">
 
-                    <div class="table-responsive" style="margin: 10px;">
-                            <table class="table table-bordered" id="dynamic_field">
-                                <tr>
-                                    <td><input type="text" name="name[]" placeholder="Escriba una fortaleza" class="form-control name_list center-block"></td>
-                                    <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
-                                </tr>
-                            </table>
-                        <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_1_4')}}">
+                    {{csrf_field()}}
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dynamic_field">
+                            <tr>
+                                <td ><input type="text" name="f4[]" placeholder="Escriba una fortaleza" class="form-control name_list center-block"></td>
+                                <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
+                            </tr>
+                        </table>
+                        <input type="submit" name="submit" id="submit" class="btn btn-info" value="Guardar" />
                     </div>
                 </form>
 
@@ -63,7 +65,7 @@
 
         $('#add').click(function(){
             i++;
-            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
+            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="f4[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
         });
 
         $(document).on('click', '.btn_remove', function(){

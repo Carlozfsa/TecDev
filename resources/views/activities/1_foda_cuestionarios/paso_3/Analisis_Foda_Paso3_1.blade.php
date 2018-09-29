@@ -23,16 +23,18 @@
                 destinados para ello.<br><br>
                 Cuando miras hacia el horizonte, en el próximo capítulo de su vida, ¿cuál crees
                 que sea el reto más grande que tendrás que afrontar?
-                <form name="add_fort" id="add_fort">
+
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_3_1')}}">
+                    {{csrf_field()}}
 
                     <div class="table-responsive">
-                            <table class="table table-bordered" id="dynamic_field">
-                                <tr>
-                                    <td ><input type="text" name="name[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></>
-                                    <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
-                                </tr>
-                            </table>
-                        <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
+                        <table class="table table-bordered" id="dynamic_field">
+                            <tr>
+                                <td ><input type="text" name="a1[]" placeholder="Escriba su respuesta" class="form-control name_list center-block"></td>
+                                <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
+                            </tr>
+                        </table>
+                        <input type="submit" name="submit" id="submit" class="btn btn-info" value="Guardar" />
                     </div>
                 </form>
 
@@ -71,7 +73,7 @@
 
         $('#add').click(function(){
             i++;
-            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
+            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="a1[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
         });
 
         $(document).on('click', '.btn_remove', function(){
