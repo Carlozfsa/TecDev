@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Amenaza;
 use App\Debilidad;
 use App\Fortaleza;
+use App\Oportunidad;
 use Illuminate\Http\Request;
 
 class FodaController extends Controller
@@ -69,6 +70,38 @@ class FodaController extends Controller
     }
 
 
+    public function create_o1(){
+        return view('activities.1_foda_cuestionarios.paso_4.Analisis_Foda_Paso4_1');
+    }
+
+    public function create_o2(){
+        return view('activities.1_foda_cuestionarios.paso_4.Analisis_Foda_Paso4_2');
+    }
+
+    public function create_o3(){
+        return view('activities.1_foda_cuestionarios.paso_4.Analisis_Foda_Paso4_3');
+    }
+
+    public function create_o4(){
+        return view('activities.1_foda_cuestionarios.paso_4.Analisis_Foda_Paso4_4');
+    }
+
+    public function create_r(){
+        $f = Fortaleza::where('numero_control',14021073)->first()->fortalezas_4;
+        $fd = json_decode($f);
+
+        $o = Oportunidad::where('numero_control',14021073)->first()->oportunidads_4;
+        $od = json_decode($o);
+
+        $d = Debilidad::where('numero_control',14021073)->first()->debilidads_4;
+        $dd = json_decode($d);
+
+        $a = Amenaza::where('numero_control',14021073)->first()->amenazas_5;
+        $ad = json_decode($a);
+
+
+        return view('activities.1_foda_cuestionarios.resumen.Analisis_Foda_Resumen', compact('fd', 'od', 'dd', 'ad'));
+    }
 
 
     public function store_f1(Request $request){
@@ -321,6 +354,84 @@ class FodaController extends Controller
         $amenazas_5->save();
     }
 
+
+    public function store_o1(Request $request){
+
+        $o1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->o1)){
+            $o1[$i]=$request->o1[$k];
+            $i++;
+            $k++;
+        }
+        $o1_output = json_encode($o1);
+
+        $oportunidads_1 = new Oportunidad();
+        $oportunidads_1->numero_control = 14021073;
+        $oportunidads_1->oportunidads_1 = $o1_output;
+        $oportunidads_1->oportunidads_2 = '';
+        $oportunidads_1->oportunidads_3 = '';
+        $oportunidads_1->oportunidads_4 = '';
+        $oportunidads_1->save();
+
+        return $o1_output;
+    }
+
+    public function store_o2(Request $request){
+
+        $o2=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->o2)){
+            $o2[$i]=$request->o2[$k];
+            $i++;
+            $k++;
+        }
+        $o2_output = json_encode($o2);
+
+        $oportunidads_2 = Oportunidad::where('numero_control',14021073)->first();
+        $oportunidads_2->oportunidads_2 = $o2_output;
+        $oportunidads_2->save();
+    }
+
+    public function store_o3(Request $request){
+
+        $o3=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->o3)){
+            $o3[$i]=$request->o3[$k];
+            $i++;
+            $k++;
+        }
+        $o3_output = json_encode($o3);
+
+        $oportunidads_3 = Oportunidad::where('numero_control',14021073)->first();
+        $oportunidads_3->oportunidads_3 = $o3_output;
+        $oportunidads_3->save();
+    }
+
+    public function store_o4(Request $request){
+
+        $o4=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->o4)){
+            $o4[$i]=$request->o4[$k];
+            $i++;
+            $k++;
+        }
+        $o4_output = json_encode($o4);
+
+        $oportunidads_4 = Oportunidad::where('numero_control',14021073)->first();
+        $oportunidads_4->oportunidads_4 = $o4_output;
+        $oportunidads_4->save();
+    }
 
 
     public function show(){

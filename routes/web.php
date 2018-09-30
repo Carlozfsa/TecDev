@@ -117,17 +117,25 @@ Route::post('/store/foda_3_3', 'FodaController@store_a3');
 Route::post('/store/foda_3_4', 'FodaController@store_a4');
 Route::post('/store/foda_3_5', 'FodaController@store_a5');
 
+////*********OPORTUNIDADES**********////
+Route::get('/foda_4_1', 'FodaController@create_o1');
+Route::get('/foda_4_2', 'FodaController@create_o2');
+Route::get('/foda_4_3', 'FodaController@create_o3');
+Route::get('/foda_4_4', 'FodaController@create_o4');
 
 
+Route::post('/store/foda_4_1', 'FodaController@store_o1');
+Route::post('/store/foda_4_2', 'FodaController@store_o2');
+Route::post('/store/foda_4_3', 'FodaController@store_o3');
+Route::post('/store/foda_4_4', 'FodaController@store_o4');
+
+////*********RESUMEN**********////
+
+Route::get('/foda_r', 'FodaController@create_r');
+
+Route::post('/store/foda_r', 'FodaController@store_r');
 
 
-
-
-
-
-Route::get('foda_1_2', function(){
-    return view('activities.1_foda_cuestionarios.paso_1.Analisis_Foda_Paso1_2');
-});
 
 
 

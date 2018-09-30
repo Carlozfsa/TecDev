@@ -12,21 +12,18 @@
 
                 <div class="container col-sm-12">
                     <h2>Fortalezas</h2>
-                    <div class="panel panel-default" style="background-color:blue; padding: 3%">
-                        <div class="panel-body">A Basic Panel</div>
-                        <form name="add_fort" id="add_fort">
+                    <div class="panel panel-default" style="padding: 3%">
+                        <div class="panel-body"></div>
 
+                        <div name="add_fort" id="add_fort">
+                           <form>
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dynamic_field">
-                                    <tr>
-                                        <td ><input type="text" name="name[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></td>
-                                        <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
-                                    </tr>
-                                </table>
-                                <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
+                                @foreach($fd as  $key=>$value)
+                                        <input type="text" name="name[]" class="form-control name_list center-block" value="{{$value}}"  disabled>
+                                @endforeach
                             </div>
-                        </form>
-                    </div>
+                          </form>
+                        </div>
                 </div>
 
             </td>
@@ -35,20 +32,17 @@
 
                 <div class="container col-sm-12">
                     <h2>Oportunidades</h2>
-                    <div class="panel panel-default panel-default" style="background-color:blue;  padding: 3%">
-                        <div class="panel-body">A Basic Panel</div>
-                        <form name="add_fort2" id="add_fort2">
-
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dynamic_field2">
-                                    <tr>
-                                        <td ><input type="text" name="name2[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></td>
-                                        <td><button type="button" name="add2" id="add2" class="btn btn-success center-block">Agregar</button></td>
-                                    </tr>
-                                </table>
-                                <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
-                            </div>
-                        </form>
+                    <div class="panel panel-default panel-default" style="padding: 3%">
+                        <div class="panel-body"></div>
+                        <div name="add_fort" id="add_fort">
+                            <form>
+                                <div class="table-responsive">
+                                    @foreach($od as  $key=>$value)
+                                        <input type="text" name="name[]" class="form-control name_list center-block" value="{{$value}}"  disabled>
+                                    @endforeach
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -78,20 +72,17 @@
 
                 <div class="container col-sm-12">
                     <h2>Debilidades</h2>
-                    <div class="panel panel-default" style="background-color:blue;  padding: 3%">
-                        <div class="panel-body">A Basic Panel</div>
-                        <form name="add_fort" id="add_fort">
-
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dynamic_field">
-                                    <tr>
-                                        <td ><input type="text" name="name[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></td>
-                                        <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
-                                    </tr>
-                                </table>
-                                <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
-                            </div>
-                        </form>
+                    <div class="panel panel-default" style="padding: 3%">
+                        <div class="panel-body"></div>
+                        <div name="add_fort" id="add_fort">
+                            <form>
+                                <div class="table-responsive">
+                                    @foreach($dd as  $key=>$value)
+                                        <input type="text" name="name[]" class="form-control name_list center-block" value="{{$value}}"  disabled>
+                                    @endforeach
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -102,19 +93,16 @@
                 <div class="container col-sm-12">
                     <h2>Amenazas</h2>
                     <div class="panel panel-default" style="padding: 3%">
-                        <div class="panel-body">A Basic Panel</div>
-                        <form name="add_fort" id="add_fort">
-
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dynamic_field">
-                                    <tr>
-                                        <td ><input type="text" name="name[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></td>
-                                        <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
-                                    </tr>
-                                </table>
-                                <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
-                            </div>
-                        </form>
+                        <div class="panel-body"></div>
+                        <div name="add_fort" id="add_fort">
+                            <form>
+                                <div class="table-responsive">
+                                    @foreach($fd as  $key=>$value)
+                                        <input type="text" name="name[]" class="form-control name_list center-block" value="{{$value}}"  disabled>
+                                    @endforeach
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -169,23 +157,6 @@
 
 </script>
 
-<script>
-    $(document).ready(function(){
-        var i2=1;
-
-        $('#add2').click(function(){
-            i2++;
-            $('#dynamic_field2').append('<tr id="row2_'+i2+'" class="dynamic-added2"><td><input type="text" name="name2[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove2" id="'+i2+'" class="btn btn-danger btn_remove2 center-block">X</button></td></tr>');
-        });
-
-        $(document).on('click', '.btn_remove2', function(){
-            var button_id2 = $(this).attr("id");
-            $('#row2_'+button_id2+'').fadeOut();
-        });
-
-    });
-
-</script>
 
 <script>
     var canvas = document.getElementById("bueno");
