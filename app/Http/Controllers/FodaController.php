@@ -103,6 +103,42 @@ class FodaController extends Controller
         return view('activities.1_foda_cuestionarios.resumen.Analisis_Foda_Resumen', compact('fd', 'od', 'dd', 'ad'));
     }
 
+    public function create_t1(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_1');
+    }
+
+    public function create_t2(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_2');
+    }
+
+    public function create_t3(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_3');
+    }
+
+    public function create_t4(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_4');
+    }
+
+    public function create_t5(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_5');
+    }
+
+    public function create_t6(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_6');
+    }
+
+    public function create_t7(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_7');
+    }
+
+    public function create_t8(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_8');
+    }
+
+    public function create_t2_1(){
+        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_1');
+    }
+
 
     public function store_f1(Request $request){
 

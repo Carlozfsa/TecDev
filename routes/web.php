@@ -80,6 +80,8 @@ for(;;){
 
 });
 
+////*********ACTIVIDAD 1 --FODA--**********////
+
 ////*********FORTALEZAS**********////
 Route::get('/foda_1_1', 'FodaController@create_f1');
 Route::get('/foda_1_2', 'FodaController@create_f2');
@@ -137,6 +139,17 @@ Route::post('/store/foda_r', 'FodaController@store_r');
 
 
 
+////*********ACTIVIDAD 2 --TIEMPO--**********////
+Route::get('/tiempo_ej_1', 'FodaController@create_t1');
+Route::get('/tiempo_ej_2', 'FodaController@create_t2');
+Route::get('/tiempo_ej_3', 'FodaController@create_t3');
+Route::get('/tiempo_ej_4', 'FodaController@create_t4');
+Route::get('/tiempo_ej_5', 'FodaController@create_t5');
+Route::get('/tiempo_ej_6', 'FodaController@create_t6');
+Route::get('/tiempo_ej_7', 'FodaController@create_t7');
+Route::get('/tiempo_ej_8', 'FodaController@create_t8');
+
+Route::get('/tiempo_ej_2_1', 'FodaController@create_t2_1');
 
 
 

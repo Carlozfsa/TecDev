@@ -11,16 +11,13 @@
             <div class="instrucciones" style="margin: 10px">
 
                 <div style="border: 2px solid mediumseagreen; border-radius: 5px; padding: 3%;">
-                    <strong>Ejercicio I</strong><br><br>
-                    Uno de los primeros pasos para mejorar la habilidad de administrar el tiempo es
-                    realizando un análisis de cómo se ha estado utilizando hasta este momento el
-                    tiempo.<br>
-                    Elabora una tabla para registrar por hora las actividades que realizas diariamente,
-                    como se muestra en la figura.<br>
+                    <strong>Ejercicio II</strong><br><br>
+                    Realiza una segunda tabla para el resumen semanal de actividades, como se
+                    muestra en la siguiente imagen:<br>
                 </div><br><br>
 
                 <div style="margin-left: 19%">
-                    <img width="500" height=400" src="images/2_administracion_del_tiempo/t1.png">
+                    <img width="500" height=400" src="images/2_administracion_del_tiempo/t2.png">
                 </div><br><br>
 
             </div>
