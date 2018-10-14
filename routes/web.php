@@ -140,17 +140,46 @@ Route::post('/store/foda_r', 'FodaController@store_r');
 
 
 ////*********ACTIVIDAD 2 --TIEMPO--**********////
-Route::get('/tiempo_ej_1', 'FodaController@create_t1');
-Route::get('/tiempo_ej_2', 'FodaController@create_t2');
-Route::get('/tiempo_ej_3', 'FodaController@create_t3');
-Route::get('/tiempo_ej_4', 'FodaController@create_t4');
-Route::get('/tiempo_ej_5', 'FodaController@create_t5');
-Route::get('/tiempo_ej_6', 'FodaController@create_t6');
-Route::get('/tiempo_ej_7', 'FodaController@create_t7');
-Route::get('/tiempo_ej_8', 'FodaController@create_t8');
+Route::get('/tiempo_ej_1', 'TiempoController@create_t1');
+Route::get('/tiempo_ej_2', 'TiempoController@create_t2');
+Route::get('/tiempo_ej_3', 'TiempoController@create_t3');
+Route::get('/tiempo_ej_4', 'TiempoController@create_t4');
+Route::get('/tiempo_ej_5', 'TiempoController@create_t5');
+Route::get('/tiempo_ej_6', 'TiempoController@create_t6');
+Route::get('/tiempo_ej_7', 'TiempoController@create_t7');
+Route::get('/tiempo_ej_8', 'TiempoController@create_t8');
+Route::get('/tiempo_ej_f', 'TiempoController@create_tf');
 
-Route::get('/tiempo_ej_2_1', 'FodaController@create_t2_1');
 
+Route::post('/store/tiempo_ej_2', 'TiempoController@store_t1_2');
+Route::post('/store/tiempo_ej_3', 'TiempoController@store_t1_3');
+Route::post('/store/tiempo_ej_4', 'TiempoController@store_t1_4');
+Route::post('/store/tiempo_ej_5', 'TiempoController@store_t1_5');
+Route::post('/store/tiempo_ej_6', 'TiempoController@store_t1_6');
+Route::post('/store/tiempo_ej_7', 'TiempoController@store_t1_7');
+Route::post('/store/tiempo_ej_8', 'TiempoController@store_t1_8');
+
+
+Route::get('/tiempo_ej_2_1', 'TiempoController@create_t2_1');
+Route::get('/tiempo_ej_2_2', 'TiempoController@create_t2_2');
+Route::get('/tiempo_ej_2_3', 'TiempoController@create_t2_3');
+Route::get('/tiempo_ej_2_4', 'TiempoController@create_t2_4');
+Route::get('/tiempo_ej_2_5', 'TiempoController@create_t2_5');
+Route::get('/tiempo_ej_2_6', 'TiempoController@create_t2_6');
+Route::get('/tiempo_ej_2_7', 'TiempoController@create_t2_7');
+Route::get('/tiempo_ej_2_8', 'TiempoController@create_t2_8');
+
+Route::post('/store/tiempo_ej_2_2', 'TiempoController@store_t2_2');
+Route::post('/store/tiempo_ej_2_3', 'TiempoController@store_t2_3');
+Route::post('/store/tiempo_ej_2_4', 'TiempoController@store_t2_4');
+Route::post('/store/tiempo_ej_2_5', 'TiempoController@store_t2_5');
+Route::post('/store/tiempo_ej_2_6', 'TiempoController@store_t2_6');
+Route::post('/store/tiempo_ej_2_7', 'TiempoController@store_t2_7');
+Route::post('/store/tiempo_ej_2_8', 'TiempoController@store_t2_8');
+
+////*********ACTIVIDAD 3 --SER HUMANO INTEGRAL--**********////
+
+Route::get('/hum_int_ej_1', 'HumanointegralController@create_hum_int_1');
 
 
 

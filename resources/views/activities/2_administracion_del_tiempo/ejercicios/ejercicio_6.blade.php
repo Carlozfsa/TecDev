@@ -14,7 +14,7 @@
 
                 <br><br>
 
-                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_4_4')}}">
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tiempo_ej_6')}}">
                     {{csrf_field()}}
 
                     <table class="table table-bordered">
@@ -208,7 +208,13 @@
                         </tr>
 
                     </table>
+
+                    <div class="row" style="margin-left: 22%;">
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                    </div>
+
                 </form>
+
 
             </div>
 
