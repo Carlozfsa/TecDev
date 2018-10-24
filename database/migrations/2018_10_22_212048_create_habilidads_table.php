@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHumanointegralsTable extends Migration
+class CreateHabilidadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,18 @@ class CreateHumanointegralsTable extends Migration
      */
     public function up()
     {
-        Schema::create('humanointegrals', function (Blueprint $table) {
+        Schema::create('habilidads', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('numero_control');
-            $table->text('pres_per');
-            $table->text('salud');
-            $table->text('simpatia');
+            $table->text('h1');
+            $table->text('h2');
+            $table->text('h3');
+            $table->text('h4');
+            $table->text('h5');
+            $table->text('h6');
+            $table->text('h7');
+            $table->text('h8');
+            $table->text('h9');
             $table->timestamps();
         });
     }
@@ -30,6 +36,6 @@ class CreateHumanointegralsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('humanointegrals');
+        Schema::dropIfExists('habilidads');
     }
 }

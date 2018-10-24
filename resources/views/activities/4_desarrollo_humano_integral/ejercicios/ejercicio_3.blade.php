@@ -28,24 +28,25 @@
 
                 <div class="form-group">
 
-                    {!! Form::open() !!}
+                    {!! Form::open(['mathod'=>'POST', 'action'=>'DesarrolloHumanoController@store_des_hum_int_3']) !!}
                         {!! Form::label('Rel1','1. Vampiro es a sangre como') !!}
-                        {!! Form::text('rel1.1', null, ['class'=>'form-control']) !!}
+                        {!! Form::text('rel1', null, ['class'=>'form-control']) !!}
                         {!! Form::label('Rel1','es a gusano') !!}<br>
                         {!! Form::label('Rel1','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('rel1.2', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('rel1_2', null, ['class'=>'form-control']) !!}<br><br>
 
 
                         {!! Form::label('Rel2','2. Tierra es a semilla como pensamiento es a') !!}
                         {!! Form::text('rel2', null, ['class'=>'form-control']) !!}
                         {!! Form::label('Rel2','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('rel2.2', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('rel2_2', null, ['class'=>'form-control']) !!}<br><br>
 
                         Realicemos ahora un ejemplo más complejo en donde se ven una gran variedad de
-                        posibles relaciones Y analogías.
+                        posibles relaciones Y analogías.<br><br>
 
-
-
+                    <div class="row" style="margin-left: 32%;">
+                        {!! Form::submit('Guardar',['class'=>'btn btn-primary form-group col-sm-5']) !!}
+                    </div>
 
 
                     {!! Form::close() !!}<br>

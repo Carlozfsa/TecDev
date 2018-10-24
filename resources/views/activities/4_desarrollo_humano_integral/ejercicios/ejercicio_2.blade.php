@@ -18,23 +18,20 @@
                 en el segundo par.<br><br>
 
                 <div class="form-group">
-                    {!! Form::open() !!}
+                    {!! Form::open(['mathod'=>'POST', 'action'=>'DesarrolloHumanoController@store_des_hum_int_2']) !!}
                         {!! Form::label('Rel1','1. Zapato es a calcetín como camisa es a camiseta') !!}<br>
                         {!! Form::label('Rel1','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('rel1.1', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('rel1.2', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('rel1', null, ['class'=>'form-control']) !!}<br><br>
 
                         {!! Form::label('Rel2','2. Papel es a pluma como clavo es a martillo') !!}<br>
                         {!! Form::label('Rel2','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('rel2.1', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('rel2.2', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('rel2', null, ['class'=>'form-control']) !!}<br><br>
 
                         {!! Form::label('Rel3','3. Conejo es a rata como tigre es a gato.') !!}<br>
                         {!! Form::label('Rel3','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('rel3.1', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('rel3.2', null, ['class'=>'form-control']) !!}<br>
+                        {!! Form::text('rel3', null, ['class'=>'form-control']) !!}<br>
 
-                    {!! Form::close() !!}<br>
+
 
 
                     Ahora vamos a realizar un ejercicio diferente tratando de encontrar un término
@@ -43,10 +40,15 @@
                     justifiquen la respuesta."
 
                     <div class="form-group">
-                        {!! Form::open() !!}
-                            {!! Form::label('rel4','Ballena es a tiburón como elefante es a:') !!}
-                            {!! Form::text('rel4', null, ['class'=>'form-control']) !!}
+                            {!! Form::label('rel4','Ballena es a tiburón como elefante es a:') !!}<br>
+                            {!! Form::text('rel4', null, ['class'=>'form-control']) !!}<br>
+
+                        <div class="row" style="margin-left: 32%;">
+                            {!! Form::submit('Guardar',['class'=>'btn btn-primary form-group col-sm-5']) !!}
+                        </div>
+
                         {!! Form::close() !!}
+
                     </div><br>
 
 

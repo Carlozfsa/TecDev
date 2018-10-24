@@ -17,40 +17,35 @@
 
                 <div class="form-group">
 
-                    {!! Form::open() !!}
+                    {!! Form::open(['mathod'=>'POST', 'action'=>'DesarrolloHumanoController@store_des_hum_int_4']) !!}
                         {!! Form::label('lbl1.1','1. Gato es a ratón como caballo es a') !!}
-                        {!! Form::text('txt1.1', null, ['class'=>'form-control']) !!}
+                        {!! Form::text('txt1_1', null, ['class'=>'form-control']) !!}
                         {!! Form::label('lbl1.2','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('txt1.2', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('txt1.3', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('txt1_2', null, ['class'=>'form-control']) !!}<br><br>
 
                         {!! Form::label('lbl2.1','2. Barco es a tren como tiburón es a') !!}
-                        {!! Form::text('txt2.1', null, ['class'=>'form-control']) !!}
+                        {!! Form::text('txt2_1', null, ['class'=>'form-control']) !!}
                         {!! Form::label('lbl2.2','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('txt2.2', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('txt2.3', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('txt2_2', null, ['class'=>'form-control']) !!}<br><br>
 
                         {!! Form::label('lbl3.1','3. Amanecer es a felicidad como noche es a') !!}
-                        {!! Form::text('txt3.1', null, ['class'=>'form-control']) !!}
+                        {!! Form::text('txt3_1', null, ['class'=>'form-control']) !!}
                         {!! Form::label('lbl3.2','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('txt3.2', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('txt3.3', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('txt3_2', null, ['class'=>'form-control']) !!}<br><br>
 
                         {!! Form::label('lbl4.1','4. Volar es a libertad como arrastrarse es ') !!}
-                        {!! Form::text('txt4.1', null, ['class'=>'form-control']) !!}
+                        {!! Form::text('txt4_1', null, ['class'=>'form-control']) !!}
                         {!! Form::label('lbl4.2','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('txt4.2', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('txt4.3', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('txt4_2', null, ['class'=>'form-control']) !!}<br><br>
 
                         {!! Form::label('lbl5.1','5. Café es a galleta como hombre es a ') !!}
-                        {!! Form::text('txt5.1', null, ['class'=>'form-control']) !!}
+                        {!! Form::text('txt5_1', null, ['class'=>'form-control']) !!}
                         {!! Form::label('lbl5.2','Relación(es) que se repite(n):') !!}
-                        {!! Form::text('txt5.2', null, ['class'=>'form-control']) !!}
-                        {!! Form::text('txt5.3', null, ['class'=>'form-control']) !!}<br><br>
+                        {!! Form::text('txt5_2', null, ['class'=>'form-control']) !!}<br><br>
 
-
-
-
+                    <div class="row" style="margin-left: 32%;">
+                        {!! Form::submit('Guardar',['class'=>'btn btn-primary form-group col-sm-5']) !!}
+                    </div>
 
 
                     {!! Form::close() !!}<br>

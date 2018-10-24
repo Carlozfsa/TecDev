@@ -142,13 +142,11 @@
                 única, aunque algunas pueden ser mejores que otras. Revisa que las explicaciones
                 sean coherentes en todo el texto y no se contradigan de un párrafo a otro. La
                     explicación debe ser amplia.</strong><br><br>
-                {!! Form::open() !!}
+                {!! Form::open(['mathod'=>'POST', 'action'=>'DesarrolloHumanoController@store_des_hum_int_6']) !!}
 
                     <div class="form-group">
-                        {!! Form::textarea('text', null, ['class'=>'form-control col-sm-12', 'rows'=>'5']) !!}
-                    </div>
+                        {!! Form::textarea('text', null, ['class'=>'form-control col-sm-12', 'rows'=>'5']) !!}<br>
 
-                    <div class="form-group">
                         {!! Form::submit('Guardar',['class'=>'btn btn-primary form-control']) !!}
                     </div>
 

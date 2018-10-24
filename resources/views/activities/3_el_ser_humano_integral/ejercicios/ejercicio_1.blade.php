@@ -10,8 +10,12 @@
 
             <div class="instrucciones" style="margin: 10px">
 
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/hum_int_ej_1')}}">
+                    {{csrf_field()}}
+
+
                 <table class="table table-bordered">
-                    <thead class="thead-light">
+                    <thead style="background-color: darkgray;">
                         <tr>
                             <th>Característica</th>
                             <th>En lo personal como se considera en cada
@@ -25,7 +29,8 @@
                             Aspecto exterior de una persona
                         </td>
                         <td>
-                            1
+                            <textarea name="pres_per" class = "form-control" cols="12">
+                            </textarea>
                         </td>
                     </tr>
 
@@ -37,7 +42,8 @@
                             visita medica, entre otros.
                         </td>
                         <td>
-                            1
+                             <textarea name="salud" class = "form-control" cols="12">
+                            </textarea>
                         </td>
                     </tr>
 
@@ -50,11 +56,17 @@
                             comportamiento en el otro.
                         </td>
                         <td>
-                            1
+                            <textarea name="simpatia" class = "form-control" cols="12">
+                            </textarea>
                         </td>
                     </tr>
 
                 </table>
+
+                    <div class="row" style="margin-left: 22%;">
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                    </div>
+                </form>
 
             </div>
 

@@ -13,6 +13,7 @@
 
                 <div class="col-sm-6">
                     <img width="400" height=300" src="images/4_desarrollo_humano_integral/e_1_7_dif.png">
+
                     <div id = "info_1" class="alert alert-danger" style="text-align: center">
                         Solamente hay 7 diferencias!
                     </div>
@@ -28,18 +29,25 @@
 
                     <strong style="text-align: center">Escribe aquí las 7 diferencias que encontraste:</strong>
 
-                    <form name="add_fort" id="add_fort">
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/store/des_hum_int_ej_1')}}">
+                        {{csrf_field()}}
 
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field">
                                 <tr>
-                                    <td ><input type="text" name="name[]" placeholder="Escriba una fortaleza" class="form-control name_list center-block"></td>
+                                    <td ><input type="text" name="dif[]" class="form-control name_list center-block"></td>
                                     <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
                                 </tr>
                             </table>
-                            <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
+
                         </div>
+
+                        <div class="row" style="margin-left: 22%;">
+                            <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                        </div>
+
                     </form>
+
 
                 </div>
 
@@ -79,9 +87,9 @@
 
         $('#add').click(function(){
 
-            if(i<=7){
+            if(i<=6){
                 i++;
-                $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
+                $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="dif[]" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
             }else{
                 $('#info_1').fadeIn();
             }
