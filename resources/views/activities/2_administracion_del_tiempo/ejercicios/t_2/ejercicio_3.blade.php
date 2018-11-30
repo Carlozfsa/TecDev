@@ -151,27 +151,30 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
-    <nav aria-label="Page navigation">
-        <ul class="pagination center-block">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-  </div>
+    <div class="center-block" style="margin-left:13%">
+        <nav aria-label="Page navigation">
+            <ul class="pagination center-block">
+                <li>
+                    <a href="{{url('/tiempo_ej_2_2')}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="{{url('/tiempo_ej_2_1')}}">Parte 1</a></li>
+                <li><a href="{{url('/tiempo_ej_2_2')}}">Parte 2</a></li>
+                <li><a href="{{url('/tiempo_ej_2_3')}}" style="background-color: lightgray;">Parte 3</a></li>
+                <li><a href="{{url('/tiempo_ej_2_4')}}">Parte 4</a></li>
+                <li><a href="{{url('/tiempo_ej_2_5')}}">Parte 5</a></li>
+                <li><a href="{{url('/tiempo_ej_2_6')}}">Parte 6</a></li>
+                <li><a href="{{url('/tiempo_ej_2_7')}}">Parte 7</a></li>
+                <li><a href="{{url('/tiempo_ej_2_8')}}">Parte 8</a></li>
+                <li>
+                    <a href="{{url('/tiempo_ej_2_4')}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 @stop
 
 @section('scripts')

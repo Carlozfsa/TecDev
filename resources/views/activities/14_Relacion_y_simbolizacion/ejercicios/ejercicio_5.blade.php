@@ -18,9 +18,9 @@
                 resumen y ensayo. Además, su plan de acción para mejorar sus capacidades y
                 habilidades de pensamiento.<br><br>
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@store_rel_sim_5']) !!}
 
-                {!! Form::textarea('tf', null,['class'=>'form-control']) !!}<br>
+                {!! Form::textarea('a', null,['class'=>'form-control']) !!}<br>
 
 
                 {!! Form::submit('Guardar', ['class'=>'form-control btn btn-primary']) !!}

@@ -42,11 +42,11 @@
                     <img width="400" height=200" src="images/14_Relacion_y_simbolizacion/1/ej1.png">
                 </div><br><br>
 
-{!! Form::open() !!}
+            {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@store_rel_sim_1']) !!}
+
                 <table>
                     <tr>
                      <td>
-
 
                     <table>
                         <tr>
@@ -201,7 +201,7 @@
 
               {!! Form::submit('Guardar', ['class'=>'form-control btn btn-primary']) !!}
 
-{!! Form::close() !!}
+            {!! Form::close() !!}
 
             </div>
 

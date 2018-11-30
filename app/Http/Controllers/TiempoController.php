@@ -342,6 +342,22 @@ class TiempoController extends Controller
         $lunes_h1->domingo_h12 = "";
         $lunes_h1->domingo_h13 = "";
 
+        $lunes_h1->lunes_retro = "";
+        $lunes_h1->martes_retro = "";
+        $lunes_h1->miercoles_retro = "";
+        $lunes_h1->jueves_retro = "";
+        $lunes_h1->viernes_retro = "";
+        $lunes_h1->sabado_retro = "";
+        $lunes_h1->domingo_retro = "";
+
+        $lunes_h1->lunes_cal = 0;
+        $lunes_h1->martes_cal = 0;
+        $lunes_h1->miercoles_cal = 0;
+        $lunes_h1->jueves_cal = 0;
+        $lunes_h1->viernes_cal = 0;
+        $lunes_h1->sabado_cal = 0;
+        $lunes_h1->domingo_cal = 0;
+
         $lunes_h1->sueno_1 = "";
         $lunes_h1->comida_1 = "";
         $lunes_h1->clase_1 = "";
@@ -405,6 +421,23 @@ class TiempoController extends Controller
         $lunes_h1->dep_7 = "";
         $lunes_h1->per_7 = "";
 
+        $lunes_h1->lunes_2_retro = "";
+        $lunes_h1->martes_2_retro = "";
+        $lunes_h1->miercoles_2_retro = "";
+        $lunes_h1->jueves_2_retro = "";
+        $lunes_h1->viernes_2_retro = "";
+        $lunes_h1->sabado_2_retro = "";
+        $lunes_h1->domingo_2_retro = "";
+
+        $lunes_h1->lunes_2_cal = 0;
+        $lunes_h1->martes_2_cal = 0;
+        $lunes_h1->miercoles_2_cal = 0;
+        $lunes_h1->jueves_2_cal = 0;
+        $lunes_h1->viernes_2_cal = 0;
+        $lunes_h1->sabado_2_cal = 0;
+        $lunes_h1->domingo_2_cal = 0;
+
+        $lunes_h1->cal_final = 0;
 
         $lunes_h1->save();
 

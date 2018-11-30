@@ -25,6 +25,11 @@ class CreateHabilidadsTable extends Migration
             $table->text('h7');
             $table->text('h8');
             $table->text('h9');
+
+            $table->text('retro');
+            $table->integer('cal_final');
+
+
             $table->timestamps();
         });
     }

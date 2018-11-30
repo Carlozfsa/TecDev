@@ -115,6 +115,22 @@ class CreateTiemposTable extends Migration
             $table->text('domingo_h12');
             $table->text('domingo_h13');
 
+            $table->text('lunes_retro');
+            $table->text('martes_retro');
+            $table->text('miercoles_retro');
+            $table->text('jueves_retro');
+            $table->text('viernes_retro');
+            $table->text('sabado_retro');
+            $table->text('domingo_retro');
+
+            $table->integer('lunes_cal');
+            $table->integer('martes_cal');
+            $table->integer('miercoles_cal');
+            $table->integer('jueves_cal');
+            $table->integer('viernes_cal');
+            $table->integer('sabado_cal');
+            $table->integer('domingo_cal');
+
             $table->text('sueno_1');
             $table->text('comida_1');
             $table->text('clase_1');
@@ -177,6 +193,24 @@ class CreateTiemposTable extends Migration
             $table->text('soc_7');
             $table->text('dep_7');
             $table->text('per_7');
+
+            $table->text('lunes_2_retro');
+            $table->text('martes_2_retro');
+            $table->text('miercoles_2_retro');
+            $table->text('jueves_2_retro');
+            $table->text('viernes_2_retro');
+            $table->text('sabado_2_retro');
+            $table->text('domingo_2_retro');
+
+            $table->integer('lunes_2_cal');
+            $table->integer('martes_2_cal');
+            $table->integer('miercoles_2_cal');
+            $table->integer('jueves_2_cal');
+            $table->integer('viernes_2_cal');
+            $table->integer('sabado_2_cal');
+            $table->integer('domingo_2_cal');
+
+            $table->integer('cal_final');
 
 
             $table->timestamps();

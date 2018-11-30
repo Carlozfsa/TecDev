@@ -31,14 +31,15 @@
                 D, en ese orden; aparece la P; le siguen también en ese orden de frecuencia C e I.<br>
                 Cabe señalar que la palabra MATEMÁTICA, debe aparecer al final del mensaje.<br><br>
 
-                <strong>Mensaje:</strong><br>
-                {!! Form::text('e', null, ['class'=>'form-control'])!!}<br>
+                {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@store_rel_sim_3']) !!}
 
-                {!! Form::open() !!}
+                        <strong>Mensaje:</strong><br>
+                        {!! Form::text('a', null, ['class'=>'form-control'])!!}<br>
 
-              {!! Form::submit('Guardar', ['class'=>'form-control btn btn-primary']) !!}
 
-{!! Form::close() !!}
+                         {!! Form::submit('Guardar', ['class'=>'form-control btn btn-primary']) !!}
+
+                {!! Form::close() !!}
 
             </div>
 

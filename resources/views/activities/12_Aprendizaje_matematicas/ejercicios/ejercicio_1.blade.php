@@ -12,7 +12,7 @@
 
                 <strong><p style="text-align: center;"> Reactivos Razonamiento Matemático</p></strong><br>
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'MatsController@store_mat_1']) !!}
 
                 <strong>1.- El área de la puerta de un edificio mide y su altura es de 2.40 m ¿Cuál
                     es el ancho de la puerta?</strong><br>
@@ -20,11 +20,11 @@
                 <table class="col-sm-12">
 
                     <tr>
-                        <td>{!! Form::radio('p1','o1') !!}&nbsp a) 1.80m</td>
-                        <td>{!! Form::radio('p1','o2') !!}&nbsp b) 1.85m</td>
-                        <td>{!! Form::radio('p1','o3') !!}&nbsp c) 1.90m</td>
-                        <td>{!! Form::radio('p1','o4') !!}&nbsp d) 1.92m</td>
-                        <td>{!! Form::radio('p1','o5') !!}&nbsp e) 1.94m</td>
+                        <td>{!! Form::radio('p1', 1) !!}&nbsp a) 1.80m</td>
+                        <td>{!! Form::radio('p1', 2) !!}&nbsp b) 1.85m</td>
+                        <td>{!! Form::radio('p1', 3) !!}&nbsp c) 1.90m</td>
+                        <td>{!! Form::radio('p1', 4) !!}&nbsp d) 1.92m</td>
+                        <td>{!! Form::radio('p1', 5) !!}&nbsp e) 1.94m</td>
                     </tr>
                 </table>
                 <br><br>
@@ -35,11 +35,11 @@
                 <table class="col-sm-12">
 
                     <tr>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a) 32</td>
-                        <td>{!! Form::radio('p2','o2') !!}&nbsp b) 63</td>
-                        <td>{!! Form::radio('p2','o3') !!}&nbsp c) 74</td>
-                        <td>{!! Form::radio('p2','o4') !!}&nbsp d) 83</td>
-                        <td>{!! Form::radio('p2','o5') !!}&nbsp e) 93</td>
+                        <td>{!! Form::radio('p2', 1) !!}&nbsp a) 32</td>
+                        <td>{!! Form::radio('p2', 2) !!}&nbsp b) 63</td>
+                        <td>{!! Form::radio('p2', 3) !!}&nbsp c) 74</td>
+                        <td>{!! Form::radio('p2', 4) !!}&nbsp d) 83</td>
+                        <td>{!! Form::radio('p2', 5) !!}&nbsp e) 93</td>
                     </tr>
                 </table>
                 <br><br>
@@ -51,11 +51,11 @@
                 <table class="col-sm-12">
 
                     <tr>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a) 11,17</td>
-                        <td>{!! Form::radio('p2','o2') !!}&nbsp b) 10,18</td>
-                        <td>{!! Form::radio('p2','o3') !!}&nbsp c) 19,9</td>
-                        <td>{!! Form::radio('p2','o4') !!}&nbsp d) 21,7</td>
-                        <td>{!! Form::radio('p2','o5') !!}&nbsp e) 20,8</td>
+                        <td>{!! Form::radio('p3', 1) !!}&nbsp a) 11,17</td>
+                        <td>{!! Form::radio('p3', 2) !!}&nbsp b) 10,18</td>
+                        <td>{!! Form::radio('p3', 3) !!}&nbsp c) 19,9</td>
+                        <td>{!! Form::radio('p3', 4) !!}&nbsp d) 21,7</td>
+                        <td>{!! Form::radio('p3', 5) !!}&nbsp e) 20,8</td>
                     </tr>
                 </table>
                 <br><br>
@@ -66,11 +66,11 @@
                 <table class="col-sm-12">
 
                     <tr>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a) $1020.00</td>
-                        <td>{!! Form::radio('p2','o2') !!}&nbsp b) $1000.00</td>
-                        <td>{!! Form::radio('p2','o3') !!}&nbsp c) $1080.0</td>
-                        <td>{!! Form::radio('p2','o4') !!}&nbsp d) $1110.00</td>
-                        <td>{!! Form::radio('p2','o5') !!}&nbsp e) $1140.00</td>
+                        <td>{!! Form::radio('p4', 1) !!}&nbsp a) $1020.00</td>
+                        <td>{!! Form::radio('p4', 2) !!}&nbsp b) $1000.00</td>
+                        <td>{!! Form::radio('p4', 3) !!}&nbsp c) $1080.0</td>
+                        <td>{!! Form::radio('p4', 4) !!}&nbsp d) $1110.00</td>
+                        <td>{!! Form::radio('p4', 5) !!}&nbsp e) $1140.00</td>
                     </tr>
                 </table>
                 <br><br>
@@ -84,11 +84,11 @@
                 <table class="col-sm-12">
 
                     <tr>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a) 11,13,24</td>
-                        <td>{!! Form::radio('p2','o2') !!}&nbsp b) 12,13,25</td>
-                        <td>{!! Form::radio('p2','o3') !!}&nbsp c) 14,16,30</td>
-                        <td>{!! Form::radio('p2','o4') !!}&nbsp d) 15,17,32</td>
-                        <td>{!! Form::radio('p2','o5') !!}&nbsp e) 18,20,38</td>
+                        <td>{!! Form::radio('p5', 1) !!}&nbsp a) 11,13,24</td>
+                        <td>{!! Form::radio('p5', 2) !!}&nbsp b) 12,13,25</td>
+                        <td>{!! Form::radio('p5', 3) !!}&nbsp c) 14,16,30</td>
+                        <td>{!! Form::radio('p5', 4) !!}&nbsp d) 15,17,32</td>
+                        <td>{!! Form::radio('p5', 5) !!}&nbsp e) 18,20,38</td>
                     </tr>
                 </table>
                 <br><br>
@@ -102,11 +102,11 @@
                 <table class="col-sm-12">
 
                     <tr>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a) 9,36</td>
-                        <td>{!! Form::radio('p2','o2') !!}&nbsp b) 10,40</td>
-                        <td>{!! Form::radio('p2','o3') !!}&nbsp c) 11,44</td>
-                        <td>{!! Form::radio('p2','o4') !!}&nbsp d) 12,48</td>
-                        <td>{!! Form::radio('p2','o5') !!}&nbsp e) 13,52</td>
+                        <td>{!! Form::radio('p6', 1) !!}&nbsp a) 9,36</td>
+                        <td>{!! Form::radio('p6', 2) !!}&nbsp b) 10,40</td>
+                        <td>{!! Form::radio('p6', 3) !!}&nbsp c) 11,44</td>
+                        <td>{!! Form::radio('p6', 4) !!}&nbsp d) 12,48</td>
+                        <td>{!! Form::radio('p6', 5) !!}&nbsp e) 13,52</td>
                     </tr>
                 </table>
                 <br><br>
@@ -120,19 +120,19 @@
 
                     <tr>
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/t3_1.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a)</td>
+                        <td>{!! Form::radio('p7', 1) !!}&nbsp a)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/t3_2.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp b)</td>
+                        <td>{!! Form::radio('p7', 2) !!}&nbsp b)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/t3_3.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp c)</td>
+                        <td>{!! Form::radio('p7', 3) !!}&nbsp c)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/t3_4.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp d)</td>
+                        <td>{!! Form::radio('p7', 4) !!}&nbsp d)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/t3_5.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp e)</td>
+                        <td>{!! Form::radio('p7', 5) !!}&nbsp e)</td>
 
                     </tr>
                 </table>
@@ -147,19 +147,19 @@
 
                     <tr>
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/f1.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a)</td>
+                        <td>{!! Form::radio('p8', 1) !!}&nbsp a)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/f2.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp b)</td>
+                        <td>{!! Form::radio('p8', 2) !!}&nbsp b)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/f3.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp c)</td>
+                        <td>{!! Form::radio('p8', 3) !!}&nbsp c)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/f4.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp d)</td>
+                        <td>{!! Form::radio('p8', 4) !!}&nbsp d)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/f5.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp e)</td>
+                        <td>{!! Form::radio('p8', 5) !!}&nbsp e)</td>
 
                     </tr>
                 </table>
@@ -175,19 +175,19 @@
 
                     <tr>
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/c1.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a)</td>
+                        <td>{!! Form::radio('p9', 1) !!}&nbsp a)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/c2.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp b)</td>
+                        <td>{!! Form::radio('p9', 2) !!}&nbsp b)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/c3.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp c)</td>
+                        <td>{!! Form::radio('p9', 3) !!}&nbsp c)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/c4.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp d)</td>
+                        <td>{!! Form::radio('p9', 4) !!}&nbsp d)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/c5.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp e)</td>
+                        <td>{!! Form::radio('p9', 5) !!}&nbsp e)</td>
 
                     </tr>
                 </table>
@@ -202,33 +202,27 @@
 
                     <tr>
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/cuad1.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a)</td>
+                        <td>{!! Form::radio('p10', 1) !!}&nbsp a)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/cuad2.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp b)</td>
+                        <td>{!! Form::radio('p10', 2) !!}&nbsp b)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/cuad3.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp c)</td>
+                        <td>{!! Form::radio('p10', 3) !!}&nbsp c)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/cuad4.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp d)</td>
+                        <td>{!! Form::radio('p10', 4) !!}&nbsp d)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/cuad5.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp e)</td>
-
+                        <td>{!! Form::radio('p10', 5) !!}&nbsp e)</td>
                     </tr>
                 </table>
+
                 <br><br><br>
 
-
-
-
-
-
-
-
-
-
+                <div class="form-group">
+                    {!! Form::submit('Guardar',['class'=>'form-control btn btn-primary']) !!}
+                </div>
 
                 {!! Form::close() !!}
 

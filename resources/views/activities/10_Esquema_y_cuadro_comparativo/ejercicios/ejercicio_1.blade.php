@@ -15,8 +15,8 @@
 
                 Genera un cuadro sinóptico por áreas de conocimiento de tu plan de estudios:
 
-                <H1>Agregar drag n drop panel</H1>
-
+                {!! Form::open(['method'=>'POST', 'action'=>'','class'=>'dropzone']) !!}
+                {!! Form::close() !!}
 
             </div>
 

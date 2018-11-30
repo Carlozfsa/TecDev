@@ -124,9 +124,22 @@ class FodaController extends Controller
         $fortaleza_1->fortalezas_2 = '';
         $fortaleza_1->fortalezas_3 = '';
         $fortaleza_1->fortalezas_4 = '';
+
+        $fortaleza_1->retro_1 = '';
+        $fortaleza_1->retro_2 = '';
+        $fortaleza_1->retro_3 = '';
+        $fortaleza_1->retro_4 = '';
+
+        $fortaleza_1->cal_1 = 0;
+        $fortaleza_1->cal_2 = 0;
+        $fortaleza_1->cal_3 = 0;
+        $fortaleza_1->cal_4 = 0;
+
+        $fortaleza_1->cal_general = 0;
+
         $fortaleza_1->save();
 
-        return $f1_output;
+        return redirect('foda_1_2');
     }
 
     public function store_f2(Request $request){
@@ -145,6 +158,9 @@ class FodaController extends Controller
         $fortaleza_2 = Fortaleza::where('numero_control',14021073)->first();
         $fortaleza_2->fortalezas_2 = $f2_output;
         $fortaleza_2->save();
+
+        return redirect('foda_1_3');
+
     }
 
     public function store_f3(Request $request){
@@ -163,6 +179,9 @@ class FodaController extends Controller
         $fortaleza_3 = Fortaleza::where('numero_control',14021073)->first();
         $fortaleza_3->fortalezas_3 = $f3_output;
         $fortaleza_3->save();
+
+        return redirect('foda_1_4');
+
     }
 
     public function store_f4(Request $request){
@@ -181,6 +200,9 @@ class FodaController extends Controller
         $fortaleza_4 = Fortaleza::where('numero_control',14021073)->first();
         $fortaleza_4->fortalezas_4 = $f4_output;
         $fortaleza_4->save();
+
+        return redirect('home');
+
     }
 
 
@@ -203,6 +225,20 @@ class FodaController extends Controller
         $debilidad_1->debilidads_2 = '';
         $debilidad_1->debilidads_3 = '';
         $debilidad_1->debilidads_4 = '';
+
+        $debilidad_1->retro_1 = '';
+        $debilidad_1->retro_2 = '';
+        $debilidad_1->retro_3 = '';
+        $debilidad_1->retro_4 = '';
+
+        $debilidad_1->cal_1 = 0;
+        $debilidad_1->cal_2 = 0;
+        $debilidad_1->cal_3 = 0;
+        $debilidad_1->cal_4 = 0;
+
+        $debilidad_1->cal_general = 0;
+
+
         $debilidad_1->save();
     }
 
@@ -275,10 +311,27 @@ class FodaController extends Controller
 
         $amenazas_1 = new Amenaza();
         $amenazas_1->numero_control = 14021073;
+
         $amenazas_1->amenazas_1 = $a1_output;
         $amenazas_1->amenazas_2 = '';
         $amenazas_1->amenazas_3 = '';
         $amenazas_1->amenazas_4 = '';
+        $amenazas_1->amenazas_5 = '';
+
+        $amenazas_1->retro_1 = '';
+        $amenazas_1->retro_2 = '';
+        $amenazas_1->retro_3 = '';
+        $amenazas_1->retro_4 = '';
+        $amenazas_1->retro_5 = '';
+
+        $amenazas_1->cal_1 = 0;
+        $amenazas_1->cal_2 = 0;
+        $amenazas_1->cal_3 = 0;
+        $amenazas_1->cal_4 = 0;
+        $amenazas_1->cal_5 = 0;
+
+        $amenazas_1->cal_general = 0;
+
         $amenazas_1->save();
 
         return $a1_output;
@@ -375,6 +428,20 @@ class FodaController extends Controller
         $oportunidads_1->oportunidads_2 = '';
         $oportunidads_1->oportunidads_3 = '';
         $oportunidads_1->oportunidads_4 = '';
+
+        $oportunidads_1->retro_1 = '';
+        $oportunidads_1->retro_2 = '';
+        $oportunidads_1->retro_3 = '';
+        $oportunidads_1->retro_4 = '';
+
+        $oportunidads_1->cal_1 = 0;
+        $oportunidads_1->cal_2 = 0;
+        $oportunidads_1->cal_3 = 0;
+        $oportunidads_1->cal_4 = 0;
+
+        $oportunidads_1->cal_general = 0;
+
+
         $oportunidads_1->save();
 
         return $o1_output;

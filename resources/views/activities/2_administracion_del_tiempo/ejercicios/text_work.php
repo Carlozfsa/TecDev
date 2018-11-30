@@ -1,10 +1,1 @@
-$dia_1 = Tiempo::where('numero_control',14021073)->first();
-$dia_1->sueno_1 = $lun_sueno1_output;
-$dia_1->comida_1 = $lun_comida1_output;
-$dia_1->clase_1 = $lun_clase1_output;
-$dia_1->estudio_1 = $lun_estudio1_output;
-$dia_1->rel_1 = $lun_rel1_output;
-$dia_1->soc_1 = $lun_soc1_output;
-$dia_1->dep_1 = $lun_dep1_output;
-$dia_1->per_1 = $lun_per1_output;
-$dia_1->save();
+'t10_1','t10_2','t10_3','t10_4','t10_5'

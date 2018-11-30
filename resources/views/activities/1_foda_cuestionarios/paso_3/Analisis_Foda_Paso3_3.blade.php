@@ -4,7 +4,7 @@
 
     <h2>ANÁLISIS FODA</h2>
     <div class="panel panel-default table-responsive">
-        <div class="panel-heading">PASO 2: INTROSPECCIÓN. Debilidades.
+        <div class="panel-heading">PASO 2: INTROSPECCIÓN. Amenazas.
         </div>
         <div class="panel-body">
 
@@ -33,27 +33,27 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
-    <nav aria-label="Page navigation">
-        <ul class="pagination center-block">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-  </div>
+    <div class="center-block" style="margin-left:12%">
+        <nav aria-label="Page navigation">
+            <ul class="pagination center-block">
+                <li>
+                    <a href="{{url('/foda_3_2')}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="{{url('/foda_3_1')}}">Amenazas 1</a></li>
+                <li><a href="{{url('/foda_3_2')}}">Amenazas 2</a></li>
+                <li><a href="{{url('/foda_3_3')}}" style="background-color: lightgray;">Amenazas 3</a></li>
+                <li><a href="{{url('/foda_3_4')}}">Amenazas 4</a></li>
+                <li><a href="{{url('/foda_3_5')}}">Amenazas 5</a></li>
+                <li>
+                    <a href="{{url('/foda_3_4')}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 @stop
 
 @section('scripts')

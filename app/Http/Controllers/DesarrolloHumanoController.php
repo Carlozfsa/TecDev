@@ -34,32 +34,183 @@ class DesarrolloHumanoController extends Controller
 
     public function store_des_hum_int_1(Request $request){
 
-        //********Hora 1********
-        $dif=array();
-        $dif_i=1;
-        $dif_k=0;
+        $f1 = $request->f1;
+        $f2 = $request->f2;
+        $f3 = $request->f3;
+        $f4 = $request->f4;
+        $f5 = $request->f5;
+        $f6 = $request->f6;
+        $f7 = $request->f7;
 
-        while($dif_i<=count($request->dif)){
-            $dif[$dif_i]=$request->dif[$dif_k];
-            $dif_i++;
-            $dif_k++;
+        $d1 = $request->d1;
+        $d2 = $request->d2;
+        $d3 = $request->d3;
+        $d4 = $request->d4;
+        $d5 = $request->d5;
+        $d6 = $request->d6;
+        $d7 = $request->d7;
+
+
+        switch($d1){
+            case 1:
+                $d1 ="Orientación";
+                break;
+
+            case 2:
+                $d1 ="Tamaño";
+                break;
+
+            case 3:
+                $d1 = "Color";
+                break;
+
+            case 4:
+                $d1 = "Posición";
+                break;
         }
-        $dif_output = json_encode($dif);
+
+        switch($d2){
+            case 1:
+                $d2 = "Orientación";
+                break;
+
+            case 2:
+                $d2 = "Tamaño";
+                break;
+
+            case 3:
+                $d2 = "Color";
+                break;
+
+            case 4:
+                $d2 = "Posición";
+                break;
+        }
+
+        switch($d3){
+            case 1:
+                $d3 = "Orientación";
+                break;
+
+            case 2:
+                $d3 = "Tamaño";
+                break;
+
+            case 3:
+                $d3= "Color";
+                break;
+
+            case 4:
+                $d3 = "Posición";
+                break;
+        }
+
+        switch($d4){
+            case 1:
+                $d4 = "Orientación";
+                break;
+
+            case 2:
+                $d4 = "Tamaño";
+                break;
+
+            case 3:
+                $d4= "Color";
+                break;
+
+            case 4:
+                $d4 = "Posición";
+                break;
+        }
+
+        switch($d5){
+            case 1:
+                $d5 = "Orientación";
+                break;
+
+            case 2:
+                $d5 = "Tamaño";
+                break;
+
+            case 3:
+                $d5= "Color";
+                break;
+
+            case 4:
+                $d5 = "Posición";
+                break;
+        }
+
+        switch($d6){
+            case 1:
+                $d6 = "Orientación";
+                break;
+
+            case 2:
+                $d6 = "Tamaño";
+                break;
+
+            case 3:
+                $d6= "Color";
+                break;
+
+            case 4:
+                $d6 = "Posición";
+                break;
+        }
+
+        switch($d7){
+            case 1:
+                $d7 = "Orientación";
+                break;
+
+            case 2:
+                $d7 = "Tamaño";
+                break;
+
+            case 3:
+                $d7= "Color";
+                break;
+
+            case 4:
+                $d7 = "Posición";
+                break;
+        }
+
+
+
+        $data1 = array(1=>$f1,2=>$f2, 3=>$f3, 4=>$f4, 5=>$f5, 6=>$f6, 7=>$f7);
+        $data2 = array(1=>$d1,2=>$d2, 3=>$d3, 4=>$d4, 5=>$d5, 6=>$d6, 7=>$d7);
+
+        $output1 = json_encode($data1);
+        $output2 = json_encode($data2);
+
 
         $dh = new Desarrollohumano();
 
         $dh->numero_control = 14021073;
-        $dh->e1_difs  = $dif_output;
+        $dh->e1_difs  = $output1;
+        $dh->e2_difs  = $output2;
+
+
+        $dh->retro_1 = "";
+        $dh->cal_1 = 0;
 
         $dh->e2_a1 = "";
         $dh->e2_a2 = "";
         $dh->e2_a3 = "";
         $dh->e2_a4 = "";
 
+        $dh->retro_2 = "";
+        $dh->cal_2 = 0;
+
         $dh->e3_a1_1 = "";
         $dh->e3_a1_2 = "";
         $dh->e3_a2_1 = "";
         $dh->e3_a2_2 = "";
+
+        $dh->retro_3 = "";
+        $dh->cal_3 = 0;
 
         $dh->e4_a1_1 = "";
         $dh->e4_a1_2 = "";
@@ -72,15 +223,26 @@ class DesarrolloHumanoController extends Controller
         $dh->e4_a5_1 = "";
         $dh->e4_a5_2 = "";
 
+        $dh->retro_4 = "";
+        $dh->cal_4 = 0;
+
         $dh->e5_a1 = "";
+
+        $dh->retro_5 = "";
+        $dh->cal_5 = 0;
 
         $dh->e6_a1 = "";
 
+        $dh->retro_6 = "";
+        $dh->cal_6 = 0;
+
+        $dh->cal_final = 0;
 
         $dh->save();
 
+        //return $f1.'-'.$d1 .', '.$f2 .' -'.$d2 .', '.$f3.' -'.$d3.', '.$f4.'-'.$d4.', '. $f5.' -'.$d5.', '.$f6.' -'.$d6.', '.$f7.' -'.$d7;
 
-        return $dif_output;
+        return '';
 
     }
 

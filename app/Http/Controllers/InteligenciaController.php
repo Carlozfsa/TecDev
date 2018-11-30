@@ -115,7 +115,6 @@ class InteligenciaController extends Controller
         $r5 = $mu1+$mu2+$mu3+$mu4+$mu5+$mu6+$mu7+$mu8+$mu9+$mu10;
 
 
-
         return view('activities.5_Inteligencias_multiples.ejercicios.ejercicio_1', compact('r1', 'r2'));
 
         return 'oks';

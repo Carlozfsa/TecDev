@@ -17,43 +17,43 @@
                 fundamentar la elección por escrito.<br><br>
 
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'PensamientosController@store_pens_5']) !!}
                 <ol>
 
                     <li>AZTECA es a MEXICANO como BALBUCEO es a:</li>
                         <ol type="a">
-                            <li>{!! Form::radio('o1','ds') !!}&nbsp palabra</li>
-                            <li>{!! Form::radio('o1','ds') !!}&nbsp lenguaje</li>
-                            <li>{!! Form::radio('o1','ds') !!}&nbsp sonido</li>
-                            <li>{!! Form::radio('o1','ds') !!}&nbsp alfabeto</li>
-                            <li>{!! Form::radio('o1','ds') !!}&nbsp sílaba</li>
+                            <li>{!! Form::radio('o1',1) !!}&nbsp palabra</li>
+                            <li>{!! Form::radio('o1',2) !!}&nbsp lenguaje</li>
+                            <li>{!! Form::radio('o1',3) !!}&nbsp sonido</li>
+                            <li>{!! Form::radio('o1',4) !!}&nbsp alfabeto</li>
+                            <li>{!! Form::radio('o1',5) !!}&nbsp sílaba</li>
                         </ol>
 
                     <li>CÓDICE es a HISTORIA como LIBRO es a:</li>
                     <ol type="a">
-                        <li>{!! Form::radio('o2','ds') !!}&nbsp investigación</li>
-                        <li>{!! Form::radio('o2','ds') !!}&nbsp librería</li>
-                        <li>{!! Form::radio('o2','ds') !!}&nbsp biblioteca</li>
-                        <li>{!! Form::radio('o2','ds') !!}&nbsp escuela</li>
-                        <li>{!! Form::radio('o2','ds') !!}&nbsp bibliografía</li>
+                        <li>{!! Form::radio('o2',1) !!}&nbsp investigación</li>
+                        <li>{!! Form::radio('o2',2) !!}&nbsp librería</li>
+                        <li>{!! Form::radio('o2',3) !!}&nbsp biblioteca</li>
+                        <li>{!! Form::radio('o2',4) !!}&nbsp escuela</li>
+                        <li>{!! Form::radio('o2',5) !!}&nbsp bibliografía</li>
                     </ol>
 
                     <li>QUETZALCÓALTL es a TEOLOGÍA como PREHISPÁNICO es a:</li>
                     <ol type="a">
-                        <li>{!! Form::radio('o3','ds') !!}&nbsp nahuátl</li>
-                        <li>{!! Form::radio('o3','ds') !!}&nbsp historia</li>
-                        <li>{!! Form::radio('o3','ds') !!}&nbsp mexica</li>
-                        <li>{!! Form::radio('o3','ds') !!}&nbsp antiguo</li>
-                        <li>{!! Form::radio('o3','ds') !!}&nbsp maya</li>
+                        <li>{!! Form::radio('o3',1) !!}&nbsp nahuátl</li>
+                        <li>{!! Form::radio('o3',2) !!}&nbsp historia</li>
+                        <li>{!! Form::radio('o3',3) !!}&nbsp mexica</li>
+                        <li>{!! Form::radio('o3',4) !!}&nbsp antiguo</li>
+                        <li>{!! Form::radio('o3',5) !!}&nbsp maya</li>
                     </ol>
 
                     <li>CORAZÓN es a SANGRE como SATÉLITE es a:</li>
                     <ol type="a">
-                        <li>{!! Form::radio('o4','ds') !!}&nbsp tecnología</li>
-                        <li>{!! Form::radio('o4','ds') !!}&nbsp comunicación</li>
-                        <li>{!! Form::radio('o4','ds') !!}&nbsp información</li>
-                        <li>{!! Form::radio('o4','ds') !!}&nbsp imágenes</li>
-                        <li>{!! Form::radio('o4','ds') !!}&nbsp planeta</li>
+                        <li>{!! Form::radio('o4',1) !!}&nbsp tecnología</li>
+                        <li>{!! Form::radio('o4',2) !!}&nbsp comunicación</li>
+                        <li>{!! Form::radio('o4',3) !!}&nbsp información</li>
+                        <li>{!! Form::radio('o4',4) !!}&nbsp imágenes</li>
+                        <li>{!! Form::radio('o4',5) !!}&nbsp planeta</li>
                     </ol>
 
                 </ol>

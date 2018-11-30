@@ -21,7 +21,7 @@
 
                 <strong>INSTRUCCIONES:</strong><br><br>
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'PensamientosController@store_pens_3']) !!}
                     <div class="form-group">
                              <p>1. El concepto jurídico actual de persona, mantiene una relación estrecha con la
                                  percepción que ya tenían los griegos y romanos; explique dicha relación.</p>

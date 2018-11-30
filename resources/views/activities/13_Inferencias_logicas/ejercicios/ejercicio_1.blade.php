@@ -22,7 +22,7 @@
 
                 Los perros son animales, los animales tienen orejas, por lo tanto los perros tienen orejas.<br><br>
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'InferenciasController@store_inf_1']) !!}
 
                 <ol>
                     <li>
@@ -34,11 +34,10 @@
                                             a) Algunas tienen o balcón o ascensor &nbsp
                                         </td>
                                         <td>
-                                            {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                            {!! Form::select('o1',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                         </td>
                                     </tr>
                                 </table>
-
 
 
                             <table>
@@ -47,7 +46,7 @@
                                         b) Algunas tienen balcón y ascensor &nbsp
                                     </td>
                                     <td>
-                                        {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                        {!! Form::select('o2',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                     </td>
                                 </tr>
                             </table>
@@ -64,7 +63,7 @@
                                     a)Tengo dinero suficiente para ir en metro &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o3',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -76,7 +75,7 @@
                                 b) Puedo tener o no dinero suficiente para ir en metro &nbsp
                             </td>
                             <td>
-                                {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                {!! Form::select('o4',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                             </td>
                         </tr>
                     </table>
@@ -94,7 +93,7 @@
                                     a)La moto es mal manejada &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o5',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -106,7 +105,7 @@
                                     b) No debería permitirse circular a las motos &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o6',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -117,7 +116,7 @@
                                     c) Desconocemos la causa del atropellamiento &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o7',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -135,7 +134,7 @@
                                     a) X nunca es más grande que A &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o8',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -147,7 +146,7 @@
                                     b) X nunca es más pequeña que A &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o9',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -158,7 +157,7 @@
                                     c) X nunca es más pequeña que B &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o10',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -177,7 +176,7 @@
                                     a) Cuando H es J, R no es J ni P &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o11',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -189,7 +188,7 @@
                                     b) Cuando M es P, J o P es R &nbsp
                                 </td>
                                 <td>
-                                    {!! Form::select('o1',[''=>'Verdadero', 'Falso'], null) !!}
+                                    {!! Form::select('o12',['1'=>'Verdadero', '2'=>'Falso'], null) !!}
                                 </td>
                             </tr>
                         </table>
@@ -198,6 +197,9 @@
 
 
                 </ol>
+                <div class="form-group">
+                    {!! Form::submit('Guardar',['class'=>'form-control btn btn-primary']) !!}
+                </div>
 
                 {!! Form::close() !!}
 

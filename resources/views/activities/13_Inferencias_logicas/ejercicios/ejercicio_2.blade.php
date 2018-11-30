@@ -18,7 +18,7 @@
                 en cada uno de ellos.<br><br>
 
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'InferenciasController@store_inf_2']) !!}
 
                 <ol>
                     <li>
@@ -33,7 +33,7 @@
                         erróneamente en las cajas, es decir, la etiqueta no coincide con el contenido de
                         la caja. Si María puede tomar únicamente una pieza de una sola caja ¿Cómo
                         podrá arreglar correctamente las etiquetas en su respectiva caja?<br>
-                        {!! Form::textarea('t1',null,['class'=>'form-control', 'rows'=>'3']) !!}
+                        {!! Form::textarea('t2',null,['class'=>'form-control', 'rows'=>'3']) !!}
                     </li><br>
 
                     <li>
@@ -44,7 +44,7 @@
                         llega a haber más caníbales que misioneros en una orilla, los caníbales
                         comerán a los misioneros.<br>
                         ¿Cómo podrían cruzar todos los ríos sin que haya bajas entre misioneros?<br>
-                        {!! Form::textarea('t1',null,['class'=>'form-control', 'rows'=>'3']) !!}
+                        {!! Form::textarea('t3',null,['class'=>'form-control', 'rows'=>'3']) !!}
                     </li><br>
 
                     <li>
@@ -64,7 +64,7 @@
                         Con estos datos el sacerdote pudo identificar correctamente a cada estatua
                         salvando con ello su vida. ¿Puedes reproducir el proceso deductivo que siguió?
                         Explíquelo.
-                            {!! Form::textarea('t1',null,['class'=>'form-control', 'rows'=>'3']) !!}
+                            {!! Form::textarea('t4',null,['class'=>'form-control', 'rows'=>'3']) !!}
                     </li><br>
 
                     <li>
@@ -72,7 +72,7 @@
                         que las monedas “buenas” pesan 11 gr. Si se tiene 10 básculas de precisión
                         que sólo pueden ser usadas 1 vez, cada una ¿Cómo haría para encontrar la
                         moneda falsa?<br>
-                        {!! Form::textarea('t1',null,['class'=>'form-control', 'rows'=>'3']) !!}
+                        {!! Form::textarea('t5',null,['class'=>'form-control', 'rows'=>'3']) !!}
                     </li><br>
 
                     <li>
@@ -85,7 +85,7 @@
                         ― Enrique, Pablo y Alfonso son elegantes.<br>
                         ― Alfonso es rubio.<br>
                         ¿Con cuál crees que quiere andar de novia?<br>
-                        {!! Form::textarea('t1',null,['class'=>'form-control', 'rows'=>'3']) !!}
+                        {!! Form::textarea('t6',null,['class'=>'form-control', 'rows'=>'3']) !!}
                     </li><br>
 
                     <li>
@@ -100,10 +100,14 @@
                         ― La Sra. Violeta almuerza con el auditor y con el cajero.<br>
                         ― El Sr. Moreno no hace deporte.<br>
                         ¿Puedes ayudar al vigilante a saber qué puesto tiene cada uno de ellos?<br>
-                        {!! Form::textarea('t1',null,['class'=>'form-control', 'rows'=>'3']) !!}
+                        {!! Form::textarea('t7',null,['class'=>'form-control', 'rows'=>'3']) !!}
                     </li><br>
 
                 </ol>
+
+                <div class="form-group">
+                    {!! Form::submit('Crear',['class'=>'btn btn-primary form-control']) !!}
+                </div>
 
                 {!! Form::close() !!}
 

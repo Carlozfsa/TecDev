@@ -16,6 +16,8 @@
                     una de las columnas verticales y compárelos entre sí.<br><br>
 
 
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/mem_1')}}">
+                    {{csrf_field()}}
 
                 <table class="table table-bordered">
                     <thead class="thead-light">
@@ -39,9 +41,10 @@
                                 ¿Puede hacerse una imagen visual viva de
                                 ello?
                             </td>
-                            <td>s</td>
-                            <td>s</td>
-                            <td>s</td>
+
+                                <td><input type="radio" name="r1" value="1"></td>
+                                <td><input type="radio" name="r1" value="2"></td>
+                                <td><input type="radio" name="r1" value="3"></td>
                         </tr>
 
                         <tr>
@@ -50,17 +53,17 @@
                                 ¿Acaba de experimentar de nuevo el saber
                                 y el olor?
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><input type="radio" name="r2" value="1"></td>
+                            <td><input type="radio" name="r2" value="2"></td>
+                            <td><input type="radio" name="r2" value="3"></td>
                         </tr>
 
                         <tr>
                             <td>3</td>
                             <td>¿Puede escribir todo lo que tomó</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><input type="radio" name="r3" value="1"></td>
+                            <td><input type="radio" name="r3" value="2"></td>
+                            <td><input type="radio" name="r3" value="3"></td>
                         </tr>
 
                         <tr>
@@ -70,9 +73,9 @@
                                 los cereales, el café, el pan, la mermelada,
                                 el zumo. etc.?
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><input type="radio" name="r4" value="1"></td>
+                            <td><input type="radio" name="r4" value="2"></td>
+                            <td><input type="radio" name="r4" value="3"></td>
                         </tr>
 
                         <tr>
@@ -83,9 +86,9 @@
                             la cuchara o si hacia sol o si estaba
                             nublado?
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                            <td><input type="radio" name="r5" value="1"></td>
+                            <td><input type="radio" name="r5" value="2"></td>
+                            <td><input type="radio" name="r5" value="3"></td>
                     </tr>
 
                     <tr>
@@ -94,9 +97,9 @@
                             ¿Puede recordar donde comió, como se
                             sentó y la posición de la comida en el plato?
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r6" value="1"></td>
+                        <td><input type="radio" name="r6" value="2"></td>
+                        <td><input type="radio" name="r6" value="3"></td>
                     </tr>
 
                     <tr style="background-color: lightgray">
@@ -118,9 +121,9 @@
                             hay, del tipo de escalones y del número de
                             estos?
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r7" value="1"></td>
+                        <td><input type="radio" name="r7" value="2"></td>
+                        <td><input type="radio" name="r7" value="3"></td>
                     </tr>
 
                     <tr>
@@ -129,9 +132,9 @@
                             ¿Recuerda la dirección y el número de
                             teléfono?
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r8" value="1"></td>
+                        <td><input type="radio" name="r8" value="2"></td>
+                        <td><input type="radio" name="r8" value="3"></td>
                     </tr>
 
                     <tr>
@@ -143,9 +146,9 @@
                             ha abierto la puerta. ¿El armario que hay
                             dentro está a la izquierda o a la derecha?
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r9" value="1"></td>
+                        <td><input type="radio" name="r9" value="2"></td>
+                        <td><input type="radio" name="r9" value="3"></td>
                     </tr>
 
                     <tr style="background-color: lightgray">
@@ -165,9 +168,9 @@
                             colocación de los muebles en una
                             habitación.
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r10" value="1"></td>
+                        <td><input type="radio" name="r10" value="2"></td>
+                        <td><input type="radio" name="r10" value="3"></td>
                     </tr>
 
                     <tr>
@@ -176,9 +179,9 @@
                             Si mis amigos pintaran el comedor de un
                             color nuevo, sin duda lo notaría
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r11" value="1"></td>
+                        <td><input type="radio" name="r11" value="2"></td>
+                        <td><input type="radio" name="r11" value="3"></td>
                     </tr>
 
                     <tr>
@@ -187,9 +190,9 @@
                             Sé si mi despertador tiene los números
                             árabes o romanos
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r12" value="1"></td>
+                        <td><input type="radio" name="r12" value="2"></td>
+                        <td><input type="radio" name="r12" value="3"></td>
                     </tr>
 
                     <tr>
@@ -197,9 +200,9 @@
                         <td>
                             Me sé mi número de la Seguridad Social.
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r13" value="1"></td>
+                        <td><input type="radio" name="r13" value="2"></td>
+                        <td><input type="radio" name="r13" value="3"></td>
                     </tr>
 
                     <tr>
@@ -207,9 +210,9 @@
                         <td>
                             Soy bueno en los deportes y/o en el baile
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r14" value="1"></td>
+                        <td><input type="radio" name="r14" value="2"></td>
+                        <td><input type="radio" name="r14" value="3"></td>
                     </tr>
 
                     <tr>
@@ -218,9 +221,9 @@
                             Soy consciente de los colores que me
                             rodean
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r15" value="1"></td>
+                        <td><input type="radio" name="r15" value="2"></td>
+                        <td><input type="radio" name="r15" value="3"></td>
                     </tr>
 
                     <tr>
@@ -229,9 +232,9 @@
                             Obtengo siempre una buena puntuación en
                             lengua
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r16" value="1"></td>
+                        <td><input type="radio" name="r16" value="2"></td>
+                        <td><input type="radio" name="r16" value="3"></td>
                     </tr>
 
                     <tr>
@@ -240,9 +243,9 @@
                             No tuve muchos problemas para aprender a
                             montar en bicicleta
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r17" value="1"></td>
+                        <td><input type="radio" name="r17" value="2"></td>
+                        <td><input type="radio" name="r17" value="3"></td>
                     </tr>
 
                     <tr>
@@ -250,9 +253,9 @@
                         <td>
                             Siento una gran afición por los crucigramas
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="radio" name="r18" value="1"></td>
+                        <td><input type="radio" name="r18" value="2"></td>
+                        <td><input type="radio" name="r18" value="3"></td>
                     </tr>
 
                     <tr style="background-color: lightgray">
@@ -279,7 +282,9 @@
                     </thead>
 
 
-                </table>
+                    </table>
+
+
                 <br>
 
                 Si usted reúne aproximadamente el mismo número de puntos en los tres tipos de
@@ -314,7 +319,10 @@
                 mientras percibe la textura de su mano, siente sus músculos y recibe una
                 determinada impresión de su estatura y sus movimientos. Sienta esto mismo cuando
                 teclee o marque un número de teléfono.<br>
-
+                    <div class="row" style="margin-left: 22%;">
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                    </div>
+                </form>
             </div>
 
         </div>
@@ -359,6 +367,8 @@
         });
 
     });
-
 </script>
+
+
+
 @stop

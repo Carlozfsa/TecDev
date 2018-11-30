@@ -29,12 +29,7 @@ mix.scripts([
     'resources/assets/js/libs/metisMenu.js',
     'resources/assets/js/sb-admin-2.js',
     'resources/assets/js/libs/scripts.js',
-    'resources/assets/js/libs/dropzone.js',
     'resources/assets/js/libs/bootstrap-confirmation.min.js',
-    'resources/assets/js/libs/b.js',
-    'resources/assets/js/libs/popper.min.js',
-    'resources/assets/js/libs/tooltip.min.js',
-
-
+    'resources/assets/js/libs/dropzone.js',
 
 ], 'public/js/libs.js');

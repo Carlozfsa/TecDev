@@ -17,15 +17,15 @@
                 manera más apropiada cuando sea necesario.<br><br>
 
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'PensamientosController@store_pens_4']) !!}
 
                     <div class="form-group">
                         <table>
                              <tr>
                                  <td>1. La palabra persona se &nbsp</td>
-                                 <td>{!! Form::text('text1', null, ['class'=>'form-control']) !!}</td>
+                                 <td>{!! Form::select('text1',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                  <td>&nbsp con el &nbsp</td>
-                                 <td>{!! Form::text('text2', null, ['class'=>'form-control']) !!}</td>
+                                 <td>{!! Form::select('text2',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                  <td>&nbsp moral y psicológico &nbsp</td>
                              </tr>
                         </table>
@@ -37,7 +37,7 @@
                         <table>
                             <tr>
                                 <td>&nbsp propio del &nbsp</td>
-                                <td>{!! Form::text('text3', null, ['class'=>'form-control']) !!}</td>
+                                <td>{!! Form::select('text3',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                 <td>&nbsp humano &nbsp</td>
                             </tr>
                         </table>
@@ -49,9 +49,9 @@
                         <table>
                             <tr>
                                 <td>2. Nuestros &nbsp</td>
-                                <td>{!! Form::text('text4', null, ['class'=>'form-control']) !!}</td>
+                                <td>{!! Form::select('text4',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                 <td>&nbsp nahuas también tenían, como los &nbsp</td>
-                                <td>{!! Form::text('text5', null, ['class'=>'form-control']) !!}</td>
+                                <td>{!! Form::select('text5',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                             </tr>
                         </table>
 
@@ -76,9 +76,9 @@
                     <table>
                         <tr>
                             <td>3. La &nbsp</td>
-                            <td>{!! Form::text('text6', null, ['class'=>'form-control']) !!}</td>
+                            <td>{!! Form::select('text6',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                             <td>&nbsp “hablaré a nuestro rostro, a nuestro corazón” va &nbsp</td>
-                            <td>{!! Form::text('text7', null, ['class'=>'form-control']) !!}</td>
+                            <td>{!! Form::select('text7',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                         </tr>
                     </table>
 
@@ -97,7 +97,7 @@
                         <table>
                             <tr>
                                 <td>4. Para los nahuas el corazón era el &nbsp</td>
-                                <td>{!! Form::text('text8', null, ['class'=>'form-control']) !!}</td>
+                                <td>{!! Form::select('text8',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                 <td>&nbsp del que parece provenir la &nbsp</td>
                             </tr>
                         </table>
@@ -112,7 +112,7 @@
                             <table>
                                 <tr>
                                     <td>&nbsp acción del &nbsp</td>
-                                    <td>{!! Form::text('text9', null, ['class'=>'form-control']) !!}</td>
+                                    <td>{!! Form::select('text9',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                 </tr>
                             </table>
 
@@ -127,9 +127,9 @@
                         <table>
                             <tr>
                                 <td>5. Lo  &nbsp</td>
-                                <td>{!! Form::text('text10', null, ['class'=>'form-control']) !!}</td>
+                                <td>{!! Form::select('text10',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                 <td>&nbsp de los indígenas, era la &nbsp</td>
-                                <td>{!! Form::text('text11', null, ['class'=>'form-control']) !!}</td>
+                                <td>{!! Form::select('text11',['0'=>'---','1'=>'eje','2'=>'colaboración','3'=>'expresión','4'=>'maravilloso','5'=>'reglamentación','6'=>'helenos','7'=>'relaciona','8'=>'encaminada','9'=>'ser','10'=>'individuo','11'=>'aventón','12'=>'viejos','13'=>'dirigidos','14'=>'aspecto'], null, ['class'=>'form-control']) !!}</td>
                                 <td>de la educación: </td>
                             </tr>
                         </table>

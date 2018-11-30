@@ -57,6 +57,9 @@
 
             </div>
 
+            <form name="add_fort" id="add_fort" method="post" action="{{url('/store/mem_2')}}">
+                {{csrf_field()}}
+
             <table class="table table-bordered">
                 <tr style="color:black; background-color: royalblue;">
                     <td>Proponga preguntas del caso a los compañeros de clase:</td>
@@ -65,10 +68,10 @@
                 <tr>
                     <td>
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dynamic_field2">
+                            <table class="table table-bordered" id="dynamic_field">
                                 <tr>
-                                    <td ><input type="text" name="name[]2" class="form-control name_list center-block"></td>
-                                    <td><button type="button" name="add2" id="add2" class="btn btn-success center-block">Agregar</button></td>
+                                    <td ><input type="text" name="c1[]" class="form-control name_list center-block"></td>
+                                    <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
                                 </tr>
                             </table>
                         </div>
@@ -82,13 +85,19 @@
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field2">
                                 <tr>
-                                    <td><textarea name="name[]2" class="form-control name_list center-block"></textarea></td>
+                                    <td><textarea name="con1" class="form-control name_list center-block"></textarea></td>
                                 </tr>
                             </table>
                         </div>
                     </td>
                 </tr>
             </table>
+
+                <div class="row" style="margin-left: 22%;">
+                    <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                </div>
+
+            </form>
 
 
         </div>
@@ -124,7 +133,7 @@
 
         $('#add').click(function(){
             i++;
-            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
+            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="c1[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
         });
 
         $(document).on('click', '.btn_remove', function(){

@@ -15,7 +15,7 @@
                 debilidades para plasmarlo en un plan de mejora, apoyado de La línea de la vida y
                 el Análisis FODA.<br><br>
                 <div class="form-group">
-                    {!! Form::open() !!}
+                    {!! Form::open(['method'=>'POST', 'action'=>'MemoriasController@store_mem_4']) !!}
                         {!! Form::textarea('escrito', null,  ['class'=>'form-control']) !!}<br>
                         {!! Form::submit('Guardar', ['class'=>'btn-primary form-control']) !!}
                     {!! Form::close() !!}
@@ -23,6 +23,7 @@
 
 
         </div>
+    </div>
     </div>
 
   <div class="center-block" style="margin-left:35%">

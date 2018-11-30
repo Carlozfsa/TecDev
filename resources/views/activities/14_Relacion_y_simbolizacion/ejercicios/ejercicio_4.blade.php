@@ -15,24 +15,24 @@
 
                 <strong>INSTRUCCIONES:</strong> Lee cuidadosamente con tus compañeros cada ejercicio y
                 plantea tu respuesta.<br><br>
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@store_rel_sim_4']) !!}
 
                     1. Una estancia tiene el doble de largo que de ancho: si el largo se disminuye en
                     6 m y el ancho aumenta en 4 m, la superficie de la estancia no varía. Obtén la
                     expresión matemática que te permita calcular las dimensiones de la estancia.<br>
-                    {!! Form::text('e', null, ['class'=>'form-control'])!!}<br><br>
+                    {!! Form::text('a', null, ['class'=>'form-control'])!!}<br><br>
 
                     2. Tenía cierta suma de dinero. Ahorré una suma igual a la que tenía y gasté
                     $50.00; luego ahorré una suma igual al doble de lo que me quedaba y gasté
                     $390.00. Si ahora no tengo nada, ¿cuál es la expresión matemática que
                     representa al enunciado anterior?<br>
-                    {!! Form::text('e', null, ['class'=>'form-control'])!!}<br><br>
+                    {!! Form::text('b', null, ['class'=>'form-control'])!!}<br><br>
 
                     3. Compré cuádruplo número de caballos que de vacas. Si hubiera comprado 5
                     caballos más y 5 vacas más tendría el triple de caballos que de vacas. Obtén la
                     expresión matemática que te permita calcular el número de caballos y de
                     vacas.<br>
-                    {!! Form::text('e', null, ['class'=>'form-control'])!!}<br><br>
+                    {!! Form::text('c', null, ['class'=>'form-control'])!!}<br><br>
 
 
 

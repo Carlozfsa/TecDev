@@ -150,6 +150,63 @@
 
                 <h1>GRAFICA PENDIENTE!!!!!</h1>
 
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/pens_1')}}">
+                    {{csrf_field()}}
+
+                    <div class="table-responsive col-sm-8" style="margin-left: 12%;">
+                        <table class="table table-bordered" id="dynamic_field">
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">a</td>
+                                <td ><input type="text" name="a" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">b</td>
+                                <td ><input type="text" name="b" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">c</td>
+                                <td ><input type="text" name="c" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">d</td>
+                                <td ><input type="text" name="d" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">e</td>
+                                <td ><input type="text" name="e" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">f</td>
+                                <td ><input type="text" name="f" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">g</td>
+                                <td ><input type="text" name="g" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">h</td>
+                                <td ><input type="text" name="h" class="form-control name_list center-block"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="col-sm-2" style="text-align: center;">i</td>
+                                <td ><input type="text" name="i" class="form-control name_list center-block"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="row" style="margin-left: 12%;">
+                        <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                    </div>
+                </form>
+
             </div>
 
 
@@ -181,21 +238,4 @@
 @stop
 
 @section('scripts')
-<script>
-    $(document).ready(function(){
-        var i=1;
-
-        $('#add').click(function(){
-            i++;
-            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
-        });
-
-        $(document).on('click', '.btn_remove', function(){
-            var button_id = $(this).attr("id");
-            $('#row'+button_id+'').fadeOut();
-        });
-
-    });
-
-</script>
 @stop

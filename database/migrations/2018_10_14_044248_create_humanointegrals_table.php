@@ -15,10 +15,15 @@ class CreateHumanointegralsTable extends Migration
     {
         Schema::create('humanointegrals', function (Blueprint $table) {
             $table->increments('id');
+
             $table->integer('numero_control');
             $table->text('pres_per');
             $table->text('salud');
             $table->text('simpatia');
+
+            $table->text('retro');
+            $table->integer('cal_final');
+
             $table->timestamps();
         });
     }

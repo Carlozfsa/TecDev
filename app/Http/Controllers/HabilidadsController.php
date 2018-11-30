@@ -124,6 +124,21 @@ class HabilidadsController extends Controller
         $h9_output = json_encode($h9);
 
         $h1 = new Habilidad();
+        $h1->numero_control = 14021073;
+        $h1->h1 = $h1_output;
+        $h1->h2 = $h2_output;
+        $h1->h3 = $h3_output;
+        $h1->h4 = $h4_output;
+        $h1->h5 = $h5_output;
+        $h1->h6 = $h6_output;
+        $h1->h7 = $h7_output;
+        $h1->h8 = $h8_output;
+        $h1->h9 = $h9_output;
+
+        $h1->retro = "";
+        $h1->cal_final = 0;
+
+        $h1->save();
 
         return 'oks';
 

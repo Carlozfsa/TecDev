@@ -18,11 +18,10 @@
                 resuelto que se da.<br><br>
 
 
-{!! Form::open() !!}
+{!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@store_rel_sim_2']) !!}
                 <table>
                     <tr>
                      <td>
-
 
                     <table>
                         <tr>

@@ -16,10 +16,25 @@ class CreateFortalezasTable extends Migration
         Schema::create('fortalezas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('numero_control');
+
             $table->string('fortalezas_1');
             $table->string('fortalezas_2');
             $table->string('fortalezas_3');
             $table->string('fortalezas_4');
+
+            $table->string('retro_1');
+            $table->string('retro_2');
+            $table->string('retro_3');
+            $table->string('retro_4');
+
+            $table->integer('cal_1');
+            $table->integer('cal_2');
+            $table->integer('cal_3');
+            $table->integer('cal_4');
+
+            $table->integer('cal_general');
+
+
             $table->timestamps();
         });
     }

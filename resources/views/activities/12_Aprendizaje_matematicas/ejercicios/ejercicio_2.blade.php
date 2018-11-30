@@ -27,7 +27,7 @@
                 llama “Figuras respuesta” selecciona solo una de ellas que le de continuidad a
                 las figuras de la izquierda.<br><br>
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'MatsController@store_mat_2']) !!}
 
                 <strong>a</strong><br>
 
@@ -40,19 +40,19 @@
 
                     <tr>
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log1.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a)</td>
+                        <td>{!! Form::radio('p1', 1) !!}&nbsp a)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log2.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp b)</td>
+                        <td>{!! Form::radio('p1', 2) !!}&nbsp b)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log3.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp c)</td>
+                        <td>{!! Form::radio('p1', 3) !!}&nbsp c)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log4.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp d)</td>
+                        <td>{!! Form::radio('p1', 4) !!}&nbsp d)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log5.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp e)</td>
+                        <td>{!! Form::radio('p1', 5) !!}&nbsp e)</td>
 
                     </tr>
                 </table>
@@ -70,19 +70,19 @@
 
                     <tr>
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log1.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a)</td>
+                        <td>{!! Form::radio('p2', 1) !!}&nbsp a)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log2.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp b)</td>
+                        <td>{!! Form::radio('p2', 2) !!}&nbsp b)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log3.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp c)</td>
+                        <td>{!! Form::radio('p2', 3) !!}&nbsp c)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log4.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp d)</td>
+                        <td>{!! Form::radio('p2', 4) !!}&nbsp d)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log5.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp e)</td>
+                        <td>{!! Form::radio('p2', 5) !!}&nbsp e)</td>
 
                     </tr>
                 </table>
@@ -99,19 +99,19 @@
 
                     <tr>
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log1.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp a)</td>
+                        <td>{!! Form::radio('p3', 1) !!}&nbsp a)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log2.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp b)</td>
+                        <td>{!! Form::radio('p3', 2) !!}&nbsp b)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log3.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp c)</td>
+                        <td>{!! Form::radio('p3', 3) !!}&nbsp c)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log4.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp d)</td>
+                        <td>{!! Form::radio('p3', 4) !!}&nbsp d)</td>
 
                         <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log5.png"></td>
-                        <td>{!! Form::radio('p2','o1') !!}&nbsp e)</td>
+                        <td>{!! Form::radio('p3', 5) !!}&nbsp e)</td>
 
                     </tr>
                 </table>
@@ -145,8 +145,8 @@
 
                     <tr>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('ESENIO', null) !!}</td>
-                        <td>{!! Form::text('l1', null) !!}</td>
-                        <td>{!! Form::text('l1', null) !!}</td>
+                        <td>{!! Form::text('t1', null) !!}</td>
+                        <td>{!! Form::text('t2', null) !!}</td>
                     </tr>
 
                     <tr>
@@ -156,9 +156,9 @@
                     </tr>
 
                     <tr>
-                        <td>{!! Form::text('l1', null) !!}</td>
+                        <td>{!! Form::text('t3', null) !!}</td>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('l1', 'RAPOSO') !!}</td>
-                        <td>{!! Form::text('l1', null) !!}</td>
+                        <td>{!! Form::text('t4', null) !!}</td>
                     </tr>
 
                     <tr>
@@ -168,19 +168,20 @@
                     </tr>
 
                     <tr>
-                        <td>{!! Form::text('l1', null) !!}</td>
-                        <td>{!! Form::text('l1', null) !!}</td>
+                        <td>{!! Form::text('t5', null) !!}</td>
+                        <td>{!! Form::text('t6', null) !!}</td>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('l1', 'ATRABILIARIO') !!}</td>
                     </tr>
 
-
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
 
                 </table>
-                <br><br><br>
 
-
-
-
+                <div class="form-group">
+                    {!! Form::submit('Guardar',['class'=>'btn btn-primary form-control']) !!}
+                </div>
 
                 {!! Form::close() !!}
 
