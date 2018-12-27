@@ -3,33 +3,121 @@
 namespace App\Http\Controllers;
 
 use App\Desarrollohumano;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DesarrolloHumanoController extends Controller
 {
 
+    public function create_des_hum_l_1(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_1');
+    }
+
+    public function create_des_hum_l_2(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_2');
+    }
+
+    public function create_des_hum_l_3(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_3');
+    }
+
+    public function create_des_hum_l_4(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_4');
+    }
+
+    public function create_des_hum_l_5(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_5');
+    }
+
+    public function create_des_hum_l_6(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_6');
+    }
+
+    public function create_des_hum_l_7(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_7');
+    }
+
+    public function create_des_hum_l_8(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_8');
+    }
+
+    public function create_des_hum_l_9(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_9');
+    }
+
+    public function create_des_hum_l_10(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_10');
+    }
+
+    public function create_des_hum_l_11(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_11');
+    }
+
+    public function create_des_hum_l_12(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_12');
+    }
+
+    public function create_des_hum_l_13(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_13');
+    }
+
+    public function create_des_hum_l_14(){
+        return view('activities.4_desarrollo_humano_integral.lecturas.lectura_14');
+    }
+
+
+
+
+
+
+
     public function create_des_hum_int_1(){
-        return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_1');
+        if(Auth::User()->avance >= 4.1){
+            return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_1');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_des_hum_int_2(){
-        return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_2');
+        if(Auth::User()->avance >= 4.2){
+            return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_2');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_des_hum_int_3(){
-        return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_3');
+        if(Auth::User()->avance >= 4.3){
+            return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_3');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_des_hum_int_4(){
-        return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_4');
+        if(Auth::User()->avance >= 4.4){
+            return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_4');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_des_hum_int_5(){
-        return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_5');
+        if(Auth::User()->avance >= 4.5){
+            return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_5');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_des_hum_int_6(){
-        return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_6');
+        if(Auth::User()->avance >= 4.6){
+            return view('activities.4_desarrollo_humano_integral.ejercicios.ejercicio_6');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function store_des_hum_int_1(Request $request){
@@ -242,7 +330,13 @@ class DesarrolloHumanoController extends Controller
 
         //return $f1.'-'.$d1 .', '.$f2 .' -'.$d2 .', '.$f3.' -'.$d3.', '.$f4.'-'.$d4.', '. $f5.' -'.$d5.', '.$f6.' -'.$d6.', '.$f7.' -'.$d7;
 
-        return '';
+
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 4.2;
+        $u->save();
+
+        return redirect('des_hum_int_ej_2');
 
     }
 
@@ -257,7 +351,11 @@ class DesarrolloHumanoController extends Controller
 
         $dh->save();
 
-        return 'oks';
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 4.3;
+        $u->save();
+
+        return redirect('des_hum_int_ej_3');
     }
 
     public function store_des_hum_int_3(Request $request){
@@ -270,7 +368,11 @@ class DesarrolloHumanoController extends Controller
 
         $dh->save();
 
-        return 'oks';
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 4.4;
+        $u->save();
+
+        return redirect('des_hum_int_ej_4');
     }
 
     public function store_des_hum_int_4(Request $request){
@@ -289,7 +391,11 @@ class DesarrolloHumanoController extends Controller
 
         $dh->save();
 
-        return 'oks';
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 4.5;
+        $u->save();
+
+        return redirect('des_hum_int_ej_5');
     }
 
     public function store_des_hum_int_5(Request $request){
@@ -312,7 +418,12 @@ class DesarrolloHumanoController extends Controller
         $dh->e5_a1 = $a5_output;
         $dh->save();
 
-        return $a5_output;
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 4.6;
+        $u->save();
+
+        return redirect('des_hum_int_ej_6');
 
     }
 
@@ -321,6 +432,10 @@ class DesarrolloHumanoController extends Controller
         $dh = Desarrollohumano::where('numero_control',14021073)->first();
         $dh->e6_a1 = $request->text;
         $dh->save();
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 5.1;
+        $u->save();
 
         return 'oks';
 

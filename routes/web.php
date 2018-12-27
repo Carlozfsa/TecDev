@@ -81,21 +81,36 @@ for(;;){
 
 });
 
-//Route::group(['middleware'=>'Alumnos'], function() {
+
+
+
+////*********ACTIVIDAD 0 --LINEA DEL TIEMPO--**********////
+Route::get('/linea_tiempo', 'LineasController@create_lineas');
+
 
 ////*********ACTIVIDAD 1 --FODA--**********////
 
 ////*********FORTALEZAS**********////
-Route::get('/foda_1_1', 'FodaController@create_f1');
-Route::get('/foda_1_2', 'FodaController@create_f2');
-Route::get('/foda_1_3', 'FodaController@create_f3');
-Route::get('/foda_1_4', 'FodaController@create_f4');
+///
+Route::group(['middleware'=>'Avances'], function() {
 
+    Route::get('/foda_1_1', 'FodaController@create_f1');
+    Route::get('/foda_1_2', 'FodaController@create_f2');
+    Route::get('/foda_1_3', 'FodaController@create_f3');
+    Route::get('/foda_1_4', 'FodaController@create_f4');
+
+});
 
 Route::post('/store/foda_1_1', 'FodaController@store_f1');
 Route::post('/store/foda_1_2', 'FodaController@store_f2');
 Route::post('/store/foda_1_3', 'FodaController@store_f3');
 Route::post('/store/foda_1_4', 'FodaController@store_f4');
+
+Route::post('/edit/foda_1_1', 'FodaController@edit_f1');
+Route::post('/edit/foda_1_2', 'FodaController@edit_f2');
+Route::post('/edit/foda_1_3', 'FodaController@edit_f3');
+Route::post('/edit/foda_1_4', 'FodaController@edit_f4');
+
 
 ////*********DEBILIDADES**********////
 Route::get('/foda_2_1', 'FodaController@create_d1');
@@ -107,6 +122,12 @@ Route::post('/store/foda_2_1', 'FodaController@store_d1');
 Route::post('/store/foda_2_2', 'FodaController@store_d2');
 Route::post('/store/foda_2_3', 'FodaController@store_d3');
 Route::post('/store/foda_2_4', 'FodaController@store_d4');
+
+Route::post('/edit/foda_2_1', 'FodaController@edit_d1');
+Route::post('/edit/foda_2_2', 'FodaController@edit_d2');
+Route::post('/edit/foda_2_3', 'FodaController@edit_d3');
+Route::post('/edit/foda_2_4', 'FodaController@edit_d4');
+
 
 ////*********AMENAZAS**********////
 Route::get('/foda_3_1', 'FodaController@create_a1');
@@ -122,6 +143,13 @@ Route::post('/store/foda_3_3', 'FodaController@store_a3');
 Route::post('/store/foda_3_4', 'FodaController@store_a4');
 Route::post('/store/foda_3_5', 'FodaController@store_a5');
 
+Route::post('/edit/foda_3_1', 'FodaController@edit_a1');
+Route::post('/edit/foda_3_2', 'FodaController@edit_a2');
+Route::post('/edit/foda_3_3', 'FodaController@edit_a3');
+Route::post('/edit/foda_3_4', 'FodaController@edit_a4');
+Route::post('/edit/foda_3_5', 'FodaController@edit_a5');
+
+
 ////*********OPORTUNIDADES**********////
 Route::get('/foda_4_1', 'FodaController@create_o1');
 Route::get('/foda_4_2', 'FodaController@create_o2');
@@ -134,15 +162,30 @@ Route::post('/store/foda_4_2', 'FodaController@store_o2');
 Route::post('/store/foda_4_3', 'FodaController@store_o3');
 Route::post('/store/foda_4_4', 'FodaController@store_o4');
 
+Route::post('/edit/foda_4_1', 'FodaController@edit_o1');
+Route::post('/edit/foda_4_2', 'FodaController@edit_o2');
+Route::post('/edit/foda_4_3', 'FodaController@edit_o3');
+Route::post('/edit/foda_4_4', 'FodaController@edit_o4');
+
+
 ////*********RESUMEN**********////
 
 Route::get('/foda_r', 'FodaController@create_r');
 
 Route::post('/store/foda_r', 'FodaController@store_r');
 
-//});
+
 
 ////*********ACTIVIDAD 2 --TIEMPO--**********////
+
+/// ********* LECTURAS ********* ////
+
+Route::get('/tiempo_l_1', 'TiempoController@create_l_t1');
+Route::get('/tiempo_l_2', 'TiempoController@create_l_t2');
+Route::get('/tiempo_l_3', 'TiempoController@create_l_t3');
+Route::get('/tiempo_l_4', 'TiempoController@create_l_t4');
+
+
 Route::get('/tiempo_ej_1', 'TiempoController@create_t1');
 Route::get('/tiempo_ej_2', 'TiempoController@create_t2');
 Route::get('/tiempo_ej_3', 'TiempoController@create_t3');
@@ -161,6 +204,16 @@ Route::post('/store/tiempo_ej_5', 'TiempoController@store_t1_5');
 Route::post('/store/tiempo_ej_6', 'TiempoController@store_t1_6');
 Route::post('/store/tiempo_ej_7', 'TiempoController@store_t1_7');
 Route::post('/store/tiempo_ej_8', 'TiempoController@store_t1_8');
+
+Route::post('/edit/tiempo_ej_2', 'TiempoController@edit_t1_2');
+Route::post('/edit/tiempo_ej_3', 'TiempoController@edit_t1_3');
+Route::post('/edit/tiempo_ej_4', 'TiempoController@edit_t1_4');
+Route::post('/edit/tiempo_ej_5', 'TiempoController@edit_t1_5');
+Route::post('/edit/tiempo_ej_6', 'TiempoController@edit_t1_6');
+Route::post('/edit/tiempo_ej_7', 'TiempoController@edit_t1_7');
+Route::post('/edit/tiempo_ej_8', 'TiempoController@edit_t1_8');
+
+
 
 
 Route::get('/tiempo_ej_2_1', 'TiempoController@create_t2_1');
@@ -182,11 +235,33 @@ Route::post('/store/tiempo_ej_2_8', 'TiempoController@store_t2_8');
 
 ////*********ACTIVIDAD 3 --SER HUMANO INTEGRAL--**********////
 
+/// ********* LECTURAS ********* ////
+Route::get('/hum_int_l_1', 'HumanointegralController@create_hum_l_1');
+Route::get('/hum_int_l_2', 'HumanointegralController@create_hum_l_2');
+
+
 Route::get('/hum_int_ej_1', 'HumanointegralController@create_hum_int_1');
 
 Route::post('/store/hum_int_ej_1', 'HumanointegralController@store_hum_int_ej_1');
 
 ////*********ACTIVIDAD 4 --DESARROLLO HUMANO INTEGRAL--**********////
+
+/// ********* LECTURAS ********* ////
+Route::get('/des_hum_int_l_1', 'DesarrolloHumanoController@create_des_hum_l_1');
+Route::get('/des_hum_int_l_2', 'DesarrolloHumanoController@create_des_hum_l_2');
+Route::get('/des_hum_int_l_3', 'DesarrolloHumanoController@create_des_hum_l_3');
+Route::get('/des_hum_int_l_4', 'DesarrolloHumanoController@create_des_hum_l_4');
+Route::get('/des_hum_int_l_5', 'DesarrolloHumanoController@create_des_hum_l_5');
+Route::get('/des_hum_int_l_6', 'DesarrolloHumanoController@create_des_hum_l_6');
+Route::get('/des_hum_int_l_7', 'DesarrolloHumanoController@create_des_hum_l_7');
+Route::get('/des_hum_int_l_8', 'DesarrolloHumanoController@create_des_hum_l_8');
+Route::get('/des_hum_int_l_9', 'DesarrolloHumanoController@create_des_hum_l_9');
+Route::get('/des_hum_int_l_10', 'DesarrolloHumanoController@create_des_hum_l_10');
+Route::get('/des_hum_int_l_11', 'DesarrolloHumanoController@create_des_hum_l_11');
+Route::get('/des_hum_int_l_12', 'DesarrolloHumanoController@create_des_hum_l_12');
+Route::get('/des_hum_int_l_13', 'DesarrolloHumanoController@create_des_hum_l_13');
+Route::get('/des_hum_int_l_14', 'DesarrolloHumanoController@create_des_hum_l_14');
+
 
 Route::get('/des_hum_int_ej_1', 'DesarrolloHumanoController@create_des_hum_int_1');
 Route::get('/des_hum_int_ej_2', 'DesarrolloHumanoController@create_des_hum_int_2');
@@ -203,6 +278,13 @@ Route::post('/store/des_hum_int_ej_5', 'DesarrolloHumanoController@store_des_hum
 Route::post('/store/des_hum_int_ej_6', 'DesarrolloHumanoController@store_des_hum_int_6');
 
 ////*********ACTIVIDAD 5 --INTELIGENCIAS MULTIPLES--**********////
+
+/// ********* LECTURAS ********* ////
+Route::get('/int_mult_l_1', 'InteligenciaController@create_int_mult_l_1');
+Route::get('/int_mult_l_2', 'InteligenciaController@create_int_mult_l_2');
+Route::get('/int_mult_l_3', 'InteligenciaController@create_int_mult_l_3');
+
+
 Route::get('/int_mult_ej_1', 'InteligenciaController@create_int_mult_ej_1');
 Route::get('/int_mult_ej_2', 'InteligenciaController@create_int_mult_ej_2');
 Route::get('/int_mult_ej_3', 'InteligenciaController@create_int_mult_ej_3');
@@ -210,14 +292,30 @@ Route::get('/int_mult_ej_4', 'InteligenciaController@create_int_mult_ej_4');
 Route::get('/int_mult_ej_res', 'InteligenciaController@create_int_mult_res');
 
 Route::post('/store/int_mult_ej_1', 'InteligenciaController@store_int_mult_ej_1');
+Route::post('/store/int_mult_ej_2', 'InteligenciaController@store_int_mult_ej_2');
+Route::post('/store/int_mult_ej_3', 'InteligenciaController@store_int_mult_ej_3');
+Route::post('/store/int_mult_ej_4', 'InteligenciaController@store_int_mult_ej_4');
 
 
 ////*********ACTIVIDAD 6 --HABILIDADES DE ESTUDIO--**********////
+
+/// ********* LECTURAS ********* ////
+Route::get('/hab_est_l_1', 'HabilidadsController@create_hab_est_l_1');
+Route::get('/hab_est_l_2', 'HabilidadsController@create_hab_est_l_2');
+Route::get('/hab_est_l_3', 'HabilidadsController@create_hab_est_l_3');
+
+
 Route::get('/hab_est_1', 'HabilidadsController@create_hab_est_1');
 
 Route::post('/store/hab_est_1', 'HabilidadsController@store_hab_est_1');
 
 ////*********ACTIVIDAD 7 --MEMORIA--**********////
+
+/// ********* LECTURAS ********* ////
+Route::get('/mem_l_1', 'MemoriasController@create_mem_l_1');
+Route::get('/mem_l_2', 'MemoriasController@create_mem_l_2');
+
+
 Route::get('/mem_1', 'MemoriasController@create_mem_1');
 Route::get('/mem_2', 'MemoriasController@create_mem_2');
 Route::get('/mem_3', 'MemoriasController@create_mem_3');
@@ -230,6 +328,15 @@ Route::post('/store/mem_3', 'MemoriasController@store_mem_3');
 Route::post('/store/mem_4', 'MemoriasController@store_mem_4');
 
 ////*********ACTIVIDAD 8 --PENSAMIENTO--**********////
+
+/// ********* LECTURAS ********* ////
+Route::get('/pens_l_1', 'PensamientosController@create_pens_l_1');
+Route::get('/pens_l_2', 'PensamientosController@create_pens_l_2');
+Route::get('/pens_l_3', 'PensamientosController@create_pens_l_3');
+Route::get('/pens_l_4', 'PensamientosController@create_pens_l_4');
+Route::get('/pens_l_5', 'PensamientosController@create_pens_l_5');
+
+
 Route::get('/pens_1', 'PensamientosController@create_pens_1');
 Route::get('/pens_2', 'PensamientosController@create_pens_2');
 Route::get('/pens_3', 'PensamientosController@create_pens_3');
@@ -243,21 +350,48 @@ Route::post('/store/pens_4', 'PensamientosController@store_pens_4');
 Route::post('/store/pens_5', 'PensamientosController@store_pens_5');
 
 ////*********ACTIVIDAD 9 --MAPA MENTAL Y CONCEPTUAL--**********////
+/// ********* LECTURAS ********* ////
+
+Route::get('/mapas_l_1', 'MapasController@create_mapas_l_1');
+Route::get('/mapas_l_2', 'MapasController@create_mapas_l_2');
+Route::get('/mapas_l_3', 'MapasController@create_mapas_l_3');
+Route::get('/mapas_l_4', 'MapasController@create_mapas_l_4');
+Route::get('/mapas_l_5', 'MapasController@create_mapas_l_5');
+Route::get('/mapas_l_6', 'MapasController@create_mapas_l_6');
+
+
 Route::get('/mapas_1', 'MapasController@create_mapas_1');
 
 Route::post('/store/mapas_1', 'MapasController@store');
 
 
 ////*********ACTIVIDAD 10 --ESQUEMA Y CUADRO COMPARATIVO--**********////
+/// ********* LECTURAS ********* ////
+Route::get('/esq_l_1', 'EsquemasController@create_esqs_l_1');
+Route::get('/esq_l_2', 'EsquemasController@create_esqs_l_2');
+
+
 Route::get('/esq_1', 'EsquemasController@create_esqs_1');
 Route::get('/esq_2', 'EsquemasController@create_esqs_2');
 
 
 ////*********ACTIVIDAD 11 --RESUMEN Y ENSAYO--**********////
+/// ********* LECTURAS ********* ////
+
+Route::get('/ens_l_1', 'EnsayosController@create_ens_l_1');
+Route::get('/ens_l_2', 'EnsayosController@create_ens_l_2');
+Route::get('/ens_l_3', 'EnsayosController@create_ens_l_3');
+
+
 Route::get('/ens_1', 'EnsayosController@create_ens_1');
 
 
 ////*********ACTIVIDAD 12 --MATEMATICAS--**********////
+/// ********* LECTURAS ********* ////
+Route::get('/mat_l_1', 'MatsController@create_mat_l_1');
+Route::get('/mat_l_2', 'MatsController@create_mat_l_2');
+
+
 Route::get('/mat_1', 'MatsController@create_mat_1');
 Route::get('/mat_2', 'MatsController@create_mat_2');
 
@@ -266,6 +400,9 @@ Route::post('/store/mat_1', 'MatsController@store_mat_1');
 Route::post('/store/mat_2', 'MatsController@store_mat_2');
 
 ////*********ACTIVIDAD 13 --INFERENCIAS LÓGICAS--**********////
+/// ********* LECTURAS ********* ////
+/// N/A
+
 Route::get('/inf_1', 'InferenciasController@create_inf_1');
 Route::get('/inf_2', 'InferenciasController@create_inf_2');
 
@@ -273,6 +410,9 @@ Route::post('/store/inf_1', 'InferenciasController@store_inf_1');
 Route::post('/store/inf_2', 'InferenciasController@store_inf_2');
 
 ////*********ACTIVIDAD 14 --RELACIÓN Y SIMBLOLIZACIÓN--**********////
+/// ********* LECTURAS ********* ////
+/// N/A
+
 Route::get('/rel_sim_1', 'RelacionsController@create_rel_sim_1');
 Route::get('/rel_sim_2', 'RelacionsController@create_rel_sim_2');
 Route::get('/rel_sim_3', 'RelacionsController@create_rel_sim_3');
@@ -284,6 +424,7 @@ Route::post('/store/rel_sim_2', 'RelacionsController@store_rel_sim_2');
 Route::post('/store/rel_sim_3', 'RelacionsController@store_rel_sim_3');
 Route::post('/store/rel_sim_4', 'RelacionsController@store_rel_sim_4');
 Route::post('/store/rel_sim_5', 'RelacionsController@store_rel_sim_5');
+
 
 //Route::group(['middleware'=>'Tutores'], function() {
 
@@ -391,7 +532,19 @@ Route::post('/store/tutor_des_hum_int_ej_5', 'TutorDesarrolloHumanoController@st
 Route::post('/store/tutor_des_hum_int_ej_6', 'TutorDesarrolloHumanoController@store_des_hum_int_6');
 
 ////*********TUTOR ACTIVIDAD 5 --INTELIGENCIAS MULTIPLES --*******************////
- //-- PENSANDO EN UNA MEJOR SOLUCION
+Route::get('/tutor_int_mult_ej_1', 'TutorInteligenciasController@create_int_mult_ej_1');
+Route::get('/tutor_int_mult_ej_2', 'TutorInteligenciasController@create_int_mult_ej_2');
+Route::get('/tutor_int_mult_ej_3', 'TutorInteligenciasController@create_int_mult_ej_3');
+Route::get('/tutor_int_mult_ej_4', 'TutorInteligenciasController@create_int_mult_ej_4');
+Route::get('/tutor_asign', 'TutorInteligenciasController@create_asign');
+
+
+Route::post('/store/tutor_int_mult_ej_1', 'TutorInteligenciasController@store_int_mult_ej_1');
+Route::post('/store/tutor_int_mult_ej_2', 'TutorInteligenciasController@store_int_mult_ej_2');
+Route::post('/store/tutor_int_mult_ej_3', 'TutorInteligenciasController@store_int_mult_ej_3');
+Route::post('/store/tutor_int_mult_ej_4', 'TutorInteligenciasController@store_int_mult_ej_4');
+Route::post('/store/tutor_asign', 'TutorInteligenciasController@store_asign');
+
 
 ////*********TUTOR ACTIVIDAD 6 --HABILIDADES DE ESTUDIO --*******************////
 Route::get('/tutor_hab_est_1', 'TutorHabilidadsController@create_hab_est_1');
@@ -464,11 +617,35 @@ Route::post('/store/tutor_rel_sim_3', 'TutorRelacionsController@store_rel_sim_3'
 Route::post('/store/tutor_rel_sim_4', 'TutorRelacionsController@store_rel_sim_4');
 Route::post('/store/tutor_rel_sim_5', 'TutorRelacionsController@store_rel_sim_5');
 
+////*********PANEL ACTS ALUMNO--**********////
+Route::get('/panel_actividades', 'ActivitiesController@create_acts');
 
-///*********ADMINISTRADOR GLOBAL PANEL DE CREACIÓN DE GRUPOS--**********////
+
+///*********REGISTRO ALUMNOS--**********////
+Route::get('/panel_acts_alumno', 'ActivitiesController@create_acts');
+Route::get('/reg_alumno', 'ActivitiesController@create_alumnos');
+
+
+Route::post('/store/reg_alumno', 'ActivitiesController@store_alumnos');
+
+///*********ADMINISTRADOR GLOBAL - PANEL DE CREACIÓN DE GRUPOS--**********////
 Route::get('/admin_grupos_create', 'GruposController@create_grupos');
 
 Route::post('/store/admin_grupos_create', 'GruposController@store_grupos');
+
+///*********ADMINISTRADOR GLOBAL - REGISTRO DE CARRERAS--**********////
+Route::get('/admin_carreras_create', 'GruposController@create_carreras');
+Route::get('/admin_materias_create', 'GruposController@create_materias');
+Route::get('/admin_academias_create', 'GruposController@create_academias');
+Route::get('/admin_periodos_create', 'GruposController@create_periodos');
+Route::get('/admin_tutores_create', 'GruposController@create_tutores');
+
+Route::post('/store/admin_carreras_create', 'GruposController@store_carreras');
+Route::post('/store/admin_materias_create', 'GruposController@store_materias');
+Route::post('/store/admin_academias_create', 'GruposController@store_academias');
+Route::post('/store/admin_periodos_create', 'GruposController@store_periodos');
+Route::get('/store/admin_tutores_create', 'GruposController@store_tutores');
+
 
 
 

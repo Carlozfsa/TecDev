@@ -4,25 +4,55 @@ namespace App\Http\Controllers;
 
 use App\Memoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MemoriasController extends Controller
 {
 
+    public function create_mem_l_1(){
+        return view('activities.7_Memoria.lecturas.lectura_1');
+    }
+
+    public function create_mem_l_2(){
+        return view('activities.7_Memoria.lecturas.lectura_2');
+    }
+
+
+
+
+
     public function create_mem_1(){
-        return view('activities.7_Memoria.ejercicios.ejercicio_1');
+        if(Auth::User()->avance >= 7.1){
+            return view('activities.7_Memoria.ejercicios.ejercicio_1');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_mem_2(){
-        return view('activities.7_Memoria.ejercicios.ejercicio_2');
+        if(Auth::User()->avance >= 7.2){
+            return view('activities.7_Memoria.ejercicios.ejercicio_2');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_mem_3(){
-        return view('activities.7_Memoria.ejercicios.ejercicio_3');
+        if(Auth::User()->avance >= 7.3){
+            return view('activities.7_Memoria.ejercicios.ejercicio_3');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_mem_4(){
-        return view('activities.7_Memoria.ejercicios.ejercicio_4');
+        if(Auth::User()->avance >= 7.4){
+            return view('activities.7_Memoria.ejercicios.ejercicio_4');
+        }else{
+            return redirect()->back();
+        }
     }
+
     public function store_mem_1(Request $request){
 
         $ve = 0;
@@ -330,6 +360,10 @@ class MemoriasController extends Controller
 
         $e1->save();
 
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 7.2;
+        $u->save();
+
         return 'oks';
     }
 
@@ -350,6 +384,10 @@ class MemoriasController extends Controller
         $e2->c1 = $c1_output;
         $e2->con1 = $request->con1;
         $e2->save();
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 7.3;
+        $u->save();
 
         return $c1_output;
     }
@@ -373,13 +411,23 @@ class MemoriasController extends Controller
         $e3->save();
 
         return $c2_output;
-        }
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 7.4;
+        $u->save();
+
+    }
 
     public function store_mem_4(Request $request){
 
         $e4 = Memoria::where('numero_control',14021073)->first();
         $e4->esc = $request->escrito;
         $e4->save();
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 8.1;
+        $u->save();
+
 
         return 'oks';
     }

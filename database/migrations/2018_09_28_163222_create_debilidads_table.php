@@ -15,23 +15,27 @@ class CreateDebilidadsTable extends Migration
     {
         Schema::create('debilidads', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('numero_control');
-            $table->string('debilidads_1');
-            $table->string('debilidads_2');
-            $table->string('debilidads_3');
-            $table->string('debilidads_4');
 
-            $table->string('retro_1');
-            $table->string('retro_2');
-            $table->string('retro_3');
-            $table->string('retro_4');
+            $table->integer('numero_control')->default(0);
 
-            $table->integer('cal_1');
-            $table->integer('cal_2');
-            $table->integer('cal_3');
-            $table->integer('cal_4');
+            $table->string('debilidads_1')->default('');
+            $table->string('debilidads_2')->default('');
+            $table->string('debilidads_3')->default('');
+            $table->string('debilidads_4')->default('');
 
-            $table->integer('cal_general');
+            $table->string('retro_1')->default('');
+            $table->string('retro_2')->default('');
+            $table->string('retro_3')->default('');
+            $table->string('retro_4')->default('');
+
+            $table->integer('cal_1')->default(0);
+            $table->integer('cal_2')->default(0);
+            $table->integer('cal_3')->default(0);
+            $table->integer('cal_4')->default(0);
+
+            $table->integer('entregado')->default(0);
+
+            $table->integer('cal_general')->default(0);
             $table->timestamps();
         });
     }

@@ -8,6 +8,28 @@ use Illuminate\Http\Request;
 class PensamientosController extends Controller
 {
     //
+    public function create_pens_l_1(){
+        return view('activities.8_Habilidades_del_Pensamiento.lecturas.lectura_1');
+    }
+
+    public function create_pens_l_2(){
+        return view('activities.8_Habilidades_del_Pensamiento.lecturas.lectura_2');
+    }
+
+    public function create_pens_l_3(){
+        return view('activities.8_Habilidades_del_Pensamiento.lecturas.lectura_3');
+    }
+
+    public function create_pens_l_4(){
+        return view('activities.8_Habilidades_del_Pensamiento.lecturas.lectura_4');
+    }
+
+    public function create_pens_l_5(){
+        return view('activities.8_Habilidades_del_Pensamiento.lecturas.lectura_5');
+    }
+
+
+
 
     public function create_pens_1(){
         return view('activities.8_Habilidades_del_Pensamiento.ejercicios.ejercicio_1');

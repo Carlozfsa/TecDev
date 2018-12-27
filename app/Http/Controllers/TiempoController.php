@@ -3,80 +3,373 @@
 namespace App\Http\Controllers;
 
 use App\Tiempo;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TiempoController extends Controller
 {
     //
 
-    public function create_t1(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_1');
+    public function create_l_t1(){
+        return view('activities.2_administracion_del_tiempo.lecturas.lectura_1');
     }
 
+    public function create_l_t2(){
+        if(Auth::User()->avance >= 2.12){
+            return view('activities.2_administracion_del_tiempo.lecturas.lectura_2');
+        }else{
+            return redirect()->back();
+        }
+    }
+
+    public function create_l_t3(){
+        return view('activities.2_administracion_del_tiempo.lecturas.lectura_3');
+    }
+
+    public function create_l_t4(){
+        return view('activities.2_administracion_del_tiempo.lecturas.lectura_4');
+    }
+
+
+
+
+
+    public function create_t1(){
+
+        if(Auth::User()->avance >= 2.11){
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_1');
+        }else{
+            return redirect()->back();
+        }
+    }
+
+
     public function create_t2(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_2');
+
+        if(Auth::User()->avance >= 2.12){
+
+            $edit = NULL;
+
+            $f = Tiempo::where('numero_control', 14021073)->first();
+            $f_decode = NULL;
+
+            if(Tiempo::where('numero_control', 14021073)->exists()){
+                $edit = 1;
+
+                $f_decode1 = json_decode($f->lunes_h1);
+                $f_decode2 = json_decode($f->lunes_h2);
+                $f_decode3 = json_decode($f->lunes_h3);
+                $f_decode4 = json_decode($f->lunes_h4);
+                $f_decode5 = json_decode($f->lunes_h5);
+                $f_decode6 = json_decode($f->lunes_h6);
+                $f_decode7 = json_decode($f->lunes_h7);
+                $f_decode8 = json_decode($f->lunes_h8);
+                $f_decode9 = json_decode($f->lunes_h9);
+                $f_decode10 = json_decode($f->lunes_h10);
+                $f_decode11 = json_decode($f->lunes_h11);
+                $f_decode12 = json_decode($f->lunes_h12);
+                $f_decode13 = json_decode($f->lunes_h13);
+
+            }else{
+                $edit= 0;
+            }
+
+
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_2', compact('edit','f_decode1','f_decode2','f_decode3','f_decode4','f_decode5','f_decode6','f_decode7','f_decode8','f_decode9','f_decode10','f_decode11','f_decode12','f_decode13'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t3(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_3');
+        if(Auth::User()->avance >= 2.13){
+
+            $edit = NULL;
+
+            $f = Tiempo::where('numero_control', 14021073)->first();
+            $f_decode1 = NULL;
+
+            if($f->avance_martes_1 > 0){
+                $edit = 1;
+
+                $f_decode1 = json_decode($f->martes_h1);
+                $f_decode2 = json_decode($f->martes_h2);
+                $f_decode3 = json_decode($f->martes_h3);
+                $f_decode4 = json_decode($f->martes_h4);
+                $f_decode5 = json_decode($f->martes_h5);
+                $f_decode6 = json_decode($f->martes_h6);
+                $f_decode7 = json_decode($f->martes_h7);
+                $f_decode8 = json_decode($f->martes_h8);
+                $f_decode9 = json_decode($f->martes_h9);
+                $f_decode10 = json_decode($f->martes_h10);
+                $f_decode11 = json_decode($f->martes_h11);
+                $f_decode12 = json_decode($f->martes_h12);
+                $f_decode13 = json_decode($f->martes_h13);
+
+            }else{
+                $edit= 0;
+            }
+
+
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_3', compact('edit','f_decode1','f_decode2','f_decode3','f_decode4','f_decode5','f_decode6','f_decode7','f_decode8','f_decode9','f_decode10','f_decode11','f_decode12','f_decode13'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t4(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_4');
+        if(Auth::User()->avance >= 2.14){
+
+            $edit = NULL;
+
+            $f = Tiempo::where('numero_control', 14021073)->first();
+            $f_decode1 = NULL;
+
+            if($f->avance_miercoles_1 > 0){
+                $edit = 1;
+
+                $f_decode1 = json_decode($f->miercoles_h1);
+                $f_decode2 = json_decode($f->miercoles_h2);
+                $f_decode3 = json_decode($f->miercoles_h3);
+                $f_decode4 = json_decode($f->miercoles_h4);
+                $f_decode5 = json_decode($f->miercoles_h5);
+                $f_decode6 = json_decode($f->miercoles_h6);
+                $f_decode7 = json_decode($f->miercoles_h7);
+                $f_decode8 = json_decode($f->miercoles_h8);
+                $f_decode9 = json_decode($f->miercoles_h9);
+                $f_decode10 = json_decode($f->miercoles_h10);
+                $f_decode11 = json_decode($f->miercoles_h11);
+                $f_decode12 = json_decode($f->miercoles_h12);
+                $f_decode13 = json_decode($f->miercoles_h13);
+
+            }else{
+                $edit= 0;
+            }
+
+
+
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_4', compact('edit','f_decode1','f_decode2','f_decode3','f_decode4','f_decode5','f_decode6','f_decode7','f_decode8','f_decode9','f_decode10','f_decode11','f_decode12','f_decode13'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t5(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_5');
+        if(Auth::User()->avance >= 2.15){
+
+            $edit = NULL;
+
+            $f = Tiempo::where('numero_control', 14021073)->first();
+            $f_decode1 = NULL;
+
+            if($f->avance_jueves_1 > 0){
+                $edit = 1;
+
+                $f_decode1 = json_decode($f->jueves_h1);
+                $f_decode2 = json_decode($f->jueves_h2);
+                $f_decode3 = json_decode($f->jueves_h3);
+                $f_decode4 = json_decode($f->jueves_h4);
+                $f_decode5 = json_decode($f->jueves_h5);
+                $f_decode6 = json_decode($f->jueves_h6);
+                $f_decode7 = json_decode($f->jueves_h7);
+                $f_decode8 = json_decode($f->jueves_h8);
+                $f_decode9 = json_decode($f->jueves_h9);
+                $f_decode10 = json_decode($f->jueves_h10);
+                $f_decode11 = json_decode($f->jueves_h11);
+                $f_decode12 = json_decode($f->jueves_h12);
+                $f_decode13 = json_decode($f->jueves_h13);
+
+            }else{
+                $edit= 0;
+            }
+
+
+
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_5', compact('edit','f_decode1','f_decode2','f_decode3','f_decode4','f_decode5','f_decode6','f_decode7','f_decode8','f_decode9','f_decode10','f_decode11','f_decode12','f_decode13'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t6(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_6');
+        if(Auth::User()->avance >= 2.16){
+
+            $edit = NULL;
+
+            $f = Tiempo::where('numero_control', 14021073)->first();
+            $f_decode1 = NULL;
+
+            if($f->avance_viernes_1 > 0){
+                $edit = 1;
+
+                $f_decode1 = json_decode($f->viernes_h1);
+                $f_decode2 = json_decode($f->viernes_h2);
+                $f_decode3 = json_decode($f->viernes_h3);
+                $f_decode4 = json_decode($f->viernes_h4);
+                $f_decode5 = json_decode($f->viernes_h5);
+                $f_decode6 = json_decode($f->viernes_h6);
+                $f_decode7 = json_decode($f->viernes_h7);
+                $f_decode8 = json_decode($f->viernes_h8);
+                $f_decode9 = json_decode($f->viernes_h9);
+                $f_decode10 = json_decode($f->viernes_h10);
+                $f_decode11 = json_decode($f->viernes_h11);
+                $f_decode12 = json_decode($f->viernes_h12);
+                $f_decode13 = json_decode($f->viernes_h13);
+
+            }else{
+                $edit= 0;
+            }
+
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_6', compact('edit','f_decode1','f_decode2','f_decode3','f_decode4','f_decode5','f_decode6','f_decode7','f_decode8','f_decode9','f_decode10','f_decode11','f_decode12','f_decode13'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t7(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_7');
+        if(Auth::User()->avance >= 2.17){
+
+            $edit = NULL;
+
+            $f = Tiempo::where('numero_control', 14021073)->first();
+            $f_decode1 = NULL;
+
+            if($f->avance_sabado_1 > 0){
+                $edit = 1;
+
+                $f_decode1 = json_decode($f->sabado_h1);
+                $f_decode2 = json_decode($f->sabado_h2);
+                $f_decode3 = json_decode($f->sabado_h3);
+                $f_decode4 = json_decode($f->sabado_h4);
+                $f_decode5 = json_decode($f->sabado_h5);
+                $f_decode6 = json_decode($f->sabado_h6);
+                $f_decode7 = json_decode($f->sabado_h7);
+                $f_decode8 = json_decode($f->sabado_h8);
+                $f_decode9 = json_decode($f->sabado_h9);
+                $f_decode10 = json_decode($f->sabado_h10);
+                $f_decode11 = json_decode($f->sabado_h11);
+                $f_decode12 = json_decode($f->sabado_h12);
+                $f_decode13 = json_decode($f->sabado_h13);
+
+            }else{
+                $edit= 0;
+            }
+
+
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_7', compact('edit','f_decode1','f_decode2','f_decode3','f_decode4','f_decode5','f_decode6','f_decode7','f_decode8','f_decode9','f_decode10','f_decode11','f_decode12','f_decode13'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t8(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_8');
+        if(Auth::User()->avance >= 2.18){
+
+            $edit = NULL;
+
+            $f = Tiempo::where('numero_control', 14021073)->first();
+            $f_decode1 = NULL;
+
+            if($f->avance_domingo_1 > 0){
+                $edit = 1;
+
+                $f_decode1 = json_decode($f->domingo_h1);
+                $f_decode2 = json_decode($f->domingo_h2);
+                $f_decode3 = json_decode($f->domingo_h3);
+                $f_decode4 = json_decode($f->domingo_h4);
+                $f_decode5 = json_decode($f->domingo_h5);
+                $f_decode6 = json_decode($f->domingo_h6);
+                $f_decode7 = json_decode($f->domingo_h7);
+                $f_decode8 = json_decode($f->domingo_h8);
+                $f_decode9 = json_decode($f->domingo_h9);
+                $f_decode10 = json_decode($f->domingo_h10);
+                $f_decode11 = json_decode($f->domingo_h11);
+                $f_decode12 = json_decode($f->domingo_h12);
+                $f_decode13 = json_decode($f->domingo_h13);
+
+            }else{
+                $edit= 0;
+            }
+
+
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_8', compact('edit','f_decode1','f_decode2','f_decode3','f_decode4','f_decode5','f_decode6','f_decode7','f_decode8','f_decode9','f_decode10','f_decode11','f_decode12','f_decode13'));
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_tf(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_f');
+        if(Auth::User()->avance >= 2.19){
+            return view('activities.2_administracion_del_tiempo.ejercicios.ejercicio_f');
+        }else{
+            return redirect()->back();
+        }
     }
-
 
 
     public function create_t2_1(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_1');
+        if(Auth::User()->avance >= 2.21){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_1');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t2_2(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_2');
+        if(Auth::User()->avance >= 2.22){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_2');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t2_3(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_3');
+        if(Auth::User()->avance >= 2.23){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_3');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t2_4(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_4');
+        if(Auth::User()->avance >= 2.24){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_4');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t2_5(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_5');
+        if(Auth::User()->avance >= 2.25){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_5');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t2_6(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_6');
+        if(Auth::User()->avance >= 2.26){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_6');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t2_7(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_7');
+        if(Auth::User()->avance >= 2.27){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_7');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function create_t2_8(){
-        return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_8');
+        if(Auth::User()->avance >= 2.28){
+            return view('activities.2_administracion_del_tiempo.ejercicios.t_2.ejercicio_8');
+        }else{
+            return redirect()->back();
+        }
     }
 
 
@@ -257,6 +550,7 @@ class TiempoController extends Controller
         $lunes_h1->lunes_h11 = $lun_h11_output;
         $lunes_h1->lunes_h12 = $lun_h12_output;
         $lunes_h1->lunes_h13 = $lun_h13_output;
+
 
         $lunes_h1->martes_h1 = "";
         $lunes_h1->martes_h2 = "";
@@ -441,7 +735,11 @@ class TiempoController extends Controller
 
         $lunes_h1->save();
 
-        return $lun_h13_output;
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.13;
+        $u->save();
+
+        return 'oks';
     }
 
     public function store_t1_3(Request $request){
@@ -619,7 +917,15 @@ class TiempoController extends Controller
         $martes_h1->martes_h11 = $mar_h11_output;
         $martes_h1->martes_h12 = $mar_h12_output;
         $martes_h1->martes_h13 = $mar_h13_output;
+
+        $martes_h1->avance_martes_1 = 1;
+
+
         $martes_h1->save();
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.14;
+        $u->save();
 
         return 'oks';
 
@@ -799,7 +1105,13 @@ class TiempoController extends Controller
         $miercoles_h1->miercoles_h11 = $mier_h11_output;
         $miercoles_h1->miercoles_h12 = $mier_h12_output;
         $miercoles_h1->miercoles_h13 = $mier_h13_output;
+        $miercoles_h1->avance_miercoles_1 = 1;
+
         $miercoles_h1->save();
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.15;
+        $u->save();
 
         return 'OKS';
 
@@ -980,8 +1292,13 @@ class TiempoController extends Controller
         $jueves_h1->jueves_h11 = $jue_h11_output;
         $jueves_h1->jueves_h12 = $jue_h12_output;
         $jueves_h1->jueves_h13 = $jue_h13_output;
+        $jueves_h1->avance_jueves_1 = 1;
+
         $jueves_h1->save();
 
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.16;
+        $u->save();
 
         return 'OKS';
     }
@@ -1159,8 +1476,13 @@ class TiempoController extends Controller
         $viernes_h1->viernes_h11 = $vie_h11_output;
         $viernes_h1->viernes_h12 = $vie_h12_output;
         $viernes_h1->viernes_h13 = $vie_h13_output;
+        $viernes_h1->avance_viernes_1 = 1;
+
         $viernes_h1->save();
 
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.17;
+        $u->save();
 
         return 'OKS';
     }
@@ -1340,8 +1662,15 @@ class TiempoController extends Controller
         $sabado_h1->sabado_h11 = $sab_h11_output;
         $sabado_h1->sabado_h12 = $sab_h12_output;
         $sabado_h1->sabado_h13 = $sab_h13_output;
+        $sabado_h1->avance_sabado_1 = 1;
+
         $sabado_h1->save();
 
+
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.18;
+        $u->save();
 
         return 'OKS';
     }
@@ -1520,7 +1849,14 @@ class TiempoController extends Controller
         $domingo_h1->domingo_h11 = $dom_h11_output;
         $domingo_h1->domingo_h12 = $dom_h12_output;
         $domingo_h1->domingo_h13 = $dom_h13_output;
+        $domingo_h1->avance_domingo_1 = 1;
+
         $domingo_h1->save();
+
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.22;
+        $u->save();
 
         return 'OKS';
 
@@ -1637,7 +1973,9 @@ class TiempoController extends Controller
         $dia_1->per_1 = $lun_per1_output;
         $dia_1->save();
 
-
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.23;
+        $u->save();
 
         return $lun_per1_output;
     }
@@ -1750,6 +2088,10 @@ class TiempoController extends Controller
         $dia_2->dep_2 = $lun_dep2_output;
         $dia_2->per_2 = $lun_per2_output;
         $dia_2->save();
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.24;
+        $u->save();
 
         return $lun_per2_output;
 
@@ -1866,6 +2208,10 @@ class TiempoController extends Controller
         $dia_3->per_3 = $lun_per3_output;
         $dia_3->save();
 
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.25;
+        $u->save();
+
         return $lun_per3_output;
 
         }
@@ -1980,6 +2326,10 @@ class TiempoController extends Controller
         $dia_4->per_4 = $lun_per4_output;
         $dia_4->save();
 
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.26;
+        $u->save();
+
         return $lun_per4_output;
     }
 
@@ -2092,6 +2442,10 @@ class TiempoController extends Controller
         $dia_5->dep_5 = $lun_dep5_output;
         $dia_5->per_5 = $lun_per5_output;
         $dia_5->save();
+
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.27;
+        $u->save();
 
         return $lun_per5_output;
     }
@@ -2206,6 +2560,10 @@ class TiempoController extends Controller
         $dia_6->per_6 = $lun_per6_output;
         $dia_6->save();
 
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 2.28;
+        $u->save();
+
         return $lun_per6_output;
     }
 
@@ -2319,9 +2677,1445 @@ class TiempoController extends Controller
         $dia_7->per_7 = $lun_per7_output;
         $dia_7->save();
 
+        $u = User::where('numero_control', 14021073)->first();
+        $u->avance = 3.1;
+        $u->save();
+
         return $lun_per7_output;
     }
 
+    public function edit_t1_2(Request $request){
+
+
+        // HORA 1
+        $f1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->le1)){
+            $f1[$i]=$request->le1[$k];
+            $i++;
+            $k++;
+        }
+
+        $f1_output1 = json_encode($f1);
+
+        // HORA 2
+        $f2=array();
+        $i2=1;
+        $k2=0;
+
+        while($i2<=count($request->le2)){
+            $f2[$i2]=$request->le2[$k2];
+            $i2++;
+            $k2++;
+        }
+
+        $f1_output2 = json_encode($f2);
+
+
+        // HORA 3
+        $f3=array();
+        $i3=1;
+        $k3=0;
+
+        while($i3<=count($request->le3)){
+            $f3[$i3]=$request->le3[$k3];
+            $i3++;
+            $k3++;
+        }
+
+        $f1_output3 = json_encode($f3);
+
+        // HORA 4
+        $f4=array();
+        $i4=1;
+        $k4=0;
+
+        while($i4<=count($request->le4)){
+            $f4[$i4]=$request->le4[$k4];
+            $i4++;
+            $k4++;
+        }
+
+        $f1_output4 = json_encode($f4);
+
+
+        // HORA 5
+        $f5=array();
+        $i5=1;
+        $k5=0;
+
+        while($i5<=count($request->le5)){
+            $f5[$i5]=$request->le5[$k5];
+            $i5++;
+            $k5++;
+        }
+
+        $f1_output5 = json_encode($f5);
+
+        // HORA 6
+        $f6=array();
+        $i6=1;
+        $k6=0;
+
+        while($i6<=count($request->le6)){
+            $f6[$i6]=$request->le6[$k6];
+            $i6++;
+            $k6++;
+        }
+
+        $f1_output6 = json_encode($f6);
+
+
+
+        // HORA 7
+        $f7=array();
+        $i7=1;
+        $k7=0;
+
+        while($i7<=count($request->le7)){
+            $f7[$i7]=$request->le7[$k7];
+            $i7++;
+            $k7++;
+        }
+
+        $f1_output7 = json_encode($f7);
+
+        // HORA 8
+        $f8=array();
+        $i8=1;
+        $k8=0;
+
+        while($i8<=count($request->le8)){
+            $f8[$i8]=$request->le8[$k8];
+            $i8++;
+            $k8++;
+        }
+
+        $f1_output8 = json_encode($f8);
+
+        // HORA 9
+        $f9=array();
+        $i9=1;
+        $k9=0;
+
+        while($i9<=count($request->le9)){
+            $f9[$i9]=$request->le9[$k9];
+            $i9++;
+            $k9++;
+        }
+
+        $f1_output9 = json_encode($f9);
+
+
+
+        // HORA 10
+        $f10=array();
+        $i10=1;
+        $k10=0;
+
+        while($i10<=count($request->le10)){
+            $f10[$i10]=$request->le10[$k10];
+            $i10++;
+            $k10++;
+        }
+
+        $f1_output10 = json_encode($f10);
+
+
+        // HORA 11
+        $f11=array();
+        $i11=1;
+        $k11=0;
+
+        while($i11<=count($request->le11)){
+            $f11[$i11]=$request->le11[$k11];
+            $i11++;
+            $k11++;
+        }
+
+        $f1_output11 = json_encode($f11);
+
+
+        // HORA 12
+        $f12=array();
+        $i12=1;
+        $k12=0;
+
+        while($i12<=count($request->le12)){
+            $f12[$i12]=$request->le12[$k12];
+            $i12++;
+            $k12++;
+        }
+
+        $f1_output12 = json_encode($f12);
+
+
+        // HORA 13
+        $f13=array();
+        $i13=1;
+        $k13=0;
+
+        while($i13<=count($request->le13)){
+            $f13[$i13]=$request->le13[$k13];
+            $i13++;
+            $k13++;
+        }
+
+        $f1_output13 = json_encode($f13);
+
+
+        $lunes_h1 = Tiempo::where('numero_control', 14021073)->first();
+
+        $lunes_h1->lunes_h1 = $f1_output1;
+        $lunes_h1->lunes_h2 = $f1_output2;
+        $lunes_h1->lunes_h3 = $f1_output3;
+        $lunes_h1->lunes_h4 = $f1_output4;
+        $lunes_h1->lunes_h5 = $f1_output5;
+        $lunes_h1->lunes_h6 = $f1_output6;
+        $lunes_h1->lunes_h7 = $f1_output7;
+        $lunes_h1->lunes_h8 = $f1_output8;
+        $lunes_h1->lunes_h9 = $f1_output9;
+        $lunes_h1->lunes_h10 = $f1_output10;
+        $lunes_h1->lunes_h11 = $f1_output11;
+        $lunes_h1->lunes_h12 = $f1_output12;
+        $lunes_h1->lunes_h13 = $f1_output13;
+
+        $lunes_h1->save();
+
+        return redirect()->back();
+
 
     }
+
+    public function edit_t1_3(Request $request){
+
+
+// HORA 1
+        $f1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->me1)){
+            $f1[$i]=$request->me1[$k];
+            $i++;
+            $k++;
+        }
+
+        $f1_output1 = json_encode($f1);
+
+// HORA 2
+        $f2=array();
+        $i2=1;
+        $k2=0;
+
+        while($i2<=count($request->me2)){
+            $f2[$i2]=$request->me2[$k2];
+            $i2++;
+            $k2++;
+        }
+
+        $f1_output2 = json_encode($f2);
+
+
+// HORA 3
+        $f3=array();
+        $i3=1;
+        $k3=0;
+
+        while($i3<=count($request->me3)){
+            $f3[$i3]=$request->me3[$k3];
+            $i3++;
+            $k3++;
+        }
+
+        $f1_output3 = json_encode($f3);
+
+// HORA 4
+        $f4=array();
+        $i4=1;
+        $k4=0;
+
+        while($i4<=count($request->me4)){
+            $f4[$i4]=$request->me4[$k4];
+            $i4++;
+            $k4++;
+        }
+
+        $f1_output4 = json_encode($f4);
+
+
+// HORA 5
+        $f5=array();
+        $i5=1;
+        $k5=0;
+
+        while($i5<=count($request->me5)){
+            $f5[$i5]=$request->me5[$k5];
+            $i5++;
+            $k5++;
+        }
+
+        $f1_output5 = json_encode($f5);
+
+// HORA 6
+        $f6=array();
+        $i6=1;
+        $k6=0;
+
+        while($i6<=count($request->me6)){
+            $f6[$i6]=$request->me6[$k6];
+            $i6++;
+            $k6++;
+        }
+
+        $f1_output6 = json_encode($f6);
+
+
+
+// HORA 7
+        $f7=array();
+        $i7=1;
+        $k7=0;
+
+        while($i7<=count($request->me7)){
+            $f7[$i7]=$request->me7[$k7];
+            $i7++;
+            $k7++;
+        }
+
+        $f1_output7 = json_encode($f7);
+
+// HORA 8
+        $f8=array();
+        $i8=1;
+        $k8=0;
+
+        while($i8<=count($request->me8)){
+            $f8[$i8]=$request->me8[$k8];
+            $i8++;
+            $k8++;
+        }
+
+        $f1_output8 = json_encode($f8);
+
+// HORA 9
+        $f9=array();
+        $i9=1;
+        $k9=0;
+
+        while($i9<=count($request->me9)){
+            $f9[$i9]=$request->me9[$k9];
+            $i9++;
+            $k9++;
+        }
+
+        $f1_output9 = json_encode($f9);
+
+
+
+// HORA 10
+        $f10=array();
+        $i10=1;
+        $k10=0;
+
+        while($i10<=count($request->me10)){
+            $f10[$i10]=$request->me10[$k10];
+            $i10++;
+            $k10++;
+        }
+
+        $f1_output10 = json_encode($f10);
+
+
+// HORA 11
+        $f11=array();
+        $i11=1;
+        $k11=0;
+
+        while($i11<=count($request->me11)){
+            $f11[$i11]=$request->me11[$k11];
+            $i11++;
+            $k11++;
+        }
+
+        $f1_output11 = json_encode($f11);
+
+
+// HORA 12
+        $f12=array();
+        $i12=1;
+        $k12=0;
+
+        while($i12<=count($request->me12)){
+            $f12[$i12]=$request->me12[$k12];
+            $i12++;
+            $k12++;
+        }
+
+        $f1_output12 = json_encode($f12);
+
+
+// HORA 13
+        $f13=array();
+        $i13=1;
+        $k13=0;
+
+        while($i13<=count($request->me13)){
+            $f13[$i13]=$request->me13[$k13];
+            $i13++;
+            $k13++;
+        }
+
+        $f1_output13 = json_encode($f13);
+
+
+        $martes_h1 = Tiempo::where('numero_control', 14021073)->first();
+
+        $martes_h1->martes_h1 = $f1_output1;
+        $martes_h1->martes_h2 = $f1_output2;
+        $martes_h1->martes_h3 = $f1_output3;
+        $martes_h1->martes_h4 = $f1_output4;
+        $martes_h1->martes_h5 = $f1_output5;
+        $martes_h1->martes_h6 = $f1_output6;
+        $martes_h1->martes_h7 = $f1_output7;
+        $martes_h1->martes_h8 = $f1_output8;
+        $martes_h1->martes_h9 = $f1_output9;
+        $martes_h1->martes_h10 = $f1_output10;
+        $martes_h1->martes_h11 = $f1_output11;
+        $martes_h1->martes_h12 = $f1_output12;
+        $martes_h1->martes_h13 = $f1_output13;
+
+        $martes_h1->save();
+
+        return redirect()->back();
+
+
+    }
+
+    public function edit_t1_4(Request $request){
+
+
+// HORA 1
+        $f1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->mie1)){
+            $f1[$i]=$request->mie1[$k];
+            $i++;
+            $k++;
+        }
+
+        $f1_output1 = json_encode($f1);
+
+// HORA 2
+        $f2=array();
+        $i2=1;
+        $k2=0;
+
+        while($i2<=count($request->mie2)){
+            $f2[$i2]=$request->mie2[$k2];
+            $i2++;
+            $k2++;
+        }
+
+        $f1_output2 = json_encode($f2);
+
+
+// HORA 3
+        $f3=array();
+        $i3=1;
+        $k3=0;
+
+        while($i3<=count($request->mie3)){
+            $f3[$i3]=$request->mie3[$k3];
+            $i3++;
+            $k3++;
+        }
+
+        $f1_output3 = json_encode($f3);
+
+// HORA 4
+        $f4=array();
+        $i4=1;
+        $k4=0;
+
+        while($i4<=count($request->mie4)){
+            $f4[$i4]=$request->mie4[$k4];
+            $i4++;
+            $k4++;
+        }
+
+        $f1_output4 = json_encode($f4);
+
+
+// HORA 5
+        $f5=array();
+        $i5=1;
+        $k5=0;
+
+        while($i5<=count($request->mie5)){
+            $f5[$i5]=$request->mie5[$k5];
+            $i5++;
+            $k5++;
+        }
+
+        $f1_output5 = json_encode($f5);
+
+// HORA 6
+        $f6=array();
+        $i6=1;
+        $k6=0;
+
+        while($i6<=count($request->mie6)){
+            $f6[$i6]=$request->mie6[$k6];
+            $i6++;
+            $k6++;
+        }
+
+        $f1_output6 = json_encode($f6);
+
+
+
+// HORA 7
+        $f7=array();
+        $i7=1;
+        $k7=0;
+
+        while($i7<=count($request->mie7)){
+            $f7[$i7]=$request->mie7[$k7];
+            $i7++;
+            $k7++;
+        }
+
+        $f1_output7 = json_encode($f7);
+
+// HORA 8
+        $f8=array();
+        $i8=1;
+        $k8=0;
+
+        while($i8<=count($request->mie8)){
+            $f8[$i8]=$request->mie8[$k8];
+            $i8++;
+            $k8++;
+        }
+
+        $f1_output8 = json_encode($f8);
+
+// HORA 9
+        $f9=array();
+        $i9=1;
+        $k9=0;
+
+        while($i9<=count($request->mie9)){
+            $f9[$i9]=$request->mie9[$k9];
+            $i9++;
+            $k9++;
+        }
+
+        $f1_output9 = json_encode($f9);
+
+
+
+// HORA 10
+        $f10=array();
+        $i10=1;
+        $k10=0;
+
+        while($i10<=count($request->mie10)){
+            $f10[$i10]=$request->mie10[$k10];
+            $i10++;
+            $k10++;
+        }
+
+        $f1_output10 = json_encode($f10);
+
+
+// HORA 11
+        $f11=array();
+        $i11=1;
+        $k11=0;
+
+        while($i11<=count($request->mie11)){
+            $f11[$i11]=$request->mie11[$k11];
+            $i11++;
+            $k11++;
+        }
+
+        $f1_output11 = json_encode($f11);
+
+
+// HORA 12
+        $f12=array();
+        $i12=1;
+        $k12=0;
+
+        while($i12<=count($request->mie12)){
+            $f12[$i12]=$request->mie12[$k12];
+            $i12++;
+            $k12++;
+        }
+
+        $f1_output12 = json_encode($f12);
+
+
+// HORA 13
+        $f13=array();
+        $i13=1;
+        $k13=0;
+
+        while($i13<=count($request->mie13)){
+            $f13[$i13]=$request->mie13[$k13];
+            $i13++;
+            $k13++;
+        }
+
+        $f1_output13 = json_encode($f13);
+
+
+        $miercoles_h1 = Tiempo::where('numero_control', 14021073)->first();
+
+        $miercoles_h1->miercoles_h1 = $f1_output1;
+        $miercoles_h1->miercoles_h2 = $f1_output2;
+        $miercoles_h1->miercoles_h3 = $f1_output3;
+        $miercoles_h1->miercoles_h4 = $f1_output4;
+        $miercoles_h1->miercoles_h5 = $f1_output5;
+        $miercoles_h1->miercoles_h6 = $f1_output6;
+        $miercoles_h1->miercoles_h7 = $f1_output7;
+        $miercoles_h1->miercoles_h8 = $f1_output8;
+        $miercoles_h1->miercoles_h9 = $f1_output9;
+        $miercoles_h1->miercoles_h10 = $f1_output10;
+        $miercoles_h1->miercoles_h11 = $f1_output11;
+        $miercoles_h1->miercoles_h12 = $f1_output12;
+        $miercoles_h1->miercoles_h13 = $f1_output13;
+
+        $miercoles_h1->save();
+
+        return redirect()->back();
+
+
+    }
+
+    public function edit_t1_5(Request $request){
+
+
+//// HORA 1
+        $f1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->je1)){
+            $f1[$i]=$request->je1[$k];
+            $i++;
+            $k++;
+        }
+
+        $f1_output1 = json_encode($f1);
+
+// HORA 2
+        $f2=array();
+        $i2=1;
+        $k2=0;
+
+        while($i2<=count($request->je2)){
+            $f2[$i2]=$request->je2[$k2];
+            $i2++;
+            $k2++;
+        }
+
+        $f1_output2 = json_encode($f2);
+
+
+// HORA 3
+        $f3=array();
+        $i3=1;
+        $k3=0;
+
+        while($i3<=count($request->je3)){
+            $f3[$i3]=$request->je3[$k3];
+            $i3++;
+            $k3++;
+        }
+
+        $f1_output3 = json_encode($f3);
+
+// HORA 4
+        $f4=array();
+        $i4=1;
+        $k4=0;
+
+        while($i4<=count($request->je4)){
+            $f4[$i4]=$request->je4[$k4];
+            $i4++;
+            $k4++;
+        }
+
+        $f1_output4 = json_encode($f4);
+
+
+// HORA 5
+        $f5=array();
+        $i5=1;
+        $k5=0;
+
+        while($i5<=count($request->je5)){
+            $f5[$i5]=$request->je5[$k5];
+            $i5++;
+            $k5++;
+        }
+
+        $f1_output5 = json_encode($f5);
+
+// HORA 6
+        $f6=array();
+        $i6=1;
+        $k6=0;
+
+        while($i6<=count($request->je6)){
+            $f6[$i6]=$request->je6[$k6];
+            $i6++;
+            $k6++;
+        }
+
+        $f1_output6 = json_encode($f6);
+
+
+
+// HORA 7
+        $f7=array();
+        $i7=1;
+        $k7=0;
+
+        while($i7<=count($request->je7)){
+            $f7[$i7]=$request->je7[$k7];
+            $i7++;
+            $k7++;
+        }
+
+        $f1_output7 = json_encode($f7);
+
+// HORA 8
+        $f8=array();
+        $i8=1;
+        $k8=0;
+
+        while($i8<=count($request->je8)){
+            $f8[$i8]=$request->je8[$k8];
+            $i8++;
+            $k8++;
+        }
+
+        $f1_output8 = json_encode($f8);
+
+// HORA 9
+        $f9=array();
+        $i9=1;
+        $k9=0;
+
+        while($i9<=count($request->je9)){
+            $f9[$i9]=$request->je9[$k9];
+            $i9++;
+            $k9++;
+        }
+
+        $f1_output9 = json_encode($f9);
+
+
+
+// HORA 10
+        $f10=array();
+        $i10=1;
+        $k10=0;
+
+        while($i10<=count($request->je10)){
+            $f10[$i10]=$request->je10[$k10];
+            $i10++;
+            $k10++;
+        }
+
+        $f1_output10 = json_encode($f10);
+
+
+// HORA 11
+        $f11=array();
+        $i11=1;
+        $k11=0;
+
+        while($i11<=count($request->je11)){
+            $f11[$i11]=$request->je11[$k11];
+            $i11++;
+            $k11++;
+        }
+
+        $f1_output11 = json_encode($f11);
+
+
+// HORA 12
+        $f12=array();
+        $i12=1;
+        $k12=0;
+
+        while($i12<=count($request->je12)){
+            $f12[$i12]=$request->je12[$k12];
+            $i12++;
+            $k12++;
+        }
+
+        $f1_output12 = json_encode($f12);
+
+
+// HORA 13
+        $f13=array();
+        $i13=1;
+        $k13=0;
+
+        while($i13<=count($request->je13)){
+            $f13[$i13]=$request->je13[$k13];
+            $i13++;
+            $k13++;
+        }
+
+        $f1_output13 = json_encode($f13);
+
+
+        $jueves_h1 = Tiempo::where('numero_control', 14021073)->first();
+
+        $jueves_h1->jueves_h1 = $f1_output1;
+        $jueves_h1->jueves_h2 = $f1_output2;
+        $jueves_h1->jueves_h3 = $f1_output3;
+        $jueves_h1->jueves_h4 = $f1_output4;
+        $jueves_h1->jueves_h5 = $f1_output5;
+        $jueves_h1->jueves_h6 = $f1_output6;
+        $jueves_h1->jueves_h7 = $f1_output7;
+        $jueves_h1->jueves_h8 = $f1_output8;
+        $jueves_h1->jueves_h9 = $f1_output9;
+        $jueves_h1->jueves_h10 = $f1_output10;
+        $jueves_h1->jueves_h11 = $f1_output11;
+        $jueves_h1->jueves_h12 = $f1_output12;
+        $jueves_h1->jueves_h13 = $f1_output13;
+
+        $jueves_h1->save();
+
+        return redirect()->back();
+
+    }
+
+
+    public function edit_t1_6(Request $request){
+
+
+//// HORA 1
+        $f1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->ve1)){
+            $f1[$i]=$request->ve1[$k];
+            $i++;
+            $k++;
+        }
+
+        $f1_output1 = json_encode($f1);
+
+// HORA 2
+        $f2=array();
+        $i2=1;
+        $k2=0;
+
+        while($i2<=count($request->ve2)){
+            $f2[$i2]=$request->ve2[$k2];
+            $i2++;
+            $k2++;
+        }
+
+        $f1_output2 = json_encode($f2);
+
+
+// HORA 3
+        $f3=array();
+        $i3=1;
+        $k3=0;
+
+        while($i3<=count($request->ve3)){
+            $f3[$i3]=$request->ve3[$k3];
+            $i3++;
+            $k3++;
+        }
+
+        $f1_output3 = json_encode($f3);
+
+// HORA 4
+        $f4=array();
+        $i4=1;
+        $k4=0;
+
+        while($i4<=count($request->ve4)){
+            $f4[$i4]=$request->ve4[$k4];
+            $i4++;
+            $k4++;
+        }
+
+        $f1_output4 = json_encode($f4);
+
+
+// HORA 5
+        $f5=array();
+        $i5=1;
+        $k5=0;
+
+        while($i5<=count($request->ve5)){
+            $f5[$i5]=$request->ve5[$k5];
+            $i5++;
+            $k5++;
+        }
+
+        $f1_output5 = json_encode($f5);
+
+// HORA 6
+        $f6=array();
+        $i6=1;
+        $k6=0;
+
+        while($i6<=count($request->ve6)){
+            $f6[$i6]=$request->ve6[$k6];
+            $i6++;
+            $k6++;
+        }
+
+        $f1_output6 = json_encode($f6);
+
+
+
+// HORA 7
+        $f7=array();
+        $i7=1;
+        $k7=0;
+
+        while($i7<=count($request->ve7)){
+            $f7[$i7]=$request->ve7[$k7];
+            $i7++;
+            $k7++;
+        }
+
+        $f1_output7 = json_encode($f7);
+
+// HORA 8
+        $f8=array();
+        $i8=1;
+        $k8=0;
+
+        while($i8<=count($request->ve8)){
+            $f8[$i8]=$request->ve8[$k8];
+            $i8++;
+            $k8++;
+        }
+
+        $f1_output8 = json_encode($f8);
+
+// HORA 9
+        $f9=array();
+        $i9=1;
+        $k9=0;
+
+        while($i9<=count($request->ve9)){
+            $f9[$i9]=$request->ve9[$k9];
+            $i9++;
+            $k9++;
+        }
+
+        $f1_output9 = json_encode($f9);
+
+
+
+// HORA 10
+        $f10=array();
+        $i10=1;
+        $k10=0;
+
+        while($i10<=count($request->ve10)){
+            $f10[$i10]=$request->ve10[$k10];
+            $i10++;
+            $k10++;
+        }
+
+        $f1_output10 = json_encode($f10);
+
+
+// HORA 11
+        $f11=array();
+        $i11=1;
+        $k11=0;
+
+        while($i11<=count($request->ve11)){
+            $f11[$i11]=$request->ve11[$k11];
+            $i11++;
+            $k11++;
+        }
+
+        $f1_output11 = json_encode($f11);
+
+
+// HORA 12
+        $f12=array();
+        $i12=1;
+        $k12=0;
+
+        while($i12<=count($request->ve12)){
+            $f12[$i12]=$request->ve12[$k12];
+            $i12++;
+            $k12++;
+        }
+
+        $f1_output12 = json_encode($f12);
+
+
+// HORA 13
+        $f13=array();
+        $i13=1;
+        $k13=0;
+
+        while($i13<=count($request->ve13)){
+            $f13[$i13]=$request->ve13[$k13];
+            $i13++;
+            $k13++;
+        }
+
+        $f1_output13 = json_encode($f13);
+
+
+        $viernes_h1 = Tiempo::where('numero_control', 14021073)->first();
+
+        $viernes_h1->viernes_h1 = $f1_output1;
+        $viernes_h1->viernes_h2 = $f1_output2;
+        $viernes_h1->viernes_h3 = $f1_output3;
+        $viernes_h1->viernes_h4 = $f1_output4;
+        $viernes_h1->viernes_h5 = $f1_output5;
+        $viernes_h1->viernes_h6 = $f1_output6;
+        $viernes_h1->viernes_h7 = $f1_output7;
+        $viernes_h1->viernes_h8 = $f1_output8;
+        $viernes_h1->viernes_h9 = $f1_output9;
+        $viernes_h1->viernes_h10 = $f1_output10;
+        $viernes_h1->viernes_h11 = $f1_output11;
+        $viernes_h1->viernes_h12 = $f1_output12;
+        $viernes_h1->viernes_h13 = $f1_output13;
+
+        $viernes_h1->save();
+
+        return redirect()->back();
+
+    }
+
+
+    public function edit_t1_7(Request $request){
+
+
+//// HORA 1
+        $f1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->se1)){
+            $f1[$i]=$request->se1[$k];
+            $i++;
+            $k++;
+        }
+
+        $f1_output1 = json_encode($f1);
+
+// HORA 2
+        $f2=array();
+        $i2=1;
+        $k2=0;
+
+        while($i2<=count($request->se2)){
+            $f2[$i2]=$request->se2[$k2];
+            $i2++;
+            $k2++;
+        }
+
+        $f1_output2 = json_encode($f2);
+
+
+// HORA 3
+        $f3=array();
+        $i3=1;
+        $k3=0;
+
+        while($i3<=count($request->se3)){
+            $f3[$i3]=$request->se3[$k3];
+            $i3++;
+            $k3++;
+        }
+
+        $f1_output3 = json_encode($f3);
+
+// HORA 4
+        $f4=array();
+        $i4=1;
+        $k4=0;
+
+        while($i4<=count($request->se4)){
+            $f4[$i4]=$request->se4[$k4];
+            $i4++;
+            $k4++;
+        }
+
+        $f1_output4 = json_encode($f4);
+
+
+// HORA 5
+        $f5=array();
+        $i5=1;
+        $k5=0;
+
+        while($i5<=count($request->se5)){
+            $f5[$i5]=$request->se5[$k5];
+            $i5++;
+            $k5++;
+        }
+
+        $f1_output5 = json_encode($f5);
+
+// HORA 6
+        $f6=array();
+        $i6=1;
+        $k6=0;
+
+        while($i6<=count($request->se6)){
+            $f6[$i6]=$request->se6[$k6];
+            $i6++;
+            $k6++;
+        }
+
+        $f1_output6 = json_encode($f6);
+
+
+
+// HORA 7
+        $f7=array();
+        $i7=1;
+        $k7=0;
+
+        while($i7<=count($request->se7)){
+            $f7[$i7]=$request->se7[$k7];
+            $i7++;
+            $k7++;
+        }
+
+        $f1_output7 = json_encode($f7);
+
+// HORA 8
+        $f8=array();
+        $i8=1;
+        $k8=0;
+
+        while($i8<=count($request->se8)){
+            $f8[$i8]=$request->se8[$k8];
+            $i8++;
+            $k8++;
+        }
+
+        $f1_output8 = json_encode($f8);
+
+// HORA 9
+        $f9=array();
+        $i9=1;
+        $k9=0;
+
+        while($i9<=count($request->se9)){
+            $f9[$i9]=$request->se9[$k9];
+            $i9++;
+            $k9++;
+        }
+
+        $f1_output9 = json_encode($f9);
+
+
+
+// HORA 10
+        $f10=array();
+        $i10=1;
+        $k10=0;
+
+        while($i10<=count($request->se10)){
+            $f10[$i10]=$request->se10[$k10];
+            $i10++;
+            $k10++;
+        }
+
+        $f1_output10 = json_encode($f10);
+
+
+// HORA 11
+        $f11=array();
+        $i11=1;
+        $k11=0;
+
+        while($i11<=count($request->se11)){
+            $f11[$i11]=$request->se11[$k11];
+            $i11++;
+            $k11++;
+        }
+
+        $f1_output11 = json_encode($f11);
+
+
+// HORA 12
+        $f12=array();
+        $i12=1;
+        $k12=0;
+
+        while($i12<=count($request->se12)){
+            $f12[$i12]=$request->se12[$k12];
+            $i12++;
+            $k12++;
+        }
+
+        $f1_output12 = json_encode($f12);
+
+
+// HORA 13
+        $f13=array();
+        $i13=1;
+        $k13=0;
+
+        while($i13<=count($request->se13)){
+            $f13[$i13]=$request->se13[$k13];
+            $i13++;
+            $k13++;
+        }
+
+        $f1_output13 = json_encode($f13);
+
+
+        $_h1sabado = Tiempo::where('numero_control', 14021073)->first();
+
+        $_h1sabado->sabado_h1 = $f1_output1;
+        $_h1sabado->sabado_h2 = $f1_output2;
+        $_h1sabado->sabado_h3 = $f1_output3;
+        $_h1sabado->sabado_h4 = $f1_output4;
+        $_h1sabado->sabado_h5 = $f1_output5;
+        $_h1sabado->sabado_h6 = $f1_output6;
+        $_h1sabado->sabado_h7 = $f1_output7;
+        $_h1sabado->sabado_h8 = $f1_output8;
+        $_h1sabado->sabado_h9 = $f1_output9;
+        $_h1sabado->sabado_h10 = $f1_output10;
+        $_h1sabado->sabado_h11 = $f1_output11;
+        $_h1sabado->sabado_h12 = $f1_output12;
+        $_h1sabado->sabado_h13 = $f1_output13;
+
+        $_h1sabado->save();
+
+        return redirect()->back();
+
+    }
+
+    public function edit_t1_8(Request $request){
+
+
+//// HORA 1
+        $f1=array();
+        $i=1;
+        $k=0;
+
+        while($i<=count($request->de1)){
+            $f1[$i]=$request->de1[$k];
+            $i++;
+            $k++;
+        }
+
+        $f1_output1 = json_encode($f1);
+
+// HORA 2
+        $f2=array();
+        $i2=1;
+        $k2=0;
+
+        while($i2<=count($request->de2)){
+            $f2[$i2]=$request->de2[$k2];
+            $i2++;
+            $k2++;
+        }
+
+        $f1_output2 = json_encode($f2);
+
+
+// HORA 3
+        $f3=array();
+        $i3=1;
+        $k3=0;
+
+        while($i3<=count($request->de3)){
+            $f3[$i3]=$request->de3[$k3];
+            $i3++;
+            $k3++;
+        }
+
+        $f1_output3 = json_encode($f3);
+
+// HORA 4
+        $f4=array();
+        $i4=1;
+        $k4=0;
+
+        while($i4<=count($request->de4)){
+            $f4[$i4]=$request->de4[$k4];
+            $i4++;
+            $k4++;
+        }
+
+        $f1_output4 = json_encode($f4);
+
+
+// HORA 5
+        $f5=array();
+        $i5=1;
+        $k5=0;
+
+        while($i5<=count($request->de5)){
+            $f5[$i5]=$request->de5[$k5];
+            $i5++;
+            $k5++;
+        }
+
+        $f1_output5 = json_encode($f5);
+
+// HORA 6
+        $f6=array();
+        $i6=1;
+        $k6=0;
+
+        while($i6<=count($request->de6)){
+            $f6[$i6]=$request->de6[$k6];
+            $i6++;
+            $k6++;
+        }
+
+        $f1_output6 = json_encode($f6);
+
+
+
+// HORA 7
+        $f7=array();
+        $i7=1;
+        $k7=0;
+
+        while($i7<=count($request->de7)){
+            $f7[$i7]=$request->de7[$k7];
+            $i7++;
+            $k7++;
+        }
+
+        $f1_output7 = json_encode($f7);
+
+// HORA 8
+        $f8=array();
+        $i8=1;
+        $k8=0;
+
+        while($i8<=count($request->de8)){
+            $f8[$i8]=$request->de8[$k8];
+            $i8++;
+            $k8++;
+        }
+
+        $f1_output8 = json_encode($f8);
+
+// HORA 9
+        $f9=array();
+        $i9=1;
+        $k9=0;
+
+        while($i9<=count($request->de9)){
+            $f9[$i9]=$request->de9[$k9];
+            $i9++;
+            $k9++;
+        }
+
+        $f1_output9 = json_encode($f9);
+
+
+
+// HORA 10
+        $f10=array();
+        $i10=1;
+        $k10=0;
+
+        while($i10<=count($request->de10)){
+            $f10[$i10]=$request->de10[$k10];
+            $i10++;
+            $k10++;
+        }
+
+        $f1_output10 = json_encode($f10);
+
+
+// HORA 11
+        $f11=array();
+        $i11=1;
+        $k11=0;
+
+        while($i11<=count($request->de11)){
+            $f11[$i11]=$request->de11[$k11];
+            $i11++;
+            $k11++;
+        }
+
+        $f1_output11 = json_encode($f11);
+
+
+// HORA 12
+        $f12=array();
+        $i12=1;
+        $k12=0;
+
+        while($i12<=count($request->de12)){
+            $f12[$i12]=$request->de12[$k12];
+            $i12++;
+            $k12++;
+        }
+
+        $f1_output12 = json_encode($f12);
+
+
+// HORA 13
+        $f13=array();
+        $i13=1;
+        $k13=0;
+
+        while($i13<=count($request->de13)){
+            $f13[$i13]=$request->de13[$k13];
+            $i13++;
+            $k13++;
+        }
+
+        $f1_output13 = json_encode($f13);
+
+
+        $_h1domingo = Tiempo::where('numero_control', 14021073)->first();
+
+        $_h1domingo->domingo_h1 = $f1_output1;
+        $_h1domingo->domingo_h2 = $f1_output2;
+        $_h1domingo->domingo_h3 = $f1_output3;
+        $_h1domingo->domingo_h4 = $f1_output4;
+        $_h1domingo->domingo_h5 = $f1_output5;
+        $_h1domingo->domingo_h6 = $f1_output6;
+        $_h1domingo->domingo_h7 = $f1_output7;
+        $_h1domingo->domingo_h8 = $f1_output8;
+        $_h1domingo->domingo_h9 = $f1_output9;
+        $_h1domingo->domingo_h10 = $f1_output10;
+        $_h1domingo->domingo_h11 = $f1_output11;
+        $_h1domingo->domingo_h12 = $f1_output12;
+        $_h1domingo->domingo_h13 = $f1_output13;
+
+        $_h1domingo->save();
+
+        return redirect()->back();
+
+    }
+
+}
 

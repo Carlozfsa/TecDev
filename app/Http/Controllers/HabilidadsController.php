@@ -4,12 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Habilidad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HabilidadsController extends Controller
 {
 
+    public function create_hab_est_l_1(){
+        return view('activities.6_Habilidades_de_estudio.lecturas.lectura_1');
+    }
+
+    public function create_hab_est_l_2(){
+        return view('activities.6_Habilidades_de_estudio.lecturas.lectura_2');
+    }
+
+    public function create_hab_est_l_3(){
+        return view('activities.6_Habilidades_de_estudio.lecturas.lectura_3');
+    }
+
+
+
     public function create_hab_est_1(){
-        return view('activities.6_Habilidades_de_estudio.ejercicios.ejercicio_1');
+        if(Auth::User()->avance >= 6.1){
+            return view('activities.6_Habilidades_de_estudio.ejercicios.ejercicio_1');
+        }else{
+            return redirect()->back();
+        }
     }
 
     public function store_hab_est_1(Request $request){

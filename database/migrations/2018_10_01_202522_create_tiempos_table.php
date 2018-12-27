@@ -31,6 +31,8 @@ class CreateTiemposTable extends Migration
             $table->text('lunes_h12');
             $table->text('lunes_h13');
 
+            $table->float('avance_lunes_1')->default(0.0);
+
             $table->text('martes_h1');
             $table->text('martes_h2');
             $table->text('martes_h3');
@@ -44,6 +46,8 @@ class CreateTiemposTable extends Migration
             $table->text('martes_h11');
             $table->text('martes_h12');
             $table->text('martes_h13');
+
+            $table->float('avance_martes_1')->default(0.0);
 
             $table->text('miercoles_h1');
             $table->text('miercoles_h2');
@@ -59,6 +63,8 @@ class CreateTiemposTable extends Migration
             $table->text('miercoles_h12');
             $table->text('miercoles_h13');
 
+            $table->float('avance_miercoles_1')->default(0.0);
+
             $table->text('jueves_h1');
             $table->text('jueves_h2');
             $table->text('jueves_h3');
@@ -72,6 +78,9 @@ class CreateTiemposTable extends Migration
             $table->text('jueves_h11');
             $table->text('jueves_h12');
             $table->text('jueves_h13');
+
+            $table->float('avance_jueves_1')->default(0.0);
+
 
             $table->text('viernes_h1');
             $table->text('viernes_h2');
@@ -87,6 +96,8 @@ class CreateTiemposTable extends Migration
             $table->text('viernes_h12');
             $table->text('viernes_h13');
 
+            $table->float('avance_viernes_1')->default(0.0);
+
             $table->text('sabado_h1');
             $table->text('sabado_h2');
             $table->text('sabado_h3');
@@ -100,6 +111,9 @@ class CreateTiemposTable extends Migration
             $table->text('sabado_h11');
             $table->text('sabado_h12');
             $table->text('sabado_h13');
+
+            $table->float('avance_sabado_1')->default(0.0);
+
 
             $table->text('domingo_h1');
             $table->text('domingo_h2');
@@ -115,6 +129,9 @@ class CreateTiemposTable extends Migration
             $table->text('domingo_h12');
             $table->text('domingo_h13');
 
+            $table->float('avance_domingo_1')->default(0.0);
+
+
             $table->text('lunes_retro');
             $table->text('martes_retro');
             $table->text('miercoles_retro');
@@ -123,13 +140,13 @@ class CreateTiemposTable extends Migration
             $table->text('sabado_retro');
             $table->text('domingo_retro');
 
-            $table->integer('lunes_cal');
-            $table->integer('martes_cal');
-            $table->integer('miercoles_cal');
-            $table->integer('jueves_cal');
-            $table->integer('viernes_cal');
-            $table->integer('sabado_cal');
-            $table->integer('domingo_cal');
+            $table->integer('lunes_cal')->default(0);
+            $table->integer('martes_cal')->default(0);
+            $table->integer('miercoles_cal')->default(0);
+            $table->integer('jueves_cal')->default(0);
+            $table->integer('viernes_cal')->default(0);
+            $table->integer('sabado_cal')->default(0);
+            $table->integer('domingo_cal')->default(0);
 
             $table->text('sueno_1');
             $table->text('comida_1');
@@ -140,6 +157,8 @@ class CreateTiemposTable extends Migration
             $table->text('dep_1');
             $table->text('per_1');
 
+            $table->float('avance_lunes_2')->default(0.0);
+
             $table->text('sueno_2');
             $table->text('comida_2');
             $table->text('clase_2');
@@ -148,6 +167,8 @@ class CreateTiemposTable extends Migration
             $table->text('soc_2');
             $table->text('dep_2');
             $table->text('per_2');
+
+            $table->float('avance_martes_2')->default(0.0);
 
             $table->text('sueno_3');
             $table->text('comida_3');
@@ -158,6 +179,8 @@ class CreateTiemposTable extends Migration
             $table->text('dep_3');
             $table->text('per_3');
 
+            $table->float('avance_miercoles_2')->default(0.0);
+
             $table->text('sueno_4');
             $table->text('comida_4');
             $table->text('clase_4');
@@ -166,6 +189,8 @@ class CreateTiemposTable extends Migration
             $table->text('soc_4');
             $table->text('dep_4');
             $table->text('per_4');
+
+            $table->float('avance_jueves_2')->default(0.0);
 
             $table->text('sueno_5');
             $table->text('comida_5');
@@ -176,6 +201,8 @@ class CreateTiemposTable extends Migration
             $table->text('dep_5');
             $table->text('per_5');
 
+            $table->float('avance_viernes_2')->default(0.0);
+
             $table->text('sueno_6');
             $table->text('comida_6');
             $table->text('clase_6');
@@ -184,6 +211,9 @@ class CreateTiemposTable extends Migration
             $table->text('soc_6');
             $table->text('dep_6');
             $table->text('per_6');
+
+            $table->float('avance_sabado_2')->default(0.0);
+
 
             $table->text('sueno_7');
             $table->text('comida_7');
@@ -194,6 +224,9 @@ class CreateTiemposTable extends Migration
             $table->text('dep_7');
             $table->text('per_7');
 
+            $table->float('avance_domingo_2')->default(0.0);
+
+
             $table->text('lunes_2_retro');
             $table->text('martes_2_retro');
             $table->text('miercoles_2_retro');
@@ -202,15 +235,15 @@ class CreateTiemposTable extends Migration
             $table->text('sabado_2_retro');
             $table->text('domingo_2_retro');
 
-            $table->integer('lunes_2_cal');
-            $table->integer('martes_2_cal');
-            $table->integer('miercoles_2_cal');
-            $table->integer('jueves_2_cal');
-            $table->integer('viernes_2_cal');
-            $table->integer('sabado_2_cal');
-            $table->integer('domingo_2_cal');
+            $table->integer('lunes_2_cal')->default(0);
+            $table->integer('martes_2_cal')->default(0);
+            $table->integer('miercoles_2_cal')->default(0);
+            $table->integer('jueves_2_cal')->default(0);
+            $table->integer('viernes_2_cal')->default(0);
+            $table->integer('sabado_2_cal')->default(0);
+            $table->integer('domingo_2_cal')->default(0);
 
-            $table->integer('cal_final');
+            $table->integer('cal_final')->default(0);
 
 
             $table->timestamps();

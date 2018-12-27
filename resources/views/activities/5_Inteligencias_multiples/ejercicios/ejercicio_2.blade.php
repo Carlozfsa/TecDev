@@ -22,7 +22,7 @@
                 </p><br>
 
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'InteligenciaController@store_int_mult_ej_2']) !!}
 
                 <strong>* EJERCICIOS PARA DESARROLLAR LA APTITUD NUMÉRICA</strong><br><br>
                 <strong>I. LOS ZOQUETES DE COLORES</strong><br>
@@ -37,8 +37,7 @@
                         <tr>
                             <div class="form-group">
                                 <td>{!! Form::label('r1.1', 'R=') !!}</td>
-                                <td class="col-sm-12">{!! Form::text('r1.2', null, ['class'=>'form-control']) !!}</td>
-                                <td>{!! Form::submit('Guardar', ['class'=>'form-control']) !!}</td>
+                                <td class="col-sm-12">{!! Form::text('num_1', null, ['class'=>'form-control']) !!}</td>
                             </div>
                         </tr>
                 </table>
@@ -52,8 +51,7 @@
                     <tr>
                         <div class="form-group">
                             <td>{!! Form::label('r2.1', 'R=') !!}</td>
-                            <td class="col-sm-12">{!! Form::text('r2.2', null, ['class'=>'form-control']) !!}</td>
-                            <td>{!! Form::submit('Guardar', ['class'=>'form-control']) !!}</td>
+                            <td class="col-sm-12">{!! Form::text('num_2', null, ['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
                 </table>
@@ -67,13 +65,15 @@
                     <tr>
                         <div class="form-group">
                             <td>{!! Form::label('r3.1', 'R=') !!}</td>
-                            <td class="col-sm-12">{!! Form::text('r3.2', null, ['class'=>'form-control']) !!}</td>
-                            <td>{!! Form::submit('Guardar', ['class'=>'form-control']) !!}</td>
+                            <td class="col-sm-12">{!! Form::text('num_3', null, ['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
                 </table>
                 <br><br>
 
+                <div class="row" style="margin-left: 22%;">
+                    <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                </div>
 
                 {!! Form::close() !!}
 

@@ -25,7 +25,7 @@
                           </form>
                         </div>
                 </div>
-
+                </div>
             </td>
 
             <td>
@@ -112,50 +112,16 @@
 
 
     </table>
+
     <canvas id="malo" width="100" height="50" style="border:1px solid black;background-color:red; margin-left:42%"></canvas>
+    <br><br><br>
 
-
-  <div class="center-block" style="margin-left:35%">
-    <nav aria-label="Page navigation">
-        <ul class="pagination center-block">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-  </div>
+    <div style="padding-left: 35%";>
+        <button type="submit" name="submit" id="submit" class="btn btn-primary" value="Guardar" onclick="location.href='/tiempo_ej_1';" >Siguiente actividad</button>
+    </div>
 @stop
 
 @section('scripts')
-<script>
-    $(document).ready(function(){
-        var i=1;
-
-        $('#add').click(function(){
-            i++;
-            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
-        });
-
-        $(document).on('click', '.btn_remove', function(){
-            var button_id = $(this).attr("id");
-            $('#row'+button_id+'').fadeOut();
-        });
-
-    });
-
-</script>
 
 
 <script>

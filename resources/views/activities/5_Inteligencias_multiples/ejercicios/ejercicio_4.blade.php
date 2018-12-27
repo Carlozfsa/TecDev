@@ -76,28 +76,26 @@
 
                 <p>¿Qué podría hacer la muchacha para revertir esta situación?</p><br>
 
-                {!! Form::open() !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'InteligenciaController@store_int_mult_ej_4']) !!}
                 <table>
                     <tr>
                         <div class="form-group">
                             <td>{!! Form::label('r1.1', 'R=') !!}</td>
-                            <td class="col-sm-12">{!! Form::text('r1.1', null, ['class'=>'form-control']) !!}</td>
-                            <td>{!! Form::submit('Guardar', ['class'=>'form-control']) !!}</td>
+                            <td class="col-sm-12">{!! Form::text('prob_1', null, ['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
-                </table>
+                </table><br>
+
+                <div class="row" style="margin-left: 22%;">
+                    <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Guardar" />
+                </div>
+
                 {!! Form::close() !!}
 
                 <p style="margin-left: 45%;">http://www.tecnicas-de-estudio.org/inteligencia/ejercicios.htm</p>
 
 
             </div>
-
-
-
-
-
-
 
         </div>
     </div>

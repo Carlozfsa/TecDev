@@ -27,19 +27,41 @@
                 Estas pueden ser nuevas amistades, eventos o sucesos inesperados que
                 se te están presentando. Escríbelos.
 
-                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_4_1')}}">
-                    {{csrf_field()}}
+                @if($edit == 0)
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_4_1')}}">
+                        {{csrf_field()}}
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dynamic_field">
-                            <tr>
-                                <td ><input type="text" name="o1[]" placeholder="Escriba su respuesta" class="form-control name_list center-block"></td>
-                                <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
-                            </tr>
-                        </table>
-                        <input type="submit" name="submit" id="submit" class="btn btn-info" value="Guardar" />
-                    </div>
-                </form>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dynamic_field">
+                                <tr>
+                                    <td ><input type="text" name="o1[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></td>
+                                    <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
+                                </tr>
+                            </table>
+                            <input type="submit" name="submit" id="submit" class="btn btn-info" value="Guardar" />
+                        </div>
+
+                    </form>
+                @else
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_4_1')}}">
+                        {{csrf_field()}}
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dynamic_field_edit">
+                                @foreach($f_decode as $key=>$value)
+                                    <tr id="row{{$key}}">
+                                        <td ><input type="text" name="oe1[]" placeholder="Escriba una amenaza" class="form-control name_list center-block" value="{{$value}}"></td>
+                                        @if($key==1) <td><button type="button" name="add_edit" id="add_edit" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit" id="{{$key}}" class="btn btn-danger btn_remove_edit center-block">X</button></td> @endif
+                                    </tr>
+                                @endforeach
+                            </table>
+                            <input type="submit" name="submit" id="submit" class="btn btn-info" value="Editar" />
+                        </div>
+
+                    </form>
+
+                @endif
 
             </div>
 
@@ -83,5 +105,25 @@
 
     });
 
+</script>
+
+
+<script>
+    $(document).ready(function(){
+
+
+        var i= $('#dynamic_field_edit').length;
+
+        $('#add_edit').click(function(){
+            i++;
+            $('#dynamic_field_edit').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="oe1[]" placeholder="Escriba una amenaza" class="form-control name_list" /></td><td><button type="button" name="remove_edit" id="'+i+'" class="btn btn-danger btn_remove_edit center-block">X</button></td></tr>');
+        });
+
+        $(document).on('click', '.btn_remove_edit', function(){
+            var button_id = $(this).attr("id");
+            $('#row'+button_id+'').remove();
+        });
+
+    });
 </script>
 @stop

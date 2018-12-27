@@ -9,6 +9,16 @@ class MatsController extends Controller
 {
     //
 
+    public function create_mat_l_1(){
+        return view('activities.12_Aprendizaje_matematicas.lecturas.lectura_1');
+    }
+
+    public function create_mat_l_2(){
+        return view('activities.12_Aprendizaje_matematicas.lecturas.lectura_2');
+    }
+
+
+
     public function create_mat_1(){
         return view('activities.12_Aprendizaje_matematicas.ejercicios.ejercicio_1');
     }

@@ -15,23 +15,27 @@ class CreateOportunidadsTable extends Migration
     {
         Schema::create('oportunidads', function (Blueprint $table) {
             $table->increments('id');
+
             $table->integer('numero_control');
-            $table->string('oportunidads_1');
-            $table->string('oportunidads_2');
-            $table->string('oportunidads_3');
-            $table->string('oportunidads_4');
 
-            $table->string('retro_1');
-            $table->string('retro_2');
-            $table->string('retro_3');
-            $table->string('retro_4');
+            $table->string('oportunidads_1')->default('');
+            $table->string('oportunidads_2')->default('');
+            $table->string('oportunidads_3')->default('');
+            $table->string('oportunidads_4')->default('');
 
-            $table->integer('cal_1');
-            $table->integer('cal_2');
-            $table->integer('cal_3');
-            $table->integer('cal_4');
+            $table->string('retro_1')->default('');
+            $table->string('retro_2')->default('');
+            $table->string('retro_3')->default('');
+            $table->string('retro_4')->default('');
 
-            $table->integer('cal_general');
+            $table->integer('cal_1')->default(0);
+            $table->integer('cal_2')->default(0);
+            $table->integer('cal_3')->default(0);
+            $table->integer('cal_4')->default(0);
+
+            $table->integer('entregado')->default(0);
+
+            $table->integer('cal_general')->default(0);
 
             $table->timestamps();
         });

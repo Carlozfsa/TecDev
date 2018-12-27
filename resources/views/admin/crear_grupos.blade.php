@@ -12,12 +12,12 @@
 
             <div class="form-group">
                 {!! Form::label('lcarrera','Carrera') !!}
-                {!! Form::select('carrera',['0'=>'---Seleccione una carrera---'], null,['style'=>'font-size: 15px;padding: 1px;', 'class'=>'form-control']) !!}
+                {!! Form::select('carrera',['0'=>'---Seleccione una carrera---']+$carreras, null,['style'=>'font-size: 15px;padding: 1px;', 'class'=>'form-control']) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('lmateria','Materia') !!}
-                {!! Form::select('materia',['0'=>'---Seleccione una materia---'], null,['style'=>'font-size: 15px;padding: 1px;', 'class'=>'form-control']) !!}
+                {!! Form::select('materia',['0'=>'---Seleccione una materia---']+$materias, null,['style'=>'font-size: 15px;padding: 1px;', 'class'=>'form-control']) !!}
             </div>
 
             <div class="form-group">
@@ -27,7 +27,7 @@
 
             <div class="form-group">
                 {!! Form::label('lperiodo','Periodo académico') !!}
-                {!! Form::select('periodo',['0'=>'---Seleccione un periodo académico---'], null,['style'=>'font-size: 15px;padding: 1px;', 'class'=>'form-control']) !!}
+                {!! Form::select('periodo',['0'=>'---Seleccione un periodo académico---']+$periodos, null,['style'=>'font-size: 15px;padding: 1px;', 'class'=>'form-control']) !!}
             </div>
 
             <div class="form-group">
