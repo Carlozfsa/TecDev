@@ -2763,22 +2763,35 @@ class ActivitiesController extends Controller
         $f2 = 0;
         $f3 = 0;
         $f4 = 0;
+        $ft = 0;
+        $pr_f = 0;
 
         $d1 = 0;
         $d2 = 0;
         $d3 = 0;
         $d4 = 0;
+        $dt = 0;
+        $pr_d = 0;
+
 
         $a1 = 0;
         $a2 = 0;
         $a3 = 0;
         $a4 = 0;
         $a5 = 0;
+        $at = 0;
+        $pr_a = 0;
+
 
         $o1 = 0;
         $o2 = 0;
         $o3 = 0;
         $o4 = 0;
+        $ot = 0;
+        $s_tot = 0;
+        $pr_o = 0;
+        $pr_t_foda = 0;
+
 
         $t1 = 0;
         $t2 = 0;
@@ -2787,6 +2800,9 @@ class ActivitiesController extends Controller
         $t5 = 0;
         $t6 = 0;
         $t7 = 0;
+        $t_tot = 0;
+        $pr_t = 0;
+
 
         $t11 = 0;
         $t22 = 0;
@@ -2795,8 +2811,17 @@ class ActivitiesController extends Controller
         $t55 = 0;
         $t66 = 0;
         $t77 = 0;
+        $tt_tot = 0;
+        $s_tot2 = 0;
+        $pr_tt = 0;
+        $pr_t_t = 0;
+
+
 
         $shi = 0;
+        $shit = 0;
+        $pr_shi = 0;
+
 
         $dhi1 = 0;
         $dhi2= 0;
@@ -2804,43 +2829,74 @@ class ActivitiesController extends Controller
         $dhi4= 0;
         $dhi5= 0;
         $dhi6= 0;
+        $dhit= 0;
+        $pr_dhi = 0;
+
 
         $int1 = 0;
         $int2 = 0;
         $int3 = 0;
         $int4 = 0;
+        $intt = 0;
+        $pr_int = 0;
+
 
         $he1 = 0;
+        $het = 0;
+        $pr_he = 0;
+
 
         $mem1 = 0;
         $mem2 = 0;
         $mem3 = 0;
         $mem4 = 0;
+        $memt = 0;
+        $pr_mem = 0;
 
         $hp1 = 0;
         $hp2 = 0;
         $hp3 = 0;
         $hp4 = 0;
         $hp5 = 0;
+        $hpt = 0;
+        $pr_hp = 0;
+
 
         $map1 = 0;
+        $mapt = 0;
+        $pr_map = 0;
 
         $esq1 = 0;
         $esq2 = 0;
+        $esqt = 0;
+        $pr_esq = 0;
+
 
         $res1 = 0;
+        $rest = 0;
+        $pr_res = 0;
+
 
         $mat1 = 0;
         $mat2 = 0;
+        $matt = 0;
+        $pr_mat = 0;
+
 
         $log1 = 0;
         $log2 = 0;
+        $logt = 0;
+        $pr_log = 0;
+
 
         $rel1 = 0;
         $rel2 = 0;
         $rel3 = 0;
         $rel4 = 0;
         $rel5 = 0;
+        $relt = 0;
+        $pr_rel = 0;
+
 
         // Variables de revisión
 
@@ -3165,6 +3221,53 @@ class ActivitiesController extends Controller
             }
         }
 
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rf1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rf2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $rf3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $rf4++;
+            }
+        }
+
+
+        //total entrega
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()-> fortalezas_1 != NULL  && Fortaleza::where('numero_control', $f->numero_control)->first()-> fortalezas_2 != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()-> fortalezas_3 != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()-> fortalezas_4 != NULL){
+                $ft++;
+            }
+        }
+
+        //total revisión
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $pr_f++;
+            }
+        }
+
         //Debilidades
 
         foreach($cont as $f){
@@ -3194,6 +3297,55 @@ class ActivitiesController extends Controller
                 $d4++;
             }
         }
+
+
+        // revisión
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists() && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rd1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists() && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rd2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists() && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $rd3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists() && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $rd4++;
+            }
+        }
+
+        //total
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists() && Debilidad::where('numero_control', $f->numero_control)->first()-> debilidads_1 != NULL && Debilidad::where('numero_control', $f->numero_control)->first()-> debilidads_2 != NULL && Debilidad::where('numero_control', $f->numero_control)->first()-> debilidads_3 != NULL && Debilidad::where('numero_control', $f->numero_control)->first()-> debilidads_4 != NULL){
+                $dt++;
+            }
+        }
+
+        //total revisión
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists() && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $pr_d++;
+            }
+        }
+
+
+
 
         //Amenazas
 
@@ -3232,6 +3384,60 @@ class ActivitiesController extends Controller
             }
         }
 
+        //total revisión
+
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $ra1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $ra2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $ra3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $ra4++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL){
+                $ra5++;
+            }
+        }
+
+
+        //total
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> amenazas_1 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> amenazas_2 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> amenazas_3 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> amenazas_4 != NULL  && Amenaza::where('numero_control', $f->numero_control)->first()-> amenazas_5 != NULL){
+                $at++;
+            }
+        }
+
+        //total revisión
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL){
+                $pr_a++;
+            }
+        }
+
         //Oportunidades
 
         foreach($cont as $f){
@@ -3261,6 +3467,72 @@ class ActivitiesController extends Controller
                 $o4++;
             }
         }
+
+        //total revisión
+
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists() && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $ro1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists() && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $ro2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists() && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $ro3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists() && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $ro4++;
+            }
+        }
+
+
+        //total
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists() && Oportunidad::where('numero_control', $f->numero_control)->first()->  oportunidads_1  != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()->  oportunidads_2  != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()->  oportunidads_3  != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()->  oportunidads_4  != NULL){
+                $ot++;
+            }
+        }
+
+        //total revisión
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists() && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $pr_o++;
+            }
+        }
+
+
+        //super total foda
+
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()->  fortalezas_1  != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()->  fortalezas_2  != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()->  fortalezas_3  != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()->  fortalezas_4  != NULL && Debilidad::where('numero_control', $f->numero_control)->first()->   debilidads_1   != NULL  && Debilidad::where('numero_control', $f->numero_control)->first()->   debilidads_2   != NULL && Debilidad::where('numero_control', $f->numero_control)->first()->   debilidads_3  != NULL && Debilidad::where('numero_control', $f->numero_control)->first()->   debilidads_4   != NULL && Amenaza::where('numero_control', $f->numero_control)->first()->   amenazas_1   != NULL && Amenaza::where('numero_control', $f->numero_control)->first()->   amenazas_2   != NULL && Amenaza::where('numero_control', $f->numero_control)->first()->   amenazas_3   != NULL && Amenaza::where('numero_control', $f->numero_control)->first()->   amenazas_4   != NULL && Amenaza::where('numero_control', $f->numero_control)->first()->   amenazas_5   != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()->   oportunidads_1   != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()->   oportunidads_2   != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()->   oportunidads_3   != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()->   oportunidads_4   != NULL){
+                $s_tot++;
+            }
+        }
+
+        //total final revisión
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists() && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Fortaleza::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL && Debilidad::where('numero_control', $f->numero_control)->exists() && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Debilidad::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL && Amenaza::where('numero_control', $f->numero_control)->exists() && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL && Amenaza::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL && Oportunidad::where('numero_control', $f->numero_control)->exists() && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Oportunidad::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $pr_t_foda++;
+            }
+        }
+
 
         //Tiempo
 
@@ -3312,6 +3584,75 @@ class ActivitiesController extends Controller
 
             if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_domingo_1  != NULL){
                 $t7++;
+            }
+        }
+
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rt1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rt2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $rt3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $rt4++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL){
+                $rt5++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_6 != NULL){
+                $rt6++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_7 != NULL){
+                $rt7++;
+            }
+        }
+
+        //total revisión
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_6 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_7 != NULL){
+                $pr_t++;
+            }
+        }
+
+
+        //total 1
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_lunes_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_martes_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_miercoles_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_jueves_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_viernes_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_sabado_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_domingo_1  != NULL){
+                $t_tot++;
             }
         }
 
@@ -3368,12 +3709,104 @@ class ActivitiesController extends Controller
             }
         }
 
+        // revisión
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_8 != NULL){
+                $rt11++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_9 != NULL){
+                $rt22++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_10 != NULL){
+                $rt33++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_11 != NULL){
+                $rt44++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_12 != NULL){
+                $rt55++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_13 != NULL){
+                $rt66++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_14 != NULL){
+                $rt77++;
+            }
+        }
+
+        //total 2
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_lunes_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_martes_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_miercoles_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_jueves_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_viernes_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_sabado_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_domingo_2  != NULL){
+                $tt_tot++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_8 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_9 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_10 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_11 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_12 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_13 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_14 != NULL){
+                $pr_tt++;
+            }
+        }
+
+        //super total tiempo
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_lunes_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_martes_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_miercoles_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_jueves_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_viernes_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_sabado_1  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_domingo_1  != NULL  && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_lunes_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_martes_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_miercoles_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_jueves_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_viernes_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_sabado_2  != NULL && Tiempo::where('numero_control', $f->numero_control)->first()->  avance_domingo_2  != NULL){
+                $s_tot2++;
+            }
+        }
+        //total final revisión
+
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists() && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_6 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_7 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_8 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_9 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_10 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_11 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_12 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_13 != NULL && Tiempo::where('numero_control', $f->numero_control)->first()-> retro_14 != NULL){
+                $pr_t_t++;
+            }
+        }
+
+
         //Ser humano integral
 
         foreach($cont as $f){
 
             if(Humanointegral::where('numero_control', $f->numero_control)->exists() && Humanointegral::where('numero_control', $f->numero_control)->first()->pres_per  != NULL &&  Humanointegral::where('numero_control', $f->numero_control)->first()->salud  != NULL &&  Humanointegral::where('numero_control', $f->numero_control)->first()->simpatia  != NULL){
                 $shi++;
+            }
+        }
+
+        //total revisión
+
+        foreach($cont as $f){
+
+            if(Humanointegral::where('numero_control', $f->numero_control)->exists() && Humanointegral::where('numero_control', $f->numero_control)->first()-> retro != NULL){
+                $rshi++;
             }
         }
 
@@ -3421,6 +3854,69 @@ class ActivitiesController extends Controller
             }
         }
 
+        //total revisión
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rdhi1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rdhi2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $rdhi3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $rdhi4++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL){
+                $rdhi5++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_6 != NULL){
+                $rdhi6++;
+            }
+        }
+
+        //revisión promedio
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_5 != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()-> retro_6 != NULL){
+                $pr_dhi++;
+            }
+        }
+
+
+        //total
+
+        foreach($cont as $f){
+
+            if(Desarrollohumano::where('numero_control', $f->numero_control)->exists() && Desarrollohumano::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()->  avance_3  != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()->  avance_4  != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()->  avance_5  != NULL && Desarrollohumano::where('numero_control', $f->numero_control)->first()->  avance_6  != NULL){
+                $dhit++;
+            }
+        }
+
         //Inteligencia
 
         foreach($cont as $f){
@@ -3451,6 +3947,56 @@ class ActivitiesController extends Controller
             }
         }
 
+        //revision
+
+        foreach($cont as $f){
+
+            if(Inteligencia::where('numero_control', $f->numero_control)->exists() && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rint1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Inteligencia::where('numero_control', $f->numero_control)->exists() && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rint2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Inteligencia::where('numero_control', $f->numero_control)->exists() && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $rint3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Inteligencia::where('numero_control', $f->numero_control)->exists() && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $rint4++;
+            }
+        }
+
+
+        //total
+
+        foreach($cont as $f){
+
+            if(Inteligencia::where('numero_control', $f->numero_control)->exists() && Inteligencia::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL && Inteligencia::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL && Inteligencia::where('numero_control', $f->numero_control)->first()->  avance_3  != NULL && Inteligencia::where('numero_control', $f->numero_control)->first()->  avance_4  != NULL){
+                $intt++;
+            }
+        }
+
+        //revisión promedio
+
+        foreach($cont as $f){
+
+            if(Inteligencia::where('numero_control', $f->numero_control)->exists() && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL  && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_3!= NULL  && Inteligencia::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $pr_int++;
+            }
+        }
+
+
         //Hab estudio
 
         foreach($cont as $f){
@@ -3459,6 +4005,16 @@ class ActivitiesController extends Controller
                 $he1++;
             }
         }
+
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Habilidad::where('numero_control', $f->numero_control)->exists() && Habilidad::where('numero_control', $f->numero_control)->first()-> retro != NULL){
+                $rhe1++;
+            }
+        }
+
 
         //Memoria
 
@@ -3487,6 +4043,53 @@ class ActivitiesController extends Controller
 
             if(Memoria::where('numero_control', $f->numero_control)->exists() && Memoria::where('numero_control', $f->numero_control)->first()->  avance_4  != NULL){
                 $mem4++;
+            }
+        }
+
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Memoria::where('numero_control', $f->numero_control)->exists() && Memoria::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rmem1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Memoria::where('numero_control', $f->numero_control)->exists() && Memoria::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rmem2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Memoria::where('numero_control', $f->numero_control)->exists() && Memoria::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $rmem3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Memoria::where('numero_control', $f->numero_control)->exists() && Memoria::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $rmem4++;
+            }
+        }
+
+        //total
+        foreach($cont as $f){
+
+            if(Memoria::where('numero_control', $f->numero_control)->exists() && Memoria::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL && Memoria::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL && Memoria::where('numero_control', $f->numero_control)->first()->  avance_3  != NULL && Memoria::where('numero_control', $f->numero_control)->first()->  avance_4  != NULL){
+                $memt++;
+            }
+        }
+
+        //revisión promedio
+
+        foreach($cont as $f){
+
+            if(Memoria::where('numero_control', $f->numero_control)->exists() && Memoria::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Memoria::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL  && Memoria::where('numero_control', $f->numero_control)->first()-> retro_3!= NULL  && Memoria::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $pr_mem++;
             }
         }
 
@@ -3520,12 +4123,67 @@ class ActivitiesController extends Controller
             }
         }
 
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Pensamiento::where('numero_control', $f->numero_control)->exists() && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rhp1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Pensamiento::where('numero_control', $f->numero_control)->exists() && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rhp2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Pensamiento::where('numero_control', $f->numero_control)->exists() && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_3 != NULL){
+                $rhp3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Pensamiento::where('numero_control', $f->numero_control)->exists() && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $rhp4++;
+            }
+        }
+
+        //total
+
+        foreach($cont as $f){
+
+            if(Pensamiento::where('numero_control', $f->numero_control)->exists() && Pensamiento::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL  && Pensamiento::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL && Pensamiento::where('numero_control', $f->numero_control)->first()->  avance_3  != NULL && Pensamiento::where('numero_control', $f->numero_control)->first()->  avance_4  != NULL){
+                $hpt++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Pensamiento::where('numero_control', $f->numero_control)->exists() && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL  && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_3!= NULL  && Pensamiento::where('numero_control', $f->numero_control)->first()-> retro_4 != NULL){
+                $pr_hp++;
+            }
+        }
+
         //Mapa
 
         foreach($cont as $f){
 
             if(Mapa::where('numero_control', $f->numero_control)->exists() && Mapa::where('numero_control', $f->numero_control)->first()->  ruta  != NULL){
                 $map1++;
+            }
+        }
+
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Mapa::where('numero_control', $f->numero_control)->exists() && Mapa::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rmap1++;
             }
         }
 
@@ -3545,12 +4203,55 @@ class ActivitiesController extends Controller
             }
         }
 
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Esquema::where('numero_control', $f->numero_control)->exists() && Esquema::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $resq1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Esquema::where('numero_control', $f->numero_control)->exists() && Esquema::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $resq2++;
+            }
+        }
+
+        //total
+        foreach($cont as $f){
+
+            if(Esquema::where('numero_control', $f->numero_control)->exists() && Esquema::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL && Esquema::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL){
+                $esqt++;
+            }
+        }
+
+        // revisión promedio
+
+        foreach($cont as $f){
+
+            if(Esquema::where('numero_control', $f->numero_control)->exists() && Esquema::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Esquema::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $pr_esq++;
+            }
+        }
+
+
     //Resumen
 
         foreach($cont as $f){
 
             if(Ensayo::where('numero_control', $f->numero_control)->exists() && Ensayo::where('numero_control', $f->numero_control)->first()->  ens  != NULL){
                 $res1++;
+            }
+        }
+
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Ensayo::where('numero_control', $f->numero_control)->exists() && Ensayo::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rres1++;
             }
         }
 
@@ -3570,22 +4271,193 @@ class ActivitiesController extends Controller
             }
         }
 
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Mat::where('numero_control', $f->numero_control)->exists() && Mat::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rmat1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Mat::where('numero_control', $f->numero_control)->exists() && Mat::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rmat2++;
+            }
+        }
+
+        //total
+
+        foreach($cont as $f){
+
+            if(Mat::where('numero_control', $f->numero_control)->exists() && Mat::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL  && Mat::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL){
+                $matt++;
+            }
+        }
+
+        //revisión promedio
+
+        foreach($cont as $f){
+
+            if(Mat::where('numero_control', $f->numero_control)->exists() && Mat::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Mat::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $pr_mat++;
+            }
+        }
+
+
+        //Info logicas
+
+        foreach($cont as $f){
+
+            if(Inferencia::where('numero_control', $f->numero_control)->exists() && Inferencia::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL){
+                $log1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Inferencia::where('numero_control', $f->numero_control)->exists() && Inferencia::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL){
+                $log2++;
+            }
+        }
+
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Inferencia::where('numero_control', $f->numero_control)->exists() && Inferencia::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL){
+                $rlog1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Inferencia::where('numero_control', $f->numero_control)->exists() && Inferencia::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $rlog2++;
+            }
+        }
 
 
 
+        //total
+        foreach($cont as $f){
+
+            if(Inferencia::where('numero_control', $f->numero_control)->exists() && Inferencia::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL && Inferencia::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL){
+                $logt++;
+            }
+        }
+
+        //revisión promedio
+
+        foreach($cont as $f){
+
+            if(Inferencia::where('numero_control', $f->numero_control)->exists() && Inferencia::where('numero_control', $f->numero_control)->first()-> retro_1 != NULL  && Inferencia::where('numero_control', $f->numero_control)->first()-> retro_2 != NULL){
+                $pr_log++;
+            }
+        }
 
 
+        //Rel sim
 
+        //avance
 
+        foreach($cont as $f){
 
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL){
+                $rel1++;
+            }
+        }
 
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL){
+                $rel2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()->  avance_3  != NULL){
+                $rel3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()->  avance_4  != NULL){
+                $rel4++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()->  avance_5  != NULL){
+                $rel5++;
+            }
+        }
+
+        //total
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()->  avance_1  != NULL && Relacion::where('numero_control', $f->numero_control)->first()->  avance_2  != NULL && Relacion::where('numero_control', $f->numero_control)->first()->  avance_3  != NULL && Relacion::where('numero_control', $f->numero_control)->first()->  avance_4  != NULL && Relacion::where('numero_control', $f->numero_control)->first()->  avance_5  != NULL){
+                $relt++;
+            }
+        }
+
+        //revisión
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()-> retro_1  != NULL){
+                $rrel1++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()-> retro_2  != NULL){
+                $rrel2++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()-> retro_3  != NULL){
+                $rrel3++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()-> retro_4  != NULL){
+                $rrel4++;
+            }
+        }
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()-> retro_5  != NULL){
+                $rrel5++;
+            }
+        }
+
+        //revisión promedio
+
+        foreach($cont as $f){
+
+            if(Relacion::where('numero_control', $f->numero_control)->exists() && Relacion::where('numero_control', $f->numero_control)->first()-> retro_1  != NULL && Relacion::where('numero_control', $f->numero_control)->first()-> retro_2  != NULL && Relacion::where('numero_control', $f->numero_control)->first()-> retro_3  != NULL && Relacion::where('numero_control', $f->numero_control)->first()-> retro_4  != NULL && Relacion::where('numero_control', $f->numero_control)->first()-> retro_5  != NULL){
+                $pr_rel++;
+            }
+        }
 
 
         /*foreach($lc as $l){
             $c1 = $c1 + $l->cal_1;
         }*/
 
-        return view('tutor.activities.avance_grupo', compact('f1','f2','f3','f4', 'd1', 'd2', 'd3', 'd4', 'a1', 'a2', 'a3', 'a4', 'a5','o1','o2','o3','o4','t1','t2','t3','t4','t5','t6','t7','t11','t22','t33','t44','t55','t66','t77','shi','dhi1','dhi2','dhi3','dhi4','dhi5','dhi6','int1','int2','int3','int4','he1','mem1','mem2','mem3','mem4','hp1','hp2','hp3','hp4','hp5','map1','esq1','esq2','res1','mat1','mat2','log1','log2','rel1','rel2','rel3','rel4','rel5','rf1','rf2','rf3','rf4','rd1', 'rd2', 'rd3', 'rd4', 'ra1', 'ra2', 'ra3', 'ra4', 'ra5','ro1','ro2','ro3','ro4','rt1','rt2','rt3','rt4','rt5','rt6','rt7','rt11','rt22','rt33','rt44','rt55','rt66','rt77','rshi','rdhi1','rdhi2','rdhi3','rdhi4','rdhi5','rdhi6','rint1','rint2','rint3','rint4','rhe1','rmem1','rmem2','rmem3','rmem4','rhp1','rhp2','rhp3','rhp4','rhp5','rmap1','resq1','resq2','rres1','rmat1','rmat2','rlog1','rlog2','rrel1','rrel2','rrel3','rrel4','rrel5','cf1','cf2','cf3','cf4','cd1','cd2','cd3','cd4','ca1','ca2','ca3','ca4','ca5','co1','co2','co3','co4','ct1','ct2','ct3','ct4','ct5','ct6','ct7','ct11','ct22','ct33','ct44','ct55','ct66','ct77','cshi','cdhi1','cdhi2','cdhi3','cdhi4','cdhi5','cdhi6','cint1','cint2','cint3','cint4','che1','cmem1','cmem2','cmem3','cmem4','chp1','chp2','chp3','chp4','cmap1','cesq1','cesq2','cres1','cmat1','cmat2','clog1','clog2','crel1','crel2','crel3','crel4','crel5','l1','rl1','cl1','ral1','raf1','raf2','raf3','raf4','rad1','rad2','rad3','rad4','raa1','raa2','raa3','raa4','raa5','rao1','rao2','rao3','rao4','rat1','rat2','rat3','rat4','rat5','rat6','rat7','rat11','rat22','rat33','rat44','rat55','rat66','rat77','rashi','radhi1','radhi2','radhi3','radhi4','radhi5','radhi6','raint1','raint2','raint3','raint4','rahe1','ramem1','ramem2','ramem3','ramem4','rahp1','rahp2','rahp3','rahp4','ramap1','raesq1','raesq2','rares1','ramat1','ramat2','ralog1','ralog2','rarel1','rarel2','rarel3','rarel4','rarel5','pf','p_foda','p_tiempo','p_a','alu','c','t_alu'));
+        return view('tutor.activities.avance_grupo', compact('pr_rel','pr_log','pr_mat','pr_esq','pr_hp','pr_mem','pr_int','pr_dhi','pr_t_t','pr_t_foda','pr_t','pr_tt','pr_f','pr_d','pr_a','pr_o','rf1','rf2','rf3','rf4','rd1','rd2','rd3','rd4','ra1','ra2','ra3','ra4','ra5','s_tot','s_tot2','ft','dt','at','ot','t_tot','tt_tot','dhit','intt','memt','hpt','esqt','matt','logt','relt','f1','f2','f3','f4', 'd1', 'd2', 'd3', 'd4', 'a1', 'a2', 'a3', 'a4', 'a5','o1','o2','o3','o4','t1','t2','t3','t4','t5','t6','t7','t11','t22','t33','t44','t55','t66','t77','shi','dhi1','dhi2','dhi3','dhi4','dhi5','dhi6','int1','int2','int3','int4','he1','mem1','mem2','mem3','mem4','hp1','hp2','hp3','hp4','hp5','map1','esq1','esq2','res1','mat1','mat2','log1','log2','rel1','rel2','rel3','rel4','rel5','rf1','rf2','rf3','rf4','rd1', 'rd2', 'rd3', 'rd4', 'ra1', 'ra2', 'ra3', 'ra4', 'ra5','ro1','ro2','ro3','ro4','rt1','rt2','rt3','rt4','rt5','rt6','rt7','rt11','rt22','rt33','rt44','rt55','rt66','rt77','rshi','rdhi1','rdhi2','rdhi3','rdhi4','rdhi5','rdhi6','rint1','rint2','rint3','rint4','rhe1','rmem1','rmem2','rmem3','rmem4','rhp1','rhp2','rhp3','rhp4','rhp5','rmap1','resq1','resq2','rres1','rmat1','rmat2','rlog1','rlog2','rrel1','rrel2','rrel3','rrel4','rrel5','cf1','cf2','cf3','cf4','cd1','cd2','cd3','cd4','ca1','ca2','ca3','ca4','ca5','co1','co2','co3','co4','ct1','ct2','ct3','ct4','ct5','ct6','ct7','ct11','ct22','ct33','ct44','ct55','ct66','ct77','cshi','cdhi1','cdhi2','cdhi3','cdhi4','cdhi5','cdhi6','cint1','cint2','cint3','cint4','che1','cmem1','cmem2','cmem3','cmem4','chp1','chp2','chp3','chp4','cmap1','cesq1','cesq2','cres1','cmat1','cmat2','clog1','clog2','crel1','crel2','crel3','crel4','crel5','l1','rl1','cl1','ral1','raf1','raf2','raf3','raf4','rad1','rad2','rad3','rad4','raa1','raa2','raa3','raa4','raa5','rao1','rao2','rao3','rao4','rat1','rat2','rat3','rat4','rat5','rat6','rat7','rat11','rat22','rat33','rat44','rat55','rat66','rat77','rashi','radhi1','radhi2','radhi3','radhi4','radhi5','radhi6','raint1','raint2','raint3','raint4','rahe1','ramem1','ramem2','ramem3','ramem4','rahp1','rahp2','rahp3','rahp4','ramap1','raesq1','raesq2','rares1','ramat1','ramat2','ralog1','ralog2','rarel1','rarel2','rarel3','rarel4','rarel5','pf','p_foda','p_tiempo','p_a','alu','c','t_alu'));
 
     }
 
