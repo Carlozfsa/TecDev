@@ -148,10 +148,12 @@
                 <strong>Anote en la gráfica su velocidad de lectura en palabras por minuto.</strong>
                 <br><br>
 
-                <h1>GRAFICA PENDIENTE!!!!!</h1>
+                @if($edit==0)
 
                 <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_pens_1')}}">
                     {{csrf_field()}}
+
+                    @if($f1_decode != NULL && $f2_decode != NULL && $f3_decode != NULL && $f4_decode != NULL && $f5_decode != NULL && $f6_decode != NULL && $f7_decode != NULL && $f8_decode != NULL && $f9_decode != NULL)
 
                     <div class="table-responsive col-sm-8" style="margin-left: 12%;">
                         <table class="table table-bordered" id="dynamic_field">
@@ -202,6 +204,15 @@
                         </table>
                     </div>
 
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
                     <table class="col-lg-12">
                         <tr>
                             <td><strong>Retroalimentación:</strong></td>
@@ -210,7 +221,7 @@
                         <tr>
                             <td>
                                 <br>
-                                <textarea rows="5" name ="retro" class="form-control"></textarea>
+                                <textarea rows="5" name ="retro1" class="form-control"></textarea>
                                 <br>
                             </td>
                         </tr>
@@ -220,7 +231,7 @@
                                 <br>
                                 <strong>Calificación:</strong>
                                 <br><br>
-                                <input type="text" name="cal" class="form-control name_list center-block">
+                                <input type="text" name="cal1" class="form-control name_list center-block">
                             </td>
                         </tr>
 
@@ -232,6 +243,106 @@
                         </tr>
                     </table>
                 </form>
+
+                @else
+
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tutor_pens_1')}}">
+                        {{csrf_field()}}
+
+                        @if($f1_decode != NULL && $f2_decode != NULL && $f3_decode != NULL && $f4_decode != NULL && $f5_decode != NULL && $f6_decode != NULL && $f7_decode != NULL && $f8_decode != NULL && $f9_decode != NULL)
+
+
+                        <div class="table-responsive col-sm-8" style="margin-left: 12%;">
+                            <table class="table table-bordered" id="dynamic_field">
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">a</td>
+                                    <td style="text-align: center;">{{$f1_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">b</td>
+                                    <td style="text-align: center;">{{$f2_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">c</td>
+                                    <td style="text-align: center;">{{$f3_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">d</td>
+                                    <td style="text-align: center;">{{$f4_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">e</td>
+                                    <td style="text-align: center;">{{$f5_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">f</td>
+                                    <td style="text-align: center;">{{$f6_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">g</td>
+                                    <td style="text-align: center;">{{$f7_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">h</td>
+                                    <td style="text-align: center;">{{$f8_decode}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="col-sm-2" style="text-align: center;">i</td>
+                                    <td style="text-align: center;">{{$f9_decode}}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        @else
+
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
+
+                        @endif
+
+                        <table class="col-lg-12">
+                            <tr>
+                                <td><strong>Retroalimentación:</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                    <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <strong>Calificación:</strong>
+                                    <br><br>
+                                    <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br><br>
+                                    <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                @endif
 
             </div>
 

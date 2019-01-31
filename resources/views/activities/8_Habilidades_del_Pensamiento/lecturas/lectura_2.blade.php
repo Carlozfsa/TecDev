@@ -12,105 +12,75 @@
 
                 <strong><p style="text-align: center;">LA LECTURA</p></strong><br>
 
-                En el siguiente espacio en blanco anote todos los problemas que le planteen la
-                lectura y el aprendizaje. Sea severo consigo mismo. Cuanto mayor sea el número de
-                problemas que identifique, más completos serán los progresos que realice.<br><br>
+                Leer, que se suele definir como “extraer del libro lo que el autor pretendió” o “asimilar
+                la palabra escrita” merece una definición mucho más completa. Podría ser la
+                siguiente: la lectura es la interpelación plena del individuo con la información
+                simbólica. Suele constituir el aspecto visual del aprendizaje y comprende las siete
+                etapas siguientes:<br><br>
 
-                Escriba su definición del término lectura.<br>
+                <ul>
+                    <li><strong>Reconocimiento</strong></li>
+                    Supone en el lector el conocimiento de los símbolos alfabéticos. Cabría decir que
+                    esta fase tiene lugar antes de que se inicie el acto material de la lectura.<br><br>
 
-                <div class="form-group">
-                    {!! Form::open() !!}
-                    {!! Form::textarea('lectura', null,  ['class'=>'form-control']) !!}<br>
-                    {!! Form::submit('Guardar', ['class'=>'btn-primary form-control']) !!}
-                    {!! Form::close() !!}
-                </div><br>
+                    <li><strong>Asimilación</strong></li>
+                    Es el proceso físico por el cual la luz reflejada en la palabra es percibida por el ojo y
+                    transmitida al cerebro a través del nervio óptico.<br><br>
 
-                Profesores de lectura y escritura han observado en los últimos cinco años que en
-                sus clases se plantean siempre iguales problemas de carácter general. A
-                continuación se ofrece una lista de los que surgen con mayor frecuencia. Conviene
-                que el lector compare sus problemas con estos y que añada a su lista aquellos que
-                le resulten aplicables (es probable que sean pocos):<br><br>
+                    <li><strong>Intraintegración</strong></li>
+                    Es el equivalente de la comprensión básica y supone la asociación adecuada de
+                    todos los elementos contenidos en lo que se está leyendo.<br><br>
+
+                    <li><strong>Extraintegración</strong></li>
+                    Incluye el análisis, la crítica, la apreciación, la selección y el rechazo. Se trata del
+                    proceso por el cual el lector asocia el conjunto de sus conocimientos anteriores con
+                    los nuevos, resultantes de la lectura, realizando las conexiones oportunas.<br><br>
+
+                    <li><strong>Retención</strong></li>
+                    Consiste en el almacenamiento básico de la información y puede por sí solo
+                    convertirse en un problema. La mayoría de los lectores habrán vivido la experiencia
+                    de entrar en un aula para examinarse y quedarse con la mayor parte de la
+                    información de que disponían sobre el tema del ejercicio “almacenada”, durante su
+                    transcurso. Por consiguiente, el almacenamiento no basta por sí solo; debe ir
+                    acompañado del recuerdo.<br><br>
+
+                    <li><strong>Recuerdo</strong></li>
+                    Es la capacidad de extraer del material almacenado la información que se precise,
+                    particularmente, en el momento en que haya necesidad de ella.<br><br>
+
+                    <li><strong>Comunicación</strong></li>
+                    Es la aplicación que se da de forma inmediata o eventual a la información; incluye
+                    una subdivisión muy importante: el pensamiento.<br><br>
+
+                    Tal definición comprende la mayoría de los problemas que se contienen en la lista
+                    anterior. Los únicos problemas que no se incluyen son los que, en cierto sentido,
+                    están fuera del proceso de la lectura, tales como el entorno, la edad, etc.<br>
+
+
+                </ul>
+
             </div>
 
 
-            <table class="table table-responsive" border="0">
-                <tr>
-                    <td>visión</td>
-                    <td>fatiga</td>
-                    <td>recuerdo</td>
-                    <td>velocidad</td>
-                </tr>
-
-                <tr>
-                    <td>pereza</td>
-                    <td>impaciencia</td>
-                    <td>comprensión</td>
-                    <td>aburrimiento</td>
-                </tr>
-
-                <tr>
-                    <td>vocabulario</td>
-                    <td>tiempo</td>
-                    <td>interés</td>
-                    <td>subvocalización</td>
-                </tr>
-
-                <tr>
-                    <td>cantidad</td>
-                    <td>análisis</td>
-                    <td>tipografía</td>
-                    <td>entorno</td>
-                </tr>
-
-                <tr>
-                    <td>crítica</td>
-                    <td>estilo literario</td>
-                    <td>apuntes</td>
-                    <td>motivación</td>
-                </tr>
-
-                <tr>
-                    <td>selección</td>
-                    <td>retención</td>
-                    <td>apreciación</td>
-                    <td>rechazo</td>
-                </tr>
-
-                <tr>
-                    <td>edad</td>
-                    <td>organización</td>
-                    <td>concentración</td>
-                    <td>temor</td>
-                </tr>
-
-                <tr>
-                    <td>regresión</td>
-                    <td>vuelta atrás</td>
-                    <td>.....</td>
-                    <td>.....</td>
-                </tr>
-
-
-            </table>
 
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:15%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/pens_l_2')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/mem_4')}}">Actividad previa</a></li>
+            <li><a href="{{url('/pens_l_1')}}">Lectura 1</a></li>
+            <li><a href="{{url('/pens_l_2')}}" style="background-color: lightgray;">Lectura 2</a></li>
+            <li><a href="{{url('/pens_l_3')}}">Lectura 3</a></li>
+            <li><a href="{{url('/pens_l_4')}}">Lectura 4</a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/pens_l_4')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

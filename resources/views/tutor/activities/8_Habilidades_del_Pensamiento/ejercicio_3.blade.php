@@ -21,7 +21,14 @@
 
                 <strong>INSTRUCCIONES:</strong><br><br>
 
+                @if($edit==0)
+
+
                 {!! Form::open(['method'=>'POST', 'action'=>'TutorPensamientosController@store_pens_2']) !!}
+
+                    @if($f1_decode != NULL && $f2_decode != NULL && $f3_decode != NULL && $f4_decode != NULL && $f5_decode != NULL)
+
+
                     <div class="form-group">
                              <p>1. El concepto jurídico actual de persona, mantiene una relación estrecha con la
                                  percepción que ya tenían los griegos y romanos; explique dicha relación.</p>
@@ -52,6 +59,15 @@
                         {!! Form::label('text5', $f5_decode, ['class'=>'form-control']) !!}
                     </div>
 
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
                 <table class="col-lg-12">
                     <tr>
                         <td><strong>Retroalimentación:</strong></td>
@@ -60,7 +76,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro2" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -70,7 +86,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal2" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -85,6 +101,85 @@
 
                 {!! Form::close() !!}
 
+                @else
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'TutorPensamientosController@edit_pens_2']) !!}
+
+                    @if($f1_decode != NULL && $f2_decode != NULL && $f3_decode != NULL && $f4_decode != NULL && $f5_decode != NULL)
+
+                    <div class="form-group">
+                        <p>1. El concepto jurídico actual de persona, mantiene una relación estrecha con la
+                            percepción que ya tenían los griegos y romanos; explique dicha relación.</p>
+                        {!! Form::label('text1', $f1_decode, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        <p>2.En el mundo náhuatl, los sabios pretendían “hacer sabios los rostros y firmes
+                            los corazones”, explique qué entiendes con esa frase.</p>
+                        {!! Form::label('text2', $f2_decode, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        <p>3. ¿Cuáles eran los elementos que caracterizaban al ser humano en la civilización
+                            náhuatl?</p>
+                        {!! Form::label('text3', $f3_decode, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        <p>4.¿Por qué era importante, para los nahuas, incluir el concepto corazón en la
+                            definición de persona?</p>
+                        {!! Form::label('text4', $f4_decode, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        <p>5.¿Qué pretendían las antiguas civilizaciones al implementar un modelo
+                            educativo obligatorio y universal?</p>
+                        {!! Form::label('text5', $f5_decode, ['class'=>'form-control']) !!}
+                    </div>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    {!! Form::close() !!}
+
+                @endif
 
             </div>
 

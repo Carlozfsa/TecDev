@@ -9,58 +9,138 @@
         <div class="panel-body">
 
 
-            <strong>INSTRUCCIONES:</strong>
 
             <div class="instrucciones" style="margin: 10px">
 
-                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_foda_1_3')}}">
-                    {{csrf_field()}}
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dynamic_field">
-                        <tr>
-                            <th style="text-align: center; background-color: lightblue;">Fortalezas</th>
-                        </tr>
-                    @foreach($f3_decode as $key=>$value)
-                            <tr>
-                                <td >{{$value}}</td>
-                            </tr>
-                @endforeach
-                <br>
-                    </table><br>
+                @if($edit==0)
 
-                    <table class="col-lg-12">
-                        <tr>
-                            <td><strong>Retroalimentación:</strong></td>
-                        </tr>
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_foda_1_3')}}">
+                        {{csrf_field()}}
 
-                        <tr>
-                            <td>
-                                <br>
-                                <textarea rows="5" name ="retro3" class="form-control"></textarea>
-                                <br>
-                            </td>
-                        </tr>
+                        <div class="table-responsive">
 
-                        <tr>
-                            <td>
-                                <br>
-                                <strong>Calificación:</strong>
-                                <br><br>
-                                <input type="text" name="cal3" class="form-control name_list center-block">
-                            </td>
-                        </tr>
+                            @if($f_decode!=NULL)
 
-                        <tr>
-                            <td>
-                                <br><br>
-                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Guardar" />
-                            </td>
-                        </tr>
-                    </table>
 
-                    </div>
-                </form>
+                                <table class="table table-bordered" id="dynamic_field">
+                                    <tr>
+                                        <th style="text-align: center; background-color: lightblue;">Fortalezas</th>
+                                    </tr>
+                                    @foreach($f_decode as $key=>$value)
+                                        <tr>
+                                            <td >{{$value}}</td>
+                                        </tr>
+                                    @endforeach
+                                    <br>
+                                </table><br>
 
+                            @else
+
+                                <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                    <strong>Aviso!</strong><br>
+                                    El alumno no ha entregado esta parte de la actividad.
+                                </div><br>
+
+                            @endif
+
+
+                            <table class="col-lg-12">
+                                <tr>
+                                    <td><strong>Retroalimentación:</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <br>
+                                        <textarea rows="5" name ="retro3" class="form-control"></textarea>
+                                        <br>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <br>
+                                        <strong>Calificación:</strong>
+                                        <br><br>
+                                        <input type="text" name="cal3" class="form-control name_list center-block">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <br><br>
+                                        <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Guardar" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </form>
+
+                @else
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tutor_foda_1_3')}}">
+                        {{csrf_field()}}
+                        <div class="table-responsive">
+
+                            @if($f_decode!=NULL)
+
+
+                                <table class="table table-bordered" id="dynamic_field">
+                                    <tr>
+                                        <th style="text-align: center; background-color: lightblue;">Fortalezas</th>
+                                    </tr>
+                                    @foreach($f_decode as $key=>$value)
+                                        <tr>
+                                            <td >{{$value}}</td>
+                                        </tr>
+                                    @endforeach
+                                    <br>
+                                </table><br>
+
+                            @else
+
+                                <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                    <strong>Aviso!</strong><br>
+                                    El alumno no ha entregado esta parte de la actividad.
+                                </div><br>
+
+                            @endif
+
+                            <table class="col-lg-12">
+                                <tr>
+                                    <td><strong>Retroalimentación:</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <br>
+                                        <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                        <br>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <br>
+                                        <strong>Calificación:</strong>
+                                        <br><br>
+                                        <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <br><br>
+                                        <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </form>
+
+                @endif
 
             </div>
 
@@ -78,7 +158,7 @@
             <li><a href="{{url('/foda_1_3')}}" style="background-color: lightgray;">Fortalezas 3</a></li>
             <li><a href="{{url('/foda_1_4')}}">Fortalezas 4</a></li>
             <li>
-                <a href="{{url('/foda_1_2')}}" aria-label="Next">
+                <a href="{{url('/foda_1_4')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

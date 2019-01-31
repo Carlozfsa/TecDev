@@ -10,13 +10,15 @@
 
             <div class="instrucciones" style="margin: 10px">
 
-                <strong><p style="text-align: center;">ACTIVIDAD INTEGRADORA</p></strong><br>
+                @if($edit==0)
+
+                    <strong><p style="text-align: center;">ACTIVIDAD INTEGRADORA</p></strong><br>
 
 
-                <strong>INSTRUCCIONES:</strong> Elabore un escrito donde puntualice lo descubierto en la
-                aplicación de las herramientas de aprendizaje como mapas, esquemas, cuadros,
-                resumen y ensayo. Además, su plan de acción para mejorar sus capacidades y
-                habilidades de pensamiento.<br><br>
+                    <strong>INSTRUCCIONES:</strong> Elabore un escrito donde puntualice lo descubierto en la
+                    aplicación de las herramientas de aprendizaje como mapas, esquemas, cuadros,
+                    resumen y ensayo. Además, su plan de acción para mejorar sus capacidades y
+                    habilidades de pensamiento.<br><br>
 
                 {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@store_rel_sim_5']) !!}
 
@@ -26,6 +28,32 @@
                 {!! Form::submit('Guardar', ['class'=>'form-control btn btn-primary']) !!}
                 {!! Form::close() !!}
 
+                @else
+
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br>
+
+                    <strong><p style="text-align: center;">ACTIVIDAD INTEGRADORA</p></strong><br>
+
+
+                    <strong>INSTRUCCIONES:</strong> Elabore un escrito donde puntualice lo descubierto en la
+                    aplicación de las herramientas de aprendizaje como mapas, esquemas, cuadros,
+                    resumen y ensayo. Además, su plan de acción para mejorar sus capacidades y
+                    habilidades de pensamiento.<br><br>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@edit_rel_sim_5']) !!}
+
+                    {!! Form::textarea('a_e', $f_decode1,['class'=>'form-control']) !!}<br>
+
+
+                    {!! Form::submit('Edit', ['class'=>'form-control btn btn-primary']) !!}
+                    {!! Form::close() !!}
+
+                @endif
+
             </div>
 
 
@@ -33,27 +61,29 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
-    <nav aria-label="Page navigation">
-        <ul class="pagination center-block">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-  </div>
+    <div class="center-block" style="margin-left:13%">
+        <nav aria-label="Page navigation">
+            <ul class="pagination center-block">
+                <li>
+                    <a href="{{url('/rel_sim_4')}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="{{url('/rel_sim_1')}}">Ejercicio 1</a></li>
+                <li><a href="{{url('/rel_sim_2')}}">Ejercicio 2</a></li>
+                <li><a href="{{url('/rel_sim_3')}}">Ejercicio 3</a></li>
+                <li><a href="{{url('/rel_sim_4')}}">Ejercicio 4</a></li>
+                <li><a href="{{url('/rel_sim_5')}}" style="background-color: lightgray;">Ejercicio 5</a></li>
+                <li><a href="{{url('/home')}}"><strong>Panel de alumno</strong></a></li>
+                <li>
+                    <a href="{{url('/home')}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
 @stop
 
 @section('scripts')

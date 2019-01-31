@@ -117,7 +117,7 @@
     <br><br><br>
 
     <div style="padding-left: 35%";>
-        <button type="submit" name="submit" id="submit" class="btn btn-primary" value="Guardar" onclick="location.href='/tiempo_ej_1';" >Siguiente actividad</button>
+        <button type="submit" name="submit" id="submit" class="btn btn-primary" value="Guardar" onclick="location.href='/tiempo_l_1';" >Siguiente actividad</button>
     </div>
 @stop
 

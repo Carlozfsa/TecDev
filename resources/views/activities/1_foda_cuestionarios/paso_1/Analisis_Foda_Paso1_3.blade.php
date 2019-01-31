@@ -12,11 +12,13 @@
             <strong>INSTRUCCIONES:</strong>
 
             <div class="instrucciones" style="margin: 10px">
-                ¿Cuáles son tus activos más valiosos?<br> Éstos pueden ser cosas intangibles, como
-                experiencias de la vida y relaciones, o también activos tangibles como bienes y
-                materiales.
 
                 @if($edit == 0)
+
+                    ¿Cuáles son tus activos más valiosos?<br> Éstos pueden ser cosas intangibles, como
+                    experiencias de la vida y relaciones, o también activos tangibles como bienes y
+                    materiales.<br>
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_1_3')}}">
                         {{csrf_field()}}
 
@@ -32,6 +34,16 @@
 
                     </form>
                 @else
+
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br>
+
+                    ¿Cuáles son tus activos más valiosos?<br> Éstos pueden ser cosas intangibles, como
+                    experiencias de la vida y relaciones, o también activos tangibles como bienes y
+                    materiales.<br>
 
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_1_3')}}">
                         {{csrf_field()}}

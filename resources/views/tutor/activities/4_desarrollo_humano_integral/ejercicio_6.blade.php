@@ -142,12 +142,25 @@
                 única, aunque algunas pueden ser mejores que otras. Revisa que las explicaciones
                 sean coherentes en todo el texto y no se contradigan de un párrafo a otro. La
                     explicación debe ser amplia.</strong><br><br>
+
+                @if($edit==0)
+
                 {!! Form::open(['mathod'=>'POST', 'action'=>'TutorDesarrolloHumanoController@store_des_hum_int_6']) !!}
 
-                    <div class="form-group">
-                        {!! Form::label('text', $f1_decode, ['class'=>'form-control col-sm-12', 'rows'=>'5']) !!}<br>
+                    @if($f1_decode!=NULL)
 
+                    <div class="form-group">
+                        {!! Form::label('', $f1_decode, ['class'=>'form-control col-sm-12', 'rows'=>'5']) !!}<br>
                     </div>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
 
 
                 <table class="col-lg-12">
@@ -158,7 +171,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro6" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -168,7 +181,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal6" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -181,6 +194,62 @@
                 </table>
 
                 {!! Form::close() !!}
+
+
+                @else
+
+                    {!! Form::open(['mathod'=>'POST', 'action'=>'TutorDesarrolloHumanoController@edit_des_hum_int_6']) !!}
+
+                    @if($f1_decode!=NULL)
+
+                    <div class="form-group">
+                        {!! Form::label('', $f1_decode, ['class'=>'form-control col-sm-12', 'rows'=>'5']) !!}<br>
+                    </div>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    {!! Form::close() !!}
+
+                @endif
+
+
                 </div>
 
 

@@ -16,8 +16,12 @@
 
                 <strong><p style="text-align: center;"> Actividad a realizar:</p></strong><br>
 
-                Produce uno de los mapas tratados en la sesión, con el concepto
-                “GLOBALIZACIÓN.
+                <p style="color: red"><strong>{{$ext}}</strong></p><br><br>
+
+                @if($edit==0)
+
+                    Produce uno de los mapas tratados en la sesión, con el concepto
+                    “GLOBALIZACIÓN.<br>
 
                 {!! Form::open(['method'=>'POST', 'action'=>'MapasController@store', 'files'=>true]) !!}
 
@@ -25,7 +29,36 @@
                         {!! Form::file('file', null, ['class'=>'form-control']) !!}
                     </div>
 
+                <div class="form-group">
+                    {!! Form::submit('Guardar', null, ['class'=>'form-control']) !!}
+                </div>
+
+                <br><br>
                 {!! Form::close() !!}
+
+                @else
+
+                    Produce uno de los mapas tratados en la sesión, con el concepto
+                    “GLOBALIZACIÓN.<br>
+
+                    <div style="margin-left: 19%">
+                        <img width="500" height=400" src="{{$f_decode1}}">
+                    </div><br><br>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'MapasController@edit', 'files'=>true]) !!}
+
+                    <div class="form-group">
+                        {!! Form::file('file_e', null, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::submit('Editar', null, ['class'=>'form-control']) !!}
+                    </div>
+
+                    {!! Form::close() !!}
+
+                @endif
+
 
             </div>
 
@@ -33,21 +66,19 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:25%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/mapas_l_6')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/mapas_l_6')}}"><strong>Lecturas</strong></a></li>
+            <li><a href="{{url('/mapas_1')}}">Ejercicio 1</a></li>
+            <li><a href="{{url('/esq_l_1')}}"><strong>Siguiente actividad</strong></a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/esq_l_1')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

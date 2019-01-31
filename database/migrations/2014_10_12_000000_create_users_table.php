@@ -18,13 +18,11 @@ class CreateUsersTable extends Migration
             $table->integer('numero_control');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('role_id')->unsigned()->default(0);
+            $table->integer('role_id')->default(0);
             $table->integer('is_active')->default(0);
             $table->float('avance')->default(0);
-//            $table->string('name');
-//            $table->string('apellidop');
-//            $table->string('apellidom');
-//
+            $table->integer('reg')->default(0);
+
             $table->rememberToken();
             $table->timestamps();
         });

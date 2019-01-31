@@ -18,59 +18,69 @@ class CreateDesarrollohumanosTable extends Migration
             $table->integer('numero_control');
 
 
-            $table->text('e1_difs');
-            $table->text('e2_difs');
+            $table->text('e1_difs')->nullable();
+            $table->text('e2_difs')->nullable();
+            $table->integer('avance_1')->default(0);
 
 
-            $table->text('retro_1');
-            $table->integer('cal_1');
+            $table->text('retro_1')->nullable();
+            $table->integer('cal_1')->default(0);;
 
 
-            $table->text('e2_a1');
-            $table->text('e2_a2');
-            $table->text('e2_a3');
-            $table->text('e2_a4');
+            $table->text('e2_a1')->nullable();
+            $table->text('e2_a2')->nullable();
+            $table->text('e2_a3')->nullable();
+            $table->text('e2_a4')->nullable();
+            $table->integer('avance_2')->default(0);;
 
-            $table->text('retro_2');
-            $table->integer('cal_2');
-
-
-            $table->text('e3_a1_1');
-            $table->text('e3_a1_2');
-            $table->text('e3_a2_1');
-            $table->text('e3_a2_2');
-
-            $table->text('retro_3');
-            $table->integer('cal_3');
+            $table->text('retro_2')->nullable();
+            $table->integer('cal_2')->default(0);;
 
 
-            $table->text('e4_a1_1');
-            $table->text('e4_a1_2');
-            $table->text('e4_a2_1');
-            $table->text('e4_a2_2');
-            $table->text('e4_a3_1');
-            $table->text('e4_a3_2');
-            $table->text('e4_a4_1');
-            $table->text('e4_a4_2');
-            $table->text('e4_a5_1');
-            $table->text('e4_a5_2');
-
-            $table->text('retro_4');
-            $table->integer('cal_4');
+            $table->text('e3_a1_1')->nullable();
+            $table->text('e3_a1_2')->nullable();
+            $table->text('e3_a2_1')->nullable();
+            $table->text('e3_a2_2')->nullable();
+            $table->integer('avance_3')->default(0);;
 
 
-            $table->text('e5_a1');
-
-            $table->text('retro_5');
-            $table->integer('cal_5');
+            $table->text('retro_3')->nullable();
+            $table->integer('cal_3')->default(0);;
 
 
-            $table->text('e6_a1');
+            $table->text('e4_a1_1')->nullable();
+            $table->text('e4_a1_2')->nullable();
+            $table->text('e4_a2_1')->nullable();
+            $table->text('e4_a2_2')->nullable();
+            $table->text('e4_a3_1')->nullable();
+            $table->text('e4_a3_2')->nullable();
+            $table->text('e4_a4_1')->nullable();
+            $table->text('e4_a4_2')->nullable();
+            $table->text('e4_a5_1')->nullable();
+            $table->text('e4_a5_2')->nullable();
+            $table->integer('avance_4')->default(0);;
 
-            $table->text('retro_6');
-            $table->integer('cal_6');
 
-            $table->integer('cal_final');
+            $table->text('retro_4')->nullable();
+            $table->integer('cal_4')->default(0);
+
+
+            $table->text('e5_a1')->nullable();
+            $table->integer('avance_5')->default(0);
+
+
+            $table->text('retro_5')->nullable();
+            $table->integer('cal_5')->default(0);
+
+
+            $table->text('e6_a1')->nullable();
+            $table->integer('avance_6')->default(0);
+
+
+            $table->text('retro_6')->nullable();
+            $table->integer('cal_6')->default(0);
+
+            $table->integer('cal_final')->default(0);
 
 
             $table->timestamps();

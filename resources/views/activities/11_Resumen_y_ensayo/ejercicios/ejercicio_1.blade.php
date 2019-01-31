@@ -10,14 +10,44 @@
 
             <div class="instrucciones" style="margin: 10px">
 
-                <strong><p style="text-align: center;"> Actividad a realizar:</p></strong><br>
 
+                @if($edit==0)
 
-                Determina uno de los 2 procedimientos expuestos en la sesión (resumen y
-                ensayo académico), hacer la investigación necesaria para desarrollar el tema:<br>
+                    <strong><p style="text-align: center;"> Actividad a realizar:</p></strong><br>
 
-                “El impacto de mi estudio de educación superior, en el desarrollo científico y
-                tecnológico de México”.
+                    Determina uno de los 2 procedimientos expuestos en la sesión (resumen y
+                    ensayo académico), hacer la investigación necesaria para desarrollar el tema:<br>
+
+                    “El impacto de mi estudio de educación superior, en el desarrollo científico y
+                    tecnológico de México". <br><br>
+
+                {!! Form::open(['method'=>'POST', 'action'=>'EnsayosController@store_ens_1']) !!}
+                {!! Form::textarea('ens', null,  ['class'=>'form-control']) !!}<br>
+                {!! Form::submit('Guardar', ['class'=>'btn-primary form-control']) !!}
+                {!! Form::close() !!}
+
+                @else
+
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br><br>
+
+                    <strong><p style="text-align: center;"> Actividad a realizar:</p></strong><br>
+
+                    Determina uno de los 2 procedimientos expuestos en la sesión (resumen y
+                    ensayo académico), hacer la investigación necesaria para desarrollar el tema:<br>
+
+                    “El impacto de mi estudio de educación superior, en el desarrollo científico y
+                    tecnológico de México". <br><br>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'EnsayosController@edit_ens_1']) !!}
+                    {!! Form::textarea('ens_e', $f_decode1,  ['class'=>'form-control']) !!}<br>
+                    {!! Form::submit('Editar', ['class'=>'btn-primary form-control']) !!}
+                    {!! Form::close() !!}
+
+                @endif
 
 
             </div>
@@ -27,21 +57,19 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:25%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/ens_l_3')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/ens_l_3')}}">Lecturas</a></li>
+            <li><a href="{{url('/ens_1')}}" style="background-color: lightgray;">Ejercicio 1</a></li>
+            <li><a href="{{url('/mat_l_1')}}"><strong>Siguiente actividad</strong></a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/mat_l_1')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

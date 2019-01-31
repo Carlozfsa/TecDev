@@ -19,18 +19,23 @@ class CreateAlumnosTable extends Migration
             $table->string('nombres')->default('');
             $table->string('apellidop')->default('');
             $table->string('apellidom')->default('');
-            $table->integer('carrera')->default(0);
+            $table->integer('carr')->default(0);
+
+            $table->integer('tut_nivel')->default(0);
+            $table->integer('grupo_l')->default(0);
+            $table->integer('turn')->default(0);
+            $table->string('grupo')->default('');
+
+
             $table->integer('sem')->default(0);
-            $table->integer('telcasa')->default(0);
-            $table->integer('cel')->default(0);
+            $table->string('telcasa')->default('');
+            $table->string('cel')->default('');
             $table->string('dir')->default('');
-            $table->integer('nss')->default(0);
+            $table->string('nss')->default('');
             $table->integer('ts')->default(0);
             $table->integer('ec')->default(0);
             $table->integer('trabajo')->default(0);
             $table->integer('horas')->default(0);
-            $table->integer('reg_completo')->default(0);
-
             $table->timestamps();
         });
     }

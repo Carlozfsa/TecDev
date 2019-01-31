@@ -40,7 +40,6 @@
             <li><a href="{{url('/tiempo_ej_6')}}">Parte 6</a></li>
             <li><a href="{{url('/tiempo_ej_7')}}">Parte 7</a></li>
             <li><a href="{{url('/tiempo_ej_8')}}">Parte 8</a></li>
-            <li><a href="{{url('/tiempo_ej_f')}}">Parte final</a></li>
             <li>
                 <a href="{{url('/tiempo_ej_2')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>

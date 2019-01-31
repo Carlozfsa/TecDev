@@ -10,6 +10,7 @@
 
             <div class="instrucciones" style="margin: 10px">
 
+                @if($edit==0)
 
 
                 <script type="text/javascript">
@@ -19,7 +20,10 @@
                 <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_hab_est_1')}}">
                     {{csrf_field()}}
 
-                <table class="table table-bordered">
+                    @if($f1_decode!=NULL && $f2_decode!=NULL && $f3_decode!=NULL && $f4_decode!=NULL && $f5_decode!=NULL && $f6_decode!=NULL && $f7_decode!=NULL && $f8_decode!=NULL && $f9_decode!=NULL)
+
+
+                    <table class="table table-bordered">
                     <thead>
                         <tr style="color: black; background-color: royalblue;">
                             <th>
@@ -195,6 +199,16 @@
                     </tr>
                 </table>
 
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+
                     <table class="col-lg-12">
                         <tr>
                             <td><strong>Retroalimentación:</strong></td>
@@ -203,7 +217,7 @@
                         <tr>
                             <td>
                                 <br>
-                                <textarea rows="5" name ="retro" class="form-control"></textarea>
+                                <textarea rows="5" name ="retro1" class="form-control">{{$retro}}</textarea>
                                 <br>
                             </td>
                         </tr>
@@ -213,7 +227,7 @@
                                 <br>
                                 <strong>Calificación:</strong>
                                 <br><br>
-                                <input type="text" name="cal_final" class="form-control name_list center-block">
+                                <input type="text" name="cal1" class="form-control name_list center-block" val="{{$cal}}">
                             </td>
                         </tr>
 
@@ -226,6 +240,232 @@
                     </table>
 
                 </form>
+
+                @else
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tutor_hab_est_1')}}">
+                        {{csrf_field()}}
+
+                        @if($f1_decode!=NULL && $f2_decode!=NULL && $f3_decode!=NULL && $f4_decode!=NULL && $f5_decode!=NULL && $f6_decode!=NULL && $f7_decode!=NULL && $f8_decode!=NULL && $f9_decode!=NULL)
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr style="color: black; background-color: royalblue;">
+                                <th>
+                                    <strong>AUTOEVALUACION</strong>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    1.- Escribe los motivos principales por los cuales estas estudiando.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field1">
+                                            @foreach($f1_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2.- ¿Cómo será Mi Vida dentro de 5 años si estudio o no estudio?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field2">
+                                            @foreach($f2_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3.-Redacta una lista de factores que te sirvan para motivar tu estudio
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field3">
+                                            @foreach($f3_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4.-Describe tu estado de salud; ¿necesitas un reconocimiento médico?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field4">
+                                            @foreach($f4_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5.-Describe como estaría construido para ti el lugar apropiado para estudiar,
+                                    analicen los puntos expuestos.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field5">
+                                            @foreach($f5_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    6.-Redacta una lista de los factores que no te permiten estudiar con eficiencia y
+                                    escribe las soluciones prácticas según tus necesidades particulares.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field6">
+                                            @foreach($f6_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    7.-Escribe una lista de las ventajas y desventajas de estudiar individualmente y de
+                                    estudiar en grupo.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field7">
+                                            @foreach($f7_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    8.-Redacta una sugerencia que convine el estudio individual con el estudio en grupo.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field8">
+                                            @foreach($f8_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    9.-Escribe que factores te causen indecisión al momento de comenzar a estudiar e
+                                    indica cómo evitarlos
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field9">
+                                            @foreach($f9_decode as $key=>$value)
+                                                <tr>
+                                                    <td >{{$value}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        @else
+
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
+
+                        @endif
+
+                        <table class="col-lg-12">
+                            <tr>
+                                <td><strong>Retroalimentación:</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                    <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <strong>Calificación:</strong>
+                                    <br><br>
+                                    <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br><br>
+                                    <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                                </td>
+                            </tr>
+                        </table>
+
+                    </form>
+
+                @endif
 
             </div>
 

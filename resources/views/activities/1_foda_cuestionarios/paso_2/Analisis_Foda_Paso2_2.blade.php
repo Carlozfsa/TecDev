@@ -8,15 +8,16 @@
         </div>
         <div class="panel-body">
 
-            <strong>INSTRUCCIONES:</strong>
-
-            <div class="instrucciones" style="margin: 10px">
-                ¿Cuáles son las tendencias negativas o destructivas de tu comportamiento que
-                pueden seguir causando sufrimiento a los demás y a usted mismo en el futuro si
-                no son atendidas?<br>
-                Escríbalas:
-
                 @if($edit == 0)
+
+                <strong>INSTRUCCIONES:</strong>
+
+                <div class="instrucciones" style="margin: 10px">
+                    ¿Cuáles son las tendencias negativas o destructivas de tu comportamiento que
+                    pueden seguir causando sufrimiento a los demás y a usted mismo en el futuro si
+                    no son atendidas?<br>
+                    Escríbalas:
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_2_2')}}">
                         {{csrf_field()}}
 
@@ -33,7 +34,21 @@
                     </form>
                 @else
 
-                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_2_2')}}">
+                        <div class="alert alert-success">
+                            <strong>Aviso!</strong><br>
+                            Registro guardado. Es posible editar la actividad.<br>
+                            Puede continuar con la siguiente parte.
+                        </div>
+
+                        <strong>INSTRUCCIONES:</strong>
+
+                        <div class="instrucciones" style="margin: 10px">
+                            ¿Cuáles son las tendencias negativas o destructivas de tu comportamiento que
+                            pueden seguir causando sufrimiento a los demás y a usted mismo en el futuro si
+                            no son atendidas?<br>
+                            Escríbalas:
+
+                            <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_2_2')}}">
                         {{csrf_field()}}
 
                         <div class="table-responsive">
@@ -53,7 +68,7 @@
                 @endif
 
             </div>
-
+                </div>
         </div>
     </div>
 

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -14,9 +15,17 @@ class User extends Authenticatable
      *
      * @var array
      */
+    use SoftDeletes;
+
+
+    protected $primaryKey = "numero_control";
+
     protected $fillable = [
-        'name','numero_control', 'email', 'password',
+        'role_id','numero_control', 'email', 'password', 'is_active',
     ];
+
+    protected $dates = ['deleted_at'];
+
 
     /**
      * The attributes that should be hidden for arrays.
@@ -45,6 +54,18 @@ class User extends Authenticatable
             return true;
         }
         return false;
+    }
+
+    public function tutor(){
+        return $this->hasOne('App\Tutor', 'numero_control');
+    }
+
+    public function alumno(){
+        return $this->hasOne('App\Alumno', 'numero_control');
+    }
+
+    public function administrador(){
+        return $this->hasOne('App\Administrador', 'numero_control');
     }
 
 }

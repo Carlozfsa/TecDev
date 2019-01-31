@@ -10,11 +10,15 @@
 
             <div class="instrucciones" style="margin: 10px">
 
-                <strong><p style="text-align: center;">Representación algebraica</p></strong><br>
+
+                @if($edit==0)
+
+                    <strong><p style="text-align: center;">Representación algebraica</p></strong><br>
 
 
-                <strong>INSTRUCCIONES:</strong> Lee cuidadosamente con tus compañeros cada ejercicio y
-                plantea tu respuesta.<br><br>
+                    <strong>INSTRUCCIONES:</strong> Lee cuidadosamente con tus compañeros cada ejercicio y
+                    plantea tu respuesta.<br><br>
+
                 {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@store_rel_sim_4']) !!}
 
                     1. Una estancia tiene el doble de largo que de ancho: si el largo se disminuye en
@@ -40,6 +44,47 @@
 
                 {!! Form::close() !!}
 
+                @else
+
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br>
+
+                    <strong><p style="text-align: center;">Representación algebraica</p></strong><br>
+
+
+                    <strong>INSTRUCCIONES:</strong> Lee cuidadosamente con tus compañeros cada ejercicio y
+                    plantea tu respuesta.<br><br>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'RelacionsController@edit_rel_sim_4']) !!}
+
+                    1. Una estancia tiene el doble de largo que de ancho: si el largo se disminuye en
+                    6 m y el ancho aumenta en 4 m, la superficie de la estancia no varía. Obtén la
+                    expresión matemática que te permita calcular las dimensiones de la estancia.<br>
+                    {!! Form::text('a_e', $f_decode1, ['class'=>'form-control'])!!}<br><br>
+
+                    2. Tenía cierta suma de dinero. Ahorré una suma igual a la que tenía y gasté
+                    $50.00; luego ahorré una suma igual al doble de lo que me quedaba y gasté
+                    $390.00. Si ahora no tengo nada, ¿cuál es la expresión matemática que
+                    representa al enunciado anterior?<br>
+                    {!! Form::text('b_e', $f_decode2, ['class'=>'form-control'])!!}<br><br>
+
+                    3. Compré cuádruplo número de caballos que de vacas. Si hubiera comprado 5
+                    caballos más y 5 vacas más tendría el triple de caballos que de vacas. Obtén la
+                    expresión matemática que te permita calcular el número de caballos y de
+                    vacas.<br>
+                    {!! Form::text('c_e', $f_decode3, ['class'=>'form-control'])!!}<br><br>
+
+
+
+                    {!! Form::submit('Editar', ['class'=>'form-control btn btn-primary']) !!}
+
+                    {!! Form::close() !!}
+
+                @endif
+
             </div>
 
 
@@ -47,27 +92,27 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
-    <nav aria-label="Page navigation">
-        <ul class="pagination center-block">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-  </div>
+    <div class="center-block" style="margin-left:20%">
+        <nav aria-label="Page navigation">
+            <ul class="pagination center-block">
+                <li>
+                    <a href="{{url('/rel_sim_3')}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="{{url('/rel_sim_1')}}">Ejercicio 1</a></li>
+                <li><a href="{{url('/rel_sim_2')}}">Ejercicio 2</a></li>
+                <li><a href="{{url('/rel_sim_3')}}">Ejercicio 3</a></li>
+                <li><a href="{{url('/rel_sim_4')}}" style="background-color: lightgray;">Ejercicio 4</a></li>
+                <li><a href="{{url('/rel_sim_5')}}">Ejercicio 5</a></li>
+                <li>
+                    <a href="{{url('/rel_sim_5')}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 @stop
 
 @section('scripts')

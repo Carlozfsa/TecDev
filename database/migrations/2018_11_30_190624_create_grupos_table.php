@@ -14,7 +14,13 @@ class CreateGruposTable extends Migration
     public function up()
     {
         Schema::create('grupos', function (Blueprint $table) {
-            $table->increments('id');
+
+            $table->string('clave')->primary();
+            $table->integer('car')->default(0);
+            $table->integer('nivel')->default(0);
+            $table->integer('docente')->default(0);
+            $table->integer('per')->default(0);
+            $table->integer('is_active')->default(0);
             $table->timestamps();
         });
     }

@@ -10,9 +10,13 @@
 
             <div class="instrucciones" style="margin: 10px">
 
-                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_hum_int_ej_1')}}">
+                @if($edit==0)
+
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_hum_int_ej_1')}}">
                     {{csrf_field()}}
 
+                        @if($f1_decode!=NULL && $f2_decode!=NULL && $f3_decode!=NULL)
 
                 <table class="table table-bordered">
                     <thead style="background-color: darkgray;">
@@ -62,6 +66,17 @@
 
                 </table>
 
+
+                        @else
+
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
+
+                        @endif
+
+
                     <table class="col-lg-12">
                         <tr>
                             <td><strong>Retroalimentación:</strong></td>
@@ -70,7 +85,7 @@
                         <tr>
                             <td>
                                 <br>
-                                <textarea rows="5" name ="retro" class="form-control"></textarea>
+                                <textarea rows="5" name ="retro" class="form-control">{{$retro}}</textarea>
                                 <br>
                             </td>
                         </tr>
@@ -80,7 +95,7 @@
                                 <br>
                                 <strong>Calificación:</strong>
                                 <br><br>
-                                <input type="text" name="cal_final" class="form-control name_list center-block">
+                                <input type="text" name="cal_final" class="form-control name_list center-block" value ={{$cal}}>
                             </td>
                         </tr>
 
@@ -92,6 +107,106 @@
                         </tr>
                     </table>
                 </form>
+
+
+                @else
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tutor_hum_int_ej_1')}}">
+                        {{csrf_field()}}
+
+                        @if($f1_decode!=NULL && $f2_decode!=NULL && $f3_decode!=NULL)
+
+                        <table class="table table-bordered">
+                            <thead style="background-color: darkgray;">
+                            <tr>
+                                <th>Característica</th>
+                                <th>En lo personal como se considera en cada
+                                    características (justifique)
+                                </th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    <strong>Presentación personal</strong><br>
+                                    Aspecto exterior de una persona
+                                </td>
+                                <td>
+                                    {{$f1_decode}}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Salud</strong><br>
+                                    Condiciones físicas en que se
+                                    encuentra, hábitos alimenticios,
+                                    visita medica, entre otros.
+                                </td>
+                                <td>
+                                    {{$f2_decode}}
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Simpatía</strong><br>
+                                    Relación entre dos cuerpos o
+                                    sistemas por la que la acción de
+                                    uno induce el mismo
+                                    comportamiento en el otro.
+                                </td>
+                                <td>
+                                    {{$f3_decode}}
+
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        @else
+
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
+
+                        @endif
+
+                        <table class="col-lg-12">
+                            <tr>
+                                <td><strong>Retroalimentación:</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                    <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <strong>Calificación:</strong>
+                                    <br><br>
+                                    <input type="text" name="cal_e" value="{{$cal}}" class="form-control name_list center-block">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br><br>
+                                    <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                                </td>
+                            </tr>
+                        </table>
+
+
+                    </form>
+
+                @endif
 
             </div>
 

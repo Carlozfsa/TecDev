@@ -4,24 +4,25 @@
 
     <h2>ANÁLISIS FODA</h2>
     <div class="panel panel-default table-responsive">
-        <div class="panel-heading">PASO 2: INTROSPECCIÓN. Amenazas.
+        <div class="panel-heading">PASO 3: INTROSPECCIÓN. Amenazas.
         </div>
         <div class="panel-body">
 
             <strong>INSTRUCCIONES:</strong>
 
-            <div class="instrucciones" style="margin: 10px">
-                ¿Qué es lo que con mayor frecuencia evitas, que eventualmente tendrás que
-                afrontar?
 
                 @if($edit == 0)
+                <div class="instrucciones" style="margin: 10px">
+                    ¿Qué es lo que con mayor frecuencia evitas, que eventualmente tendrás que
+                    afrontar?
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_3_3')}}">
                         {{csrf_field()}}
 
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field">
                                 <tr>
-                                    <td ><input type="text" name="a3[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></td>
+                                    <td ><input type="text" name="a3[]" placeholder="Escriba una amenaza" class="form-control name_list center-block"></td>
                                     <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
                                 </tr>
                             </table>
@@ -30,6 +31,17 @@
 
                     </form>
                 @else
+
+                        <div class="alert alert-success">
+                            <strong>Aviso!</strong><br>
+                            Registro guardado. Es posible editar la actividad.<br>
+                            Puede continuar con la siguiente parte.
+                        </div>
+
+                        <div class="instrucciones" style="margin: 10px">
+                            ¿Qué es lo que con mayor frecuencia evitas, que eventualmente tendrás que
+                            afrontar?
+                        </div>
 
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_3_3')}}">
                         {{csrf_field()}}
@@ -85,7 +97,7 @@
 
         $('#add').click(function(){
             i++;
-            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="a3[]" placeholder="Enter your Name" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
+            $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="a3[]" placeholder="Escriba una amenaza" class="form-control name_list" /></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove center-block">X</button></td></tr>');
         });
 
         $(document).on('click', '.btn_remove', function(){

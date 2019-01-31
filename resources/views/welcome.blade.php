@@ -69,9 +69,16 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Cerrar sesión
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @else
-                        <a href="{{ url('/login') }}">Inicio de sesión</a>
+                        <a href="{{ url('/login') }}">Iniciar sesión</a>
                         <a href="{{ url('/register') }}">Registro</a>
                     @endif
                 </div>
@@ -79,16 +86,18 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Plataforma de Tututorías
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="http://www.tecvallarta.edu.mx/">Sitio del Tec Vallarta</a>
+                    <a href="http://mail.tecvallarta.edu.mx/Vallarta_CntWeb/default.asp">Connect</a>
+                    <a href="http://eduditec.tecvallarta.edu.mx/">Eduditec</a>
+                    <a href="www.tecmm.edu.mx">Tec MM</a>
+                    <a href="https://www.tecnm.mx/">TecNM</a>
+                    <br><br>
                 </div>
+
             </div>
         </div>
     </body>

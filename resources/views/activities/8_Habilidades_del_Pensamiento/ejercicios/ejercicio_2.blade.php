@@ -89,21 +89,21 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:17%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/pens_l_1')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/pens_1')}}">Ejercicio 1</a></li>
+            <li><a href="{{url('/pens_2')}}" style="background-color: lightgray;">Ejercicio 2</a></li>
+            <li><a href="{{url('/pens_3')}}">Ejercicio 3</a></li>
+            <li><a href="{{url('/pens_4')}}">Ejercicio 4</a></li>
+            <li><a href="{{url('/pens_5')}}">Ejercicio 5</a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/pens_3')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

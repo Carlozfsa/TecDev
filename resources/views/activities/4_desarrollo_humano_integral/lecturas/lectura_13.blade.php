@@ -39,21 +39,30 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:0%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/des_hum_int_l_12')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/des_hum_int_l_1')}}">Lectura 1</a></li>
+            <li><a href="{{url('/des_hum_int_l_2')}}">Lectura 2</a></li>
+            <li><a href="{{url('/des_hum_int_l_3')}}">Lectura 3</a></li>
+            <li><a href="{{url('/des_hum_int_l_4')}}">Lectura 4</a></li>
+            <li><a href="{{url('/des_hum_int_l_5')}}">Lectura 5</a></li>
+            <li><a href="{{url('/des_hum_int_l_6')}}">Lectura 6</a></li>
+            <li><a href="{{url('/des_hum_int_l_7')}}">Lectura 7</a></li>
+            <li><a href="{{url('/des_hum_int_l_8')}}">Lectura 8</a></li>
+            <li><a href="{{url('/des_hum_int_l_9')}}">Lectura 9</a></li>
+            <li><a href="{{url('/des_hum_int_l_10')}}">Lectura 10</a></li>
+            <li><a href="{{url('/des_hum_int_l_11')}}">Lectura 11</a></li>
+            <li><a href="{{url('/des_hum_int_l_12')}}">Lectura 12</a></li>
+            <li><a href="{{url('/des_hum_int_l_13')}}" style="background-color: lightgray;">Lectura 13</a></li>
+            <li><a href="{{url('/des_hum_int_l_14')}}">Lectura 14</a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/des_hum_int_l_14')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

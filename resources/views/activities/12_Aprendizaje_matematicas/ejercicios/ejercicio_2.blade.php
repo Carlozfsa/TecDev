@@ -27,6 +27,8 @@
                 llama “Figuras respuesta” selecciona solo una de ellas que le de continuidad a
                 las figuras de la izquierda.<br><br>
 
+                @if($edit==0)
+
                 {!! Form::open(['method'=>'POST', 'action'=>'MatsController@store_mat_2']) !!}
 
                 <strong>a</strong><br>
@@ -185,7 +187,174 @@
 
                 {!! Form::close() !!}
 
+                @else
 
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'MatsController@edit_mat_2']) !!}
+
+                    <strong>a</strong><br>
+
+
+                    <div style="margin-left: 18%">
+                        <img width="500" height=100" src="images/12_Aprendizaje_matematicas/logica/log.png">
+                    </div><br>
+
+                    <table class="col-sm-12">
+
+                        <tr>
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log1.png"></td>
+                            <td>{!! Form::radio('p1_e', 1, $f_decode1 == 1 ? 1 : 0) !!}&nbsp a)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log2.png"></td>
+                            <td>{!! Form::radio('p1_e', 2, $f_decode1 == 2 ? 2 : 0) !!}&nbsp b)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log3.png"></td>
+                            <td>{!! Form::radio('p1_e', 3, $f_decode1 == 3 ? 3 : 0) !!}&nbsp c)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log4.png"></td>
+                            <td>{!! Form::radio('p1_e', 4, $f_decode1 == 4 ? 4 : 0) !!}&nbsp d)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica/log5.png"></td>
+                            <td>{!! Form::radio('p1_e', 5, $f_decode1 == 5 ? 5 : 0) !!}&nbsp e)</td>
+
+                        </tr>
+                    </table>
+                    <br><br><br>
+
+
+                    <strong>b</strong><br>
+
+
+                    <div style="margin-left: 18%">
+                        <img width="500" height=100" src="images/12_Aprendizaje_matematicas/logica2/log.png">
+                    </div><br>
+
+                    <table class="col-sm-12">
+
+                        <tr>
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log1.png"></td>
+                            <td>{!! Form::radio('p2_e', 1, $f_decode2 == 1 ? 1 : 0) !!}&nbsp a)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log2.png"></td>
+                            <td>{!! Form::radio('p2_e', 2, $f_decode2 == 2 ? 2 : 0) !!}&nbsp b)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log3.png"></td>
+                            <td>{!! Form::radio('p2_e', 3, $f_decode2 == 3 ? 3 : 0) !!}&nbsp c)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log4.png"></td>
+                            <td>{!! Form::radio('p2_e', 4, $f_decode2 == 4 ? 4 : 0) !!}&nbsp d)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica2/log5.png"></td>
+                            <td>{!! Form::radio('p2_e', 5, $f_decode2 == 5 ? 5 : 0) !!}&nbsp e)</td>
+
+                        </tr>
+                    </table>
+                    <br><br><br>
+
+                    <strong>c</strong><br>
+
+
+                    <div style="margin-left: 18%">
+                        <img width="500" height=100" src="images/12_Aprendizaje_matematicas/logica3/log.png">
+                    </div><br>
+
+                    <table class="col-sm-12">
+
+                        <tr>
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log1.png"></td>
+                            <td>{!! Form::radio('p3_e', 1, $f_decode3 == 1 ? 1 : 0) !!}&nbsp a)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log2.png"></td>
+                            <td>{!! Form::radio('p3_e', 2, $f_decode3 == 2 ? 2 : 0) !!}&nbsp b)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log3.png"></td>
+                            <td>{!! Form::radio('p3_e', 3, $f_decode3 == 3 ? 3 : 0) !!}&nbsp c)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log4.png"></td>
+                            <td>{!! Form::radio('p3_e', 4, $f_decode3 == 4 ? 4 : 0) !!}&nbsp d)</td>
+
+                            <td><img width="50" height=50" src="images/12_Aprendizaje_matematicas/logica3/log5.png"></td>
+                            <td>{!! Form::radio('p3_e', 5, $f_decode3 == 5 ? 5 : 0) !!}&nbsp e)</td>
+
+                        </tr>
+                    </table>
+                    <br><br><br>
+
+
+
+                    2. Descubra a los Raposos, a los Atrabiliarios y a los Esenios que aún no tienen
+                    puesto su nombre.<br>
+
+
+                    <table class="col-sm-12">
+
+                        <tr>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log1.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log2.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log3.png"></td>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('l1', 'RAPOSO') !!}</td>
+                            <td>&nbsp;&nbsp;&nbsp;{!! Form::label('l1', 'ATRABILIARIO') !!}</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('l1', 'ESENIO') !!}</td>
+                        </tr>
+
+                        <tr>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log4.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log5.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log6.png"></td>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('ESENIO', null) !!}</td>
+                            <td>{!! Form::text('t1_e', $f_decode4) !!}</td>
+                            <td>{!! Form::text('t2_e', $f_decode5) !!}</td>
+                        </tr>
+
+                        <tr>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log7.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log8.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log9.png"></td>
+                        </tr>
+
+                        <tr>
+                            <td>{!! Form::text('t3_e', $f_decode6) !!}</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('l1', 'RAPOSO') !!}</td>
+                            <td>{!! Form::text('t4_e', $f_decode7) !!}</td>
+                        </tr>
+
+                        <tr>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log10.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log11.png"></td>
+                            <td><img width="150" height=150" src="images/12_Aprendizaje_matematicas/logica4/log12.png"></td>
+                        </tr>
+
+                        <tr>
+                            <td>{!! Form::text('t5_e', $f_decode8) !!}</td>
+                            <td>{!! Form::text('t6_e', $f_decode9) !!}</td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!! Form::label('l1', 'ATRABILIARIO') !!}</td>
+                        </tr>
+
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+
+                    </table>
+
+                    <div class="form-group">
+                        {!! Form::submit('Edit',['class'=>'btn btn-primary form-control']) !!}
+                    </div>
+
+                    {!! Form::close() !!}
+
+
+                @endif
 
 
 
@@ -196,21 +365,19 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:25%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/mat_1')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/mat_1')}}">Ejercicio 1</a></li>
+            <li><a href="{{url('/mat_2')}}" style="background-color: lightgray;">Ejercicio 2</a></li>
+            <li><a href="{{url('/inf_1')}}"><strong>Siguiente actividad</strong></a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/inf_1')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

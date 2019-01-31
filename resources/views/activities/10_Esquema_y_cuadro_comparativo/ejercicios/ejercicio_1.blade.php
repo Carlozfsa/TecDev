@@ -12,34 +12,65 @@
 
                 <strong><p style="text-align: center;"> Actividad a realizar:</p></strong><br>
 
+                <p style="color: red"><strong>{{$ext}}</strong></p><br><br>
 
-                Genera un cuadro sinóptico por áreas de conocimiento de tu plan de estudios:
 
-                {!! Form::open(['method'=>'POST', 'action'=>'','class'=>'dropzone']) !!}
-                {!! Form::close() !!}
+                @if($edit==0)
+
+                    Genera un cuadro sinóptico por áreas de conocimiento de tu plan de estudios:
+                    <br><br>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'EsquemasController@store_esqs_1', 'files'=>true]) !!}
+
+                    <div class="form-group">
+                        {!! Form::file('file', null, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::submit('Guardar', null, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <br><br>
+                    {!! Form::close() !!}
+
+                @else
+
+                    <div style="margin-left: 19%">
+                        <img width="500" height=400" src="{{$f_decode1}}">
+                    </div><br><br>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'EsquemasController@edit_esqs_1', 'files'=>true]) !!}
+
+                    <div class="form-group">
+                        {!! Form::file('file_e', null, ['class'=>'form-control']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::submit('Editar', null, ['class'=>'form-control']) !!}
+                    </div>
+
+                    {!! Form::close() !!}
+
+                @endif
 
             </div>
-
-
 
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:25%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/esq_l_2')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/esq_l_2')}}"><strong>Lecturas</strong></a></li>
+            <li><a href="{{url('/esq_1')}}" style="background-color: lightgray;">Ejercicio 1</a></li>
+            <li><a href="{{url('/esq_2')}}">Ejercicio 2</a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/esq_2')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

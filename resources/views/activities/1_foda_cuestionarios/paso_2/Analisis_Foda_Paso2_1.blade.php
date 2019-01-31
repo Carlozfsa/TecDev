@@ -10,24 +10,26 @@
 
                 <strong>OBJETIVO</strong>
 
-            <div class="objetivo" style="margin: 10px">
-                Identifica qué es lo que te está frenando e imponiendo límites en el siguiente capítulo
-                de su vida. Tener claridad sobre los recursos, capacidades y cualidades de tu fuerza
-                interna.
-            </div>
-
-            <strong>INSTRUCCIONES:</strong>
-
-            <div class="instrucciones" style="margin: 10px">
-                1. Conviértete en “observador desapegado” y revise su línea de vida.<br>
-                2. Contesta las siguientes preguntas y escriba sus respuestas en los espacios
-                destinados para ello.<br>
-                Observa los momentos en los que experimentaste el fracaso. Presta especial
-                atención a los “patrones” recurrentes de fracaso en tu vida.<br>
-                ¿Cuál es la debilidad o deficiencia más común que consideras tener y que piensas que está
-                relacionada con estos fracasos?
 
                 @if($edit == 0)
+
+                <div class="objetivo" style="margin: 10px">
+                    Identifica qué es lo que te está frenando e imponiendo límites en el siguiente capítulo
+                    de su vida. Tener claridad sobre los recursos, capacidades y cualidades de tu fuerza
+                    interna.
+                </div>
+
+                <strong>INSTRUCCIONES:</strong>
+
+                <div class="instrucciones" style="margin: 10px">
+                    1. Conviértete en “observador desapegado” y revise su línea de vida.<br>
+                    2. Contesta las siguientes preguntas y escriba sus respuestas en los espacios
+                    destinados para ello.<br>
+                    Observa los momentos en los que experimentaste el fracaso. Presta especial
+                    atención a los “patrones” recurrentes de fracaso en tu vida.<br>
+                    ¿Cuál es la debilidad o deficiencia más común que consideras tener y que piensas que está
+                    relacionada con estos fracasos?<br>
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_2_1')}}">
                         {{csrf_field()}}
 
@@ -43,6 +45,29 @@
 
                     </form>
                 @else
+
+                        <div class="alert alert-success">
+                            <strong>Aviso!</strong><br>
+                            Registro guardado. Es posible editar la actividad.<br>
+                            Puede continuar con la siguiente parte.
+                        </div>
+
+                        <div class="objetivo" style="margin: 10px">
+                            Identifica qué es lo que te está frenando e imponiendo límites en el siguiente capítulo
+                            de su vida. Tener claridad sobre los recursos, capacidades y cualidades de tu fuerza
+                            interna.
+                        </div>
+
+                        <strong>INSTRUCCIONES:</strong>
+
+                        <div class="instrucciones" style="margin: 10px">
+                            1. Conviértete en “observador desapegado” y revise su línea de vida.<br>
+                            2. Contesta las siguientes preguntas y escriba sus respuestas en los espacios
+                            destinados para ello.<br>
+                            Observa los momentos en los que experimentaste el fracaso. Presta especial
+                            atención a los “patrones” recurrentes de fracaso en tu vida.<br>
+                            ¿Cuál es la debilidad o deficiencia más común que consideras tener y que piensas que está
+                            relacionada con estos fracasos?<br>
 
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_2_1')}}">
                         {{csrf_field()}}
@@ -64,7 +89,7 @@
                 @endif
 
             </div>
-
+                </div>
         </div>
     </div>
 

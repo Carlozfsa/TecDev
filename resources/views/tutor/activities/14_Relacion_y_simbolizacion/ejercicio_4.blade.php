@@ -15,26 +15,39 @@
 
                 <strong>INSTRUCCIONES:</strong> Lee cuidadosamente con tus compañeros cada ejercicio y
                 plantea tu respuesta.<br><br>
+
+                @if($edit==0)
+
                 {!! Form::open(['method'=>'POST', 'action'=>'TutorRelacionsController@store_rel_sim_4']) !!}
+
+                    @if($e1 != NULL && $e2 != NULL && $e3 != NULL && $e4 != NULL)
 
                     1. Una estancia tiene el doble de largo que de ancho: si el largo se disminuye en
                     6 m y el ancho aumenta en 4 m, la superficie de la estancia no varía. Obtén la
                     expresión matemática que te permita calcular las dimensiones de la estancia.<br>
-                    {!! Form::label('a', $e1, ['class'=>'form-control'])!!}<br><br>
+                    {!! Form::label('', $e1, ['class'=>'form-control'])!!}<br><br>
 
                     2. Tenía cierta suma de dinero. Ahorré una suma igual a la que tenía y gasté
                     $50.00; luego ahorré una suma igual al doble de lo que me quedaba y gasté
                     $390.00. Si ahora no tengo nada, ¿cuál es la expresión matemática que
                     representa al enunciado anterior?<br>
-                    {!! Form::label('b', $e2, ['class'=>'form-control'])!!}<br><br>
+                    {!! Form::label('', $e2, ['class'=>'form-control'])!!}<br><br>
 
                     3. Compré cuádruplo número de caballos que de vacas. Si hubiera comprado 5
                     caballos más y 5 vacas más tendría el triple de caballos que de vacas. Obtén la
                     expresión matemática que te permita calcular el número de caballos y de
                     vacas.<br>
-                    {!! Form::label('c', $e3, ['class'=>'form-control'])!!}<br><br>
+                    {!! Form::label('', $e3, ['class'=>'form-control'])!!}<br><br>
 
 
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
 
                 <table class="col-lg-12">
                     <tr>
@@ -44,7 +57,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro4" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -54,7 +67,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal4" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -67,6 +80,72 @@
                 </table>
 
                 {!! Form::close() !!}
+
+                @else
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'TutorRelacionsController@edit_rel_sim_4']) !!}
+
+                    @if($e1 != NULL && $e2 != NULL && $e3 != NULL && $e4 != NULL)
+
+                    1. Una estancia tiene el doble de largo que de ancho: si el largo se disminuye en
+                    6 m y el ancho aumenta en 4 m, la superficie de la estancia no varía. Obtén la
+                    expresión matemática que te permita calcular las dimensiones de la estancia.<br>
+                    {!! Form::label('', $e1, ['class'=>'form-control'])!!}<br><br>
+
+                    2. Tenía cierta suma de dinero. Ahorré una suma igual a la que tenía y gasté
+                    $50.00; luego ahorré una suma igual al doble de lo que me quedaba y gasté
+                    $390.00. Si ahora no tengo nada, ¿cuál es la expresión matemática que
+                    representa al enunciado anterior?<br>
+                    {!! Form::label('', $e2, ['class'=>'form-control'])!!}<br><br>
+
+                    3. Compré cuádruplo número de caballos que de vacas. Si hubiera comprado 5
+                    caballos más y 5 vacas más tendría el triple de caballos que de vacas. Obtén la
+                    expresión matemática que te permita calcular el número de caballos y de
+                    vacas.<br>
+                    {!! Form::label('', $e3, ['class'=>'form-control'])!!}<br><br>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    {!! Form::close() !!}
+
+                @endif
 
             </div>
 

@@ -43,9 +43,9 @@
                 </div> -->
                 <div class="user-info">
                         <span class="user-name">
-                                <strong>NAME</strong>
+                                {{--<strong>{{Auth::user()->alumno->nombres}}</strong>--}}
                         </span>
-                    <span class="user-role">ROLE</span>
+                    {{--<span class="user-role">{{Auth::user()->role->name}}</span>--}}
                     <span class="user-status">
                             <i class="fa fa-circle"></i>
                             <span>Online</span>
@@ -61,7 +61,7 @@
                         <span>Menú</span>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#">
+                        <a href="{{url('/panel_actividades')}}">
                             <i class="fas fa-book"></i>
                             <span>Actividades</span>
                             <span class="badge badge-pill badge-danger">New</span>
@@ -83,7 +83,7 @@
                         </div>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#">
+                        <a href="{{url('/panel_actividades')}}">
                             <i class="fas fa-graduation-cap"></i>
                             <span>Calificaciones</span>
                             <span class="badge badge-pill badge-primary">3</span>
@@ -105,9 +105,9 @@
                         </div>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#">
+                        <a href="{{url('/reg_alumno')}}">
                             <i class="fas fa-envelope"></i>
-                            <span>Mensajes</span>
+                            <span>Mi perfil</span>
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
@@ -130,9 +130,9 @@
                         </div>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#">
-                            <i class="fa fa-chart-line"></i>
-                            <span>Charts</span>
+                        <a href="{{url('/')}}">
+                            <i class="fa fa-home"></i>
+                            <span>Página de inicio</span>
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
@@ -152,10 +152,18 @@
                         </div>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#">
-                            <i class="fa fa-globe"></i>
-                            <span>Maps</span>
+                        <a href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Cerrar sesión</span>
                         </a>
+
+
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
@@ -167,49 +175,29 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="header-menu">
-                        <span>Extra</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-calendar"></i>
-                            <span>Calendar</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-folder"></i>
-                            <span>Examples</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-book"></i>
-                            <span>Documentation</span>
-                        </a>
-                    </li>
+
                 </ul>
             </div>
             <!-- sidebar-menu  -->
         </div>
         <!-- sidebar-content  -->
-        <div class="sidebar-footer">
-            <a href="#">
-                <i class="fa fa-bell"></i>
-                <span class="badge badge-pill badge-warning notification">3</span>
-            </a>
-            <a href="#">
-                <i class="fa fa-envelope"></i>
-                <span class="badge badge-pill badge-success notification">7</span>
-            </a>
-            <a href="#">
-                <i class="fa fa-cog"></i>
-                <span class="badge-sonar"></span>
-            </a>
-            <a href="#">
-                <i class="fa fa-power-off"></i>
-            </a>
-        </div>
+        {{--<div class="sidebar-footer">--}}
+            {{--<a href="#">--}}
+                {{--<i class="fa fa-bell"></i>--}}
+                {{--<span class="badge badge-pill badge-warning notification">3</span>--}}
+            {{--</a>--}}
+            {{--<a href="#">--}}
+                {{--<i class="fa fa-envelope"></i>--}}
+                {{--<span class="badge badge-pill badge-success notification">7</span>--}}
+            {{--</a>--}}
+            {{--<a href="#">--}}
+                {{--<i class="fa fa-cog"></i>--}}
+                {{--<span class="badge-sonar"></span>--}}
+            {{--</a>--}}
+            {{--<a href="#">--}}
+                {{--<i class="fa fa-power-off"></i>--}}
+            {{--</a>--}}
+        {{--</div>--}}
     </nav>
     <!-- sidebar-wrapper  -->
     <main class="page-content">
@@ -233,7 +221,7 @@
     <!-- page-content" -->
 </div>
 <!-- page-wrapper -->
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"--}}
         {{--crossorigin="anonymous"></script>--}}
 {{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"--}}

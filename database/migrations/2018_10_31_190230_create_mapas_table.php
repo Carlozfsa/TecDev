@@ -15,6 +15,14 @@ class CreateMapasTable extends Migration
     {
         Schema::create('mapas', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('numero_control');
+
+            $table->string('ruta')->default('');
+            $table->integer('avance_1')->default(0);
+            $table->string('retro_1')->default('');
+            $table->integer('cal_1')->default(0);
+
             $table->timestamps();
         });
     }

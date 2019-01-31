@@ -10,6 +10,8 @@
 
             <div class="instrucciones" style="margin: 10px">
 
+                @if($edit == 0)
+
                 <form name="add_fort" id="add_fort" method="post" action="{{url('/store/hum_int_ej_1')}}">
                     {{csrf_field()}}
 
@@ -68,6 +70,72 @@
                     </div>
                 </form>
 
+                @else
+
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div>
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/hum_int_ej_1')}}">
+                        {{csrf_field()}}
+
+
+                        <table class="table table-bordered">
+                            <thead style="background-color: darkgray;">
+                            <tr>
+                                <th>Característica</th>
+                                <th>En lo personal como se considera en cada
+                                    características (justifique)
+                                </th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    <strong>Presentación personal</strong><br>
+                                    Aspecto exterior de una persona
+                                </td>
+                                <td>
+                            <textarea name="pres_per_e" class = "form-control" cols="12">{{$f_decode1}}</textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Salud</strong><br>
+                                    Condiciones físicas en que se
+                                    encuentra, hábitos alimenticios,
+                                    visita medica, entre otros.
+                                </td>
+                                <td>
+                             <textarea name="salud_e" class = "form-control" cols="12">{{$f_decode2}}</textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Simpatía</strong><br>
+                                    Relación entre dos cuerpos o
+                                    sistemas por la que la acción de
+                                    uno induce el mismo
+                                    comportamiento en el otro.{{$f_decode2}}
+                                </td>
+                                <td>
+                                    <textarea name="simpatia_e" class = "form-control" cols="12">{{$f_decode3}}</textarea>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <div class="row" style="margin-left: 22%;">
+                            <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Editar" />
+                        </div>
+                    </form>
+
+                @endif
+
+
             </div>
 
         </div>
@@ -76,18 +144,9 @@
   <div class="center-block" style="margin-left:35%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
+            <li><a href="{{url('/des_hum_int_ej_1')}}"><strong>Siguiente actividad</strong></a></li>
             <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/des_hum_int_ej_1')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

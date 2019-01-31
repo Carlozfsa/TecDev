@@ -15,10 +15,13 @@
                     De lo contrario, déjela en blanco. Después sume los resultados obtenidos en cada
                     una de las columnas verticales y compárelos entre sí.<br><br>
 
+            @if($edit==0)
 
                 <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_mem_1')}}">
                     {{csrf_field()}}
 
+
+                  @if($f1_decode != NULL && $f2_decode != NULL && $f3_decode != NULL)
 
                 <table class="table table-bordered">
                     <thead class="thead-light">
@@ -42,8 +45,16 @@
 
                     </table>
 
+                    @else
 
-                <br>
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <br>
 
                 Si usted reúne aproximadamente el mismo número de puntos en los tres tipos de
                 memoria, eso significa que tiene facilidad para registrar y archivar de cualquiera de
@@ -86,7 +97,7 @@
                         <tr>
                             <td>
                                 <br>
-                                <textarea rows="5" name ="retro" class="form-control"></textarea>
+                                <textarea rows="5" name ="retro1" class="form-control"></textarea>
                                 <br>
                             </td>
                         </tr>
@@ -96,7 +107,7 @@
                                 <br>
                                 <strong>Calificación:</strong>
                                 <br><br>
-                                <input type="text" name="cal" class="form-control name_list center-block">
+                                <input type="text" name="cal1" class="form-control name_list center-block">
                             </td>
                         </tr>
 
@@ -108,9 +119,115 @@
                         </tr>
                     </table>
 
-
-
                 </form>
+
+                @else
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tutor_mem_1')}}">
+                        {{csrf_field()}}
+
+                        @if($f1_decode != NULL && $f2_decode != NULL && $f3_decode != NULL)
+
+                        <table class="table table-bordered">
+                            <thead class="thead-light">
+                            <tr style="background-color: lightgray">
+                                <th colspan="5" style="text-align: center;">
+                                    Suma de puntos
+                                </th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">Verbal</td>
+                                <td style="text-align: center;">Visual</td>
+                                <td style="text-align: center;">Cinestésica</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center;">{{$f1_decode}}</td>
+                                <td style="text-align: center;">{{$f2_decode}}</td>
+                                <td style="text-align: center;">{{$f3_decode}}</td>
+                            </tr>
+                            </thead>
+
+
+                        </table>
+
+                        @else
+
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
+
+                        @endif
+
+                        <br>
+
+                        Si usted reúne aproximadamente el mismo número de puntos en los tres tipos de
+                        memoria, eso significa que tiene facilidad para registrar y archivar de cualquiera de
+                        las tres formas cualquier recuerdo. Usted puede reforzar cualquier unidad de
+                        información verbal, visual o cinestésica con otros recuerdos (por ejemplo, recordar
+                        que se trataba del tres de trébol mediante una imagen visual de la carta, el recuerdo
+                        verbal al decir y escribir las palabras, y el recuerdo cinestésico al sentarse con las
+                        cartas en la mano y recordar que el tres de tréboles era la primera carta empezando
+                        por la derecha).<br><br>
+                        Si usted tiene una mejor memoria visual, recordar mayor si refuerza los recuerdos
+                        verbales y cinestésicos con una imagen visual. Escriba nombres, direcciones y
+                        números de teléfono, y obsérvelos. Hágase una imagen visual de los artículos de
+                        una lista. Visualice a esas personas que ha conocido con sus nombres colgados de
+                        la solapa o sosteniendo objetos que sugieran esos nombres. Cuando adquiera una
+                        nueva habilidad física, imagínese haciéndola, observe su cuerpo y sus manos
+                        mientras experimenta las sensaciones físicas en sus músculos, recuerden los
+                        colores y las formas de los árboles. Y las señales y los edificios cercanos a la
+                        parada de autobús en la que desea bajarse.<br><br>
+                        Si su fuerte es la memoria verbal, favorecerá su recuerdo si da nombres a las cosas.
+                        Reforzará el recuerdo de los rostros de las personas que le son presentadas si
+                        añade a éstos descripciones personales.<br><br>
+                        Confeccione listas mentales de las señales o los nombres de las tiendas cercanas a
+                        la parada de autobús donde debe bajar. Probablemente ya esté haciendo muchas
+                        de estas cosas sin pensarlo, pero aumente su número de forma que consolide
+                        conscientemente los recuerdos visuales y cinestésicos mediante un refuerzo verbal.
+                        Si su fuerte es la memoria cenestésica, probablemente recuerde dónde colocó, las
+                        cosas, pero puede tener problemas para recordar las instrucciones percibidas por
+                        escrito, las caras nuevas en las fiestas o la lista de la compra. Usted desearía añadir
+                        fuertes recuerdos cinestésicos a informaciones de otro tipo con el fin de contar con
+                        más formas de recordarlas. Cuando le presenten a una persona, repita su nombre
+                        mientras percibe la textura de su mano, siente sus músculos y recibe una
+                        determinada impresión de su estatura y sus movimientos. Sienta esto mismo cuando
+                        teclee o marque un número de teléfono.<br><br>
+
+                        <table class="col-lg-12">
+                            <tr>
+                                <td><strong>Retroalimentación:</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                    <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <strong>Calificación:</strong>
+                                    <br><br>
+                                    <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br><br>
+                                    <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                                </td>
+                            </tr>
+                        </table>
+
+                    </form>
+
+                @endif
+
             </div>
 
         </div>

@@ -14,6 +14,8 @@
 
                 <br><br>
 
+                @if($edit == 0)
+
                 <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tiempo_ej_2_4')}}">
                     {{csrf_field()}}
 
@@ -145,6 +147,164 @@
                     </div>
 
                 </form>
+
+                @else
+
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br>
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tiempo_ej_2_4')}}">
+                        {{csrf_field()}}
+
+                        <table class="table table-bordered">
+                            <thead class="thead-light">
+                            <tr>
+                                <th>Categoría</th>
+                                <th>Actividades</th>
+                            </tr>
+                            </thead>
+                            <tr>
+                                <td>Sueño</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_1">
+                                            @foreach($f_decode1 as $key=>$value)
+                                                <tr id="row_e_1{{$key}}">
+                                                    <td><input type="text" name="sueno3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_1" id="add_edit_1" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_1" id="{{$key}}" class="btn btn-danger btn_remove_edit_1 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Comida</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_2">
+                                            @foreach($f_decode2 as $key=>$value)
+                                                <tr id="row_e_2{{$key}}">
+                                                    <td><input type="text" name="comida3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_2" id="add_edit_2" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_2" id="{{$key}}" class="btn btn-danger btn_remove_edit_2 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Clase</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_3">
+                                            @foreach($f_decode3 as $key=>$value)
+                                                <tr id="row_e_3{{$key}}">
+                                                    <td><input type="text" name="clase3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_3" id="add_edit_3" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_3" id="{{$key}}" class="btn btn-danger btn_remove_edit_3 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Estudio</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_4">
+                                            @foreach($f_decode4 as $key=>$value)
+                                                <tr id="row_e_4{{$key}}">
+                                                    <td><input type="text" name="estudio3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_4" id="add_edit_4" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_4" id="{{$key}}" class="btn btn-danger btn_remove_edit_4 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Actividades religiosas</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_5">
+                                            @foreach($f_decode5 as $key=>$value)
+                                                <tr id="row_e_5{{$key}}">
+                                                    <td><input type="text" name="rel3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_5" id="add_edit_5" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_5" id="{{$key}}" class="btn btn-danger btn_remove_edit_5 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Actividades sociales</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_6">
+                                            @foreach($f_decode6 as $key=>$value)
+                                                <tr id="row_e_6{{$key}}">
+                                                    <td><input type="text" name="soc3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_6" id="add_edit_6" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_6" id="{{$key}}" class="btn btn-danger btn_remove_edit_6 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Actividades deportivas</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_7">
+                                            @foreach($f_decode7 as $key=>$value)
+                                                <tr id="row_e_7{{$key}}">
+                                                    <td><input type="text" name="dep3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_7" id="add_edit_7" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_7" id="{{$key}}" class="btn btn-danger btn_remove_edit_7 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Tiempo
+                                    perdido,
+                                    etc..</td>
+                                <td>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamic_field_edit_8">
+                                            @foreach($f_decode8 as $key=>$value)
+                                                <tr id="row_e_8{{$key}}">
+                                                    <td><input type="text" name="per3[]" placeholder="Escriba su respuesta" class="form-control name_list center-block" value="{{$value}}"></td>
+                                                    @if($key==1) <td><button type="button" name="add_edit_8" id="add_edit_8" class="btn btn-success center-block">Agregar</button></td> @else <td><button type="button" name="remove_edit_8" id="{{$key}}" class="btn btn-danger btn_remove_edit_8 center-block">X</button></td> @endif
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <div class="row" style="margin-left: 22%;">
+                            <input type="submit" name="submit" id="submit" class="btn btn-primary col-sm-8" value="Editar" />
+                        </div>
+
+                    </form>
+
+                @endif
 
             </div>
 
@@ -315,5 +475,163 @@
 
         });
     </script>
+
+    {{--PARA EDITAR--}}
+
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_1').length;
+
+            $('#add_edit_1').click(function(){
+                i++;
+                $('#dynamic_field_edit_1').append('<tr id="row_e_1'+i+'" class="dynamic-added"><td><input type="text" name="sueno3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_1" id="'+i+'" class="btn btn-danger btn_remove_edit_1 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_1', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_1'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_2').length;
+
+            $('#add_edit_2').click(function(){
+                i++;
+                $('#dynamic_field_edit_2').append('<tr id="row_e_2'+i+'" class="dynamic-added"><td><input type="text" name="comida3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_2" id="'+i+'" class="btn btn-danger btn_remove_edit_2 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_2', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_2'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_3').length;
+
+            $('#add_edit_3').click(function(){
+                i++;
+                $('#dynamic_field_edit_3').append('<tr id="row_e_3'+i+'" class="dynamic-added"><td><input type="text" name="clase3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_3" id="'+i+'" class="btn btn-danger btn_remove_edit_3 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_3', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_3'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_4').length;
+
+            $('#add_edit_4').click(function(){
+                i++;
+                $('#dynamic_field_edit_4').append('<tr id="row_e_4'+i+'" class="dynamic-added"><td><input type="text" name="estudio3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_4" id="'+i+'" class="btn btn-danger btn_remove_edit_4 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_4', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_4'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_5').length;
+
+            $('#add_edit_5').click(function(){
+                i++;
+                $('#dynamic_field_edit_5').append('<tr id="row_e_5'+i+'" class="dynamic-added"><td><input type="text" name="rel3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_5" id="'+i+'" class="btn btn-danger btn_remove_edit_5 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_5', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_5'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_6').length;
+
+            $('#add_edit_6').click(function(){
+                i++;
+                $('#dynamic_field_edit_6').append('<tr id="row_e_6'+i+'" class="dynamic-added"><td><input type="text" name="soc3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_6" id="'+i+'" class="btn btn-danger btn_remove_edit_6 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_6', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_6'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_7').length;
+
+            $('#add_edit_7').click(function(){
+                i++;
+                $('#dynamic_field_edit_7').append('<tr id="row_e_7'+i+'" class="dynamic-added"><td><input type="text" name="dep3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_7" id="'+i+'" class="btn btn-danger btn_remove_edit_7 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_7', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_7'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+
+            var i= $('#dynamic_field_edit_8').length;
+
+            $('#add_edit_8').click(function(){
+                i++;
+                $('#dynamic_field_edit_8').append('<tr id="row_e_8'+i+'" class="dynamic-added"><td><input type="text" name="per3[]" placeholder="Escriba una fortaleza" class="form-control name_list" /></td><td><button type="button" name="remove_edit_8" id="'+i+'" class="btn btn-danger btn_remove_edit_8 center-block">X</button></td></tr>');
+            });
+
+            $(document).on('click', '.btn_remove_edit_8', function(){
+                var button_id = $(this).attr("id");
+                $('#row_e_8'+button_id+'').remove();
+            });
+
+        });
+    </script>
+
+
+
 
 @stop

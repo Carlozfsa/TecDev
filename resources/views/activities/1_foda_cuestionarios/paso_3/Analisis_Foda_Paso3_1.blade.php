@@ -8,30 +8,31 @@
         </div>
         <div class="panel-body">
 
+                @if($edit == 0)
+
                 <strong>OBJETIVO</strong>
 
-            <div class="objetivo" style="margin: 10px">
-                Identifica los riesgos implicados en el próximo capítulo de tu vida. Ser consciente de
-                los retos a futuro.
-            </div>
+                <div class="objetivo" style="margin: 10px">
+                    Identifica los riesgos implicados en el próximo capítulo de tu vida. Ser consciente de
+                    los retos a futuro.
+                </div>
 
-            <strong>INSTRUCCIONES:</strong>
+                <strong>INSTRUCCIONES:</strong>
 
-            <div class="instrucciones" style="margin: 10px">
-                1. Conviértete en “observador desapegado” y revisa tu línea de vida.<br>
-                2. Contesta las siguientes preguntas y escribe tus respuestas en los espacios<br>
-                destinados para ello.<br><br>
-                Cuando miras hacia el horizonte, en el próximo capítulo de su vida, ¿cuál crees
-                que sea el reto más grande que tendrás que afrontar?
+                <div class="instrucciones" style="margin: 10px">
+                    1. Conviértete en “observador desapegado” y revisa tu línea de vida.<br>
+                    2. Contesta las siguientes preguntas y escribe tus respuestas en los espacios<br>
+                    destinados para ello.<br><br>
+                    Cuando miras hacia el horizonte, en el próximo capítulo de su vida, ¿cuál crees
+                    que sea el reto más grande que tendrás que afrontar?
 
-                @if($edit == 0)
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_3_1')}}">
                         {{csrf_field()}}
 
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field">
                                 <tr>
-                                    <td ><input type="text" name="a1[]" placeholder="Escriba una debilidad" class="form-control name_list center-block"></td>
+                                    <td ><input type="text" name="a1[]" placeholder="Escriba una amenaza" class="form-control name_list center-block"></td>
                                     <td><button type="button" name="add" id="add" class="btn btn-success center-block">Agregar</button></td>
                                 </tr>
                             </table>
@@ -40,6 +41,27 @@
 
                     </form>
                 @else
+                        <strong>OBJETIVO</strong>
+
+                        <div class="alert alert-success">
+                            <strong>Aviso!</strong><br>
+                            Registro guardado. Es posible editar la actividad.<br>
+                            Puede continuar con la siguiente parte.
+                        </div>
+
+                        <div class="objetivo" style="margin: 10px">
+                            Identifica los riesgos implicados en el próximo capítulo de tu vida. Ser consciente de
+                            los retos a futuro.
+                        </div>
+
+                        <strong>INSTRUCCIONES:</strong>
+
+                        <div class="instrucciones" style="margin: 10px">
+                            1. Conviértete en “observador desapegado” y revisa tu línea de vida.<br>
+                            2. Contesta las siguientes preguntas y escribe tus respuestas en los espacios<br>
+                            destinados para ello.<br><br>
+                            Cuando miras hacia el horizonte, en el próximo capítulo de su vida, ¿cuál crees
+                            que sea el reto más grande que tendrás que afrontar?
 
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_3_1')}}">
                         {{csrf_field()}}
@@ -61,6 +83,7 @@
                 @endif
 
             </div>
+                </div>
 
         </div>
     </div>

@@ -12,10 +12,11 @@
             <strong>INSTRUCCIONES:</strong>
 
             <div class="instrucciones" style="margin: 10px">
-                ¿Qué es lo que la gente más admira de ti?<br> Éstas son las cualidades y virtudes
-                personales particulares que aportas a las relaciones. <br>Escríbalas:
 
                 @if($edit == 0)
+                    ¿Qué es lo que la gente más admira de ti?<br> Éstas son las cualidades y virtudes
+                    personales particulares que aportas a las relaciones. <br>Escríbalas:<br><br>
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_1_2')}}">
                         {{csrf_field()}}
 
@@ -31,6 +32,15 @@
 
                     </form>
                 @else
+
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br>
+
+                    ¿Qué es lo que la gente más admira de ti?<br> Éstas son las cualidades y virtudes
+                    personales particulares que aportas a las relaciones. <br>Escríbalas:<br><br>
 
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_1_2')}}">
                         {{csrf_field()}}

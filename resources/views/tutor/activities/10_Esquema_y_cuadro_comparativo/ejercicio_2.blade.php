@@ -16,8 +16,96 @@
                 Realiza una tabla comparativa de las competencias específicas y genéricas de
                 las asignaturas que estas cursando.<br>
 
-                <H1>Agregar drag n drop panel</H1>
+                @if($f1_decode!=NULL)
 
+                    <div style="margin-left: 19%">
+                        <img width="500" height=400" src="{{$f1_decode}}">
+                    </div><br><br>
+
+                @else
+
+                    <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                        <strong>Aviso!</strong><br>
+                        El alumno no ha entregado esta parte de la actividad.
+                    </div><br>
+
+                @endif
+
+                @if($edit==0)
+
+                <form name="add_fort" id="add_fort" method="post" action="{{url('/store/tutor_esq_2')}}">
+                    {{csrf_field()}}
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro2" class="form-control"></textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal2" class="form-control name_list center-block">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Guardar" />
+                            </td>
+                        </tr>
+                    </table>
+
+                </form>
+
+                @else
+
+                    <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tutor_esq_2')}}">
+                        {{csrf_field()}}
+
+                        <table class="col-lg-12">
+                            <tr>
+                                <td><strong>Retroalimentación:</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                    <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <strong>Calificación:</strong>
+                                    <br><br>
+                                    <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br><br>
+                                    <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                                </td>
+                            </tr>
+                        </table>
+
+                    </form>
+
+                @endif
 
             </div>
 

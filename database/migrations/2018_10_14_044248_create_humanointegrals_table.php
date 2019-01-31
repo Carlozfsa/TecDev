@@ -17,12 +17,12 @@ class CreateHumanointegralsTable extends Migration
             $table->increments('id');
 
             $table->integer('numero_control');
-            $table->text('pres_per');
-            $table->text('salud');
-            $table->text('simpatia');
+            $table->text('pres_per')->nullable();
+            $table->text('salud')->nullable();
+            $table->text('simpatia')->nullable();
 
-            $table->text('retro');
-            $table->integer('cal_final');
+            $table->text('retro')->nullable();
+            $table->integer('cal_final')->default(0);
 
             $table->timestamps();
         });

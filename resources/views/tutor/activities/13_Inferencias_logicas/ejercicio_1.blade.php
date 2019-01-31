@@ -22,7 +22,11 @@
 
                 Los perros son animales, los animales tienen orejas, por lo tanto los perros tienen orejas.<br><br>
 
+                @if($edit==0)
+
                 {!! Form::open(['method'=>'POST', 'action'=>'TutorInferenciasController@store_inf_1']) !!}
+
+                @if($o1 != NULL && $o2 != NULL && $o3 != NULL && $o4 != NULL && $o5 != NULL && $o6 != NULL && $o7 != NULL && $o8 != NULL && $o9 != NULL && $o10 != NULL && $o11 != NULL && $o12 != NULL)
 
                 <ol>
                     <li>
@@ -195,8 +199,17 @@
 
                     </li>
 
-
                 </ol>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
                 <table class="col-lg-12">
                     <tr>
                         <td><strong>Retroalimentación:</strong></td>
@@ -205,7 +218,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro1" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -215,7 +228,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal1" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -228,6 +241,228 @@
                 </table>
 
                 {!! Form::close() !!}
+
+                @else
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'TutorInferenciasController@edit_inf_1']) !!}
+
+                    @if($o1 != NULL && $o2 != NULL && $o3 != NULL && $o4 != NULL && $o5 != NULL && $o6 != NULL && $o7 != NULL && $o8 != NULL && $o9 != NULL && $o10 != NULL && $o11 != NULL && $o12 != NULL)
+
+                    <ol>
+                        <li>
+                            Pocas casas de este barrio tienen balcones, pero todas tienen ascensor. Por lo
+                            tanto:
+                            <table>
+                                <tr>
+                                    <td>
+                                        a) Algunas tienen o balcón o ascensor &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o1',['1'=>'Verdadero', '2'=>'Falso'], $o1) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        b) Algunas tienen balcón y ascensor &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o2',['1'=>'Verdadero', '2'=>'Falso'], $o2) !!}
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+
+                        <br>
+                        <!--Número 2 -->
+                        <li>
+                            El metro es más barato que el autobús. No tengo dinero suficiente para ir en
+                            autobús, por lo tanto:
+                            <table>
+                                <tr>
+                                    <td>
+                                        a)Tengo dinero suficiente para ir en metro &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o3',['1'=>'Verdadero', '2'=>'Falso'], $o3) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        b) Puedo tener o no dinero suficiente para ir en metro &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o4',['1'=>'Verdadero', '2'=>'Falso'], $o4) !!}
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+
+                        </li>
+
+                        <!--Número 3 -->
+
+                        <li>
+                            Va por la calle. Una moto a toda velocidad lo atropella, por lo tanto:
+                            <table>
+                                <tr>
+                                    <td>
+                                        a)La moto es mal manejada &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o5',['1'=>'Verdadero', '2'=>'Falso'], $o5) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        b) No debería permitirse circular a las motos &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o6',['1'=>'Verdadero', '2'=>'Falso'], $o6) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        c) Desconocemos la causa del atropellamiento &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o7',['1'=>'Verdadero', '2'=>'Falso'], $o7) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </li>
+                        <br>
+
+                        <!--Número 4 -->
+
+                        <li>
+                            Cuando A es más grande que B, X es más pequeña que B, Por lo tanto:
+                            <table>
+                                <tr>
+                                    <td>
+                                        a) X nunca es más grande que A &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o8',['1'=>'Verdadero', '2'=>'Falso'], $o8) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        b) X nunca es más pequeña que A &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o9',['1'=>'Verdadero', '2'=>'Falso'], $o9) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        c) X nunca es más pequeña que B &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o10',['1'=>'Verdadero', '2'=>'Falso'], $o10) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </li>
+                        <br>
+
+
+                        <!--Número 5 -->
+
+                        <li>
+                            Cuando H es J, M es P. Cuando M no es P, R es J o P, por lo tanto :
+                            <table>
+                                <tr>
+                                    <td>
+                                        a) Cuando H es J, R no es J ni P &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o11',['1'=>'Verdadero', '2'=>'Falso'], $o11) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        b) Cuando M es P, J o P es R &nbsp
+                                    </td>
+                                    <td>
+                                        {!! Form::select('o12',['1'=>'Verdadero', '2'=>'Falso'], $o12) !!}
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </li>
+
+                    </ol>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    {!! Form::close() !!}
+
+                @endif
 
             </div>
 

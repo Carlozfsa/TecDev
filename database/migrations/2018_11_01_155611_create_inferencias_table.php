@@ -17,34 +17,36 @@ class CreateInferenciasTable extends Migration
             $table->increments('id');
             $table->integer('numero_control');
 
-            $table->integer('o1');
-            $table->integer('o2');
-            $table->integer('o3');
-            $table->integer('o4');
-            $table->integer('o5');
-            $table->integer('o6');
-            $table->integer('o7');
-            $table->integer('o8');
-            $table->integer('o9');
-            $table->integer('o10');
-            $table->integer('o11');
-            $table->integer('o12');
+            $table->integer('o1')->default(0);
+            $table->integer('o2')->default(0);
+            $table->integer('o3')->default(0);
+            $table->integer('o4')->default(0);
+            $table->integer('o5')->default(0);
+            $table->integer('o6')->default(0);
+            $table->integer('o7')->default(0);
+            $table->integer('o8')->default(0);
+            $table->integer('o9')->default(0);
+            $table->integer('o10')->default(0);
+            $table->integer('o11')->default(0);
+            $table->integer('o12')->default(0);
 
-            $table->text('retro_1');
-            $table->integer('cal_1');
+            $table->integer('avance_1')->default(0);
+            $table->text('retro_1')->nullable();
+            $table->integer('cal_1')->default(0);
 
-            $table->text('t1');
-            $table->text('t2');
-            $table->text('t3');
-            $table->text('t4');
-            $table->text('t5');
-            $table->text('t6');
-            $table->text('t7');
+            $table->text('t1')->nullable();
+            $table->text('t2')->nullable();
+            $table->text('t3')->nullable();
+            $table->text('t4')->nullable();
+            $table->text('t5')->nullable();
+            $table->text('t6')->nullable();
+            $table->text('t7')->nullable();
 
-            $table->text('retro_2');
-            $table->integer('cal_2');
+            $table->integer('avance_2')->default(0);
+            $table->text('retro_2')->nullable();
+            $table->integer('cal_2')->default(0);
 
-            $table->integer('cal_final');
+            $table->integer('cal_final')->default(0);
 
             $table->timestamps();
         });

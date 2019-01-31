@@ -36,16 +36,30 @@
                     <img width="400" height=200" src="images/5_Inteligencias_multiples/log1.png">
                 </div>
 
+                @if($edit==0)
+
+
                 {!! Form::open(['method'=>'POST', 'action'=>'TutorInteligenciasController@store_int_mult_ej_3']) !!}
 
-                <table>
+                    @if($log1 != NULL)
+
+                    <table>
                     <tr>
                         <div class="form-group">
                             <td>{!! Form::label('r1.1', 'R=') !!}</td>
-                            <td class="col-sm-12">{!! Form::label('r1.1', $log1) !!}</td>
+                            <td class="col-sm-12">{!! Form::label('num_1_e', $log1, ['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
                 </table><br>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
 
                 <table class="col-lg-12">
                     <tr>
@@ -55,7 +69,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro3" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -65,7 +79,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal3" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -79,6 +93,63 @@
 
                 {!! Form::close() !!}
 
+             @else
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'TutorInteligenciasController@edit_int_mult_ej_3']) !!}
+
+                    @if($log1 != NULL)
+
+                    <table>
+                        <tr>
+                            <div class="form-group">
+                                <td>{!! Form::label('r1.1', 'R=') !!}</td>
+                                <td class="col-sm-12">{!! Form::label('num_1_e', $log1, ['class'=>'form-control']) !!}</td>
+                            </div>
+                        </tr>
+                    </table><br>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    {!! Form::close() !!}
+
+            @endif
 
             </div>
 

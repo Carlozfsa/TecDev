@@ -10,144 +10,189 @@
 
             <div class="instrucciones" style="margin: 10px">
 
-                <strong><p style="text-align: center;">EXPRESAR IDEAS Y PENSAMIENTOS POR ESCRITO</p></strong><br>
+                <strong><p style="text-align: center;">La redacción</p></strong><br>
 
-                El escribir es necesario en nuestra vida, sea cual sea nuestra profesión, se
-                necesitara algún día escribir un informe, redactar una descripción técnica,
-                comunicación virtual, entre otros.
-                Considerándolo de un modo más inmediato se necesita estar capacitados para
-                exponer trabajos con claridad y de forma escrita inteligible para responder a los
-                exámenes.<br><br>
+                La palabra es un símbolo parcial que nos permite, al combinarla con otras palabras,
+                dar cuenta de un hecho o una historia. La palabra es un término que nos da la
+                posibilidad –esta es su mayor virtud y la más feroz de sus limitantes– de recrear
+                condiciones; en otras palabras, de aproximar al lector a lo que queremos relatar.
+                Al escribir transformamos nuestras vivencias, sentimientos, ideas y conocimientos –y
+                nuestro trabajo reporteril– en frases, oraciones y párrafos. El que elige leernos debe
+                encontrar en aquellas frases, oraciones y párrafos, el sentido mismo de lo que
+                quisimos transmitir. Si queremos que realmente nos entiendan y rescaten de la
+                lectura de nuestros textos exactamente lo mismo que quisimos expresar, requerimos
+                encontrar el lenguaje y el tono que exprese nuestro mensaje del modo más
+                adecuado.<br><br>
 
-                <strong>Aprender a escribir, aprender a redactar</strong><br>
+                <strong>Existen tres fases previas a la redacción:</strong>
 
-                Para comenzar es preciso concordar como premisa básica que cualquiera sea la
-                actividad o profesión que desarrollemos en nuestras vidas, siempre tendremos, en
-                algún momento, la necesidad de escribir.<br>
-                Redactar es otorgar un orden, una estructura, a aquello que digo, mediante la
-                palabra escrita.<br><br>
+                <ol>
+                    <li>Descubrimiento del tema: encontrar qué decir.</li>
+                    <li>Disposición: ordenar lo que encontremos.</li>
+                    <li>Elocución: ubicar las palabras adecuadas en el texto.</li>
+                </ol>
 
-                <strong>Al escribir es necesario seguir las siguientes reglas:</strong><br><br>
+                Estos tres pasos se deben cumplir o no se verá en la expresión escrita, en la
+                redacción final del texto. Si cualquiera de estos pasos falló o se omitió, el escrito
+                quedará confundido.<br><br>
+
+                <strong>Las etapas que se siguen al escribir son las siguientes:</strong><br><br>
 
                 <ul>
-
-                    <li>Tomar conciencia</li>
-                    <li>Llevar al papel aquello que pensamos, opinamos, sentimos, creemos o nos
-                        han dicho.</li>
-                    <li>Comunicar; es un acto de comunicación con otro, con un ellos o conmigo
-                        (diario de vida).</li>
-                    <li>Conectarse con un público (ellos) con el objetivo de comunicarle hechos y
-                        acontecimientos de relevancia social, política, económica, cultural, científica,
-                        etc.</li>
-                    <li>Para que este acto de comunicación sea efectivo, para que cumpla con su
-                        deber de informar y educar respecto de ese "algo" que queremos descubrirle
-                        al lector, la redacción debe ser clara y comprensible, sin dejar espacios de
-                        duda. Para esto, debemos tener claramente establecido en nuestro cerebro lo
-                        que vamos a decir. Estamos obligados a tener la "idea clara".</li>
+                    <li>Para poder escribir se debe tener algo que decir y ser capaces de
+                        proporcionar un orden determinado a lo que se escribe.</li>
+                    <li>Tener ideas o hechos determinados que se deseen comunicar.</li>
+                    <li>Poner estas ideas en palabras y frases y escribirlas</li>
+                    <li>Las palabras y frases han de convertirse en oraciones gramaticalmente
+                        correctas y estar de acuerdo con el uso aceptado</li>
+                    <li>Las oraciones han de seguirse una a otras de un modo natural reflejando el
+                        orden del pensamiento lógico</li>
+                    <li>Al escribirse se debe de pensar en el impacto que probablemente causara lo
+                        escrito en quienes lo leerán.</li>
+                    <li>Los fallos que se cometen al escribir pueden surgir en cualquiera de estas
+                        etapas.</li>
                 </ul>
 
-                <strong>Al escribir, se debe:</strong><br><br>
+                <strong>Antes de escribir:</strong><br><br>
+
+                <ul>
+                    <li>Poner en claro pensamientos e ideas antes de empezar a escribir.</li>
+                    <li>Ampliar el vocabulario, el caudal de palabras y frases leyendo buenos autores
+                        y periódicos de calidad o introduciéndose en charlas y discusiones de tipo
+                        intelectual que las que se limitan a los deportes, al tiempo y al precio de los
+                        productos en las tiendas.</li>
+                    <li>Familiarizarse con la gramática.</li>
+                    <li>Practicar (escribir mucho).</li>
+                </ul>
+
+                <strong>Normas básicas y decisivas para escribir mejor</strong><br><br>
 
                 <ol>
-                    <li>Motivar al lector con el tema que propone,</li>
-                    <li>Establecer un orden en lo que quiere transmitir, y</li>
-                    <li>Encontrar un lenguaje común para establecer una relación "aireada"
-                        con su lector.</li>
+                    <li>
+                        <strong>Ampliar el vocabulario. </strong><br>
+                        Se puede ampliar mediante una lectura extensiva.
+                        El estudiante universitario puede reconocer unas 150.00 palabras, pero el
+                        número de palabra que emplea corrientemente en la conversación o por
+                        escrito es, mucho menor.<br><br>
+                        El vocabulario que habla la gente es reducido, y esto es más evidente en
+                        aquellos que llevan una vida solitaria. Si se quiere desarrollar un vocabulario
+                        mas adecuado, es necesario leer mucho y conversar con mayor profundidad
+                        de lo que comúnmente se hace.
+                    </li>
+
+                    <li>
+                        <strong>Dominar la gramática. </strong><br>
+                        Aprender los principios de gramática y sintaxis. La
+                        Gramática es el estudio de las reglas y principios que regulan el uso de las
+                        lenguas y la organización de las palabras dentro de una oración.<br><br>
+                        También se denomina así al conjunto de reglas y principios que gobiernan el
+                        uso de un lenguaje muy determinado. Morfología (forma y estructura), y
+                        sintaxis (parte de la gramática que estudia la forma en que se combinan y
+                        relacionan las palabras para formar secuencia mayores, clausula y oraciones
+                        y la función que desempeñan dentro de esta). Es el cómo se estructura una
+                        oración)
+                    </li>
+
+                    <li>
+                        <strong>Elección de las palabras.</strong><br>
+                        Los escritores con talento y experiencia pueden
+                        ser capaces de escribir deprisa y con fluidez, sin buscar las palabra, pero la
+                        mayoría de nosotros vemos que nuestros pensamientos no se traducen con
+                        tanta rapidez, debemos seleccionar las palabras adecuas a la personas, al
+                        contexto y a la situación en la que estemos. El lenguaje académico a de ser
+                        cuidadoso y conciso.
+                    </li>
+
+                    <li>
+                        <strong> Utilizar palabras cortas y familiares.</strong><br>
+                        Como regla general se debe utilizar las
+                        palabras familiares en vez de poco corrientes o comunes.<br>
+                        Como norma general: Preferir las palabras familiares a las rebuscadas, Las
+                        palabras concretas a las abstractas y La palabra única a la perífrasis
+                        (ambigua, evasiva).<br>
+
+                        Ejemplo: La frase < Los eventos consuetudinarios que acontecen en la rúa>
+                        Es a la vez poco corriente, abstracta, perifrástica, larga y pedante, comparada
+                        con < Lo que pasa en la calle> que tiene todas las características opuesta. Y
+                        es más inteligible.<br>
+                        Si se va escribir sobre temas técnicos es recomendable emplear un
+                        vocabulario técnico apropiado. Evitar las jergas y aquellas palabras cuyo
+                        significado ha quedado desfasado. Cada rama y cada tema tiene su
+                        vocabulario propio que lo principiantes deben de aprender.
+                    </li>
+
+                    <li>
+                        <strong>Construcción correcta de las oraciones.</strong><br>
+                        Una palabra sola tiene poco
+                        sentido y su significado es variable y depende del contexto.
+                    </li>
+
+                    <li>
+                        <strong>La unión de las oraciones entre sí.</strong><br>
+                        Las oraciones han de estar unidas de un
+                        modo inteligible si el lector sigue el orden del pensamiento.
+                    </li>
+
+                    <li>
+                        <strong>Organizar los materiales escritos.</strong><br>
+                        En cualquier clase o exposición técnica o
+                        presentación de un argumento razonado, e a de seguir una sucesión lógica.
+                        Antes de empezar a escribir sobre un tema, es necesario recoger y redactar
+                        el material necesario y trazar un esquema. Todo trabajo se ha de dividirse
+                        en unidades manejables y se debe pensar en el orden y presentación de la
+                        misma y como se han de unir entre si. Los subtítulos y la subdivisiones e
+                        utilizan siempre en trabajos y artículos de cierta longitud, no solo porque
+                        ayudara al lector, si porque también impone una disciplina útil al propio
+                        escrito e impide que se desvié del tema.
+                    </li>
+
+                    <li>
+                        <strong>La repetición del escrito.</strong><br>
+                        Primero realizar un borrador del escrito y luego
+                        realizarlo en limpio, con frases reconstruidas y ordenadas. Los trabajos
+                        importantes suelen requerir varios borradores.
+                    </li>
+
+                    <li>
+                        <strong>Realizar una segunda lectura, leer cuidadosamente y corregir lo que se
+                            ha escrito.</strong><br>
+                        Se recomienda dejar el escrito ya terminado y luego mirarlo de
+                        nuevo para corroborar que este se ha escrito adecuadamente y si no hace la
+                        correcciones pertinentes.
+                    </li>
+
+                    <li>
+                        <strong>Utilizar correctamente la puntuación.</strong><br>
+                        La puntuación indica las palabra que
+                        se han de considerar como una unidad y la que son una mera continuación
+                        de las precedentes. Los puntos, comas, etc. Sustituyen las pausas y
+                        entonaciones del discurso. Ayudan en la lectura a mantener unidas las
+                        palabras en unidades que corresponden a pensamientos.
+                    </li>
+
+                    <li>
+                        <strong>Evitar faltas de ortografía.</strong><br>
+                        La faltas de ortografía distraen la intención del
+                        lector, en segundo lugar se tiende a considerarlas como prueba d e
+                        ignorancia y falta de educación adecuada.
+                    </li>
+
+                    <li>
+                        <strong>Mejorar la letra.</strong><br>
+                        Samuel Butrle decía que mejoraba la claridad de su
+                        pensamiento cuando se esforzaba a escribir con claridad.
+                    </li>
+
+                    <li>
+                        <strong>Auto perfeccionamiento.</strong><br>
+                        Es recomendable practicar un repaso crítico, ha
+                        de ser posible con un profesor experimentado que esté preparado para
+                        tomarse el tiempo necesario de leer el escrito con cuidado y criticarlo
+                        extensamente.
+                    </li>
+                    <br><br>
                 </ol>
 
-                En este punto, es necesario que pensemos en aquellos errores que frecuentemente
-                cometemos a la hora de escribir; aquellos que enlodan nuestro trabajo y lo tornan
-                difícil en su lectura y, muchas veces, incomprensible:<br><br>
-
-                <ol>
-                    <li>Anunciar al inicio del párrafo algo que diremos y, antes de desarrollarlo,
-                        referirnos a otra cosa.</li>
-                    <ul>
-                        <li>Ejemplo: El secretario general del comité dijo, tras la celebración realizada
-                            en honor al centenario de la institución que preside el señor Eulogio
-                            Frisamán, hombre carismático que pretende dar un nuevo rumbo al curso
-                            de la historia entomológica de la nación, empeñando sus esfuerzos en la
-                            profundización de la investigación científica de la materia.</li>
-                    </ul>
-
-                    <li>No dejar claro el tema, sus antecedentes y causas, ni a qué hecho o
-                        circunstancia se está haciendo alusión.</li>
-                    <li>Presumir que quien leerá el texto ya está familiarizado con la noticia a la que me
-                        estoy refiriendo.</li>
-                    <li>Entremezclar conceptos, hechos, datos, informaciones, etc., sin un cuidado de
-                        jerarquía, ni de sintaxis.</li>
-                    <li>Dar por concluidos textos que no transmiten lo que queríamos transmitir al
-                        comenzarlos.</li>
-                    <li>No encontrar la fórmula de desarrollar comprensiblemente ciertas ideas.</li>
-                    <li>Percibir que los hechos y su desarrollo se van complicando en el papel, a
-                        medida que los vamos describiendo</li>
-                    <li>Irnos por las ramas.</li>
-                    <li>Repetir en una misma línea, oración y/o párrafo, un concepto y una palabra.</li>
-                    <li>Utilizar muletillas como "Por otra parte/lado", "Por su parte/lado", "Y es que",
-                        para comenzar una oración o párrafo, cuando no se sabe cómo hacerlo y no se
-                        quiere pensar en una solución creativa para resolver el problema. En este punto
-                        hay que recalcar que la primera y segunda muletilla provocan en el lector
-                        preguntarse: "¿Por cuál parte?; ¿por la de atrás, la de adelante, cuál?</li>
-                    <li>Reiterar una y otra vez ilativos tales como: "por la cual", "por lo cual", "por los
-                        cuales", "la que ", "lo que", "los que"; o los determinativos "sin duda", "no cabe
-                        duda"; y tantos otros que ustedes ya estarán recordando.</li>
-                    <li>Eliminar la sangría al comenzar un párrafo.</li>
-
-                    <li>Abusar de las comillas (""), sabiendo que sólo se usan en caso de insertar una
-                        cuña o frase textual de alguna fuente en el texto.</li>
-
-                    <li>Utilizar palabras tomadas del inglés y mal traducidas o inexistentes en
-                        castellano. Por ejemplo, “customizar” (customize); emponderar (empowerment),
-                        setear (set up) y otras tantas que contaminan el lenguaje.</li>
-
-                </ol>
-
-
-                Al momento de comenzar a pensar en un tema inmediatamente nos hacemos una
-                imagen mental de lo que queremos obtener: ya prefiguramos cómo lo escribiremos.
-                Se inicia, así, un recorrido mental en que seleccionaremos ideas, fuentes,
-                documentos, diálogos, discursos, textos; decantaremos, buscaremos, saltaremos,
-                descartaremos, asociaremos, desplazaremos de lugar, etc. Jugaremos con el tiempo
-                real desestructurándolo para crear nuevos efectos o, simplemente, para facilitar la
-                comprensión de los hechos de manera aislada e individual. Al redactar
-                sintetizaremos y expandiremos –cuando corresponda y/o lo amerite– esas ideas.
-                Luego, a medida que releamos lo escrito, corregiremos los errores, clarificaremos las
-                dudas y, en algunos casos, eliminaremos frases y párrafos que nos parezcan
-                redundantes o innecesarios.<br><br>
-                Las expectativas que genero en torno a lo que quiero escribir; la búsqueda de datos,
-                la persecución consecución de fuentes; la toma de notas; la transcripción de
-                entrevistas; la formulación de esquemas de trabajo y de esquemas de desarrollo del
-                texto; etc., son todas partes constitutivas de la obra final.<br><br>
-                Entender qué palabras y oraciones son apenas representaciones lingüísticas, mapas
-                del territorio que describen, es básico para entender que cada vez que escribimos
-                necesitamos y tenemos la obligación de encontrar la palabra y la oración que
-                representen, que interpreten, que expresen de mejor modo aquello que quiero
-                comunicar.<br><br>
-                La palabra es una parcialidad. Un conjunto de palabras es un conjunto de
-                parcialidades; con ese conjunto de parcialidades debemos referirnos a una totalidad,
-                a un hecho, a una persona, a un sentimiento.<br><br>
-                Ante cada párrafo que escribamos debemos preguntarnos si hemos logrado
-                comunicar tal como queríamos aquella totalidad a la que nos referimos mediante la
-                palabra (parcial). Debemos practicar el mismo ejercicio con cada uno de los verbos
-                utilizados, verificando que sean los más adecuados y que se utilicen en el tiempo
-                correcto. Debemos buscar la palabra y el verbo más representativos.
-                Lo escrito nunca se entiende del mismo modo que lo hablado. No se habla igual que
-                como se escribe.<br><br>
-                No se escucha igual que como se lee. Funcionamos en niveles distintos de
-                comprensión. Cuando al hablar digo algo que luego descubro no es correcto, puedo
-                rectificar de inmediato y mi interlocutor lo entenderá, pasando por alto mi error. Si al
-                escribir cometo un error, en el mejor de los casos pasará un día completo antes de
-                que pueda rectificarlo y será demasiado tarde: lo que el público leyó en las páginas
-                que escribí en el diario en que trabajo, ya lo internalizó.<br><br>
-                Una y otra vez tendremos que recordar que al escribir estamos comunicándonos con
-                otra persona, no hablando en el vacío. Todo texto se concibe con la presencia de un
-                destinatario.<br><br>
-                A fin de potenciar el texto, siempre y cuando no se atente contra la verdad, podemos
-                hacer saltos en el tiempo, eliminar datos irrelevantes, detenernos largamente en un
-                hecho particular que nos parece de enorme relevancia; cortar, tachar, romper,
-                desarrollar, etc. Somos los dueños de nuestro texto; podemos liquidarlo tantas veces
-                como queramos, si el fin último es bueno, verdadero y de calidad.
-                Por último, el mensaje no es lo quiero decir, es lo que digo.<br><br>
 
             </div>
 
@@ -155,21 +200,22 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:10%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/pens_l_4')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/mem_4')}}">Actividad previa</a></li>
+            <li><a href="{{url('/pens_l_1')}}">Lectura 1</a></li>
+            <li><a href="{{url('/pens_l_2')}}">Lectura 2</a></li>
+            <li><a href="{{url('/pens_l_3')}}">Lectura 3</a></li>
+            <li><a href="{{url('/pens_l_4')}}" style="background-color: lightgray;">Lectura 4</a></li>
+            <li><a href="{{url('/pens_1')}}"><strong>Primer ejercicio</strong></a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/pens_1')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

@@ -32,12 +32,6 @@ class CreateFortalezasTable extends Migration
             $table->integer('cal_3')->default(0);
             $table->integer('cal_4')->default(0);
 
-            $table->integer('b1')->default(0);
-            $table->integer('b2')->default(0);
-            $table->integer('b3')->default(0);
-            $table->integer('b4')->default(0);
-
-            $table->integer('entregado')->default(0);
 
             $table->integer('cal_general')->default(0);
 

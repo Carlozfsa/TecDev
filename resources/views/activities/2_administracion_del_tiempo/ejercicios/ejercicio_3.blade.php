@@ -217,6 +217,12 @@
 
                 @else
 
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br>
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/tiempo_ej_3')}}">
                         {{csrf_field()}}
 
@@ -466,7 +472,6 @@
                 <li><a href="{{url('/tiempo_ej_6')}}">Parte 6</a></li>
                 <li><a href="{{url('/tiempo_ej_7')}}">Parte 7</a></li>
                 <li><a href="{{url('/tiempo_ej_8')}}">Parte 8</a></li>
-                <li><a href="{{url('/tiempo_ej_f')}}">Parte final</a></li>
                 <li>
                     <a href="{{url('/tiempo_ej_4')}}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>

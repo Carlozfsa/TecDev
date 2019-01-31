@@ -21,51 +21,43 @@
                 <thead class="thead-light">
                 <tr>
                     <th>TIPO DE INTELIGENCIA</th>
-                    <th>PORCENTAJE</th>
-                    <th>ORDEN DE PRIORIDAD</th>
+                    <th>PUNTAJE</th>
                 </tr>
                 </thead>
 
                 <tr>
                     <td>Lingüística</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$t1}}</td>
                 </tr>
 
                 <tr>
                     <td>Lógica y matemática</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$t2}}</td>
                 </tr>
 
                 <tr>
                     <td>Espacial</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$t3}}</td>
                 </tr>
 
                 <tr>
                     <td>Física y cinestésica</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$t4}}</td>
                 </tr>
 
                 <tr>
                     <td>Musical</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$t5}}</td>
                 </tr>
 
                 <tr>
                     <td>Interpersonal</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$t6}}</td>
                 </tr>
 
                 <tr>
                     <td>Intrapersonal</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$t7}}</td>
                 </tr>
 
             </table>
@@ -87,24 +79,27 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:10%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
+            <ul class="pagination center-block">
+                <li>
+                    <a href="{{url('/int_mult_ej_4')}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="{{url('/int_mult_ej_1')}}">Ejercicio 1</a></li>
+                <li><a href="{{url('/int_mult_ej_2')}}">Ejercicio 2</a></li>
+                <li><a href="{{url('/int_mult_ej_3')}}">Ejercicio 3</a></li>
+                <li><a href="{{url('/int_mult_ej_4')}}">Ejercicio 4</a></li>
+                <li><a href="{{url('/int_mult_ej_3')}}" style="background-color: lightgray;">Resultados</a></li>
+                <li><a href="{{url('/hab_est_l_1')}}"><strong>Siguiente actividad</strong></a></li>
+                <li>
+                    <a href="{{url('/hab_est_l_1')}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
         </ul>
     </nav>
   </div>

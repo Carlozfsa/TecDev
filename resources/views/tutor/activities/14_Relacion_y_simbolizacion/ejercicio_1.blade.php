@@ -42,7 +42,11 @@
                     <img width="400" height=200" src="images/14_Relacion_y_simbolizacion/1/ej1.png">
                 </div><br><br>
 
+                @if($edit==0)
+
             {!! Form::open(['method'=>'POST', 'action'=>'TutorRelacionsController@store_rel_sim_1']) !!}
+
+                @if($e1 != NULL && $e2 != NULL && $e3 != NULL && $e4 != NULL && $e5 != NULL && $e6 != NULL && $e7 != NULL && $e8 != NULL)
 
                 <table>
                     <tr>
@@ -59,7 +63,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>{!! Form::label('a', $e1, ['class'=>'form-control'])!!}</td>
+                            <td>{!! Form::label('', $e1, ['class'=>'form-control'])!!}</td>
                         </tr>
                     </table>
                      </td>
@@ -76,7 +80,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{!! Form::label('e', $e5, ['class'=>'form-control'])!!}</td>
+                                    <td>{!! Form::label('', $e5, ['class'=>'form-control'])!!}</td>
                                 </tr>
                             </table>
                         </td>
@@ -96,7 +100,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{!! Form::label('b', $e2, ['class'=>'form-control'])!!}</td>
+                                    <td>{!! Form::label('', $e2, ['class'=>'form-control'])!!}</td>
                                 </tr>
                             </table>
                         </td>
@@ -113,7 +117,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{!! Form::label('f', $e6, ['class'=>'form-control'])!!}</td>
+                                    <td>{!! Form::label('', $e6, ['class'=>'form-control'])!!}</td>
                                 </tr>
                             </table>
                         </td>
@@ -133,7 +137,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{!! Form::label('c', $e3, ['class'=>'form-control'])!!}</td>
+                                    <td>{!! Form::label('', $e3, ['class'=>'form-control'])!!}</td>
                                 </tr>
                             </table>
                         </td>
@@ -150,7 +154,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{!! Form::label('g', $e7, ['class'=>'form-control'])!!}</td>
+                                    <td>{!! Form::label('', $e7, ['class'=>'form-control'])!!}</td>
                                 </tr>
                             </table>
                         </td>
@@ -170,7 +174,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{!! Form::label('d', $e4, ['class'=>'form-control'])!!}</td>
+                                    <td>{!! Form::label('', $e4, ['class'=>'form-control'])!!}</td>
                                 </tr>
                             </table>
                         </td>
@@ -187,17 +191,25 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>{!! Form::label('h', $e8, ['class'=>'form-control'])!!}</td>
+                                    <td>{!! Form::label('', $e8, ['class'=>'form-control'])!!}</td>
                                 </tr>
                             </table>
                         </td>
 
                     </tr>
 
-
                 </tr>
                 </table>
                 <br><br>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
 
                 <table class="col-lg-12">
                     <tr>
@@ -207,7 +219,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro1" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -217,7 +229,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal1" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -230,6 +242,209 @@
                 </table>
 
             {!! Form::close() !!}
+
+            @else
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'TutorRelacionsController@edit_rel_sim_1']) !!}
+
+                    @if($e1 != NULL && $e2 != NULL && $e3 != NULL && $e4 != NULL && $e5 != NULL && $e6 != NULL && $e7 != NULL && $e8 != NULL)
+
+                    <table>
+                        <tr>
+                            <td>
+
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/a.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e1, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/e.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e5, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/b.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e2, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/f.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e6, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/c.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e3, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/g.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e7, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/d.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e4, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td rowspan = "2">
+                                            <img width="100" height=100" src="images/14_Relacion_y_simbolizacion/1/h.png">
+                                        </td>
+                                        <td>
+                                            Señala alguna
+                                            característica esencial:
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{!! Form::label('', $e8, ['class'=>'form-control'])!!}</td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+
+                        </tr>
+                    </table>
+                    <br><br>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+
+                    {!! Form::close() !!}
+
+            @endif
 
             </div>
 

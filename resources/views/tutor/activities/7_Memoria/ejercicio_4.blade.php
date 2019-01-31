@@ -15,11 +15,26 @@
                 debilidades para plasmarlo en un plan de mejora, apoyado de La línea de la vida y
                 el Análisis FODA.<br><br>
                 <div class="form-group">
+
+
+                    @if($edit==0)
+
                     {!! Form::open(['method'=>'POST', 'action'=>'TutorMemoriasController@store_mem_4']) !!}
-                        {!! Form::label('escrito', $f1_decode,  ['class'=>'form-control']) !!}<br>
+
+                        @if($f1_decode != NULL)
+
+                        {!! Form::label('', $f1_decode,  ['class'=>'form-control']) !!}<br>
                         {!! Form::submit('Guardar', ['class'=>'btn-primary form-control']) !!}
 
 
+                        @else
+
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
+
+                        @endif
                     <table class="col-lg-12">
                         <tr>
                             <td><strong>Retroalimentación:</strong></td>
@@ -28,7 +43,7 @@
                         <tr>
                             <td>
                                 <br>
-                                <textarea rows="5" name ="retro" class="form-control"></textarea>
+                                <textarea rows="5" name ="retro4" class="form-control"></textarea>
                                 <br>
                             </td>
                         </tr>
@@ -38,7 +53,7 @@
                                 <br>
                                 <strong>Calificación:</strong>
                                 <br><br>
-                                <input type="text" name="cal" class="form-control name_list center-block">
+                                <input type="text" name="cal4" class="form-control name_list center-block">
                             </td>
                         </tr>
 
@@ -52,6 +67,63 @@
 
 
                     {!! Form::close() !!}
+
+                    @else
+
+
+                        {!! Form::open(['method'=>'POST', 'action'=>'TutorMemoriasController@edit_mem_4']) !!}
+
+                        @if($f1_decode != NULL)
+
+                        {!! Form::label('', $f1_decode,  ['class'=>'form-control']) !!}<br>
+                        {!! Form::submit('Guardar', ['class'=>'btn-primary form-control']) !!}
+
+
+                        @else
+
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
+
+                        @endif
+
+                        <table class="col-lg-12">
+                            <tr>
+                                <td><strong>Retroalimentación:</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                    <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <strong>Calificación:</strong>
+                                    <br><br>
+                                    <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br><br>
+                                    <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                        {!! Form::close() !!}
+
+                    @endif
+
                 </div>
 
 

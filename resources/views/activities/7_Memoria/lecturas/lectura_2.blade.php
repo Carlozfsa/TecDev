@@ -59,21 +59,19 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:35%">
+  <div class="center-block" style="margin-left:25%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('/mem_l_1')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('/mem_l_1')}}">Lectura 1</a></li>
+            <li><a href="{{url('/mem_l_2')}}" style="background-color: lightgray;">Lectura 2</a></li>
+            <li><a href="{{url('/mem_1')}}"><strong>Primer ejercicio</strong></a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('/mem_1')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

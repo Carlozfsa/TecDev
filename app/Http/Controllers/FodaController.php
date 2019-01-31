@@ -20,19 +20,25 @@ class FodaController extends Controller
 
     public function create_f1(){
 
-        $edit = NULL;
+        if(Auth::User()->avance >= 1.11) {
 
-        $f = Fortaleza::where('numero_control', 14021073)->first();
-        $f_decode = NULL;
 
-        if(Fortaleza::where('numero_control', 14021073)->exists()){
-            $edit = 1;
-            $f_decode = json_decode($f->fortalezas_1);
+            $edit = NULL;
 
+            $f = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
+            $f_decode = NULL;
+
+            if (Fortaleza::where('numero_control', Auth::user()->numero_control)->exists() && $f->fortalezas_1 != NULL) {
+                $edit = 1;
+                $f_decode = json_decode($f->fortalezas_1);
+
+            } else {
+                $edit = 0;
+            }
+            return view('activities.1_foda_cuestionarios.paso_1.Analisis_Foda_Paso1_1', compact('edit', 'f_decode'));
         }else{
-            $edit= 0;
+            return redirect()->back();
         }
-         return view('activities.1_foda_cuestionarios.paso_1.Analisis_Foda_Paso1_1', compact('edit','f_decode'));
     }
 
     public function create_f2(){
@@ -41,7 +47,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Fortaleza::where('numero_control', 14021073)->first();
+            $f = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->fortalezas_2 != ''){
@@ -63,7 +69,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Fortaleza::where('numero_control', 14021073)->first();
+            $f = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->fortalezas_3 != ''){
@@ -85,7 +91,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Fortaleza::where('numero_control', 14021073)->first();
+            $f = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->fortalezas_4 != ''){
@@ -108,10 +114,10 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Debilidad::where('numero_control', 14021073)->first();
+            $f = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
-            if(Debilidad::where('numero_control', 14021073)->exists()){
+            if(Debilidad::where('numero_control', Auth::user()->numero_control)->exists() &&  $f->debilidads_1 != NULL){
                 $edit = 1;
                 $f_decode = json_decode($f->debilidads_1 );
 
@@ -130,7 +136,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Debilidad::where('numero_control', 14021073)->first();
+            $f = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->debilidads_2 != ''){
@@ -152,7 +158,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Debilidad::where('numero_control', 14021073)->first();
+            $f = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->debilidads_3 != ''){
@@ -174,7 +180,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Debilidad::where('numero_control', 14021073)->first();
+            $f = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->debilidads_4 != ''){
@@ -198,10 +204,10 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Amenaza::where('numero_control', 14021073)->first();
+            $f = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
-            if(Amenaza::where('numero_control', 14021073)->exists()){
+            if(Amenaza::where('numero_control', Auth::user()->numero_control)->exists() && $f->amenazas_1 != NULL){
                 $edit = 1;
                 $f_decode = json_decode($f->amenazas_1);
 
@@ -220,7 +226,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Amenaza::where('numero_control', 14021073)->first();
+            $f = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->amenazas_2 != ''){
@@ -243,7 +249,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Amenaza::where('numero_control', 14021073)->first();
+            $f = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->amenazas_3 != ''){
@@ -266,7 +272,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Amenaza::where('numero_control', 14021073)->first();
+            $f = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->amenazas_4 != ''){
@@ -288,7 +294,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Amenaza::where('numero_control', 14021073)->first();
+            $f = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->amenazas_5 != ''){
@@ -312,10 +318,10 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Oportunidad::where('numero_control', 14021073)->first();
+            $f = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
-            if(Oportunidad::where('numero_control', 14021073)->exists()){
+            if(Oportunidad::where('numero_control', Auth::user()->numero_control)->exists() && $f->oportunidads_1 != NULL){
                 $edit = 1;
                 $f_decode = json_decode($f->oportunidads_1);
 
@@ -334,7 +340,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Oportunidad::where('numero_control', 14021073)->first();
+            $f = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->oportunidads_2 != ''){
@@ -357,7 +363,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Oportunidad::where('numero_control', 14021073)->first();
+            $f = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->oportunidads_3 != ''){
@@ -379,7 +385,7 @@ class FodaController extends Controller
 
             $edit = NULL;
 
-            $f = Oportunidad::where('numero_control', 14021073)->first();
+            $f = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
             $f_decode = NULL;
 
             if($f->oportunidads_4 != ''){
@@ -397,22 +403,28 @@ class FodaController extends Controller
     }
 
     public function create_r(){
-        $f = Fortaleza::where('numero_control',14021073)->first()->fortalezas_4;
-        $fd = json_decode($f);
 
-        $o = Oportunidad::where('numero_control',14021073)->first()->oportunidads_4;
-        $od = json_decode($o);
+        if(Auth::User()->avance >= 1.45) {
 
-        $d = Debilidad::where('numero_control',14021073)->first()->debilidads_4;
-        $dd = json_decode($d);
+            $f = Fortaleza::where('numero_control', Auth::user()->numero_control)->first()->fortalezas_4;
+            $fd = json_decode($f);
 
-        $a = Amenaza::where('numero_control',14021073)->first()->amenazas_5;
-        $ad = json_decode($a);
+            $o = Oportunidad::where('numero_control', Auth::user()->numero_control)->first()->oportunidads_4;
+            $od = json_decode($o);
 
+            $d = Debilidad::where('numero_control', Auth::user()->numero_control)->first()->debilidads_4;
+            $dd = json_decode($d);
 
-        return view('activities.1_foda_cuestionarios.resumen.Analisis_Foda_Resumen', compact('fd', 'od', 'dd', 'ad'));
+            $a = Amenaza::where('numero_control', Auth::user()->numero_control)->first()->amenazas_5;
+            $ad = json_decode($a);
+
+            return view('activities.1_foda_cuestionarios.resumen.Analisis_Foda_Resumen', compact('fd', 'od', 'dd', 'ad'));
+
+        }else{
+            return redirect()->back();
+        }
+
     }
-
 
 
     public function store_f1(Request $request){
@@ -428,19 +440,33 @@ class FodaController extends Controller
         }
         $f1_output = json_encode($f1);
 
-        $fortaleza_1 = new Fortaleza();
-        $fortaleza_1->numero_control = 14021073;
-        $fortaleza_1->fortalezas_1 = $f1_output;
+        if(Fortaleza::where('numero_control', Auth::user()->numero_control)->exists()){
 
-        $fortaleza_1->b1 = 1;
+            $fortaleza_1 = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
+            $fortaleza_1->numero_control = Auth::user()->numero_control;
+            $fortaleza_1->fortalezas_1 = $f1_output;
 
-        $fortaleza_1->save();
+            $fortaleza_1->save();
 
-        $u = User::where('numero_control', 14021073)->first();
-        $u->avance = 1.12;
-        $u->save();
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.12;
+            $u->save();
 
-        return redirect('foda_1_2');
+        }else{
+            $fortaleza_1 = new Fortaleza();
+            $fortaleza_1->numero_control = Auth::user()->numero_control;
+            $fortaleza_1->fortalezas_1 = $f1_output;
+
+            $fortaleza_1->save();
+
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.12;
+            $u->save();
+        }
+
+
+
+        return redirect()->back();
     }
 
     public function store_f2(Request $request){
@@ -456,16 +482,16 @@ class FodaController extends Controller
         }
         $f2_output = json_encode($f2);
 
-        $fortaleza_2 = Fortaleza::where('numero_control',14021073)->first();
+        $fortaleza_2 = Fortaleza::where('numero_control',Auth::user()->numero_control)->first();
         $fortaleza_2->fortalezas_2 = $f2_output;
         $fortaleza_2->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.13;
         $u->save();
 
 
-        return redirect('foda_1_3');
+        return redirect()->back();
 
     }
 
@@ -482,16 +508,16 @@ class FodaController extends Controller
         }
         $f3_output = json_encode($f3);
 
-        $fortaleza_3 = Fortaleza::where('numero_control',14021073)->first();
+        $fortaleza_3 = Fortaleza::where('numero_control',Auth::user()->numero_control)->first();
         $fortaleza_3->fortalezas_3 = $f3_output;
         $fortaleza_3->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.14;
         $u->save();
 
 
-        return redirect('foda_1_4');
+        return redirect()->back();
 
     }
 
@@ -508,17 +534,16 @@ class FodaController extends Controller
         }
         $f4_output = json_encode($f4);
 
-        $fortaleza_4 = Fortaleza::where('numero_control',14021073)->first();
+        $fortaleza_4 = Fortaleza::where('numero_control',Auth::user()->numero_control)->first();
         $fortaleza_4->fortalezas_4 = $f4_output;
-        $fortaleza_4->entregado = 1;
         $fortaleza_4->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.21;
         $u->save();
 
 
-        return redirect('foda_2_1');
+        return redirect()->back();
 
     }
 
@@ -536,33 +561,30 @@ class FodaController extends Controller
         }
         $d1_output = json_encode($d1);
 
-        $debilidad_1 = new Debilidad();
-        $debilidad_1->numero_control = 14021073;
-        $debilidad_1->debilidads_1 = $d1_output;
-        $debilidad_1->debilidads_2 = '';
-        $debilidad_1->debilidads_3 = '';
-        $debilidad_1->debilidads_4 = '';
+        if(Debilidad::where('numero_control', Auth::user()->numero_control)->exists()){
+            $debilidad_1 = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
+            $debilidad_1->numero_control = Auth::user()->numero_control;
+            $debilidad_1->debilidads_1 = $d1_output;
+            $debilidad_1->save();
 
-        $debilidad_1->retro_1 = '';
-        $debilidad_1->retro_2 = '';
-        $debilidad_1->retro_3 = '';
-        $debilidad_1->retro_4 = '';
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.22;
+            $u->save();
+        }else {
+            $debilidad_1 = new Debilidad();
+            $debilidad_1->numero_control = Auth::user()->numero_control;
+            $debilidad_1->debilidads_1 = $d1_output;
+            $debilidad_1->save();
 
-        $debilidad_1->cal_1 = 0;
-        $debilidad_1->cal_2 = 0;
-        $debilidad_1->cal_3 = 0;
-        $debilidad_1->cal_4 = 0;
-
-        $debilidad_1->cal_general = 0;
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.22;
+            $u->save();
+        }
 
 
-        $debilidad_1->save();
 
-        $u = User::where('numero_control', 14021073)->first();
-        $u->avance = 1.22;
-        $u->save();
 
-        return redirect('foda_2_2');
+        return redirect()->back();
 
     }
 
@@ -579,15 +601,15 @@ class FodaController extends Controller
         }
         $d2_output = json_encode($d2);
 
-        $debilidad_2 = Debilidad::where('numero_control',14021073)->first();
+        $debilidad_2 = Debilidad::where('numero_control',Auth::user()->numero_control)->first();
         $debilidad_2->debilidads_2 = $d2_output;
         $debilidad_2->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.23;
         $u->save();
 
-        return redirect('foda_2_3');
+        return redirect()->back();
 
     }
 
@@ -604,15 +626,15 @@ class FodaController extends Controller
         }
         $d3_output = json_encode($d3);
 
-        $debilidad_3 = Debilidad::where('numero_control',14021073)->first();
+        $debilidad_3 = Debilidad::where('numero_control',Auth::user()->numero_control)->first();
         $debilidad_3->debilidads_3 = $d3_output;
         $debilidad_3->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.24;
         $u->save();
 
-        return redirect('foda_2_4');
+        return redirect()->back();
 
     }
 
@@ -629,16 +651,15 @@ class FodaController extends Controller
         }
         $d4_output = json_encode($d4);
 
-        $debilidad_4 = Debilidad::where('numero_control',14021073)->first();
+        $debilidad_4 = Debilidad::where('numero_control',Auth::user()->numero_control)->first();
         $debilidad_4->debilidads_4 = $d4_output;
-        $debilidad_4->entregado = 1;
         $debilidad_4->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.31;
         $u->save();
 
-        return redirect('foda_3_1');
+        return redirect()->back();
 
     }
 
@@ -655,36 +676,30 @@ class FodaController extends Controller
         }
         $a1_output = json_encode($a1);
 
-        $amenazas_1 = new Amenaza();
-        $amenazas_1->numero_control = 14021073;
+        if(Amenaza::where('numero_control', Auth::user()->numero_control)->exists()){
+            $amenazas_1 = Amenaza::where('numero_control', Auth::user()->numero_control);
+            $amenazas_1->numero_control = Auth::user()->numero_control;
+            $amenazas_1->amenazas_1 = $a1_output;
+            $amenazas_1->save();
 
-        $amenazas_1->amenazas_1 = $a1_output;
-        $amenazas_1->amenazas_2 = '';
-        $amenazas_1->amenazas_3 = '';
-        $amenazas_1->amenazas_4 = '';
-        $amenazas_1->amenazas_5 = '';
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.32;
+            $u->save();
+        }else{
+            $amenazas_1 = new Amenaza();
+            $amenazas_1->numero_control = Auth::user()->numero_control;
+            $amenazas_1->amenazas_1 = $a1_output;
+            $amenazas_1->save();
 
-        $amenazas_1->retro_1 = '';
-        $amenazas_1->retro_2 = '';
-        $amenazas_1->retro_3 = '';
-        $amenazas_1->retro_4 = '';
-        $amenazas_1->retro_5 = '';
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.32;
+            $u->save();
+        }
 
-        $amenazas_1->cal_1 = 0;
-        $amenazas_1->cal_2 = 0;
-        $amenazas_1->cal_3 = 0;
-        $amenazas_1->cal_4 = 0;
-        $amenazas_1->cal_5 = 0;
 
-        $amenazas_1->cal_general = 0;
 
-        $amenazas_1->save();
 
-        $u = User::where('numero_control', 14021073)->first();
-        $u->avance = 1.32;
-        $u->save();
-
-        return redirect('foda_3_2');
+        return redirect()->back();
     }
     public function store_a2(Request $request){
 
@@ -699,15 +714,15 @@ class FodaController extends Controller
         }
         $a2_output = json_encode($a2);
 
-        $amenazas_2 = Amenaza::where('numero_control',14021073)->first();
+        $amenazas_2 = Amenaza::where('numero_control',Auth::user()->numero_control)->first();
         $amenazas_2->amenazas_2 = $a2_output;
         $amenazas_2->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.33;
         $u->save();
 
-        return redirect('foda_3_3');
+        return redirect()->back();
 
     }
 
@@ -724,15 +739,15 @@ class FodaController extends Controller
         }
         $a3_output = json_encode($a3);
 
-        $amenazas_3 = Amenaza::where('numero_control',14021073)->first();
+        $amenazas_3 = Amenaza::where('numero_control',Auth::user()->numero_control)->first();
         $amenazas_3->amenazas_3 = $a3_output;
         $amenazas_3->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.34;
         $u->save();
 
-        return redirect('foda_3_4');
+        return redirect()->back();
 
     }
 
@@ -749,15 +764,15 @@ class FodaController extends Controller
         }
         $a4_output = json_encode($a4);
 
-        $amenazas_4 = Amenaza::where('numero_control',14021073)->first();
+        $amenazas_4 = Amenaza::where('numero_control',Auth::user()->numero_control)->first();
         $amenazas_4->amenazas_4 = $a4_output;
         $amenazas_4->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.35;
         $u->save();
 
-        return redirect('foda_3_5');
+        return redirect()->back();
 
     }
 
@@ -774,16 +789,15 @@ class FodaController extends Controller
         }
         $a5_output = json_encode($a5);
 
-        $amenazas_5 = Amenaza::where('numero_control',14021073)->first();
+        $amenazas_5 = Amenaza::where('numero_control',Auth::user()->numero_control)->first();
         $amenazas_5->amenazas_5 = $a5_output;
-        $amenazas_5->entregado = 1;
         $amenazas_5->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.41;
         $u->save();
 
-        return redirect('foda_4_1');
+        return redirect()->back();
 
     }
 
@@ -801,34 +815,30 @@ class FodaController extends Controller
         }
         $o1_output = json_encode($o1);
 
-        $oportunidads_1 = new Oportunidad();
-        $oportunidads_1->numero_control = 14021073;
-        $oportunidads_1->oportunidads_1 = $o1_output;
-        $oportunidads_1->oportunidads_2 = '';
-        $oportunidads_1->oportunidads_3 = '';
-        $oportunidads_1->oportunidads_4 = '';
-
-        $oportunidads_1->retro_1 = '';
-        $oportunidads_1->retro_2 = '';
-        $oportunidads_1->retro_3 = '';
-        $oportunidads_1->retro_4 = '';
-
-        $oportunidads_1->cal_1 = 0;
-        $oportunidads_1->cal_2 = 0;
-        $oportunidads_1->cal_3 = 0;
-        $oportunidads_1->cal_4 = 0;
-
-        $oportunidads_1->cal_general = 0;
+        if(Oportunidad::where('numero_control', Auth::user()->numero_control)->exists()){
+            $oportunidads_1 = Oportunidad::where('numero_control', Auth::user()->numero_control);
+            $oportunidads_1->numero_control = Auth::user()->numero_control;
+            $oportunidads_1->oportunidads_1 = $o1_output;
+            $oportunidads_1->save();
 
 
-        $oportunidads_1->save();
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.42;
+            $u->save();
+        }else{
+            $oportunidads_1 = new Oportunidad();
+            $oportunidads_1->numero_control = Auth::user()->numero_control;
+            $oportunidads_1->oportunidads_1 = $o1_output;
+            $oportunidads_1->save();
 
 
-        $u = User::where('numero_control', 14021073)->first();
-        $u->avance = 1.42;
-        $u->save();
+            $u = User::where('numero_control', Auth::user()->numero_control)->first();
+            $u->avance = 1.42;
+            $u->save();
+        }
 
-        return redirect('foda_4_2');
+
+        return redirect()->back();
     }
 
     public function store_o2(Request $request){
@@ -844,15 +854,15 @@ class FodaController extends Controller
         }
         $o2_output = json_encode($o2);
 
-        $oportunidads_2 = Oportunidad::where('numero_control',14021073)->first();
+        $oportunidads_2 = Oportunidad::where('numero_control',Auth::user()->numero_control)->first();
         $oportunidads_2->oportunidads_2 = $o2_output;
         $oportunidads_2->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 1.43;
         $u->save();
 
-        return redirect('foda_4_3');
+        return redirect()->back();
 
     }
 
@@ -869,15 +879,15 @@ class FodaController extends Controller
         }
         $o3_output = json_encode($o3);
 
-        $oportunidads_3 = Oportunidad::where('numero_control',14021073)->first();
+        $oportunidads_3 = Oportunidad::where('numero_control',Auth::user()->numero_control)->first();
         $oportunidads_3->oportunidads_3 = $o3_output;
         $oportunidads_3->save();
 
-        $u = User::where('numero_control', 14021073)->first();
-        $u->avance = 1.44;
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
+        $u->avance = 1.45;
         $u->save();
 
-        return redirect('foda_4_4');
+        return redirect()->back();
 
     }
 
@@ -894,12 +904,11 @@ class FodaController extends Controller
         }
         $o4_output = json_encode($o4);
 
-        $oportunidads_4 = Oportunidad::where('numero_control',14021073)->first();
+        $oportunidads_4 = Oportunidad::where('numero_control',Auth::user()->numero_control)->first();
         $oportunidads_4->oportunidads_4 = $o4_output;
-        $oportunidads_4->entregado = 1;
         $oportunidads_4->save();
 
-        $u = User::where('numero_control', 14021073)->first();
+        $u = User::where('numero_control', Auth::user()->numero_control)->first();
         $u->avance = 2.12;
         $u->save();
 
@@ -922,13 +931,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Fortaleza::where('numero_control', 14021073)->first();
+        $e = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->fortalezas_1 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_f2(Request $request){
@@ -945,13 +954,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Fortaleza::where('numero_control', 14021073)->first();
+        $e = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->fortalezas_2 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_f3(Request $request){
@@ -968,13 +977,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Fortaleza::where('numero_control', 14021073)->first();
+        $e = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->fortalezas_3 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_f4(Request $request){
@@ -991,13 +1000,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Fortaleza::where('numero_control', 14021073)->first();
+        $e = Fortaleza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->fortalezas_4 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
 
@@ -1016,13 +1025,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Debilidad::where('numero_control', 14021073)->first();
+        $e = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->debilidads_1 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_d2(Request $request){
@@ -1040,13 +1049,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Debilidad::where('numero_control', 14021073)->first();
+        $e = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->debilidads_2 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_d3(Request $request){
@@ -1064,13 +1073,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Debilidad::where('numero_control', 14021073)->first();
+        $e = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->debilidads_3 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_d4(Request $request){
@@ -1088,13 +1097,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Debilidad::where('numero_control', 14021073)->first();
+        $e = Debilidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->debilidads_4 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_a1(Request $request){
@@ -1112,13 +1121,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Amenaza::where('numero_control', 14021073)->first();
+        $e = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->amenazas_1 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_a2(Request $request){
@@ -1136,13 +1145,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Amenaza::where('numero_control', 14021073)->first();
+        $e = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->amenazas_2 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_a3(Request $request){
@@ -1159,13 +1168,13 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Amenaza::where('numero_control', 14021073)->first();
+        $e = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->amenazas_3 = $f1_output;
 
         $e->save();
 
-        return $f1_output;
+        return redirect()->back();
     }
 
     public function edit_a4(Request $request){
@@ -1182,7 +1191,7 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Amenaza::where('numero_control', 14021073)->first();
+        $e = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->amenazas_4 = $f1_output;
 
@@ -1205,7 +1214,7 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Amenaza::where('numero_control', 14021073)->first();
+        $e = Amenaza::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->amenazas_5 = $f1_output;
 
@@ -1227,7 +1236,7 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Oportunidad::where('numero_control', 14021073)->first();
+        $e = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->oportunidads_1 = $f1_output;
 
@@ -1249,11 +1258,12 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Oportunidad::where('numero_control', 14021073)->first();
+        $e = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->oportunidads_2 = $f1_output;
 
         $e->save();
+
         return redirect()->back();
     }
 
@@ -1271,11 +1281,12 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Oportunidad::where('numero_control', 14021073)->first();
+        $e = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->oportunidads_3 = $f1_output;
 
         $e->save();
+
         return redirect()->back();
     }
 
@@ -1293,7 +1304,7 @@ class FodaController extends Controller
 
         $f1_output = json_encode($f1);
 
-        $e = Oportunidad::where('numero_control', 14021073)->first();
+        $e = Oportunidad::where('numero_control', Auth::user()->numero_control)->first();
 
         $e->oportunidads_4 = $f1_output;
 

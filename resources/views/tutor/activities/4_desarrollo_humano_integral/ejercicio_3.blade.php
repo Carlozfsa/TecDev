@@ -26,9 +26,79 @@
                 Escribe el término que falta y la relación que se repite. Puede haber más de una
                 respuesta en cada ejercicio, siempre y cuando las justifiques.
 
+                @if($edit==0)
+
                 <div class="form-group">
 
                     {!! Form::open(['mathod'=>'POST', 'action'=>'TutorDesarrolloHumanoController@store_des_hum_int_3']) !!}
+
+                    @if($f1_decode!=NULL && $f2_decode!=NULL && $f3_decode!=NULL && $f4_decode!=NULL)
+
+                        {!! Form::label('Rel1','1. Vampiro es a sangre como') !!}
+                        {!! Form::label('rel1', $f1_decode, ['class'=>'form-control']) !!}
+                        {!! Form::label('Rel1','es a gusano') !!}<br>
+                        {!! Form::label('Rel1','Relación(es) que se repite(n):') !!}
+                        {!! Form::label('rel1_2', $f2_decode, ['class'=>'form-control']) !!}<br><br>
+
+
+                        {!! Form::label('Rel2','2. Tierra es a semilla como pensamiento es a') !!}
+                        {!! Form::label('rel2', $f3_decode, ['class'=>'form-control']) !!}
+                        {!! Form::label('Rel2','Relación(es) que se repite(n):') !!}
+                        {!! Form::label('rel2_2', $f4_decode, ['class'=>'form-control']) !!}<br><br>
+
+                        Realicemos ahora un ejemplo más complejo en donde se ven una gran variedad de
+                        posibles relaciones Y analogías.<br><br>
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro3" class="form-control"></textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal3" class="form-control name_list center-block">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Guardar" />
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    {!! Form::close() !!}
+                </div>
+
+                 @else
+
+                    <div class="form-group">
+
+                        {!! Form::open(['mathod'=>'POST', 'action'=>'TutorDesarrolloHumanoController@edit_des_hum_int_3']) !!}
+
+                        @if($f1_decode!=NULL && $f2_decode!=NULL && $f3_decode!=NULL && $f4_decode!=NULL)
+
                         {!! Form::label('Rel1','1. Vampiro es a sangre como') !!}
                         {!! Form::label('rel1', $f1_decode, ['class'=>'form-control']) !!}
                         {!! Form::label('Rel1','es a gusano') !!}<br>
@@ -45,40 +115,50 @@
                         posibles relaciones Y analogías.<br><br>
 
 
-                    <table class="col-lg-12">
-                        <tr>
-                            <td><strong>Retroalimentación:</strong></td>
-                        </tr>
+                        @else
 
-                        <tr>
-                            <td>
-                                <br>
-                                <textarea rows="5" name ="retro" class="form-control"></textarea>
-                                <br>
-                            </td>
-                        </tr>
+                            <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                                <strong>Aviso!</strong><br>
+                                El alumno no ha entregado esta parte de la actividad.
+                            </div><br>
 
-                        <tr>
-                            <td>
-                                <br>
-                                <strong>Calificación:</strong>
-                                <br><br>
-                                <input type="text" name="cal" class="form-control name_list center-block">
-                            </td>
-                        </tr>
+                        @endif
 
-                        <tr>
-                            <td>
-                                <br><br>
-                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Guardar" />
-                            </td>
-                        </tr>
-                    </table>
+                        <table class="col-lg-12">
+                            <tr>
+                                <td><strong>Retroalimentación:</strong></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                    <br>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br>
+                                    <strong>Calificación:</strong>
+                                    <br><br>
+                                    <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <br><br>
+                                    <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Edit" />
+                                </td>
+                            </tr>
+                        </table>
 
 
-                    {!! Form::close() !!}
-                </div>
+                        {!! Form::close() !!}
+                    </div>
 
+                @endif
 
             </div>
 

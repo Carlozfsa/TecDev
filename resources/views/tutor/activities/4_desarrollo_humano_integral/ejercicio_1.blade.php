@@ -9,6 +9,9 @@
         </div>
         <div class="panel-body">
 
+            @if($edit==0)
+
+
             <div class="instrucciones" style="margin: 10px">
 
 
@@ -28,14 +31,15 @@
 
                     {!! Form::open(['method'=>'POST', 'action'=>'TutorDesarrolloHumanoController@store_des_hum_int_1']) !!}
 
+                @if($f1_decode!=NULL && $f2_decode!=NULL)
 
 
-                    <div class="col-sm-6">
+                <div class="col-sm-6">
                         <table class="table table-bordered">
                             <tr>
                                 <td><strong>Número de figura</strong></td>
                             </tr>
-                            @foreach($f_decode as $key=>$value)
+                            @foreach($f1_decode as $key=>$value)
                                 <tr>
                                     <td >{{$value}}</td>
                                 </tr>
@@ -56,6 +60,14 @@
                     </table>
                 </div>
 
+                @else
+
+                    <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                        <strong>Aviso!</strong><br>
+                        El alumno no ha entregado esta parte de la actividad.
+                    </div><br>
+
+                @endif
 
                 <table class="col-lg-12">
                     <tr>
@@ -65,7 +77,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro1" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -75,7 +87,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal1" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -87,6 +99,88 @@
                     </tr>
                 </table>
                 {!! Form::close() !!}
+
+                @else
+
+                    <div style="margin-left: 17%;">
+                        <img width="500" height=360" src="images/4_desarrollo_humano_integral/e_1_7_dif.png">
+                    </div>
+                    <div id = "info_1" class="alert alert-danger" style="text-align: center">
+                        Solamente hay 7 diferencias!
+                    </div>
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'TutorDesarrolloHumanoController@edit_des_hum_int_1']) !!}
+
+                    @if($f1_decode!=NULL && $f2_decode!=NULL)
+
+                    <div class="col-sm-6">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td><strong>Número de figura</strong></td>
+                            </tr>
+                            @foreach($f1_decode as $key=>$value)
+                                <tr>
+                                    <td >{{$value}}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td><strong>Número de figura</strong></td>
+                            </tr>
+                            @foreach($f2_decode as $key=>$value)
+                                <tr>
+                                    <td >{{$value}}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+                    {!! Form::close() !!}
+
+                    @endif
             </div>
 
         </div>

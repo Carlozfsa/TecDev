@@ -193,17 +193,15 @@
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
-                <a href="#" aria-label="Previous">
+                <a href="{{url('hum_int_l_1')}}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+            <li><a href="{{url('hum_int_l_1')}}">1</a></li>
+            <li><a href="{{url('hum_int_l_2')}}"style="background-color: lightgray;">2</a></li>
+            <li><a href="{{url('hum_int_ej_1')}}"><strong>Primer ejercicio</strong></a></li>
             <li>
-                <a href="#" aria-label="Next">
+                <a href="{{url('hum_int_ej_1')}}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

@@ -12,11 +12,12 @@
             <strong>INSTRUCCIONES:</strong>
 
             <div class="instrucciones" style="margin: 10px">
-                Revisa tus respuestas a las preguntas anteriores.<br> ESCRIBE LAS CUATRO
-                “FORTALEZAS” MAS IMPORTANTES QUE DEBES CONSTRUIR PARA LOS
-                SIGUIENTES CAPÍTULOS DE TU VIDA
 
                 @if($edit == 0)
+                    Revisa tus respuestas a las preguntas anteriores.<br> ESCRIBE LAS CUATRO
+                    “FORTALEZAS” MAS IMPORTANTES QUE DEBES CONSTRUIR PARA LOS
+                    SIGUIENTES CAPÍTULOS DE TU VIDA<br>
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_1_4')}}">
                         {{csrf_field()}}
 
@@ -32,6 +33,15 @@
 
                     </form>
                 @else
+                    <div class="alert alert-success">
+                        <strong>Aviso!</strong><br>
+                        Registro guardado. Es posible editar la actividad.<br>
+                        Puede continuar con la siguiente parte.
+                    </div><br>
+
+                    Revisa tus respuestas a las preguntas anteriores.<br> ESCRIBE LAS CUATRO
+                    “FORTALEZAS” MAS IMPORTANTES QUE DEBES CONSTRUIR PARA LOS
+                    SIGUIENTES CAPÍTULOS DE TU VIDA<br>
 
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_1_4')}}">
                         {{csrf_field()}}
@@ -57,7 +67,7 @@
         </div>
     </div>
 
-  <div class="center-block" style="margin-left:20%">
+  <div class="center-block" style="margin-left:13%">
     <nav aria-label="Page navigation">
         <ul class="pagination center-block">
             <li>
@@ -69,8 +79,11 @@
             <li><a href="{{url('/foda_1_2')}}">Fortalezas 2</a></li>
             <li><a href="{{url('/foda_1_3')}}">Fortalezas 3</a></li>
             <li><a href="{{url('/foda_1_4')}}" style="background-color: lightgray;">Fortalezas 4</a></li>
+            <li><a href="{{url('/foda_2_1')}}"><strong>Siguiente parte!</strong></a></li>
             <li>
-
+                <a href="{{url('/foda_2_1')}}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
             </li>
         </ul>
     </nav>

@@ -8,13 +8,15 @@
         </div>
         <div class="panel-body">
 
-            <strong>INSTRUCCIONES:</strong>
-
-            <div class="instrucciones" style="margin: 10px">
-                ¿Qué es lo que más te gustaría cambiar de usted mismo en el próximo capítulo
-                de tu vida?
 
                 @if($edit == 0)
+
+                <strong>INSTRUCCIONES:</strong>
+
+                <div class="instrucciones" style="margin: 10px">
+                    ¿Qué es lo que más te gustaría cambiar de usted mismo en el próximo capítulo
+                    de tu vida?
+
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/store/foda_2_3')}}">
                         {{csrf_field()}}
 
@@ -30,6 +32,17 @@
 
                     </form>
                 @else
+                        <div class="alert alert-success">
+                            <strong>Aviso!</strong><br>
+                            Registro guardado. Es posible editar la actividad.<br>
+                            Puede continuar con la siguiente parte.
+                        </div>
+
+                        <strong>INSTRUCCIONES:</strong>
+
+                        <div class="instrucciones" style="margin: 10px">
+                            ¿Qué es lo que más te gustaría cambiar de usted mismo en el próximo capítulo
+                            de tu vida?
 
                     <form name="add_fort" id="add_fort" method="post" action="{{url('/edit/foda_2_3')}}">
                         {{csrf_field()}}
@@ -51,7 +64,7 @@
                 @endif
 
             </div>
-
+                </div>
         </div>
     </div>
 

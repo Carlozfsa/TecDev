@@ -76,15 +76,29 @@
 
                 <p>¿Qué podría hacer la muchacha para revertir esta situación?</p><br>
 
+                @if($edit==0)
+
                 {!! Form::open(['method'=>'POST', 'action'=>'TutorInteligenciasController@store_int_mult_ej_4']) !!}
-                <table>
+
+                    @if($prob1 != NULL)
+
+                    <table>
                     <tr>
                         <div class="form-group">
                             <td>{!! Form::label('r1.1', 'R=') !!}</td>
-                            <td class="col-sm-12">{!! Form::label('r1.1', $prob1) !!}</td>
+                            <td class="col-sm-12">{!! Form::label('', $prob1, ['class'=>'form-control']) !!}</td>
                         </div>
                     </tr>
                 </table><br>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
 
                 <table class="col-lg-12">
                     <tr>
@@ -94,7 +108,7 @@
                     <tr>
                         <td>
                             <br>
-                            <textarea rows="5" name ="retro" class="form-control"></textarea>
+                            <textarea rows="5" name ="retro4" class="form-control"></textarea>
                             <br>
                         </td>
                     </tr>
@@ -104,7 +118,7 @@
                             <br>
                             <strong>Calificación:</strong>
                             <br><br>
-                            <input type="text" name="cal" class="form-control name_list center-block">
+                            <input type="text" name="cal4" class="form-control name_list center-block">
                         </td>
                     </tr>
 
@@ -118,6 +132,66 @@
 
 
                 {!! Form::close() !!}
+
+                @else
+
+                    {!! Form::open(['method'=>'POST', 'action'=>'TutorInteligenciasController@edit_int_mult_ej_4']) !!}
+
+                    @if($prob1 != NULL)
+
+                    <table>
+                        <tr>
+                            <div class="form-group">
+                                <td>{!! Form::label('r1.1', 'R=') !!}</td>
+                                <td class="col-sm-12">{!! Form::label('r1.1', $prob1) !!}</td>
+                            </div>
+                        </tr>
+                    </table><br>
+
+                    @else
+
+                        <div class="alert alert-danger" style="margin-left: 15%;margin-right: 15%; margin-top: 3%; text-align: center;">
+                            <strong>Aviso!</strong><br>
+                            El alumno no ha entregado esta parte de la actividad.
+                        </div><br>
+
+                    @endif
+
+
+                    <table class="col-lg-12">
+                        <tr>
+                            <td><strong>Retroalimentación:</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <textarea rows="5" name ="retro_e" class="form-control">{{$retro}}</textarea>
+                                <br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br>
+                                <strong>Calificación:</strong>
+                                <br><br>
+                                <input type="text" name="cal_e" class="form-control name_list center-block" value="{{$cal}}">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <br><br>
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary form-control" value="Editar" />
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    {!! Form::close() !!}
+
+                @endif
 
                 <p style="margin-left: 45%;">http://www.tecnicas-de-estudio.org/inteligencia/ejercicios.htm</p>
 
