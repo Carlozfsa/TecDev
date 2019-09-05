@@ -62,13 +62,21 @@
                         </div>
 
 
-                        <div id = "pass_div" class="form-group">
+
+                        <div id = "pass_div" class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
+
 
                         <div id = "passc_div" class="form-group">
                             <label for="password-confirm" class="col-md-4 control-label">Confirmar contraseña</label>
@@ -86,8 +94,6 @@
                             </div>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>

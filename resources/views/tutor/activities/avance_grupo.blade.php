@@ -292,7 +292,8 @@
                                     <td style="text-indent: 20px;"><strong>Promedio total</strong></td>
                                     <td>{{$s_tot}}</td>
                                     <td>{{$pr_t_foda}}</td>
-                                    <td><strong>{{$p_foda}}</strong></td>
+                                    <td><strong>{{$total_cal_foda}}</strong></td>
+
                                     <td></td>
                                 </tr>
 
@@ -463,7 +464,7 @@
                                     <td style="text-indent: 20px;"><strong>Promedio</strong></td>
                                     <td>{{$tt_tot}}</td>
                                     <td>{{$pr_t}}</td>
-                                    <td>{{($ct11+$ct22+$ct33+$ct44+$ct55+$ct66+$ct77)/7}}</td>
+                                    <td>{{$pro_cal_2}}</td>
                                     <td></td>
                                 </tr>
 

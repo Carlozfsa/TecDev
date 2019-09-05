@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 class AlumnosController extends Controller
 {
     //
+
+
     public function create_panel_alumno(){
         return view('activities.registro_alumno.alumno_panel');
     }
@@ -137,24 +139,47 @@ class AlumnosController extends Controller
     public function store_alumnos(Request $request){
 
         $this->validate($request, [
-            'nombres' => 'required',
-            'apellidop' => 'required',
-            'apellidom' => 'required',
+            'nombres' => 'required|regex:/^[a-zA-Z ]+$/|max:100',
+            'apellidop' => 'required|regex:/^[a-zA-Z ]+$/|max:50',
+            'apellidom' => 'required|regex:/^[a-zA-Z ]+$/|max:50',
             'carrera' => 'required',
             'gru' => 'required',
             'tur' => 'required',
             'sem' => 'required',
-            'telcasa' => 'required',
-            'cel' => 'required',
-            'dir' => 'required',
-            'nss' => 'required',
+            'telcasa' => 'required|regex:/^[0-9]+$/|max:20',
+            'cel' => 'required|regex:/^[0-9]+$/|max:20',
+            'dir' => 'required|max:50',
+            'nss' => 'required|regex:/^[0-9]+$/|digits:11',
             'ts' => 'required',
             'ec' => 'required',
             'trabajo' => 'required',
-            'horas' => 'required',
+        ],[
+            'nombres.required'=>'Debes escribir tu nombre',
+            'apellidop.required'=>'Debes escribir tu apellido paterno',
+            'apellidom.required'=>'Debes escribir tu apellido materno',
 
+            'nombres.max'=>'Tu nombre no puede tener mas de 100 caracteres ',
+            'apellidop.max'=>'Tu apellido paterno no puede tener mas de 50 caracteres ',
+            'apellidom.max'=>'Tu apellido materno no puede tener mas de 50 caracteres ',
 
+            'nombres.regex'=>'Tu nombre no puede contener números',
+            'apellidop.regex'=>'Tu apellido paterno no puede contener números',
+            'apellidom.regex'=>'Tu apellido materno no puede contener números',
 
+            'telcasa.required'=>'Debes escribir el teléfono de tu casa',
+            'telcasa.regex'=>'El teléfono de tu casa no puede contener letras',
+            'telcasa.max'=>'El teléfono de tu casa no puede contener mas de 20 caracteres',
+
+            'cel.required'=>'Debes escribir tu teléfono celular',
+            'cel.regex'=>'Tu teléfono celular no puede contener letras',
+            'cel.max'=>'Tu teléfono celular no puede contener mas de 20 caracteres',
+
+            'dir.required'=>'Debes escribir tu dirección',
+            'dir.max'=>'Tu dirección no puede tener mas de 50 caracteres',
+
+            'nss.required'=>'Debes escribir tu Número de Seguridad Social',
+            'nss.regex'=>'Tu Número de Seguridad Social no puede contener letras',
+            'nss.digits'=>'Tu Número de Seguridad Social tiene es de 11 dígitos',
 
         ]);
 
@@ -182,6 +207,8 @@ class AlumnosController extends Controller
         $u = User::where('numero_control',Auth::user()->numero_control)->first();
         $u->reg = 1;
         $u->save();
+
+        session()->flash('mensaje_registro', 'Has completado tu registro! Puedes continuar');
 
         return redirect('/panel_alumno');
     }

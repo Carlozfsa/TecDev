@@ -8,7 +8,13 @@ class Alumno extends Model
 {
     //
 
-    protected $primaryKey = "numero_control";
+    protected $primaryKey = "numero_control";  //NUEVO
+
+    protected $fillable = [       //NUEVO
+        'numero_control', 'nombres', 'apellidop', 'apellidom', 'carr', 'tut_nivel',
+        'grupo_l', 'turn', 'grupo', 'sem', 'telcasa', 'cel', 'dir', 'nss',
+        'ts', 'ec', 'trabajo', 'horas',
+    ];
 
 
     public function carrera(){

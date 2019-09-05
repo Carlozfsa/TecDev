@@ -14,6 +14,16 @@
 
     </div>
     </div>
+
+    @if($flash = session('mensaje_registro'))
+
+        <div class="alert alert-success" style="text-align:center; font-weight:bold;">
+                {{$flash}}
+        </div>
+
+    @endif
+
+
 @stop
 
 @section('scripts')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Alumno; // <-- NUEVO
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -49,9 +50,18 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'email' => 'required|string|email|max:255|unique:users',
-            'numero_control' => 'required|integer|min:8',
+            'numero_control' => 'required|integer|digits:8|unique:users',
             'password' => 'required|string|min:6|confirmed',
-        ]);
+        ],
+            ['required'=>'El :attribute es obligatorio',
+            'email'=>'El :attribute debe de ser un correo electrónico',
+            'integer'=>'El :attribute debe ser numérico',
+            'digits'=>'El :attribute debe contener 8 caracteres',
+            'email.unique'=>'El :attribute ya está registrado en la base de datos',
+                'numero_control.unique'=>'El :attribute ya está registrado en la base de datos',
+                'min'=>'La :attribute debe contener al menos 6 caracteres',
+            'confirmed'=>'La :attribute no concuerda'
+            ]);
     }
 
     /**
@@ -62,12 +72,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        /**return User::create([
+            'email' => $data['email'],
+            'numero_control' => $data['numero_control'],
+            'password' => bcrypt($data['password']),
+            'role_id'=>1,
+        ]);   **/
+
+
+        // -- NUEVO TUTORIAS 2 Y 3
+        $us = User::create([
             'email' => $data['email'],
             'numero_control' => $data['numero_control'],
             'password' => bcrypt($data['password']),
             'role_id'=>1,
         ]);
 
+        $us -> Alumno = Alumno::create([
+            'numero_control' => $data['numero_control'],
+        ]);
+
+        return $us;
+
     }
+
+    
 }

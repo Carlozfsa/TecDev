@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'Alumnos'=>\App\Http\Middleware\Alumnos::class,
         'Tutores'=>\App\Http\Middleware\Tutores::class,
         'Avances'=>\App\Http\Middleware\Avances::class,
+        'TerminarRegistro'=>\App\Http\Middleware\TerminarRegistro::class,
 
     ];
 }

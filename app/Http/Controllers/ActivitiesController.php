@@ -1374,7 +1374,7 @@ class ActivitiesController extends Controller
         $p_foda1 = ((($cf1+$cf2+$cf3+$cf4)/4)+(($cd1+$cd2+$cd3+$cd4)/4)+(($ca1+$ca2+$ca3+$ca4+$ca5)/5)+(($cf1+$cf2+$cf3+$cf4)/4))/4;
         $p_foda = number_format((float)$p_foda1, 2, '.', '');
 
-        $p_tiempo1 = (($ct1+$ct2+$ct3+$ct4+$ct5+$ct6+$ct7)/7)+(($ct11+$ct22+$ct33+$ct44+$ct55+$ct66+$ct77)/7);
+        $p_tiempo1 = ($ct1+$ct2+$ct3+$ct4+$ct5+$ct6+$ct7+$ct11+$ct22+$ct33+$ct44+$ct55+$ct66+$ct77)/14;
         $p_tiempo = number_format((float)$p_tiempo1, 2, '.', '');
 
         $p = (($cl1)+(($cf1+$cf2+$cf3+$cf4)/4)+(($cd1+$cd2+$cd3+$cd4)/4)+(($ca1+$ca2+$ca3+$ca4+$ca5)/5)+(($co1+$co2+$co3+$co4)/4)+(($ct1+$ct2+$ct3+$ct4+$ct5+$ct6+$ct7)/7)+(($ct11+$ct22+$ct33+$ct44+$ct55+$ct66+$ct77)/7)+$cshi+(($cdhi1+$cdhi2+$cdhi3+$cdhi4+$cdhi5+$cdhi6)/6)+(($cint1+$cint2+$cint3+$cint4)/4)+($che1+($cmem1+$cmem2+$cmem3+$cmem4)/4)+(($chp1+$chp2+$chp3+$chp4)/4)+($cmap1+($cesq1+$cesq2)/2)+$cres1+(($cmat1+$cmat2)/2)+(($clog1+$clog2)/2)+(($crel1+$crel2+$crel3+$crel4+$crel5)/5))/20;
@@ -3252,6 +3252,63 @@ class ActivitiesController extends Controller
         }
 
 
+        //calificacones
+
+        $suma_f1 = 0;
+        $cont_f1 = 0;
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists()){
+                $suma_f1 = $suma_f1 + Fortaleza::where('numero_control', $f->numero_control)->first()->cal_1;
+                $cont_f1++;
+            }
+        }
+
+        $cf1 = $suma_f1/$cont_f1++;
+
+        $suma_f2 = 0;
+        $cont_f2 = 0;
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_f2 = $suma_f2 + Fortaleza::where('numero_control', $f->numero_control)->first()->cal_2;
+                $cont_f2++;
+            }
+        }
+
+        $cf2 = $suma_f2/$cont_f2;
+
+
+
+        $suma_f3 = 0;
+        $cont_f3 = 0;
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_f3 = $suma_f3 + Fortaleza::where('numero_control', $f->numero_control)->first()->cal_3;
+                $cont_f3++;
+            }
+        }
+
+        $cf3 = $suma_f3/$cont_f3;
+
+
+        $suma_f4 = 0;
+        $cont_f4 = 0;
+        foreach($cont as $f){
+
+            if(Fortaleza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_f4 = $suma_f4 + Fortaleza::where('numero_control', $f->numero_control)->first()->cal_4;
+                $cont_f4++;
+            }
+        }
+
+        $cf4 = $suma_f4/$cont_f4;
+
+
         //total entrega
         foreach($cont as $f){
 
@@ -3327,6 +3384,64 @@ class ActivitiesController extends Controller
                 $rd4++;
             }
         }
+
+        //calificacones
+
+        $suma_d1 = 0;
+        $cont_d1 = 0;
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_d1 = $suma_d1 + Debilidad::where('numero_control', $f->numero_control)->first()->cal_1;
+                $cont_d1++;
+            }
+        }
+
+        $cd1 = $suma_d1/$cont_d1;
+
+
+        $suma_d2 = 0;
+        $cont_d2 = 0;
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_d2 = $suma_d2 + Debilidad::where('numero_control', $f->numero_control)->first()->cal_2;
+                $cont_d2++;
+            }
+        }
+
+        $cd2 = $suma_d2/$cont_d2;
+
+
+
+        $suma_d3 = 0;
+        $cont_d3 = 0;
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_d3 = $suma_d3 + Debilidad::where('numero_control', $f->numero_control)->first()->cal_3;
+                $cont_d3++;
+            }
+        }
+
+        $cd3 = $suma_d3/$cont_d3;
+
+
+        $suma_d4 = 0;
+        $cont_d4 = 0;
+        foreach($cont as $f){
+
+            if(Debilidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_d4 = $suma_d4 + Debilidad::where('numero_control', $f->numero_control)->first()->cal_4;
+                $cont_d4++;
+            }
+        }
+
+        $cd4 = $suma_d4/$cont_d4;
 
         //total
         foreach($cont as $f){
@@ -3421,6 +3536,77 @@ class ActivitiesController extends Controller
             }
         }
 
+        //calificacones
+
+        $suma_a1 = 0;
+        $cont_a1 = 0;
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_a1 = $suma_a1 + Amenaza::where('numero_control', $f->numero_control)->first()->cal_1;
+                $cont_a1++;
+            }
+        }
+
+        $ca1 = $suma_a1/$cont_a1;
+
+
+
+        $suma_a2 = 0;
+        $cont_a2 = 0;
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_a2 = $suma_a2 + Amenaza::where('numero_control', $f->numero_control)->first()->cal_2;
+                $cont_a2++;
+            }
+        }
+
+        $ca2 = $suma_a2/$cont_a2;
+
+
+        $suma_a3 = 0;
+        $cont_a3 = 0;
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_a3 = $suma_a3 + Amenaza::where('numero_control', $f->numero_control)->first()->cal_3;
+                $cont_a3++;
+            }
+        }
+
+        $ca3 = $suma_a3/$cont_a3;
+
+
+        $suma_a4 = 0;
+        $cont_a4 = 0;
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_a4 = $suma_a4 + Amenaza::where('numero_control', $f->numero_control)->first()->cal_4;
+                $cont_a4++;
+            }
+        }
+
+        $ca4 = $suma_a4/$cont_a4;
+
+
+        $suma_a5 = 0;
+        $cont_a5 = 0;
+        foreach($cont as $f){
+
+            if(Amenaza::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_a5 = $suma_a5 + Amenaza::where('numero_control', $f->numero_control)->first()->cal_5;
+                $cont_a5++;
+            }
+        }
+
+        $ca5 = $suma_a5/$cont_a5;
 
         //total
         foreach($cont as $f){
@@ -3468,7 +3654,7 @@ class ActivitiesController extends Controller
             }
         }
 
-        //total revisión
+        // revisión
 
         foreach($cont as $f){
 
@@ -3516,6 +3702,62 @@ class ActivitiesController extends Controller
         }
 
 
+        $suma_o1 = 0;
+        $cont_o1 = 0;
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_o1 = $suma_o1 + Oportunidad::where('numero_control', $f->numero_control)->first()->cal_1;
+                $cont_o1++;
+            }
+        }
+
+        $co1 = $suma_o1/$cont_o1;
+
+
+        $suma_o2 = 0;
+        $cont_o2 = 0;
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_o2 = $suma_o2 + Oportunidad::where('numero_control', $f->numero_control)->first()->cal_2;
+                $cont_o2++;
+            }
+        }
+
+        $co2 = $suma_o2/$cont_o2;
+
+
+        $suma_o3 = 0;
+        $cont_o3 = 0;
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_o3 = $suma_o3 + Oportunidad::where('numero_control', $f->numero_control)->first()->cal_3;
+                $cont_o3++;
+            }
+        }
+
+        $co3 = $suma_o3/$cont_o3;
+
+
+        $suma_o4 = 0;
+        $cont_o4 = 0;
+        foreach($cont as $f){
+
+            if(Oportunidad::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_o4 = $suma_o4 + Oportunidad::where('numero_control', $f->numero_control)->first()->cal_4;
+                $cont_o4++;
+            }
+        }
+
+        $co4 = $suma_o4/$cont_o4;
+
+
         //super total foda
 
         foreach($cont as $f){
@@ -3533,6 +3775,9 @@ class ActivitiesController extends Controller
             }
         }
 
+        // total final calificacion
+        $total_cal_foda1 = ((($cf1+$cf2+$cf3+$cf4)/4)+(($cd1+$cd2+$cd3+$cd4)/4)+(($ca1+$ca2+$ca3+$ca4+$ca5)/4)+(($co1+$co2+$co3+$co4)/4))/4;
+        $total_cal_foda = number_format((float)$total_cal_foda1, 2, '.', '');
 
         //Tiempo
 
@@ -3637,6 +3882,107 @@ class ActivitiesController extends Controller
                 $rt7++;
             }
         }
+
+        //calificaciones
+
+        $suma_t1 = 0;
+        $cont_t1 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t1 = $suma_t1 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_1;
+                $cont_t1++;
+            }
+        }
+
+        $ct1 = $suma_t1/$cont_t1;
+
+
+        $suma_t2 = 0;
+        $cont_t2 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t2 = $suma_t2 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_2;
+                $cont_t2++;
+            }
+        }
+
+        $ct2 = $suma_t2/$cont_t2;
+
+
+        $suma_t3 = 0;
+        $cont_t3 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t3 = $suma_t3 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_3;
+                $cont_t3++;
+            }
+        }
+
+        $ct3 = $suma_t3/$cont_t3;
+
+
+        $suma_t4 = 0;
+        $cont_t4 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t4 = $suma_t4 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_4;
+                $cont_t4++;
+            }
+        }
+
+        $ct4 = $suma_t4/$cont_t4;
+
+
+        $suma_t5 = 0;
+        $cont_t5 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t5 = $suma_t5 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_5;
+                $cont_t5++;
+            }
+        }
+
+        $ct5 = $suma_t5/$cont_t5;
+
+
+        $suma_t6 = 0;
+        $cont_t6 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t6 = $suma_t6 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_6;
+                $cont_t6++;
+            }
+        }
+
+        $ct6 = $suma_t6/$cont_t6;
+
+
+        $suma_t7 = 0;
+        $cont_t7 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t7 = $suma_t7 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_7;
+                $cont_t7++;
+            }
+        }
+
+        $ct7 = $suma_t7/$cont_t7;
+
+
 
         //total revisión
 
@@ -3775,6 +4121,110 @@ class ActivitiesController extends Controller
             }
         }
 
+        //calificaciones
+
+        $suma_t8 = 0;
+        $cont_t8 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t8 = $suma_t8 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_8;
+                $cont_t8++;
+            }
+        }
+
+        $ct11 = $suma_t8/$cont_t8;
+
+        $suma_t9 = 0;
+        $cont_t9 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t9 = $suma_t9 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_9;
+                $cont_t9++;
+            }
+        }
+
+        $ct22 = $suma_t9/$cont_t9;
+
+        $suma_t10 = 0;
+        $cont_t10 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t10 = $suma_t10 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_10;
+                $cont_t10++;
+            }
+        }
+
+        $ct33 = $suma_t10/$cont_t10;
+
+
+
+        $suma_t11 = 0;
+        $cont_t11 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t11 = $suma_t11 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_11;
+                $cont_t11++;
+            }
+        }
+
+        $ct44 = $suma_t11/$cont_t11;
+
+
+        $suma_t12 = 0;
+        $cont_t12 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t12 = $suma_t12 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_12;
+                $cont_t12++;
+            }
+        }
+
+        $ct55 = $suma_t12/$cont_t12;
+
+
+        $suma_t13 = 0;
+        $cont_t13 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t13 = $suma_t13 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_13;
+                $cont_t13++;
+            }
+        }
+
+        $ct66 = $suma_t13/$cont_t13;
+
+        $suma_t14 = 0;
+        $cont_t14 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t14 = $suma_t14 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_14;
+                $cont_t14++;
+            }
+        }
+
+        $ct77 = $suma_t14/$cont_t14;
+
+        $pro_cal_22 = ($ct11+$ct22+$ct33+$ct44+$ct55+$ct66+$ct77)/7;
+        
+        $pro_cal_2 = number_format((float)$pro_cal_22, 2, '.', '');
+
+        $p_tiempo1 = ($ct1+$ct2+$ct3+$ct4+$ct5+$ct6+$ct7+$ct11+$ct22+$ct33+$ct44+$ct55+$ct66+$ct77)/14;
+        $p_tiempo = number_format((float)$p_tiempo1, 2, '.', '');
+
         //super total tiempo
         foreach($cont as $f){
 
@@ -3809,6 +4259,22 @@ class ActivitiesController extends Controller
                 $rshi++;
             }
         }
+
+        //calificacion ----
+
+        $cshi = $suma_t13/$cont_t13;
+
+        $suma_t14 = 0;
+        $cont_t14 = 0;
+        foreach($cont as $f){
+
+            if(Tiempo::where('numero_control', $f->numero_control)->exists()){
+
+                $suma_t14 = $suma_t14 + Tiempo::where('numero_control', $f->numero_control)->first()->cal_14;
+                $cont_t14++;
+            }
+        }
+
 
         //Desarrollo humano integral
 
@@ -3853,6 +4319,7 @@ class ActivitiesController extends Controller
                 $dhi6++;
             }
         }
+
 
         //total revisión
 
@@ -4457,7 +4924,7 @@ class ActivitiesController extends Controller
             $c1 = $c1 + $l->cal_1;
         }*/
 
-        return view('tutor.activities.avance_grupo', compact('pr_rel','pr_log','pr_mat','pr_esq','pr_hp','pr_mem','pr_int','pr_dhi','pr_t_t','pr_t_foda','pr_t','pr_tt','pr_f','pr_d','pr_a','pr_o','rf1','rf2','rf3','rf4','rd1','rd2','rd3','rd4','ra1','ra2','ra3','ra4','ra5','s_tot','s_tot2','ft','dt','at','ot','t_tot','tt_tot','dhit','intt','memt','hpt','esqt','matt','logt','relt','f1','f2','f3','f4', 'd1', 'd2', 'd3', 'd4', 'a1', 'a2', 'a3', 'a4', 'a5','o1','o2','o3','o4','t1','t2','t3','t4','t5','t6','t7','t11','t22','t33','t44','t55','t66','t77','shi','dhi1','dhi2','dhi3','dhi4','dhi5','dhi6','int1','int2','int3','int4','he1','mem1','mem2','mem3','mem4','hp1','hp2','hp3','hp4','hp5','map1','esq1','esq2','res1','mat1','mat2','log1','log2','rel1','rel2','rel3','rel4','rel5','rf1','rf2','rf3','rf4','rd1', 'rd2', 'rd3', 'rd4', 'ra1', 'ra2', 'ra3', 'ra4', 'ra5','ro1','ro2','ro3','ro4','rt1','rt2','rt3','rt4','rt5','rt6','rt7','rt11','rt22','rt33','rt44','rt55','rt66','rt77','rshi','rdhi1','rdhi2','rdhi3','rdhi4','rdhi5','rdhi6','rint1','rint2','rint3','rint4','rhe1','rmem1','rmem2','rmem3','rmem4','rhp1','rhp2','rhp3','rhp4','rhp5','rmap1','resq1','resq2','rres1','rmat1','rmat2','rlog1','rlog2','rrel1','rrel2','rrel3','rrel4','rrel5','cf1','cf2','cf3','cf4','cd1','cd2','cd3','cd4','ca1','ca2','ca3','ca4','ca5','co1','co2','co3','co4','ct1','ct2','ct3','ct4','ct5','ct6','ct7','ct11','ct22','ct33','ct44','ct55','ct66','ct77','cshi','cdhi1','cdhi2','cdhi3','cdhi4','cdhi5','cdhi6','cint1','cint2','cint3','cint4','che1','cmem1','cmem2','cmem3','cmem4','chp1','chp2','chp3','chp4','cmap1','cesq1','cesq2','cres1','cmat1','cmat2','clog1','clog2','crel1','crel2','crel3','crel4','crel5','l1','rl1','cl1','ral1','raf1','raf2','raf3','raf4','rad1','rad2','rad3','rad4','raa1','raa2','raa3','raa4','raa5','rao1','rao2','rao3','rao4','rat1','rat2','rat3','rat4','rat5','rat6','rat7','rat11','rat22','rat33','rat44','rat55','rat66','rat77','rashi','radhi1','radhi2','radhi3','radhi4','radhi5','radhi6','raint1','raint2','raint3','raint4','rahe1','ramem1','ramem2','ramem3','ramem4','rahp1','rahp2','rahp3','rahp4','ramap1','raesq1','raesq2','rares1','ramat1','ramat2','ralog1','ralog2','rarel1','rarel2','rarel3','rarel4','rarel5','pf','p_foda','p_tiempo','p_a','alu','c','t_alu'));
+        return view('tutor.activities.avance_grupo', compact('pro_cal_total','pro_cal_2','total_cal_foda','pr_rel','pr_log','pr_mat','pr_esq','pr_hp','pr_mem','pr_int','pr_dhi','pr_t_t','pr_t_foda','pr_t','pr_tt','pr_f','pr_d','pr_a','pr_o','rf1','rf2','rf3','rf4','rd1','rd2','rd3','rd4','ra1','ra2','ra3','ra4','ra5','s_tot','s_tot2','ft','dt','at','ot','t_tot','tt_tot','dhit','intt','memt','hpt','esqt','matt','logt','relt','f1','f2','f3','f4', 'd1', 'd2', 'd3', 'd4', 'a1', 'a2', 'a3', 'a4', 'a5','o1','o2','o3','o4','t1','t2','t3','t4','t5','t6','t7','t11','t22','t33','t44','t55','t66','t77','shi','dhi1','dhi2','dhi3','dhi4','dhi5','dhi6','int1','int2','int3','int4','he1','mem1','mem2','mem3','mem4','hp1','hp2','hp3','hp4','hp5','map1','esq1','esq2','res1','mat1','mat2','log1','log2','rel1','rel2','rel3','rel4','rel5','rf1','rf2','rf3','rf4','rd1', 'rd2', 'rd3', 'rd4', 'ra1', 'ra2', 'ra3', 'ra4', 'ra5','ro1','ro2','ro3','ro4','rt1','rt2','rt3','rt4','rt5','rt6','rt7','rt11','rt22','rt33','rt44','rt55','rt66','rt77','rshi','rdhi1','rdhi2','rdhi3','rdhi4','rdhi5','rdhi6','rint1','rint2','rint3','rint4','rhe1','rmem1','rmem2','rmem3','rmem4','rhp1','rhp2','rhp3','rhp4','rhp5','rmap1','resq1','resq2','rres1','rmat1','rmat2','rlog1','rlog2','rrel1','rrel2','rrel3','rrel4','rrel5','cf1','cf2','cf3','cf4','cd1','cd2','cd3','cd4','ca1','ca2','ca3','ca4','ca5','co1','co2','co3','co4','ct1','ct2','ct3','ct4','ct5','ct6','ct7','ct11','ct22','ct33','ct44','ct55','ct66','ct77','cshi','cdhi1','cdhi2','cdhi3','cdhi4','cdhi5','cdhi6','cint1','cint2','cint3','cint4','che1','cmem1','cmem2','cmem3','cmem4','chp1','chp2','chp3','chp4','cmap1','cesq1','cesq2','cres1','cmat1','cmat2','clog1','clog2','crel1','crel2','crel3','crel4','crel5','l1','rl1','cl1','ral1','raf1','raf2','raf3','raf4','rad1','rad2','rad3','rad4','raa1','raa2','raa3','raa4','raa5','rao1','rao2','rao3','rao4','rat1','rat2','rat3','rat4','rat5','rat6','rat7','rat11','rat22','rat33','rat44','rat55','rat66','rat77','rashi','radhi1','radhi2','radhi3','radhi4','radhi5','radhi6','raint1','raint2','raint3','raint4','rahe1','ramem1','ramem2','ramem3','ramem4','rahp1','rahp2','rahp3','rahp4','ramap1','raesq1','raesq2','rares1','ramat1','ramat2','ralog1','ralog2','rarel1','rarel2','rarel3','rarel4','rarel5','pf','p_foda','p_tiempo','p_a','alu','c','t_alu'));
 
     }
 

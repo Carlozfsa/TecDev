@@ -122,17 +122,17 @@ for(;;){
 
 
 ////*********ACTIVIDAD 0 --LINEA DEL TIEMPO--**********////
+///
+///
 Route::get('/linea_tiempo', 'LineasController@create_lineas');
-
 Route::post('/store/linea_tiempo', 'LineasController@store');
-
 Route::post('/edit/linea_tiempo', 'LineasController@edit');
 
 ////*********ACTIVIDAD 1 --FODA--**********////
 
 ////*********FORTALEZAS**********////
 ///
-Route::group(['middleware'=>'Avances'], function() {
+Route::group(['middleware'=>'TerminarRegistro'], function() {
 
     Route::get('/foda_1_1', 'FodaController@create_f1');
     Route::get('/foda_1_2', 'FodaController@create_f2');
@@ -144,7 +144,7 @@ Route::group(['middleware'=>'Avances'], function() {
 Route::post('/store/foda_1_1', 'FodaController@store_f1');
 Route::post('/store/foda_1_2', 'FodaController@store_f2');
 Route::post('/store/foda_1_3', 'FodaController@store_f3');
-Route::post('/store/foda_1_4', 'FodaController@store_f4');
+Route::post('/stofre/foda_1_4', 'FodaController@store_f4');
 
 Route::post('/edit/foda_1_1', 'FodaController@edit_f1');
 Route::post('/edit/foda_1_2', 'FodaController@edit_f2');

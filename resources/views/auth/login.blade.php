@@ -58,6 +58,13 @@
                                 {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
                                     {{--Forgot Your Password?--}}
                                 {{--</a>--}}
+
+                               @if($flash = session('message'))
+                                    <div class="alert alert-info">
+                                        {{$flash}}
+                                    </div>
+                                @endif
+
                             </div>
                         </div>
                     </form>

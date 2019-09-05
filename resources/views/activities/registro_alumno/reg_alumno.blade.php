@@ -8,12 +8,20 @@
         </div>
         <div class="panel-body" style="padding-left: 20%;padding-right: 20%;">
 
-            @if(count($errors)>0)
+            {{--@if(count($errors)>0)--}}
 
-                <div class = "alert alert-danger">
-                    <strong>Aviso!</strong> Rectifique sus datos!
+                {{--<div class = "alert alert-danger">--}}
+                    {{--<strong>Aviso!</strong> Rectifique sus datos!--}}
+                {{--</div>--}}
+            {{--@else--}}
+
+            {{--@endif--}}
+
+            @if(session('alerta'))
+
+                <div class="alert alert-danger">
+                    {{session('alerta')}}
                 </div>
-            @else
 
             @endif
 
@@ -27,19 +35,40 @@
 
             {!! Form::open(['method'=>'POST', 'action'=>'AlumnosController@store_alumnos']) !!}
 
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('nombres') ? ' has-error' : '' }}">
                 {!! Form::label('lnombres','Nombres') !!}
                 {!! Form::text('nombres', null, ['class'=>'form-control']) !!}
+
+                @if ($errors->has('nombres'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('nombres') }}</strong>
+                    </span>
+                @endif
+
             </div>
 
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('apellidop') ? ' has-error' : '' }}">
                 {!! Form::label('lapellidop','Apellido paterno') !!}
                 {!! Form::text('apellidop', null, ['class'=>'form-control']) !!}
+
+                @if ($errors->has('apellidop'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('apellidop') }}</strong>
+                    </span>
+                @endif
+
             </div>
 
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('apellidom') ? ' has-error' : '' }}">
                 {!! Form::label('lapellidom','Apellido materno') !!}
                 {!! Form::text('apellidom', null, ['class'=>'form-control']) !!}
+
+                @if ($errors->has('apellidom'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('apellidom') }}</strong>
+                    </span>
+                @endif
+
             </div>
 
             <div class="form-group">
@@ -62,24 +91,53 @@
                 {!! Form::select('sem',['1'=>'1','2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9','10'=>'9+',]+$carreras, null,['style'=>'font-size: 15px;padding: 1px;', 'class'=>'form-control']) !!}
             </div>
 
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('apellidom') ? ' has-error' : '' }}">
                 {!! Form::label('ltelcasa','Teléfono de casa') !!}
                 {!! Form::text('telcasa', null, ['class'=>'form-control']) !!}
+
+                @if ($errors->has('telcasa'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('telcasa') }}</strong>
+                    </span>
+                @endif
+
             </div>
 
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('cel') ? ' has-error' : '' }}">
                 {!! Form::label('lcel','Teléfono celular') !!}
                 {!! Form::text('cel', null, ['class'=>'form-control']) !!}
+
+                @if ($errors->has('cel'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('cel') }}</strong>
+                    </span>
+                @endif
+
             </div>
 
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('dir') ? ' has-error' : '' }}">
                 {!! Form::label('ldir','Dirección') !!}
                 {!! Form::text('dir', null, ['class'=>'form-control']) !!}
+
+
+                @if ($errors->has('dir'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('dir') }}</strong>
+                    </span>
+                @endif
+
             </div>
 
-            <div class="form-group">
+            <div class="form-group{{ $errors->has('nss') ? ' has-error' : '' }}">
                 {!! Form::label('lnss','Número de Seguro Social (NSS)') !!}
                 {!! Form::text('nss', null, ['class'=>'form-control']) !!}
+
+                @if ($errors->has('nss'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('nss') }}</strong>
+                    </span>
+                @endif
+
             </div>
 
             <div class="form-group">
